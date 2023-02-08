@@ -1,0 +1,20 @@
+@import "./normalize.scss";
+@import "./variables.scss";
+@import "./themes/light.scss";
+@import "./themes/dark.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
