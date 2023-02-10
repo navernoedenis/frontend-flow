@@ -1,21 +1,27 @@
-import { NavLink } from "react-router-dom";
-import { AppRouting } from "pages";
-import { useTheme } from "./providers/theme";
-import "./styles/global.scss";
+import { AppRouter } from 'pages';
+import { useTheme } from './providers/theme';
+import './styles/global.scss';
+
+import { Header } from 'widgets/header';
+import { Sidebar } from 'widgets/sidebar';
+
+import { classNames } from 'shared/lib/class-names';
+
+import 'shared/config/i18n/i18n.config';
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
-      <button onClick={toggleTheme}>TOGGLE THEME</button>
+    <div className={classNames('app', { [theme]: true })}>
+      <Header />
 
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/main">Main</NavLink>
-      </nav>
-      <AppRouting />
+      <div className="main">
+        <Sidebar />
+        <div className="page-container">
+          <AppRouter />
+        </div>
+      </div>
     </div>
   );
 };

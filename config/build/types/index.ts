@@ -1,24 +1,24 @@
-import { Configuration as WebpackConfiguration } from "webpack";
-import { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import { type Configuration as WebpackConfiguration } from 'webpack';
+import { type Configuration as DevServerConfiguration } from 'webpack-dev-server';
 
-export type BuildMode = "development" | "production";
+export type BuildMode = 'development' | 'production';
 export type Configuration = WebpackConfiguration & DevServerConfiguration;
 
-export type BuildPaths = {
+export interface BuildPaths {
   entry: string;
   html: string;
   build: string;
   src: string;
-};
+}
 
-export type BuildEnv = {
+export interface BuildEnv {
   mode: BuildMode;
   port: string;
-};
+}
 
-export type BuildOptions = {
+export interface BuildOptions {
   isDevelopment: boolean;
   mode: BuildMode;
   paths: BuildPaths;
   port: number;
-};
+}

@@ -1,7 +1,7 @@
-@import "./normalize.scss";
-@import "./variables.scss";
-@import "./themes/light.scss";
-@import "./themes/dark.scss";
+@import "./normalize";
+@import "./variables";
+@import "./themes/light";
+@import "./themes/dark";
 
 *,
 *::before,
@@ -13,8 +13,44 @@ body {
   font-size: 20px;
 }
 
+:root {
+  --color-anchorman: #2e3440;
+  --color-springtime-rain: #eceff4;
+  --color-candy-drop: #bf616a;
+  --color-copperleaf: #d08770;
+  --color-gaia-stone: #a3be8c;
+  --color-walnut-oil: #ebcb8b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: 0;
+  padding: 0;
+}
+
 .app {
   min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.page-container {
+  flex-grow: 1;
 }
