@@ -7,20 +7,21 @@ import {
 
 import { buildConfig } from './config/build/build-config';
 
+const srcDir = path.resolve(__dirname, 'src');
+
 export default (env: BuildEnv): Configuration => {
   const paths: BuildPaths = {
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
-    entry: path.resolve(__dirname, 'src', 'index.tsx'),
-    src: path.resolve(__dirname, 'src'),
+    entry: path.resolve(srcDir, 'index.tsx'),
+    src: srcDir,
+    initTheme: path.resolve(srcDir, "shared", "lib", "theme", "init-theme.ts")
   };
 
   const mode = env.mode || 'development';
   const port = +env.port || 3000;
 
   const isDevelopment = mode === 'development';
-
-  console.log('isDevelopment: ', isDevelopment);
 
   const config = buildConfig({
     isDevelopment,

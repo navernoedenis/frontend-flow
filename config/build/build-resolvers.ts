@@ -8,6 +8,6 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
     alias: {},
     extensions: ['.tsx', '.ts', '.js'],
     modules: [paths.src, 'node_modules'],
-    preferAbsolute: true
+    preferAbsolute: true,
   };
 }

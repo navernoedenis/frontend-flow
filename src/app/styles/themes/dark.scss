@@ -1,4 +1,5 @@
-.dark {
-  --primary-color: var(--color-springtime-rain);
-  --secondary-color: var(--color-anchorman);
+html[theme="dark"] {
+  --primary-color: var(--color-white);
+  --secondary-color: var(--color-black);
+  --accent-color: var(--color-copperleaf);
 }

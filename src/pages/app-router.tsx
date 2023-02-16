@@ -6,7 +6,7 @@ import { HomePage } from 'pages/home';
 import { MainPage } from 'pages/main';
 import { NotFoundPage } from 'pages/not-found';
 
-import { AppRoute, AppRoutePath } from 'shared/config/router/router.config'
+import { AppRoute, AppRoutePath } from 'shared/config/router/router.config';
 import { PageLoader } from 'shared/components/page-loader';
 
 const AppRoutes: Record<AppRoute, RouteProps> = {
@@ -23,17 +23,19 @@ const AppRoutes: Record<AppRoute, RouteProps> = {
     element: <MainPage />,
   },
   [AppRoute.NOT_FOUND]: {
-    path: AppRoute.NOT_FOUND,
+    path: AppRoutePath.not_found,
     element: <NotFoundPage />,
   },
 };
 
-export const AppRouter = () => (
-  <Suspense fallback={<PageLoader />}>
-    <Routes>
-      {Object.entries(AppRoutes).map(([key, route]) => (
-        <Route key={key} path={route.path} element={route.element} />
-      ))}
-    </Routes>
-  </Suspense>
-);
+export function AppRouter() {
+  return (
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        {Object.entries(AppRoutes).map(([key, route]) => (
+          <Route key={key} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </Suspense>
+  );
+}

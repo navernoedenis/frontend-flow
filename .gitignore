@@ -1,3 +1,8 @@
 /build
+.loki/current
+.loki/difference
+
 dist
 node_modules
+storybook-static
+

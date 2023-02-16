@@ -1,16 +1,15 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { ErrorBoundary } from 'app/providers/error-boundary';
 import App from './app';
-
-import { ThemeProvider } from 'app/providers/theme';
 
 const app = document.getElementById('app-root') as HTMLDivElement;
 const root = createRoot(app);
 
 root.render(
   <BrowserRouter>
-    <ThemeProvider>
+    <ErrorBoundary>
       <App />
-    </ThemeProvider>
-  </BrowserRouter>
+    </ErrorBoundary>
+  </BrowserRouter>,
 );

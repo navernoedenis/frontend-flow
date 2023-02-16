@@ -1,4 +1,4 @@
 {
   "extends": "stylelint-config-standard-scss",
-  "ignoreFiles": ["src/app/styles/normalize.scss"]
+  "ignoreFiles": ["src/app/styles/vendors/normalize.scss"]
 }

@@ -9,6 +9,7 @@ export interface BuildPaths {
   html: string;
   build: string;
   src: string;
+  initTheme: string;
 }
 
 export interface BuildEnv {

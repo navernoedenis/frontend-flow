@@ -7,6 +7,7 @@ import {
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { type BuildOptions } from './types';
 
@@ -25,6 +26,7 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
       filename: isDevelopment ? 'css/[name].css' : 'css/[name].[hash].css',
       chunkFilename: isDevelopment ? 'css/[name].css' : 'css/[name].[hash].css',
     }),
+    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
 
   if (isDevelopment) {

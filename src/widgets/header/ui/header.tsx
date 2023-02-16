@@ -1,20 +1,28 @@
-import classes from './header.module.scss';
+import { useTranslation } from 'react-i18next';
+
 import { AppLink } from 'shared/components/app-link';
+import { AppRoutePath } from 'shared/config/router/router.config';
+import classes from './header.module.scss';
 
-const Header = () => (
-  <div className={classes.header}>
-    <div className={classes.links}>
-      <AppLink to="/" isInversed isNavLink>
-        Home
-      </AppLink>
-      <AppLink to="/about" isInversed isNavLink>
-        About
-      </AppLink>
-      <AppLink to="/main" isInversed isNavLink>
-        Main
-      </AppLink>
+function Header() {
+  const { t } = useTranslation();
+
+  return (
+    <div className={classes.header} data-testid="header">
+      <div className={classes.links}>
+        <AppLink to={AppRoutePath.home} isNavLink>
+          {t('Home')}
+        </AppLink>
+
+        <AppLink to={AppRoutePath.about} isNavLink>
+          {t('About')}
+        </AppLink>
+
+        <AppLink to={AppRoutePath.main} isNavLink>
+          {t('Main')}
+        </AppLink>
+      </div>
     </div>
-  </div>
-);
-
+  );
+}
 export default Header;

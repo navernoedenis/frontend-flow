@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
-import './home.scss';
+import classes from './home.module.scss';
 
-const HomePage = () => {
+function HomePage() {
   const { t } = useTranslation('home');
 
   return (
-    <div className="home-page">
-      <h1 className="home-page-title">{t('title')}</h1>
+    <div className={classes.container}>
+      <h1>{t('title')}</h1>
     </div>
   );
-};
+}
 
 export default HomePage;

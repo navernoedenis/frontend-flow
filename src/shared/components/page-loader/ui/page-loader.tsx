@@ -1,10 +1,12 @@
+import { AppLoader } from 'shared/components/app-loader';
 import classes from './page-loader.module.scss';
-import { Loader } from 'shared/components/loader';
 
-const PageLoader = () => (
-  <div className={classes.loader}>
-    <Loader />
-  </div>
-);
+function PageLoader() {
+  return (
+    <div className={classes.loader} data-testid="page-loader">
+      <AppLoader />
+    </div>
+  );
+}
 
 export default PageLoader;

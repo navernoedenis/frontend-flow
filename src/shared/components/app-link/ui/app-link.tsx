@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { Link, NavLink, type LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/class-names';
 
-import './app-link.scss';
+import classes from './app-link.module.scss';
 
 interface AppLinkProps extends LinkProps {
   isInversed?: boolean;
@@ -11,23 +11,26 @@ interface AppLinkProps extends LinkProps {
 
 const AppLink: FC<AppLinkProps> = (props) => {
   const {
-    to,
-    className = '',
     children,
-    isNavLink = false,
+    className = '',
     isInversed = false,
+    isNavLink = false,
     ...otherProps
   } = props;
 
   const LinkComponent = isNavLink ? NavLink : Link;
 
-  const linkClasses = classNames('app-link', {
+  const linkClasses = classNames(classes.link, {
     [className]: Boolean(className),
-    'app-link-inversed': isInversed,
+    [classes.inversed]: isInversed,
   });
 
   return (
-    <LinkComponent to={to} className={linkClasses} {...otherProps}>
+    <LinkComponent
+      className={linkClasses}
+      data-testid="app-link"
+      {...otherProps}
+    >
       {children}
     </LinkComponent>
   );

@@ -1,6 +1,6 @@
-@import "./normalize";
+@import "./vendors/normalize";
+@import "./colors";
 @import "./variables";
-@import "./themes/light";
 @import "./themes/dark";
 
 *,
@@ -9,17 +9,16 @@
   box-sizing: border-box;
 }
 
-body {
-  font-size: 20px;
+html {
+  --primary-color: var(--color-black);
+  --secondary-color: var(--color-white);
+  --accent-color: var(--color-green);
 }
 
-:root {
-  --color-anchorman: #2e3440;
-  --color-springtime-rain: #eceff4;
-  --color-candy-drop: #bf616a;
-  --color-copperleaf: #d08770;
-  --color-gaia-stone: #a3be8c;
-  --color-walnut-oil: #ebcb8b;
+body {
+  font-size: 20px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 h1,
@@ -33,6 +32,14 @@ p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+
+  &.active {
+    color: var(--color-copperleaf);
+  }
+}
+
 ul {
   list-style-type: 0;
   padding: 0;
@@ -40,17 +47,14 @@ ul {
 
 .app {
   min-height: 100vh;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
 }
 
 .main {
   display: flex;
   height: calc(100vh - var(--header-height));
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
 }
 
 .page-container {
   flex-grow: 1;
+  padding: 0 20px;
 }

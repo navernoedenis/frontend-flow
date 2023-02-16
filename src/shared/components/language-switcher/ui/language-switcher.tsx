@@ -1,7 +1,6 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/class-names';
-
 import classes from './language-switcher.module.scss';
 
 interface LanguageSwitcherProps {
@@ -12,7 +11,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className = '' }) => {
   const { i18n } = useTranslation();
 
   const onToggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
   };
 
   const buttonClasses = classNames(classes.button, {
@@ -20,8 +19,13 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className = '' }) => {
   });
 
   return (
-    <div className={buttonClasses} onClick={onToggleLanguage}>
-      {i18n.language}
+    <div
+      aria-hidden="true"
+      className={buttonClasses}
+      data-testid="language-switcher"
+      onClick={onToggleLanguage}
+    >
+      {`${i18n.language}`.slice(0, 2)}
     </div>
   );
 };

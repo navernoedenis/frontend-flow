@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import './main.scss';
 
-const MainPage = () => {
+function MainPage() {
   const { t } = useTranslation('main');
 
   return (
@@ -9,6 +8,6 @@ const MainPage = () => {
       <h1 className="main-page-title">{t('title')}</h1>
     </div>
   );
-};
+}
 
 export default MainPage;

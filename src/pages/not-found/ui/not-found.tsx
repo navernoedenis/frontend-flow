@@ -1,11 +1,14 @@
-import './not-found.scss';
+import { useTranslation } from 'react-i18next';
+import classes from './not-found.module.scss';
 
-const NotFoundPage = () => {
+function NotFoundPage() {
+  const { t } = useTranslation('not-found');
+
   return (
-    <div className="not-found-page">
-      <h1 className="not-found-page-title">NOT FOUND page!!!</h1>
+    <div className={classes.container}>
+      <h1>{t('title')}</h1>
     </div>
   );
-};
+}
 
 export default NotFoundPage;
