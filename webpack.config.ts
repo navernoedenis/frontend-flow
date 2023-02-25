@@ -1,9 +1,5 @@
 import path from 'path';
-import {
-  type Configuration,
-  type BuildEnv,
-  type BuildPaths,
-} from './config/build/types';
+import type { Configuration, BuildEnv, BuildPaths } from './config/build/types';
 
 import { buildConfig } from './config/build/build-config';
 
@@ -15,7 +11,7 @@ export default (env: BuildEnv): Configuration => {
     html: path.resolve(__dirname, 'public', 'index.html'),
     entry: path.resolve(srcDir, 'index.tsx'),
     src: srcDir,
-    initTheme: path.resolve(srcDir, "shared", "lib", "theme", "init-theme.ts")
+    initTheme: path.resolve(srcDir, 'shared', 'lib', 'theme', 'init-theme.ts'),
   };
 
   const mode = env.mode || 'development';

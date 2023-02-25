@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import AppLoader from './app-loader';
 
 export default {
@@ -8,5 +9,7 @@ export default {
 
 const Template: ComponentStory<typeof AppLoader> = () => <AppLoader />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Light = Template.bind({});
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator('dark')];

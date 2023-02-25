@@ -1,2 +1,3 @@
 export { I18nDecorator } from './i18n';
-export { ResetThemeDecorator } from './reset-theme';
+export { StoreDecorator } from './store';
+export { ThemeDecorator } from './theme';

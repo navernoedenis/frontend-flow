@@ -1,4 +1,7 @@
 {
+  "globals": {
+    "__IS_DEV__": true
+  },
   "env": {
     "browser": true,
     "es2021": true
@@ -17,24 +20,31 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "i18next"],
+  "plugins": ["react", "i18next", "react-hooks"],
   "rules": {
     "@typescript-eslint/comma-dangle": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/space-before-function-paren": "off",
-    "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "indent": ["error", 2],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-param-reassign": "off",
     "no-shadow": "off",
     "no-underscore-dangle": "off",
+    "object-curly-newline": "off",
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
     "react/button-has-type": "off",
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
@@ -54,5 +64,11 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["*.test.ts", "*.test.tsx", "*.config.ts", "*.stories.tsx"]
+  "ignorePatterns": [
+    "*.test.ts",
+    "*.test.tsx",
+    "*.config.ts",
+    "*.stories.tsx",
+    "*.html"
+  ]
 }

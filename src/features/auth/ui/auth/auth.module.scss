@@ -1,0 +1,21 @@
+.title {
+  margin-bottom: 16px;
+}
+
+.error {
+  margin-bottom: 10px;
+  color: var(--color-red);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.buttons {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

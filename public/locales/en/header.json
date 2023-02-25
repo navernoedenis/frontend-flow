@@ -1,0 +1,11 @@
+{
+  "buttons": {
+    "login": "login",
+    "logout": "logout"
+  },
+  "navigation": {
+    "about": "about",
+    "home": "home",
+    "main": "main"
+  }
+}

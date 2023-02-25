@@ -5,7 +5,7 @@ function HomePage() {
   const { t } = useTranslation('home');
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} data-testid="home">
       <h1>{t('title')}</h1>
     </div>
   );

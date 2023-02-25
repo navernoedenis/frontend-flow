@@ -8,12 +8,12 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    returnNull: false,
     load: 'languageOnly',
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     fallbackLng: false,
-    // eslint-disable-next-line no-undef
     debug: __IS_DEV__,
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

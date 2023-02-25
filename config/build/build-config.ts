@@ -1,4 +1,4 @@
-import { type Configuration, type BuildOptions } from './types';
+import type { Configuration, BuildOptions } from './types';
 import { buildDevServer } from './build-dev-server';
 import { buildLoaders } from './build-loaders';
 import { buildPlugins } from './build-plugins';

@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import Header from './header';
 
 export default {
@@ -8,4 +9,7 @@ export default {
 
 const Template: ComponentStory<typeof Header> = () => <Header />;
 
-export const Default = Template.bind({});
+export const Light = Template.bind({});
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator('dark')];

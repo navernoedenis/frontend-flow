@@ -1,18 +1,19 @@
-export type Theme = 'light' | 'dark';
+import { LS_THEME_KEY } from 'shared/constants/local-storage';
+import { LocalStorage } from 'shared/services/local-storage';
 
-const LS_THEME_KEY = 'frontend-project:theme';
+export type Theme = 'light' | 'dark';
 
 export function applyTheme(theme: Theme, persist: boolean = true): void {
   document.documentElement.setAttribute('theme', theme);
   if (persist) {
-    localStorage.setItem(LS_THEME_KEY, theme);
+    LocalStorage.save(LS_THEME_KEY, theme);
   }
 }
 
 export function getSavedTheme(): Theme | null {
-  return localStorage.getItem(LS_THEME_KEY) as Theme | null;
+  return LocalStorage.get<Theme>(LS_THEME_KEY);
 }
 
 export function removeSavedTheme(): void {
-  localStorage.removeItem(LS_THEME_KEY);
+  LocalStorage.remove(LS_THEME_KEY);
 }

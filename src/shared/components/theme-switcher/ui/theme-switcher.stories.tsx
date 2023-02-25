@@ -7,11 +7,7 @@ export default {
 } as ComponentMeta<typeof ThemeSwitcher>;
 
 const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
-  <div
-    style={{ display: 'inline-block', backgroundColor: 'var(--primary-color)' }}
-  >
-    <ThemeSwitcher {...args} />
-  </div>
+  <ThemeSwitcher {...args} />
 );
 
 export const Default = Template.bind({});

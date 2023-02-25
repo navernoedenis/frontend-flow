@@ -5,7 +5,7 @@ function AboutPage() {
   const { t } = useTranslation('about');
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} data-testid="about">
       <h1>{t('title')}</h1>
     </div>
   );

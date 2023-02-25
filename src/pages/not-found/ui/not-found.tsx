@@ -5,7 +5,7 @@ function NotFoundPage() {
   const { t } = useTranslation('not-found');
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} data-testid="not-found">
       <h1>{t('title')}</h1>
     </div>
   );

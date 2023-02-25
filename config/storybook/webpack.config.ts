@@ -1,5 +1,10 @@
 import path from 'path';
-import { Configuration, RuleSetRule } from 'webpack';
+import { DefinePlugin } from 'webpack';
+import type {
+  Configuration,
+  RuleSetRule,
+  WebpackPluginInstance,
+} from 'webpack';
 
 export function buildWebpackConfig(config: Configuration): Configuration {
   const filesRule = config.module?.rules?.find((rule) => {
@@ -28,6 +33,14 @@ export function buildWebpackConfig(config: Configuration): Configuration {
   ];
 
   config.resolve?.modules?.push(...modules);
+
+  const plugins: WebpackPluginInstance[] = [
+    new DefinePlugin({
+      __IS_DEV__: true,
+    }),
+  ];
+
+  config.plugins?.push(...plugins);
 
   return config;
 }

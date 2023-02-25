@@ -1,15 +1,12 @@
-import {
-  DefinePlugin,
-  ProgressPlugin,
-  type WebpackPluginInstance,
-} from 'webpack';
+import { DefinePlugin, ProgressPlugin } from 'webpack';
+import type { WebpackPluginInstance } from 'webpack';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-import { type BuildOptions } from './types';
+import type { BuildOptions } from './types';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
   const { isDevelopment, paths } = options;

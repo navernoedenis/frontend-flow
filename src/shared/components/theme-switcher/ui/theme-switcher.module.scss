@@ -4,6 +4,12 @@
   cursor: pointer;
 
   svg {
+    fill: var(--primary-color);
+  }
+}
+
+.inversed {
+  svg {
     fill: var(--secondary-color);
   }
 }

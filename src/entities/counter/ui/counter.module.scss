@@ -1,0 +1,16 @@
+.container {
+  border: 1px dashed var(--primary-color);
+  padding: 10px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.button {
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

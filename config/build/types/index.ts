@@ -1,5 +1,5 @@
-import { type Configuration as WebpackConfiguration } from 'webpack';
-import { type Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import type { Configuration as WebpackConfiguration } from 'webpack';
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 
 export type BuildMode = 'development' | 'production';
 export type Configuration = WebpackConfiguration & DevServerConfiguration;

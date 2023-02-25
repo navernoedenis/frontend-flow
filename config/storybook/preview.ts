@@ -1,8 +1,10 @@
-import { addDecorator, DecoratorFn, Parameters } from '@storybook/react';
+import { addDecorator } from '@storybook/react';
+import type { DecoratorFn, Parameters } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
 import {
   I18nDecorator,
-  ResetThemeDecorator,
+  StoreDecorator,
+  ThemeDecorator,
 } from 'shared/config/storybook/decorators';
 
 import 'app/styles/global.scss';
@@ -19,5 +21,6 @@ export const parameters: Parameters = {
 
 export const decorators: DecoratorFn[] = [withRouter];
 
+addDecorator(StoreDecorator);
 addDecorator(I18nDecorator);
-addDecorator(ResetThemeDecorator);
+addDecorator(ThemeDecorator('light'));

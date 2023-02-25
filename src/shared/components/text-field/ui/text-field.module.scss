@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.error .input {
+    border-color: var(--color-red);
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-color);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.input {
+  outline: none;
+  border-radius: 0;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  padding: 7px;
+  font-size: 16px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.error {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-red);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

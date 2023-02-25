@@ -18,7 +18,7 @@ function Sidebar() {
     <div className={sidebarClasses} data-testid="sidebar">
       <AppButton onClick={toggleOpen}>{isOpen ? 'close' : 'open'}</AppButton>
       <div className={classes.buttons}>
-        <ThemeSwitcher />
+        <ThemeSwitcher isInversed />
         <LanguageSwitcher />
       </div>
     </div>

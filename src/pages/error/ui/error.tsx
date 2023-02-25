@@ -10,7 +10,7 @@ function ErrorPage() {
   };
 
   return (
-    <div className={classes.page}>
+    <div className={classes.page} data-testid="error">
       <div className={classes.container}>
         <h1 className={classes.title}>{t('title')}</h1>
         <AppButton onClick={onReload} size="large" isSquare>

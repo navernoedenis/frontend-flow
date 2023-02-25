@@ -1,4 +1,11 @@
 {
   "extends": "stylelint-config-standard-scss",
-  "ignoreFiles": ["src/app/styles/vendors/normalize.scss"]
+  "ignoreFiles": ["src/app/styles/vendors/normalize.scss"],
+  "rules": {
+    "custom-property-empty-line-before": null,
+    "import-notation": null,
+    "keyframes-name-pattern": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null
+  }
 }

@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import LanguageSwitcher from './language-switcher';
 
 export default {
@@ -7,9 +8,12 @@ export default {
 } as ComponentMeta<typeof LanguageSwitcher>;
 
 const Template: ComponentStory<typeof LanguageSwitcher> = (args) => (
-  <div style={{ display: 'flex' }}>
+  <div style={{ display: 'inline-block' }}>
     <LanguageSwitcher {...args} />
   </div>
 );
 
-export const Default = Template.bind({});
+export const Light = Template.bind({});
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator('dark')];

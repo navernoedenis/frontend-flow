@@ -1,6 +1,6 @@
-import { type RuleSetRule } from 'webpack';
+import type { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { type BuildOptions } from './types';
+import type { BuildOptions } from './types';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const { isDevelopment } = options;

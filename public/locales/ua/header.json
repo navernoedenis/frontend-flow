@@ -1,0 +1,11 @@
+{
+  "buttons": {
+    "login": "логін",
+    "logout": "вийти"
+  },
+  "navigation": {
+    "about": "про",
+    "home": "домашня",
+    "main": "головна"
+  }
+}

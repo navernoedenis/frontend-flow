@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  align-items: center;
   height: var(--header-height);
   padding: 0 20px;
   background-color: var(--secondary-color);
@@ -9,5 +10,9 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+}
+
+.buttons {
+  margin-left: 16px;
 }
