@@ -1,9 +1,13 @@
 .title {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  font-size: 32px;
+  line-height: 1.2;
 }
 
 .error {
   margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--color-red);
 }
 
@@ -14,7 +18,7 @@
 }
 
 .buttons {
-  margin-top: 16px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 5px;

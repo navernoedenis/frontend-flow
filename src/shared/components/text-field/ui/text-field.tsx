@@ -7,15 +7,15 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   error?: string;
   isFocused?: boolean;
-  title: string;
+  title?: string;
 }
 
 const TextField = (props: TextFieldProps) => {
   const {
+    className = '',
     error = '',
     isFocused = false,
-    className = '',
-    title,
+    title = '',
     type = 'text',
     ...otherProps
   } = props;
@@ -35,9 +35,11 @@ const TextField = (props: TextFieldProps) => {
 
   return (
     <div className={textFieldClasses} data-testid="text-field">
-      <h6 className={classes.title} data-testid="title">
-        {title}
-      </h6>
+      {title && (
+        <h6 className={classes.title} data-testid="title">
+          {title}
+        </h6>
+      )}
       <input
         className={classes.input}
         data-testid="input"

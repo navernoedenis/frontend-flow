@@ -1,5 +1,7 @@
 import { screen, fireEvent } from '@testing-library/react';
 import { renderWithStore } from 'shared/config/tests/wrappers';
+import { counterReducer } from '../model/slice';
+
 import Counter from './counter';
 
 describe('test entities/counter', () => {
@@ -10,7 +12,8 @@ describe('test entities/counter', () => {
 
   it('should increment value', () => {
     renderWithStore(<Counter />, {
-      counter: { value: 0 },
+      lazyReducers: { counter: counterReducer },
+      preloadedState: { counter: { value: 0 } },
     });
 
     const title = screen.getByTestId('title');
@@ -24,7 +27,8 @@ describe('test entities/counter', () => {
 
   it('should decrement value', () => {
     renderWithStore(<Counter />, {
-      counter: { value: 13 },
+      lazyReducers: { counter: counterReducer },
+      preloadedState: { counter: { value: 13 } },
     });
 
     const title = screen.getByTestId('title');

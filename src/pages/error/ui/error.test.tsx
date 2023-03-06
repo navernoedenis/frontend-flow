@@ -5,6 +5,6 @@ import Error from './error';
 describe('test pages/error', () => {
   it('should be in the document', () => {
     renderWithAll(<Error />);
-    expect(screen.getByTestId('error')).toBeInTheDocument();
+    expect(screen.getByTestId('error-page')).toBeInTheDocument();
   });
 });

@@ -39,11 +39,3 @@ Medium_Light_Disabled.args = { disabled: true };
 export const Medium_Dark_Disabled = Template.bind({});
 Medium_Dark_Disabled.args = { disabled: true };
 Medium_Dark_Disabled.decorators = [ThemeDecorator('dark')];
-
-const SquareTemplate: ComponentStory<typeof AppButton> = (args) => (
-  <AppButton isSquare {...args} />
-);
-
-export const Medium_Square_Light = SquareTemplate.bind({});
-export const Medium_Square_Dark = SquareTemplate.bind({});
-Medium_Square_Dark.decorators = [ThemeDecorator('dark')];

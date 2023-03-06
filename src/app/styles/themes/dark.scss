@@ -1,5 +1,8 @@
 html[theme="dark"] {
   --primary-color: var(--color-white);
   --secondary-color: var(--color-black);
-  --accent-color: var(--color-orange);
+  --accent-color: var(--color-green);
+  --overlay-bg: rgb(255 255 255 / 5%);
+  --theme-menu-border-color: transparent;
+  --theme-menu-bg-color: #353a40;
 }

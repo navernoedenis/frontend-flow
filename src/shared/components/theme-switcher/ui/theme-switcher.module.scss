@@ -1,10 +1,17 @@
 .button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+  border: 1px solid var(--theme-menu-border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  background-color: var(--theme-menu-bg-color);
+  color: var(--primary-color);
 
   svg {
-    fill: var(--primary-color);
+    transform: scale(1.2);
   }
 }
 
@@ -12,4 +19,32 @@
   svg {
     fill: var(--secondary-color);
   }
+}
+
+.menu {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  width: 208px;
+  color: var(--primary-color);
+  transition: 150ms linear;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+.menuText {
+  margin-left: 12px;
+}
+
+.menuCheck {
+  margin-left: auto;
+  color: var(--accent-color);
 }

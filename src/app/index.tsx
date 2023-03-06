@@ -1,16 +1,15 @@
 import { useEffect } from 'react';
-import { AppRouter } from 'pages';
-import './styles/global.scss';
-
 import { Header } from 'widgets/header';
 import { Sidebar } from 'widgets/sidebar';
 
 import { authActions } from 'features/auth';
-
 import { useAppDispatch } from 'shared/hooks';
-import { classNames } from 'shared/lib/class-names';
+import { applyTheme, getSystemTheme } from 'shared/lib/theme';
 
-import 'shared/config/i18n/i18n.config';
+import { AppRouter } from './router';
+import './styles/global.scss';
+
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 function App() {
   const dispatch = useAppDispatch();
@@ -19,15 +18,23 @@ function App() {
     dispatch(authActions.init());
   }, [dispatch]);
 
+  useEffect(() => {
+    const systemThemeListener = () => applyTheme(getSystemTheme());
+    systemTheme.addEventListener('change', systemThemeListener);
+    return () => {
+      systemTheme.removeEventListener('change', systemThemeListener);
+    };
+  }, []);
+
   return (
-    <div className={classNames('app')}>
+    <div className="app">
       <Header />
-      <div className="main">
+      <main className="main">
         <Sidebar />
         <div className="page-container">
           <AppRouter />
         </div>
-      </div>
+      </main>
     </div>
   );
 }

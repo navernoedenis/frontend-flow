@@ -4,8 +4,8 @@
     "logout": "вийти"
   },
   "navigation": {
-    "about": "про",
+    "counter": "лічильник",
     "home": "домашня",
-    "main": "головна"
+    "profile": "профіль"
   }
 }

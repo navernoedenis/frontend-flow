@@ -1,15 +1,16 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import type { MouseEvent, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { Portal } from 'shared/components/portal';
 import { classNames } from 'shared/lib/class-names';
 
+import CrossIcon from './assets/cross.svg';
 import classes from './app-modal.module.scss';
 
 interface AppModalProps {
   children: ReactNode;
   isOpen: boolean;
-  onClose: () => void;
+  onClose: VoidFunction;
 }
 
 const ANIMATION_DURATION = 300;
@@ -29,20 +30,13 @@ const AppModal = (props: AppModalProps) => {
     }, ANIMATION_DURATION);
   }, [onClose]);
 
-  const handleKeyDown = useCallback(
-    (event: globalThis.KeyboardEvent) => {
+  useEffect(() => {
+    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
         handleClosing();
       }
-    },
-    [handleClosing],
-  );
+    };
 
-  const stopContentPropagation = (event: MouseEvent) => {
-    event.stopPropagation();
-  };
-
-  useEffect(() => {
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
     }
@@ -52,7 +46,7 @@ const AppModal = (props: AppModalProps) => {
       document.removeEventListener('keydown', handleKeyDown);
       setClosing(false);
     };
-  }, [handleKeyDown, isOpen]);
+  }, [isOpen, handleClosing]);
 
   const appPortalClasses = classNames(classes.container, {
     [classes.isOpen]: isOpen,
@@ -73,10 +67,16 @@ const AppModal = (props: AppModalProps) => {
         >
           <div
             className={classes.content}
-            onClick={stopContentPropagation}
+            onClick={(event) => {
+              event.stopPropagation();
+            }}
             style={{ animationDuration: `${ANIMATION_DURATION}ms` }}
           >
             {children}
+
+            <button className={classes.button} onClick={handleClosing}>
+              <CrossIcon />
+            </button>
           </div>
         </div>
       </div>

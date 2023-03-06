@@ -1,19 +1,14 @@
 import React, { Suspense } from 'react';
-import type { ReactNode } from 'react';
-
-import { ErrorPage } from 'pages/error';
+import { ErrorPage } from 'pages';
 import { PageLoader } from 'shared/components/page-loader';
 
-interface Props {
-  children: ReactNode;
-}
+import type { ErrorBoundaryProps, ErrorBoundaryState } from './types';
 
-interface State {
-  hasError: boolean;
-}
-
-export class ErrorBoundary extends React.Component<Props, State> {
-  constructor(props: Props) {
+export class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }

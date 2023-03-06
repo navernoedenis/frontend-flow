@@ -1,3 +1,3 @@
-import { applyTheme, getSavedTheme } from '.';
+import { applyTheme, getSavedTheme, getSystemTheme } from '.';
 
-applyTheme(getSavedTheme() ?? 'light');
+applyTheme(getSavedTheme() ?? getSystemTheme());

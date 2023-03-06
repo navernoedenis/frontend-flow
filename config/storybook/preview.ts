@@ -21,6 +21,6 @@ export const parameters: Parameters = {
 
 export const decorators: DecoratorFn[] = [withRouter];
 
-addDecorator(StoreDecorator);
+addDecorator(StoreDecorator());
 addDecorator(I18nDecorator);
 addDecorator(ThemeDecorator('light'));

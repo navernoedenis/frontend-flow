@@ -1,6 +1,35 @@
 .loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - var(--header-height));
+  height: 100vh;
+  background-color: var(--overlay-bg);
+  animation-name: fadeIn;
+  animation-duration: 300ms;
+  z-index: var(--overlay-z-index);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

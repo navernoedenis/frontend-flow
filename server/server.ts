@@ -61,8 +61,8 @@ server.post('/sign-in', (req, res) => {
 server.use((req, res, next) => {
   const { authorization } = req.headers;
 
-  if (authorization === undefined) {
-    res.sendStatus(401);
+  if (!authorization) {
+    res.status(401).json({ error: 'Invalid token' });
   }
 
   next();
@@ -71,6 +71,5 @@ server.use((req, res, next) => {
 server.use(router);
 
 server.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`JSON Server started running on port: ${port}`);
 });

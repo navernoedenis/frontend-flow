@@ -1,12 +1,14 @@
 import { selectCounter } from './select-counter';
-import { AppState, AppPartialState } from '../../types';
+import { AppState } from 'app/providers/store';
 
-describe('test counter/select-counter', () => {
-  it('should return default value', () => {
-    const state: AppPartialState = {
-      counter: { value: 7 },
-    };
+describe('test entities/counter/select-counter', () => {
+  it('should return: null', () => {
+    const state = {} as AppState;
+    expect(selectCounter(state)).toBe(null);
+  });
 
-    expect(selectCounter(state as AppState)).toEqual({ value: 7 });
+  it('should return: value 8', () => {
+    const state = { counter: { value: 8 } } as AppState;
+    expect(selectCounter(state)).toEqual({ value: 8 });
   });
 });

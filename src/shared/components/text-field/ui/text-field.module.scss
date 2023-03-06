@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 
   &.error .input {
     border-color: var(--color-red);
@@ -20,13 +20,21 @@
 
 .input {
   outline: none;
-  border-radius: 0;
-  border: 1px solid var(--primary-color);
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
   background-color: transparent;
-  padding: 7px;
-  font-size: 16px;
+  padding: 8px 0;
   color: var(--primary-color);
+  width: 100%;
+  transition: 100ms linear;
+  transition-property: border-color, padding;
   cursor: pointer;
+
+  &:disabled {
+    border-color: transparent;
+    padding-left: 0;
+    cursor: default;
+  }
 }
 
 .error {

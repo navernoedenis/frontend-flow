@@ -3,10 +3,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from './store';
 import { ErrorBoundary } from './error-boundary';
 
-export const AppProviders = ({ children }: { children: ReactNode }) => (
-  <StoreProvider>
-    <BrowserRouter>
+interface AppProvidersProps {
+  children: ReactNode;
+}
+
+export const AppProviders = ({ children }: AppProvidersProps) => (
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary>{children}</ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>
+    </StoreProvider>
+  </BrowserRouter>
 );

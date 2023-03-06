@@ -10,6 +10,5 @@ export default {
 const Template: ComponentStory<typeof Home> = () => <Home />;
 
 export const Light = Template.bind({});
-
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator('dark')];

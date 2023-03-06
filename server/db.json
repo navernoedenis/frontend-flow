@@ -2,8 +2,15 @@
   "users": [
     {
       "id": 1,
-      "name": "admin",
-      "password": "root"
+      "name": "navernoedenis",
+      "password": "12345"
     }
-  ]
+  ],
+  "profile": {
+    "name": "navernoedenis",
+    "avatar": "https://i.imgur.com/RB4D6Pk.jpg",
+    "age": 29,
+    "country": "Ukraine",
+    "position": "Fullstack Developer"
+  }
 }

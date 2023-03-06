@@ -1,9 +1,9 @@
 .link {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
   color: var(--primary-color);
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: uppercase;
 }
 
 .inversed {

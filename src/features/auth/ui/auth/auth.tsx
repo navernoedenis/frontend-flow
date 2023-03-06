@@ -8,9 +8,9 @@ import { TextField } from 'shared/components/text-field';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import classes from './auth.module.scss';
 
-import { signIn } from '../../api';
+import { signIn } from '../../api/sign-in/sign-in';
 import { authActions } from '../../model/slice';
-import { selectAuthError, selectAuthLogin } from '../../model/selectors';
+import { selectAuth } from '../../model/selectors/select-auth/select-auth';
 import type { AuthForm } from '../../model/types';
 
 const INITIAL_FORM: AuthForm = {
@@ -20,10 +20,9 @@ const INITIAL_FORM: AuthForm = {
 
 function Auth() {
   const { t } = useTranslation('auth');
-  const dispatch = useAppDispatch();
 
-  const error = useAppSelector(selectAuthError);
-  const isLoading = useAppSelector(selectAuthLogin);
+  const dispatch = useAppDispatch();
+  const auth = useAppSelector(selectAuth);
 
   const [form, setForm] = useState<AuthForm>(INITIAL_FORM);
 
@@ -57,15 +56,17 @@ function Auth() {
 
   return (
     <div data-testid="auth">
-      <h2 className={classes.title}>
-        {isLoading ? `${t('loading')}...` : `${t('title')}`}
-      </h2>
-
-      {error.length > 0 && <h5 className={classes.error}>{error}</h5>}
+      <h2 className={classes.title}>{t('title')}</h2>
+      {auth.error.length > 0 && (
+        <h5 className={classes.error} data-testid="error">
+          {auth.error}
+        </h5>
+      )}
 
       <form onSubmit={onSubmitForm}>
         <div className={classes.fields}>
           <TextField
+            data-testid="name"
             isFocused
             name="name"
             onChange={onChangeForm}
@@ -74,6 +75,7 @@ function Auth() {
             value={form.name}
           />
           <TextField
+            data-testid="password"
             name="password"
             onChange={onChangeForm}
             placeholder={t('placeholder.password')}
@@ -85,14 +87,20 @@ function Auth() {
 
         <div className={classes.buttons}>
           <AppButton
-            disabled={!canFormBeReset}
+            data-testid="reset"
+            disabled={!canFormBeReset || auth.isLoading}
             onClick={onResetForm}
             type="button"
           >
             {t('buttons.reset')}
           </AppButton>
 
-          <AppButton disabled={!isFormValid || isLoading} type="submit">
+          <AppButton
+            data-testid="submit"
+            disabled={!isFormValid}
+            isLoading={auth.isLoading}
+            type="submit"
+          >
             {t('buttons.enter')}
           </AppButton>
         </div>

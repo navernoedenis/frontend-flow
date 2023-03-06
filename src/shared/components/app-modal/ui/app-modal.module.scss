@@ -19,12 +19,32 @@
 }
 
 .content {
+  position: relative;
   border-radius: 6px;
-  width: 100%;
-  padding: 16px;
   max-width: 500px;
+  width: 100%;
+  padding: 16px 20px;
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+.button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    fill: var(--primary-color);
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .isOpen {
@@ -32,27 +52,27 @@
   z-index: var(--overlay-z-index);
 
   .overlay {
-    animation-name: overlay;
+    animation-name: fadeIn;
     opacity: 1;
   }
 
   .content {
-    animation-name: content;
+    animation-name: zoomIn;
   }
 }
 
 .isClosing {
   .overlay {
-    animation-name: overlayEnd;
+    animation-name: fadeOut;
     opacity: 0;
   }
 
   .content {
-    animation-name: contentEnd;
+    animation-name: zoomOut;
   }
 }
 
-@keyframes overlay {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -62,7 +82,7 @@
   }
 }
 
-@keyframes overlayEnd {
+@keyframes fadeOut {
   0% {
     opacity: 1;
   }
@@ -72,7 +92,7 @@
   }
 }
 
-@keyframes content {
+@keyframes zoomIn {
   0% {
     transform: scale(0.5);
   }
@@ -82,7 +102,7 @@
   }
 }
 
-@keyframes contentEnd {
+@keyframes zoomOut {
   0% {
     transform: scale(1);
   }

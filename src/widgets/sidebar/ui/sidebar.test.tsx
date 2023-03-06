@@ -8,11 +8,16 @@ describe('test widgets/sidebar', () => {
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
-  it('should be opened', () => {
+  it('should be open', () => {
     renderWithI18n(<Sidebar />);
-    const button = screen.getByTestId('app-button');
+    const button = screen.getByTestId('arrow-button');
 
     fireEvent.click(button);
+    expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed');
+  });
+
+  it('should be closed', () => {
+    renderWithI18n(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
   });
 });

@@ -12,9 +12,4 @@ describe('test shared/app-button', () => {
     render(<AppButton size="large" />);
     expect(screen.getByTestId('app-button')).toHaveClass('large');
   });
-
-  it('should have classname: square', () => {
-    render(<AppButton isSquare />);
-    expect(screen.getByTestId('app-button')).toHaveClass('square');
-  });
 });

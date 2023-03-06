@@ -4,8 +4,8 @@
     "logout": "logout"
   },
   "navigation": {
-    "about": "about",
+    "counter": "counter",
     "home": "home",
-    "main": "main"
+    "profile": "profile"
   }
 }

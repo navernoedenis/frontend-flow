@@ -1,16 +1,20 @@
+import type { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 
-import type { ReactNode } from 'react';
-
-import type { AppState, AppPartialState } from 'app/providers/store/types';
-import { createStore } from 'app/providers/store';
+import { createAppStore } from 'app/providers/store';
+import type { AppState, AppStoreParams } from 'app/providers/store';
 
 export function renderWithStore(
   component: ReactNode,
-  preloadedState?: AppPartialState,
+  params: AppStoreParams = {},
 ) {
-  const store = createStore(preloadedState as AppState);
+  const { lazyReducers = {}, preloadedState = {} } = params;
+
+  const store = createAppStore({
+    lazyReducers,
+    preloadedState: preloadedState as AppState,
+  });
 
   return render(<Provider store={store}>{component}</Provider>);
 }

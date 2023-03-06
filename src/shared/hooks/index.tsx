@@ -1,2 +1,2 @@
 export { useTheme } from './use-theme';
-export { useAppDispatch, useAppSelector } from './use-store';
+export { useAppDispatch, useAppSelector, useAppStore } from './use-store';

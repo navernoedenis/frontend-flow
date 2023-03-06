@@ -1,14 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { LocalStorage } from 'shared/services/local-storage';
 import { LS_AUTH_KEY } from 'shared/constants/local-storage';
 
-import type { TUser } from 'entities/user';
+import type { User } from 'entities/user';
 import type { AuthState } from '../types';
 
-import { signIn } from '../../api';
+import { signIn } from '../../api/sign-in/sign-in';
 
-const initialState: AuthState = {
-  isLoading: false,
+export const initialState: AuthState = {
+  isLoading: true,
   error: '',
   me: null,
 };
@@ -18,7 +19,8 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     init: (state) => {
-      state.me = LocalStorage.get<TUser>(LS_AUTH_KEY);
+      state.me = LocalStorage.get<User>(LS_AUTH_KEY);
+      state.isLoading = false;
     },
     logout: (state) => {
       state.me = null;

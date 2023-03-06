@@ -1,22 +1,18 @@
-import { Suspense } from 'react';
 import { AppModal } from 'shared/components/app-modal';
-
-import Auth from '../auth/auth';
+import Auth from '../auth/auth.lazy';
 
 interface AuthModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: VoidFunction;
 }
 
 const AuthModal = (props: AuthModalProps) => {
   const { isOpen, onClose } = props;
 
   return (
-    <Suspense fallback="">
-      <AppModal isOpen={isOpen} onClose={onClose}>
-        <Auth />
-      </AppModal>
-    </Suspense>
+    <AppModal isOpen={isOpen} onClose={onClose}>
+      <Auth />
+    </AppModal>
   );
 };
 

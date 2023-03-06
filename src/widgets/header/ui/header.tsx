@@ -1,13 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AuthModal, authActions, selectAuthMe } from 'features/auth';
+import { AuthModal, authActions, selectAuth } from 'features/auth';
 
-import { AppLink } from 'shared/components/app-link';
-import { AppButton } from 'shared/components/app-button';
 import { AppRoutePath } from 'shared/config/router/router.config';
-
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
+
+import { AppButton } from 'shared/components/app-button';
+import { AppLink } from 'shared/components/app-link';
+import { ThemeSwitcher } from 'shared/components/theme-switcher';
 
 import classes from './header.module.scss';
 
@@ -15,16 +16,16 @@ function Header() {
   const { t } = useTranslation('header');
 
   const dispatch = useAppDispatch();
-  const me = useAppSelector(selectAuthMe);
+  const auth = useAppSelector(selectAuth);
 
-  const [isOpenModal, setOpenModal] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
-  const onShowModal = useCallback(() => {
-    setOpenModal(true);
+  const onModalShow = useCallback(() => {
+    setModalOpen(true);
   }, []);
 
-  const onCloseModal = useCallback(() => {
-    setOpenModal(false);
+  const onModalClose = useCallback(() => {
+    setModalOpen(false);
   }, []);
 
   const handleLogout = useCallback(() => {
@@ -32,10 +33,10 @@ function Header() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (me) {
-      onCloseModal();
+    if (auth.me) {
+      onModalClose();
     }
-  }, [me, onCloseModal]);
+  }, [auth.me, onModalClose]);
 
   return (
     <div className={classes.header} data-testid="header">
@@ -44,25 +45,30 @@ function Header() {
           {t('navigation.home')}
         </AppLink>
 
-        <AppLink to={AppRoutePath.about} isNavLink>
-          {t('navigation.about')}
+        <AppLink to={AppRoutePath.counter} isNavLink>
+          {t('navigation.counter')}
         </AppLink>
 
-        <AppLink to={AppRoutePath.main} isNavLink>
-          {t('navigation.main')}
-        </AppLink>
-      </div>
-
-      <div className={classes.buttons}>
-        {me ? (
-          <AppButton onClick={handleLogout}>{t('buttons.logout')}</AppButton>
-        ) : (
-          <AppButton onClick={onShowModal}>{t('buttons.login')}</AppButton>
+        {auth.me && (
+          <AppLink to={AppRoutePath.profile} isNavLink>
+            {t('navigation.profile')}
+          </AppLink>
         )}
       </div>
 
-      <AuthModal isOpen={isOpenModal} onClose={onCloseModal} />
+      <div className={classes.controls}>
+        <ThemeSwitcher />
+
+        {auth.me ? (
+          <AppButton onClick={handleLogout}>{t('buttons.logout')}</AppButton>
+        ) : (
+          <AppButton onClick={onModalShow}>{t('buttons.login')}</AppButton>
+        )}
+      </div>
+
+      <AuthModal isOpen={isModalOpen} onClose={onModalClose} />
     </div>
   );
 }
+
 export default Header;
