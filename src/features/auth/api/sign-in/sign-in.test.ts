@@ -2,16 +2,10 @@ import axios from 'axios';
 import { signIn } from './sign-in';
 
 import type { AppDispatch, AppState } from 'app/providers/store';
-import type { User } from 'entities/user';
+import { userMock } from 'shared/config/tests/mocks/entities';
 
 jest.mock('axios');
 const mockedAxios = jest.mocked(axios);
-
-const me: User = {
-  id: 1,
-  name: 'navernoedenis',
-  password: 'root',
-};
 
 describe('test feature/auth/sign-in', () => {
   let dispatch: AppDispatch;
@@ -23,7 +17,7 @@ describe('test feature/auth/sign-in', () => {
   });
 
   it('should be: success', async () => {
-    mockedAxios.post.mockResolvedValue({ data: me });
+    mockedAxios.post.mockResolvedValue({ data: userMock });
 
     const action = signIn({ name: 'navernoedenis', password: '12345' });
     const response = await action(dispatch, getState, { client: mockedAxios });
@@ -31,7 +25,7 @@ describe('test feature/auth/sign-in', () => {
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(dispatch).toHaveBeenCalledTimes(2);
     expect(response.meta.requestStatus).toBe('fulfilled');
-    expect(response.payload).toEqual(me);
+    expect(response.payload).toEqual(userMock);
   });
 
   it('should be: error', async () => {

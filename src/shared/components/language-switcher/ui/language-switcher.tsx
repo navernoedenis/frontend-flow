@@ -21,7 +21,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className = '' }) => {
 
   return (
     <div
-      aria-hidden="true"
+      aria-hidden
       className={buttonClasses}
       data-testid="language-switcher"
       onClick={onToggleLanguage}

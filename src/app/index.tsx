@@ -21,6 +21,7 @@ function App() {
   useEffect(() => {
     const systemThemeListener = () => applyTheme(getSystemTheme());
     systemTheme.addEventListener('change', systemThemeListener);
+
     return () => {
       systemTheme.removeEventListener('change', systemThemeListener);
     };

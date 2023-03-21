@@ -36,19 +36,19 @@ const TextField = (props: TextFieldProps) => {
   return (
     <div className={textFieldClasses} data-testid="text-field">
       {title && (
-        <h6 className={classes.title} data-testid="title">
+        <h6 className={classes.title} data-testid="text-field-title">
           {title}
         </h6>
       )}
       <input
         className={classes.input}
-        data-testid="input"
+        data-testid="text-field-input"
         ref={inputRef}
         type={type}
         {...otherProps}
       />
       {error && (
-        <p className={classes.error} data-testid="error">
+        <p className={classes.error} data-testid="text-field-error">
           {error}
         </p>
       )}

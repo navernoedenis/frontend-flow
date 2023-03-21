@@ -38,6 +38,7 @@ export function buildWebpackConfig(config: Configuration): Configuration {
     new DefinePlugin({
       __HOST__: JSON.stringify('http://localhost:4000'),
       __IS_DEV__: JSON.stringify(true),
+      __IS_STORYBOOK__: JSON.stringify(true),
     }),
   ];
 

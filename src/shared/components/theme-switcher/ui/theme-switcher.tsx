@@ -3,15 +3,14 @@ import { useTranslation } from 'react-i18next';
 import type { FC } from 'react';
 
 import { classNames } from 'shared/lib/class-names';
-import { Dropdown } from 'shared/components/dropdown';
+import { Dropdown, DropdownItem } from 'shared/components/dropdown';
 import { useTheme } from 'shared/hooks';
 
 import classes from './theme-switcher.module.scss';
 
-import AutoIcon from '../assets/auto.svg';
-import CheckIcon from '../assets/check.svg';
-import MoonIcon from '../assets/moon.svg';
-import SunIcon from '../assets/sun.svg';
+import AutoIcon from './assets/auto.svg';
+import MoonIcon from './assets/moon.svg';
+import SunIcon from './assets/sun.svg';
 
 interface ThemeMenuProps {
   className?: string;
@@ -44,7 +43,7 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
   return (
     <>
       <button
-        aria-hidden="true"
+        aria-hidden
         className={buttonClasses}
         data-testid="theme-menu"
         onClick={(event) => {
@@ -59,38 +58,29 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
       </button>
 
       <Dropdown
+        className={classes.dropdown}
         isOpen={isMenuOpened}
-        onCloseMenu={onMenuClose}
+        onClose={onMenuClose}
         parent={buttonRef.current}
       >
-        <div className={classes.menu}>
-          <button
-            className={classes.menuButton}
-            onClick={() => setTheme('auto')}
-          >
-            <AutoIcon />
-            <span className={classes.menuText}>{t('auto')}</span>
-            {theme === 'auto' && <CheckIcon className={classes.menuCheck} />}
-          </button>
-
-          <button
-            className={classes.menuButton}
-            onClick={() => setTheme('light')}
-          >
-            <SunIcon />
-            <span className={classes.menuText}>{t('light')}</span>
-            {theme === 'light' && <CheckIcon className={classes.menuCheck} />}
-          </button>
-
-          <button
-            className={classes.menuButton}
-            onClick={() => setTheme('dark')}
-          >
-            <MoonIcon />
-            <span className={classes.menuText}>{t('dark')}</span>
-            {theme === 'dark' && <CheckIcon className={classes.menuCheck} />}
-          </button>
-        </div>
+        <DropdownItem
+          icon={<AutoIcon />}
+          isChecked={theme === 'auto'}
+          onClick={() => setTheme('auto')}
+          title={t('auto')}
+        />
+        <DropdownItem
+          icon={<SunIcon />}
+          isChecked={theme === 'light'}
+          onClick={() => setTheme('light')}
+          title={t('light')}
+        />
+        <DropdownItem
+          icon={<MoonIcon />}
+          isChecked={theme === 'dark'}
+          onClick={() => setTheme('dark')}
+          title={t('dark')}
+        />
       </Dropdown>
     </>
   );

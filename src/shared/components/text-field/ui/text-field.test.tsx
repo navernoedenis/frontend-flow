@@ -7,26 +7,26 @@ describe('test shared/text-field', () => {
     expect(screen.getByTestId('text-field')).toBeInTheDocument();
   });
 
-  it('should set title', () => {
+  it('show: title', () => {
     render(<TextField title="Jest!!!" />);
-    expect(screen.getByTestId('title').textContent).toBe('Jest!!!');
+    expect(screen.getByTestId('text-field-title').textContent).toBe('Jest!!!');
   });
 
-  it('should change input value', () => {
+  it('change: input value', () => {
     render(<TextField title="" />);
-    const input = screen.getByTestId('input') as HTMLInputElement;
+    const input = screen.getByTestId('text-field-input') as HTMLInputElement;
     fireEvent.change(input, { target: { value: 'jest' } });
 
     expect(input.value).toBe('jest');
   });
 
-  it('should be error message', () => {
+  it('show: error message', () => {
     render(<TextField title="" error="Oops!... " />);
-    expect(screen.getByTestId('error')).toBeInTheDocument();
+    expect(screen.getByTestId('text-field-error')).toBeInTheDocument();
   });
 
-  it("shouldn't be error message", () => {
+  it('hide: error message', () => {
     render(<TextField title="" />);
-    expect(screen.queryByTestId('error')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('text-field-error')).not.toBeInTheDocument();
   });
 });

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import classes from './home.module.scss';
 
 function HomePage() {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('home-page');
 
   return (
     <div className={classes.container} data-testid="home">

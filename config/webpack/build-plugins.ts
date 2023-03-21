@@ -10,13 +10,14 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import type { BuildOptions } from './types';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
-  const { isDevelopment, paths, host } = options;
+  const { isStorybook, isDevelopment, paths, host } = options;
 
   const plugins: WebpackPluginInstance[] = [
     new ProgressPlugin(),
     new DefinePlugin({
       __HOST__: JSON.stringify(host),
       __IS_DEV__: JSON.stringify(isDevelopment),
+      __IS_STORYBOOK__: JSON.stringify(isStorybook),
     }),
     new HtmlInlineScriptPlugin({
       scriptMatchPattern: [/initTheme.+[.]js$/],

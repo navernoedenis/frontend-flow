@@ -5,25 +5,16 @@ import {
 } from 'shared/config/storybook/decorators';
 
 import { AppStoreParams } from 'app/providers/store';
+import { profileReducer } from 'features/edit-profile/model/slice';
 
-import type { Profile } from '../../model/types';
-import { profileReducer } from '../../model/slice';
-
-import { Country } from 'shared/constants/country';
+import { profileMock } from 'shared/config/tests/mocks/entities';
 import ProfileCard from './profile-card';
-
-const profile: Profile = {
-  age: 62,
-  avatar:
-    'https://short-biography.com/wp-content/uploads/carl-sagan/Carl-Edward-Sagan.jpg',
-  country: Country.USA,
-  name: 'Carl Sagan',
-  position: 'Scient',
-};
 
 const params: AppStoreParams = {
   lazyReducers: { profile: profileReducer },
-  preloadedState: { profile: { isLoading: false, error: '', data: profile } },
+  preloadedState: {
+    profile: { isLoading: false, error: '', data: profileMock },
+  },
 };
 
 export default {
@@ -31,7 +22,9 @@ export default {
   component: ProfileCard,
 } as ComponentMeta<typeof ProfileCard>;
 
-const Template: ComponentStory<typeof ProfileCard> = () => <ProfileCard />;
+const Template: ComponentStory<typeof ProfileCard> = () => (
+  <ProfileCard isDisabled profile={profileMock} />
+);
 
 export const Light = Template.bind({});
 Light.decorators = [StoreDecorator(params)];

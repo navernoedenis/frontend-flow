@@ -3,7 +3,7 @@ import { AppButton } from 'shared/components/app-button';
 import classes from './error.module.scss';
 
 function ErrorPage() {
-  const { t } = useTranslation('error');
+  const { t } = useTranslation('error-page');
 
   const onReload = () => {
     window.location.reload();

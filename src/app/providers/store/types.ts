@@ -13,7 +13,7 @@ import type {
 
 import type { AuthState } from 'features/auth';
 import type { CounterState } from 'entities/counter';
-import type { ProfileState } from 'entities/profile';
+import type { ProfileState } from 'features/edit-profile';
 import type { createAppStore } from './create-store';
 
 export type AppDispatch = ReturnType<typeof createAppStore>['dispatch'];

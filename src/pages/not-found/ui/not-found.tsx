@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import classes from './not-found.module.scss';
 
 function NotFoundPage() {
-  const { t } = useTranslation('not-found');
+  const { t } = useTranslation('not-found-page');
 
   return (
     <div className={classes.container} data-testid="not-found">

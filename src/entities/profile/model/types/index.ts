@@ -1,4 +1,4 @@
-import type { Country } from 'shared/constants/country';
+import type { Country } from 'entities/country';
 
 export interface Profile {
   name: string;
@@ -6,10 +6,4 @@ export interface Profile {
   position: string;
   country: Country;
   avatar: string;
-}
-
-export interface ProfileState {
-  isLoading: boolean;
-  error: string;
-  data: Profile | null;
 }

@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import { LocalStorage } from 'shared/services/local-storage';
 import { LS_AUTH_KEY } from 'shared/constants/local-storage';
 
 import type { User } from 'entities/user';
 import type { AuthState } from '../types';
-
 import { signIn } from '../../api/sign-in/sign-in';
 
 export const initialState: AuthState = {

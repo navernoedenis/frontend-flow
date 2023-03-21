@@ -1,15 +1,10 @@
+import type { AnyAction } from '@reduxjs/toolkit';
+
 import { authReducer, initialState } from '.';
+import { userMock } from 'shared/config/tests/mocks/entities';
+
 import { AuthState } from '../types';
 import { signIn } from '../../api/sign-in/sign-in';
-
-import type { AnyAction } from '@reduxjs/toolkit';
-import type { User } from 'entities/user';
-
-const me: User = {
-  id: 1,
-  name: 'navernoedenis',
-  password: 'root',
-};
 
 describe('test feature/auth/reducer', () => {
   it('should add to state: isLoading', () => {
@@ -31,12 +26,12 @@ describe('test feature/auth/reducer', () => {
     const expectedState: AuthState = {
       error: '',
       isLoading: false,
-      me,
+      me: userMock,
     };
 
     const action: AnyAction = {
       type: signIn.fulfilled.type,
-      payload: me,
+      payload: userMock,
     };
 
     const authState = authReducer(initialState, action);

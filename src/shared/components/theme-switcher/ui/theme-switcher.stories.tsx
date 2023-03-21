@@ -7,7 +7,9 @@ export default {
 } as ComponentMeta<typeof ThemeSwitcher>;
 
 const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
-  <ThemeSwitcher {...args} />
+  <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+    <ThemeSwitcher {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});

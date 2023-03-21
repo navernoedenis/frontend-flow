@@ -6,14 +6,14 @@ import { buildPlugins } from './build-plugins';
 import { buildResolvers } from './build-resolvers';
 
 export function buildConfig(options: BuildOptions): Configuration {
-  const { isDevelopment, mode, paths } = options;
+  const { isDevelopment, buildMode, paths } = options;
 
   return {
     entry: {
       main: paths.entry,
       initTheme: paths.initTheme,
     },
-    mode,
+    mode: buildMode,
     module: {
       rules: buildLoaders(options),
     },

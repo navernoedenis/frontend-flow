@@ -21,30 +21,6 @@
   }
 }
 
-.menu {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.menuButton {
-  display: flex;
-  align-items: center;
-  padding: 8px 16px;
-  width: 208px;
-  color: var(--primary-color);
-  transition: 150ms linear;
-
-  &:hover {
-    color: var(--accent-color);
-  }
-}
-
-.menuText {
-  margin-left: 12px;
-}
-
-.menuCheck {
-  margin-left: auto;
-  color: var(--accent-color);
+.dropdown {
+  width: 200px;
 }

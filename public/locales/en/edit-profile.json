@@ -1,0 +1,17 @@
+{
+  "buttons": {
+    "cancel": "cancel",
+    "edit": "edit",
+    "save": "save"
+  },
+  "errors": {
+    "age_empty": "Age can't be empty",
+    "age_range_less": "Age must be over 17",
+    "avatar_empty": "Avatar can't be empty",
+    "avatar_invalid_url": "Invalid avatar url",
+    "name_empty": "Name can't be empty",
+    "name_range": "Name must be between 3-15 characters",
+    "position_empty": "Position can't be empty",
+    "position_range_less": "Position can't be less 3 characters"
+  }
+}

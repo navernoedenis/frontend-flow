@@ -31,19 +31,19 @@ const AppModal = (props: AppModalProps) => {
   }, [onClose]);
 
   useEffect(() => {
-    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+    const keyDownListener = (event: globalThis.KeyboardEvent) => {
       if (event.key === 'Escape') {
         handleClosing();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('keydown', keyDownListener);
     }
 
     return () => {
       clearTimeout(closingTimerRef.current);
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', keyDownListener);
       setClosing(false);
     };
   }, [isOpen, handleClosing]);

@@ -2,7 +2,8 @@
   "root": true,
   "globals": {
     "__HOST__": true,
-    "__IS_DEV__": true
+    "__IS_DEV__": true,
+    "__IS_STORYBOOK__": true
   },
   "env": {
     "browser": true,

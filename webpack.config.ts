@@ -3,6 +3,7 @@ import { buildConfig } from './config/webpack/build-config';
 
 import type {
   BuildEnv,
+  BuildMode,
   BuildPaths,
   Configuration,
 } from './config/webpack/types';
@@ -10,11 +11,13 @@ import type {
 const srcDir = path.resolve(__dirname, 'src');
 
 export default (env: BuildEnv): Configuration => {
+  const buildMode: BuildMode = env.mode || 'development';
+
   const host = env.host || 'http://localhost:4000';
-  const mode = env.mode || 'development';
   const port = +env.port || 3000;
 
-  const isDevelopment = mode === 'development';
+  const isDevelopment = buildMode === 'development';
+  const isStorybook = false;
 
   const paths: BuildPaths = {
     build: path.resolve(__dirname, 'build'),
@@ -25,9 +28,10 @@ export default (env: BuildEnv): Configuration => {
   };
 
   const config = buildConfig({
+    buildMode,
     host,
     isDevelopment,
-    mode,
+    isStorybook,
     paths,
     port,
   });

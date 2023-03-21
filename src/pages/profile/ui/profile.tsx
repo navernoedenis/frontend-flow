@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getProfile, profileReducer, ProfileCard } from 'entities/profile';
-
-import { LazyReducers } from 'shared/lib/lazy-reducers';
-import { useAppDispatch } from 'shared/hooks/use-store';
 
 import type { AppReducersLazy } from 'app/providers/store';
+import { EditProfile, getProfile, profileReducer } from 'features/edit-profile';
+
+import { LazyReducers } from 'shared/lib/lazy-reducers';
+import { useAppDispatch } from 'shared/hooks';
+
 import classes from './profile.module.scss';
 
 const reducers: AppReducersLazy = {
@@ -13,18 +14,19 @@ const reducers: AppReducersLazy = {
 };
 
 function ProfilePage() {
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation('profile-page');
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    if (__IS_STORYBOOK__) return;
     dispatch(getProfile());
   }, [dispatch]);
 
   return (
     <LazyReducers reducers={reducers}>
-      <div className={classes.container} data-testid="profile">
-        <h1 className={classes.title}>{t('page-title')}</h1>
-        <ProfileCard />
+      <div className={classes.container} data-testid="profile-page">
+        <h1 className={classes.title}>{t('title')}</h1>
+        <EditProfile />
       </div>
     </LazyReducers>
   );

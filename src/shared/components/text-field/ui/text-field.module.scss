@@ -27,12 +27,11 @@
   color: var(--primary-color);
   width: 100%;
   transition: 100ms linear;
-  transition-property: border-color, padding;
+  transition-property: border-color;
   cursor: pointer;
 
   &:disabled {
     border-color: transparent;
-    padding-left: 0;
     cursor: default;
   }
 }

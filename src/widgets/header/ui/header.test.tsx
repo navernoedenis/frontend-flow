@@ -1,3 +1,4 @@
+import 'shared/config/tests/mocks/match-media';
 import { screen } from '@testing-library/react';
 import { renderWithAll } from 'shared/config/tests/wrappers';
 import Header from './header';

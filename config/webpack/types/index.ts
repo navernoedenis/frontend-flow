@@ -1,8 +1,8 @@
 import type { Configuration as WebpackConfiguration } from 'webpack';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 
-export type BuildMode = 'development' | 'production';
 export type Configuration = WebpackConfiguration & DevServerConfiguration;
+export type BuildMode = 'development' | 'production';
 
 export interface BuildEnv {
   host?: string;
@@ -19,9 +19,10 @@ export interface BuildPaths {
 }
 
 export interface BuildOptions {
+  buildMode: BuildMode;
   host: string;
   isDevelopment: boolean;
-  mode: BuildMode;
+  isStorybook: boolean;
   paths: BuildPaths;
   port: number;
 }

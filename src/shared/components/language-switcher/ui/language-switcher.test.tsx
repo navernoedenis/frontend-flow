@@ -8,12 +8,12 @@ describe('test shared/language-switcher', () => {
     expect(screen.getByTestId('language-switcher')).toBeInTheDocument();
   });
 
-  it('should have additional classname', () => {
+  it('add: additional classname', () => {
     renderWithI18n(<LanguageSwitcher className="test-1" />);
     expect(screen.getByTestId('language-switcher')).toHaveClass('test-1');
   });
 
-  it('should switch language', () => {
+  it('toggle: language', () => {
     renderWithI18n(<LanguageSwitcher />);
 
     const initialLanguage = screen.getByTestId('language-switcher').textContent;

@@ -7,6 +7,6 @@ import Profile from './profile';
 describe('test pages/profile', () => {
   it('should be in the document', async () => {
     await act(() => renderWithAll(<Profile />));
-    expect(screen.getByTestId('profile')).toBeInTheDocument();
+    expect(screen.getByTestId('profile-page')).toBeInTheDocument();
   });
 });

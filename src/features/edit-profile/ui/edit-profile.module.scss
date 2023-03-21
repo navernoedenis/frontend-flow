@@ -1,0 +1,18 @@
+.errors {
+  margin-bottom: 10px;
+}
+
+.error {
+  color: var(--color-red);
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

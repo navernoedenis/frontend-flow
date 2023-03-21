@@ -1,12 +1,13 @@
 .container {
-  padding: 14px 0;
+  width: 220px;
+  padding-bottom: 14px;
 }
 
 .avatarContainer {
   margin-bottom: 16px;
   border-radius: 6px;
-  width: 220px;
   height: 220px;
+  width: 100%;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -27,13 +28,5 @@
 .fields {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.buttons {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
   gap: 10px;
 }
