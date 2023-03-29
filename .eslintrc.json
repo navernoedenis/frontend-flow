@@ -67,16 +67,16 @@
       }
     }
   ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "ignorePatterns": [
     "*.test.ts",
     "*.test.tsx",
     "*.config.ts",
     "*.stories.tsx",
     "*.html"
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import Counter from './counter';
+import CounterEntity from './counter';
 
 export default {
   title: 'entities/Counter',
-  component: Counter,
-} as ComponentMeta<typeof Counter>;
+  component: CounterEntity,
+} as ComponentMeta<typeof CounterEntity>;
 
-const Template: ComponentStory<typeof Counter> = () => <Counter />;
+const Template: ComponentStory<typeof CounterEntity> = () => <CounterEntity />;
 
 export const Light = Template.bind({});
 export const Dark = Template.bind({});

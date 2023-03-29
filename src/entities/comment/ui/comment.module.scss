@@ -1,0 +1,29 @@
+.container {
+  box-shadow: var(--app-shadow);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
+.username {
+  margin-left: 6px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.text {
+  margin-top: 10px;
+}

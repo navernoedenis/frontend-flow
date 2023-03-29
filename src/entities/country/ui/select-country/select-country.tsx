@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppSelect } from 'shared/components/app-select';
+import { AppSelect } from 'shared/ui/app-select';
 import { Country } from '../../model/constants';
 import type { CountriesRecord, CountryOption } from '../../model/types';
 
 interface CountrySelectProps {
+  className?: string;
   currentCountry: Country;
   isDisabled?: boolean;
   onSelectCountry: (country: Country) => void;
@@ -13,6 +14,7 @@ interface CountrySelectProps {
 }
 
 const CountrySelect = ({
+  className = '',
   currentCountry,
   isDisabled = false,
   onSelectCountry,
@@ -42,6 +44,7 @@ const CountrySelect = ({
 
   return (
     <AppSelect
+      className={className}
       isDisabled={isDisabled}
       onSelect={(value) => onSelectCountry(value as Country)}
       options={countryOptions}

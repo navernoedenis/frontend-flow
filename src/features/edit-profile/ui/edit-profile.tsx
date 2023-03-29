@@ -2,12 +2,11 @@ import { useState, useEffect, useMemo, useReducer } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ChangeEvent } from 'react';
 
-import { ProfileCard } from 'entities/profile';
+import { ProfileEntity, ProfileSkeleton } from 'entities/profile';
 import type { Profile } from 'entities/profile';
 import type { Country } from 'entities/country';
 
-import { AppButton } from 'shared/components/app-button';
-import { PageLoader } from 'shared/components/page-loader';
+import { AppButton } from 'shared/ui/app-button';
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { deepCopy } from 'shared/lib/deep-copy';
@@ -105,7 +104,7 @@ const EditProfile = () => {
   };
 
   if (!profile || profile.isLoading) {
-    return <PageLoader />;
+    return <ProfileSkeleton />;
   }
 
   if (!profileCopy) {
@@ -129,7 +128,7 @@ const EditProfile = () => {
         </div>
       )}
 
-      <ProfileCard
+      <ProfileEntity
         isDisabled={isDisabled}
         profile={profileCopy}
         formEvents={{

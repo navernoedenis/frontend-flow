@@ -4,6 +4,7 @@
     "logout": "logout"
   },
   "navigation": {
+    "articles": "articles",
     "counter": "counter",
     "home": "home",
     "profile": "profile"

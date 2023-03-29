@@ -12,10 +12,15 @@
 }
 
 html {
+  --app-shadow: 0 4px 12px rgba(0 0 0 / 15%);
+
   --accent-color: var(--color-green);
   --primary-color: var(--color-black);
   --secondary-color: var(--color-white);
+
+  --skeleton-bg: rgb(0 0 0 / 10%);
   --overlay-bg: rgb(0 0 0 / 10%);
+
   --theme-menu-border-color: var(--color-grey);
   --theme-menu-bg-color: transparent;
 }
@@ -51,25 +56,37 @@ a {
 button {
   border: none;
   padding: 0;
-  cursor: pointer;
   background-color: transparent;
+  cursor: pointer;
 }
 
 ul {
-  list-style-type: 0;
+  list-style-type: none;
+  margin: 0;
   padding: 0;
+}
+
+img {
+  display: block;
 }
 
 .app {
   min-height: 100vh;
 }
 
-.main {
-  display: flex;
-  min-height: calc(100vh - var(--header-height));
+.app-container {
+  margin: 0 auto;
+  max-width: 1144px;
+  width: 100%;
+  padding: 0 var(--app-padding);
 }
 
-.page-container {
-  flex-grow: 1;
-  padding: 0 20px;
+.page-wrapper {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  padding: 0 var(--app-padding) var(--app-padding);
+  min-height: calc(100vh - var(--header-height));
 }

@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 
 import { AuthModal, authActions, selectAuth } from 'features/auth';
 
-import { AppRoutePath } from 'shared/config/router/router.config';
+import { AppRoutePath } from 'shared/constants/routes';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 
-import { AppButton } from 'shared/components/app-button';
-import { AppLink } from 'shared/components/app-link';
-import { ThemeSwitcher } from 'shared/components/theme-switcher';
+import { AppButton } from 'shared/ui/app-button';
+import { AppLink } from 'shared/ui/app-link';
+import { ThemeSwitcher } from 'shared/ui/theme-switcher';
+import { LanguageSwitcher } from 'shared/ui/language-switcher';
 
 import classes from './header.module.scss';
 
@@ -39,35 +40,44 @@ function Header() {
   }, [auth.me, onModalClose]);
 
   return (
-    <div className={classes.header} data-testid="header">
-      <div className={classes.links}>
-        <AppLink to={AppRoutePath.home} isNavLink>
-          {t('navigation.home')}
-        </AppLink>
-
-        <AppLink to={AppRoutePath.counter} isNavLink>
-          {t('navigation.counter')}
-        </AppLink>
-
-        {auth.me && (
-          <AppLink to={AppRoutePath.profile} isNavLink>
-            {t('navigation.profile')}
+    <header className={classes.header} data-testid="header">
+      <div className={`app-container ${classes.container}`}>
+        <div className={classes.links}>
+          <AppLink to={AppRoutePath.home} isNavLink>
+            {t('navigation.home')}
           </AppLink>
-        )}
+
+          <AppLink to={AppRoutePath.counter} isNavLink>
+            {t('navigation.counter')}
+          </AppLink>
+
+          {auth.me && (
+            <>
+              <AppLink to={AppRoutePath.articles} isNavLink>
+                {t('navigation.articles')}
+              </AppLink>
+
+              <AppLink to={AppRoutePath.profile} isNavLink>
+                {t('navigation.profile')}
+              </AppLink>
+            </>
+          )}
+        </div>
+
+        <div className={classes.controls}>
+          <ThemeSwitcher />
+          <LanguageSwitcher />
+
+          {auth.me ? (
+            <AppButton onClick={handleLogout}>{t('buttons.logout')}</AppButton>
+          ) : (
+            <AppButton onClick={onModalShow}>{t('buttons.login')}</AppButton>
+          )}
+        </div>
+
+        <AuthModal isOpen={isModalOpen} onClose={onModalClose} />
       </div>
-
-      <div className={classes.controls}>
-        <ThemeSwitcher />
-
-        {auth.me ? (
-          <AppButton onClick={handleLogout}>{t('buttons.logout')}</AppButton>
-        ) : (
-          <AppButton onClick={onModalShow}>{t('buttons.login')}</AppButton>
-        )}
-      </div>
-
-      <AuthModal isOpen={isModalOpen} onClose={onModalClose} />
-    </div>
+    </header>
   );
 }
 

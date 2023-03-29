@@ -2,19 +2,16 @@ import { screen, fireEvent } from '@testing-library/react';
 import { renderWithStore } from 'shared/config/tests/wrappers';
 import { counterReducer } from '../model/slice';
 
-import Counter from './counter';
+import CounterEntity from './counter';
 
 describe('test entities/counter', () => {
   it('should be in the document', () => {
-    renderWithStore(<Counter />);
+    renderWithStore(<CounterEntity />);
     expect(screen.getByTestId('counter')).toBeInTheDocument();
   });
 
   it('should increment value', () => {
-    renderWithStore(<Counter />, {
-      lazyReducers: { counter: counterReducer },
-      preloadedState: { counter: { value: 0 } },
-    });
+    renderWithStore(<CounterEntity />, { counter: { value: 0 } });
 
     const title = screen.getByTestId('title');
     const increment = screen.getByTestId('increment');
@@ -26,10 +23,7 @@ describe('test entities/counter', () => {
   });
 
   it('should decrement value', () => {
-    renderWithStore(<Counter />, {
-      lazyReducers: { counter: counterReducer },
-      preloadedState: { counter: { value: 13 } },
-    });
+    renderWithStore(<CounterEntity />, { counter: { value: 13 } });
 
     const title = screen.getByTestId('title');
     const decrement = screen.getByTestId('decrement');

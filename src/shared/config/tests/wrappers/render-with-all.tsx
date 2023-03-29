@@ -4,17 +4,30 @@ import { Provider } from 'react-redux';
 import { I18nextProvider } from 'react-i18next';
 import { render } from '@testing-library/react';
 
+import { createAppStore } from 'app/providers/store';
+import type {
+  AppState,
+  AppStatePreloaded,
+  AppReducersLazy,
+} from 'app/providers/store';
+
+import { articleReducer, commentsReducer } from 'pages/article';
+import { counterReducer } from 'entities/counter';
+import { profileReducer } from 'features/edit-profile';
+
 import i18n from 'shared/config/i18n/i18n.config-test';
 
-import { createAppStore } from 'app/providers/store';
-import type { AppState, AppStoreParams } from 'app/providers/store';
+const lazyReducers: AppReducersLazy = {
+  article: articleReducer,
+  comments: commentsReducer,
+  counter: counterReducer,
+  profile: profileReducer,
+};
 
 export function renderWithAll(
   component: ReactNode,
-  params: AppStoreParams = {},
+  preloadedState: AppStatePreloaded = {},
 ) {
-  const { lazyReducers = {}, preloadedState = {} } = params;
-
   const store = createAppStore({
     lazyReducers,
     preloadedState: preloadedState as AppState,

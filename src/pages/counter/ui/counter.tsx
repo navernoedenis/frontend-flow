@@ -1,8 +1,8 @@
-import { Counter } from 'entities/counter';
+import { CounterEntity } from 'entities/counter';
 
 const CounterPage = () => (
   <div data-testid="counter-page">
-    <Counter />
+    <CounterEntity />
   </div>
 );
 

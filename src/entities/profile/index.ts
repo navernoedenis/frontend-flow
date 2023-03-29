@@ -1,3 +1,4 @@
-export { default as ProfileCard } from './ui/profile-card/profile-card';
+export { default as ProfileEntity } from './ui/profile';
+export { default as ProfileSkeleton } from './ui/profile.skeleton';
 
 export type { Profile } from './model/types';

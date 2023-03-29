@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { ErrorPage } from 'pages';
-import { PageLoader } from 'shared/components/page-loader';
+import { PageLoader } from 'shared/ui/page-loader';
 
 import type { ErrorBoundaryProps, ErrorBoundaryState } from './types';
 

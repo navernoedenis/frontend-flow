@@ -1,0 +1,21 @@
+.container {
+  border-radius: 4px;
+  height: 140px;
+  width: 100%;
+  animation: 1.5s ease-in-out 0.5s infinite normal none pulse;
+  background-color: var(--skeleton-bg);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

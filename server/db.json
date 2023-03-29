@@ -1,16 +1,146 @@
 {
-  "users": [
+  "articles": [
     {
-      "id": 1,
-      "name": "navernoedenis",
-      "password": "12345"
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "1",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "2",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    }
+  ],
+  "comments": [
+    {
+      "articleId": "1",
+      "id": "1",
+      "text": "Nice post!",
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "id": "2",
+      "text": "So wondering...",
+      "userId": "3"
+    },
+    {
+      "articleId": "1",
+      "id": "3",
+      "text": ":)",
+      "userId": "1"
     }
   ],
   "profile": {
-    "name": "navernoedenis",
-    "avatar": "https://i.imgur.com/RB4D6Pk.jpg",
     "age": 29,
+    "avatar": "https://i.imgur.com/RB4D6Pk.jpeg",
     "country": "usa",
+    "name": "navernoedenis",
     "position": "FullStack Developer"
-  }
+  },
+  "users": [
+    {
+      "avatar": "https://i.imgur.com/RB4D6Pk.jpg",
+      "id": "1",
+      "name": "navernoedenis",
+      "password": "12345"
+    },
+    {
+      "avatar": "https://i.pinimg.com/736x/63/00/ea/6300eaf582ef094d257361a2b3fe1ab7.jpg",
+      "id": "2",
+      "name": "roma",
+      "password": "12345"
+    },
+    {
+      "avatar": "https://www.meme-arsenal.com/memes/1c1ef07b5c0e4521b8216cd15ad2440a.jpg",
+      "id": "3",
+      "name": "evgen",
+      "password": "12345"
+    }
+  ]
 }

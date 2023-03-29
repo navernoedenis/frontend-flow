@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { AppButton } from 'shared/components/app-button';
+import { AppButton } from 'shared/ui/app-button';
 import classes from './error.module.scss';
 
-function ErrorPage() {
+const ErrorPage = () => {
   const { t } = useTranslation('error-page');
 
   const onReload = () => {
@@ -19,6 +19,6 @@ function ErrorPage() {
       </div>
     </div>
   );
-}
+};
 
 export default ErrorPage;

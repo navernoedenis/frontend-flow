@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import Header from './header';
 
 import { authActions } from 'features/auth';
@@ -21,6 +20,4 @@ const Template: ComponentStory<typeof Header> = () => {
   return <Header />;
 };
 
-export const Light = Template.bind({});
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark')];
+export const Default = Template.bind({});

@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  box-shadow: var(--app-shadow);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 8px 0;
+  background-color: var(--secondary-color);
+  animation: fadeIn 100ms ease-in-out;
+  transform: translateY(5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}

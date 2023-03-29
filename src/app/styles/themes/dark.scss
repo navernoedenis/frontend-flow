@@ -1,8 +1,13 @@
 html[theme="dark"] {
+  --app-shadow: 0 2px 6px rgba(255 255 255 / 15%);
+
+  --accent-color: var(--color-green);
   --primary-color: var(--color-white);
   --secondary-color: var(--color-black);
-  --accent-color: var(--color-green);
+
   --overlay-bg: rgb(255 255 255 / 5%);
-  --theme-menu-border-color: transparent;
+  --skeleton-bg: rgb(255 255 255 / 10%);
+
   --theme-menu-bg-color: #353a40;
+  --theme-menu-border-color: transparent;
 }

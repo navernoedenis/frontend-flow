@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { AppStoreParams } from 'app/providers/store';
-import { profileReducer } from 'features/edit-profile';
+import type { AppStatePreloaded } from 'app/providers/store';
 
 import { profileMock } from 'shared/config/tests/mocks/entities';
 import {
@@ -9,11 +8,8 @@ import {
 } from 'shared/config/storybook/decorators';
 import ProfilePage from './profile';
 
-const params: AppStoreParams = {
-  preloadedState: {
-    profile: { isLoading: false, error: '', data: profileMock },
-  },
-  lazyReducers: { profile: profileReducer },
+const preloadedState: AppStatePreloaded = {
+  profile: { isLoading: false, error: '', data: profileMock },
 };
 
 export default {
@@ -24,7 +20,7 @@ export default {
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
 
 export const Light = Template.bind({});
-Light.decorators = [StoreDecorator(params)];
+Light.decorators = [StoreDecorator(preloadedState)];
 
 export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(params)];
+Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(preloadedState)];

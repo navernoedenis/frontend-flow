@@ -11,9 +11,11 @@ import type {
   ThunkMiddleware,
 } from '@reduxjs/toolkit';
 
+import type { ArticleState, CommentsState } from 'pages/article';
 import type { AuthState } from 'features/auth';
 import type { CounterState } from 'entities/counter';
 import type { ProfileState } from 'features/edit-profile';
+
 import type { createAppStore } from './create-store';
 
 export type AppDispatch = ReturnType<typeof createAppStore>['dispatch'];
@@ -22,6 +24,8 @@ export type AppState = AppStateLazy & {
 };
 
 export type AppStateLazy = Partial<{
+  article: ArticleState;
+  comments: CommentsState;
   counter: CounterState;
   profile: ProfileState;
 }>;
@@ -41,9 +45,11 @@ export interface AppStore
 }
 
 export interface AppStoreParams {
-  preloadedState?: DeepPartial<AppState>;
+  preloadedState?: AppStatePreloaded;
   lazyReducers?: AppReducersLazy;
 }
+
+export type AppStatePreloaded = DeepPartial<AppState>;
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<AppState>;

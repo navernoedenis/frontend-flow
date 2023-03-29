@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppButton } from 'shared/components/app-button';
-import { TextField } from 'shared/components/text-field';
+import { AppButton } from 'shared/ui/app-button';
+import { TextField } from 'shared/ui/text-field';
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import classes from './auth.module.scss';

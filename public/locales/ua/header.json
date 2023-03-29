@@ -4,6 +4,7 @@
     "logout": "вийти"
   },
   "navigation": {
+    "articles": "статті",
     "counter": "лічильник",
     "home": "домашня",
     "profile": "профіль"

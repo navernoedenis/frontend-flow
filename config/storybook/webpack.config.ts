@@ -29,7 +29,7 @@ export function buildWebpackConfig(config: Configuration): Configuration {
 
   const modules: string[] = [
     path.resolve(__dirname, '..', '..', 'src'),
-    path.resolve('node_modules'),
+    'node_modules',
   ];
 
   config.resolve?.modules?.push(...modules);

@@ -1,10 +1,11 @@
 import { screen } from '@testing-library/react';
 import { renderWithAll } from 'shared/config/tests/wrappers';
-import Error from './error';
+
+import ErrorPage from './error';
 
 describe('test pages/error', () => {
   it('should be in the document', () => {
-    renderWithAll(<Error />);
+    renderWithAll(<ErrorPage />);
     expect(screen.getByTestId('error-page')).toBeInTheDocument();
   });
 });

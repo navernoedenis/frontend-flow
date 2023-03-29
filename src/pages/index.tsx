@@ -1,5 +1,7 @@
-export { CounterPage } from 'pages/counter';
-export { HomePage } from 'pages/home';
-export { NotFoundPage } from 'pages/not-found';
-export { ProfilePage } from 'pages/profile';
-export { ErrorPage } from 'pages/error';
+export { ArticlePage } from './article';
+export { ArticlesPage } from './articles';
+export { CounterPage } from './counter';
+export { ErrorPage } from './error';
+export { HomePage } from './home';
+export { NotFoundPage } from './not-found';
+export { ProfilePage } from './profile';

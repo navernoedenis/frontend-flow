@@ -12,7 +12,7 @@ describe('test features/auth-modal', () => {
     expect(screen.getByTestId('app-modal')).toBeInTheDocument();
   });
 
-  it("shouldn't be in the document", async () => {
+  it("shouldn't be should be in the document", async () => {
     await act(async () =>
       renderWithAll(<AuthModal isOpen={false} onClose={() => {}} />),
     );

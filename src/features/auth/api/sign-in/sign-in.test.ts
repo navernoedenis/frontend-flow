@@ -12,8 +12,8 @@ describe('test feature/auth/sign-in', () => {
   let getState: () => AppState;
 
   beforeEach(() => {
-    getState = jest.fn();
     dispatch = jest.fn();
+    getState = jest.fn();
   });
 
   it('should be: success', async () => {

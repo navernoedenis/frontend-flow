@@ -1,0 +1,13 @@
+.title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.paragpaph {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

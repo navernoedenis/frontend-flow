@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imageLoaded {
+  opacity: 1;
+}
+
+.imageOriginalSize {
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.storybookContainer {
+  height: 400px;
+  width: 100%;
+}

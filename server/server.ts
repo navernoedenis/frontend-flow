@@ -13,7 +13,7 @@ const port = 4000;
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
-// Emulate server latency
+// Emulating server delay
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 server.use(async (req, res, next) => {
   await new Promise((resolve) => {

@@ -6,6 +6,7 @@ export type {
   AppReducersLazy,
   AppState,
   AppStateLazyKey,
+  AppStatePreloaded,
   AppStore,
   AppStoreParams,
   ThunkConfig,

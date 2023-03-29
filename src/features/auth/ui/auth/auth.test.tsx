@@ -9,9 +9,7 @@ describe('test features/auth', () => {
   });
 
   it('error message: exist', () => {
-    renderWithAll(<Auth />, {
-      preloadedState: { auth: { error: 'Error' } },
-    });
+    renderWithAll(<Auth />, { auth: { error: 'Error' } });
     expect(screen.getByTestId('error')).toBeInTheDocument();
   });
 

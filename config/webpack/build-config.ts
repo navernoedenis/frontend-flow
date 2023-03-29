@@ -23,7 +23,7 @@ export function buildConfig(options: BuildOptions): Configuration {
       clean: true,
       filename: '[name].[hash].js',
       path: paths.build,
-      publicPath: '',
+      publicPath: '/',
     },
     devtool: isDevelopment ? 'inline-source-map' : undefined,
     devServer: isDevelopment ? buildDevServer(options) : undefined,

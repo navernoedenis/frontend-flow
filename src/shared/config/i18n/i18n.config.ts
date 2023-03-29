@@ -8,16 +8,12 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    returnNull: false,
-    load: 'languageOnly',
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
-    fallbackLng: false,
+    backend: { loadPath: '/locales/{{lng}}/{{ns}}.json' },
     debug: __IS_DEV__,
-    interpolation: {
-      escapeValue: false,
-    },
+    fallbackLng: false,
+    interpolation: { escapeValue: false },
+    load: 'languageOnly',
+    returnNull: false,
   });
 
 export default i18n;

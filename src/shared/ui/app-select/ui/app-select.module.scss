@@ -1,0 +1,35 @@
+.container {
+  color: var(--primary-color);
+}
+
+.isOpen .value {
+  border-color: var(--color-orange);
+}
+
+.isDisabled .value {
+  border-color: transparent;
+  cursor: default;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-color);
+  cursor: default;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.value {
+  border-bottom: 1px solid var(--accent-color);
+  padding: 8px 0;
+  line-height: 1.15;
+  transition: border-color 100ms linear;
+  cursor: pointer;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

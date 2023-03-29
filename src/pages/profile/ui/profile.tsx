@@ -13,8 +13,15 @@ const reducers: AppReducersLazy = {
   profile: profileReducer,
 };
 
-function ProfilePage() {
-  const { t } = useTranslation('profile-page');
+const translations: string[] = [
+  'profile-page',
+  'edit-profile',
+  'profile',
+  'select-country',
+];
+
+const ProfilePage = () => {
+  const { t } = useTranslation(translations);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -24,12 +31,12 @@ function ProfilePage() {
 
   return (
     <LazyReducers reducers={reducers}>
-      <div className={classes.container} data-testid="profile-page">
+      <div data-testid="profile-page">
         <h1 className={classes.title}>{t('title')}</h1>
         <EditProfile />
       </div>
     </LazyReducers>
   );
-}
+};
 
 export default ProfilePage;

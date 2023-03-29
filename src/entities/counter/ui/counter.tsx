@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import type { AppReducersLazy } from 'app/providers/store';
 
-import { AppButton } from 'shared/components/app-button';
+import { AppButton } from 'shared/ui/app-button';
 import { LazyReducers } from 'shared/lib/lazy-reducers';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 
@@ -15,7 +15,7 @@ const reducers: AppReducersLazy = {
   counter: counterReducer,
 };
 
-const Counter = () => {
+const CounterEntity = () => {
   const { t } = useTranslation('counter');
 
   const dispatch = useAppDispatch();
@@ -31,11 +31,12 @@ const Counter = () => {
 
   return (
     <LazyReducers reducers={reducers}>
-      <div className={classes.container} data-testid="counter">
+      <div data-testid="counter">
         <h2 data-testid="title">
           {t('title')}
           {`: ${value}`}
         </h2>
+
         <div className={classes.buttons}>
           <AppButton
             className={classes.button}
@@ -45,6 +46,7 @@ const Counter = () => {
           >
             {t('decrement')}
           </AppButton>
+
           <AppButton
             className={classes.button}
             data-testid="increment"
@@ -58,4 +60,4 @@ const Counter = () => {
   );
 };
 
-export default Counter;
+export default CounterEntity;
