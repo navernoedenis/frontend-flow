@@ -14,7 +14,7 @@ export const getComments = createAsyncThunk<Comment[], string, ThunkConfig>(
       const response = await extra.client.get<Comment[]>('/comments', {
         params: {
           articleId,
-          _expand: 'user', // https://github.com/typicode/json-server#relationships
+          _expand: 'user',
         },
       });
 

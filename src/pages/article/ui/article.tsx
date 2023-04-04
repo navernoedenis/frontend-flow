@@ -1,21 +1,25 @@
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useCallback } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import type { AppReducersLazy } from 'app/providers/store';
 
+import { AddComment } from 'features/add-comment';
+
 import { ArticleEntity, ArticleSkeleton } from 'entities/article';
 import { CommentEntity, CommentSkeleton } from 'entities/comment';
 
+import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
 import { LazyReducers } from 'shared/lib/lazy-reducers';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
+import { AppRoutePath } from 'shared/constants/routes';
 
+import { addComment } from '../api/add-comment/add-comment';
 import { getArticle } from '../api/get-article/get-article';
 import { getComments } from '../api/get-comments/get-comments';
 
-import { articleReducer } from '../model/slice/article';
-import { commentsReducer } from '../model/slice/comments';
-
+import { articleReducer, commentsReducer } from '../model/slice';
 import { selectArticle } from '../model/selectors/select-article/select-article';
 import {
   selectComments,
@@ -30,31 +34,45 @@ const reducers: AppReducersLazy = {
   comments: commentsReducer,
 };
 
-const translations: string[] = ['article-page', 'article', 'clipboard'];
+const translations: string[] = [
+  'page.article',
+  'entities.article',
+  'shared.clipboard',
+];
 
-const ArticlePage = () => {
+function ArticlePage() {
   const { t } = useTranslation(translations);
   const params = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const article = useAppSelector(selectArticle);
   const comments = useAppSelector(selectComments.selectAll);
   const commentsLoading = useAppSelector(selectCommentsLoading);
   const commentsError = useAppSelector(selectCommentsError);
 
-  useEffect(() => {
-    if (!__IS_STORYBOOK__) {
-      dispatch(getArticle(params.id as string));
-      dispatch(getComments(params.id as string));
-    }
-  }, [dispatch, params.id]);
+  useEffectOnce(() => {
+    dispatch(getArticle(params.id as string));
+    dispatch(getComments(params.id as string));
+  });
 
   const errorMessage = article?.error ?? commentsError;
+
+  const handleSendComment = useCallback(
+    (comment: string) => {
+      dispatch(addComment({ articleId: article?.data?.id as string, comment }));
+    },
+    [article?.data?.id, dispatch],
+  );
+
+  const onGoBack = useCallback(() => {
+    navigate(AppRoutePath.articles);
+  }, [navigate]);
 
   if (errorMessage) {
     return (
       <LazyReducers reducers={reducers}>
-        <h1>{errorMessage}</h1>
+        <AppTypography tag="h1">{errorMessage}</AppTypography>
       </LazyReducers>
     );
   }
@@ -62,35 +80,37 @@ const ArticlePage = () => {
   return (
     <LazyReducers reducers={reducers}>
       <div data-testid="article-page">
+        <header className={classes.header}>
+          <AppButton onClick={onGoBack} size="small">
+            {t('buttons.go_back')}
+          </AppButton>
+        </header>
+
         {article?.isLoading && <ArticleSkeleton />}
         {article?.data && <ArticleEntity article={article.data} />}
 
-        <h3 className={classes.commentsTitle}>{`${t('comments')}:`}</h3>
-
-        {commentsLoading && (
-          <div
-            style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
-          >
+        {commentsLoading ? (
+          <div className={classes.skeleton}>
             <CommentSkeleton />
             <CommentSkeleton />
             <CommentSkeleton />
           </div>
-        )}
-
-        {comments.length > 0 && (
-          <div className={classes.comments}>
-            {comments.map((comment) => (
-              <CommentEntity key={comment.id} comment={comment} />
-            ))}
-          </div>
-        )}
-
-        {!commentsLoading && !comments.length && (
-          <p className={classes.notComments}>{t('no_comments')}</p>
+        ) : (
+          <>
+            <AddComment
+              className={classes.addComment}
+              onSendComment={handleSendComment}
+            />
+            <div className={classes.comments}>
+              {comments.map((comment) => (
+                <CommentEntity key={comment.id} comment={comment} />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </LazyReducers>
   );
-};
+}
 
 export default ArticlePage;

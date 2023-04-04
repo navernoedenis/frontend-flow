@@ -20,14 +20,6 @@ export function validateProfile(profile: Profile) {
     errors.push(ValidateProfileError.AVATAR_INVALID_URL);
   }
 
-  if (!profile.name) {
-    errors.push(ValidateProfileError.NAME_EMPTY);
-  }
-
-  if (profile.name.length < 3 || profile.name.length > 15) {
-    errors.push(ValidateProfileError.NAME_RANGE);
-  }
-
   if (!profile.position) {
     errors.push(ValidateProfileError.POSITION_EMPTY);
   }

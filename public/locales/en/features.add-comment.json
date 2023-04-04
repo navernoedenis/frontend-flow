@@ -1,0 +1,8 @@
+{
+  "buttons": {
+    "reset": "reset",
+    "send": "send"
+  },
+  "placeholder": "message",
+  "title": "add comment"
+}

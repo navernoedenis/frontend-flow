@@ -12,7 +12,13 @@ const AppSkeleton = ({ className = '', style = {} }: AppSkeletonProps) => {
     [className]: !!className,
   });
 
-  return <div className={appSkeletonClasses} style={style} />;
+  return (
+    <div
+      className={appSkeletonClasses}
+      data-testid="app-skeleton"
+      style={style}
+    />
+  );
 };
 
 export default AppSkeleton;

@@ -9,7 +9,7 @@ interface LazyReducersProps {
   reducers: AppReducersLazy;
 }
 
-export const LazyReducers = ({ children, reducers }: LazyReducersProps) => {
+export function LazyReducers({ children, reducers }: LazyReducersProps) {
   const store = useAppStore();
 
   useEffect(() => {
@@ -27,4 +27,4 @@ export const LazyReducers = ({ children, reducers }: LazyReducersProps) => {
   }, [reducers, store]);
 
   return <>{children}</>;
-};
+}

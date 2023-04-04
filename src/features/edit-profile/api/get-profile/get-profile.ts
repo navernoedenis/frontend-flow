@@ -4,13 +4,13 @@ import { errorMessage } from 'shared/lib/error-message';
 import type { ThunkConfig } from 'app/providers/store';
 import type { Profile } from 'entities/profile';
 
-export const getProfile = createAsyncThunk<Profile, undefined, ThunkConfig>(
+export const getProfile = createAsyncThunk<Profile, string, ThunkConfig>(
   'profile/get-profile',
-  async (_, config) => {
+  async (profileId, config) => {
     const { extra, rejectWithValue } = config;
 
     try {
-      const response = await extra.client.get<Profile>('/profile');
+      const response = await extra.client.get<Profile>(`/profiles/${profileId}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(errorMessage(error));

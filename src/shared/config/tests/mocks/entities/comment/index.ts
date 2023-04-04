@@ -3,6 +3,7 @@ import { userMock } from '../user';
 
 export const commentMock: Comment = {
   id: '1',
-  text: 'Horror is a film genre that seeks to elicit fear or disgust in its audience for entertainment purposes.',
+  text: 'Plainly, the world held wonders of a kind I had never guessed',
+  userId: '1',
   user: userMock,
 };

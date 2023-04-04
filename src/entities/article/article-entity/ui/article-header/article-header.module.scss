@@ -1,0 +1,33 @@
+.title {
+  margin-bottom: 10px;
+}
+
+.sublist {
+  margin-bottom: 10px;
+}
+
+.subitem {
+  margin-bottom: 5px;
+  display: flex;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.subtitle {
+  margin-right: 10px;
+}
+
+.tag {
+  margin-right: 5px;
+  color: var(--accent-color);
+
+  &::after {
+    content: (", ");
+  }
+
+  &:last-child::after {
+    content: ("");
+  }
+}

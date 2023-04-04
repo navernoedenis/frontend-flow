@@ -3,10 +3,13 @@
   min-width: 40px;
   padding: 8px 6px;
   user-select: none;
-  font-size: 17px;
   color: var(--secondary-color);
   text-align: center;
   text-transform: uppercase;
   background-color: var(--primary-color);
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }

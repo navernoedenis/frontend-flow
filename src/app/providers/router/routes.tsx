@@ -19,8 +19,8 @@ export const AppRoutes: Record<AppRoute, AppRouteProps> = {
     path: AppRoutePath.counter,
     element: <CounterPage />,
   },
-  [AppRoute.PROFILE]: {
-    path: AppRoutePath.profile,
+  [AppRoute.PROFILES]: {
+    path: `${AppRoutePath.profiles}/:id`,
     element: <ProfilePage />,
     isPrivate: true,
   },

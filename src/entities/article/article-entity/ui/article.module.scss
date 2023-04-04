@@ -1,0 +1,13 @@
+.image {
+  margin-bottom: 20px;
+  border-radius: 4px;
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

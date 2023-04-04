@@ -22,9 +22,10 @@ function AppButton(props: AppButtonProps) {
   } = props;
 
   const buttonClasses = classNames(classes.button, {
-    [className]: Boolean(className),
-    [classes[size]]: true,
+    'app-transition': true,
     [classes.loading]: isLoading,
+    [classes[size]]: true,
+    [className]: Boolean(className),
   });
 
   return (

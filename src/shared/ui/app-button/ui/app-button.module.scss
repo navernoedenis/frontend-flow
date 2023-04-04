@@ -18,6 +18,10 @@
   &::first-letter {
     text-transform: uppercase;
   }
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
+  }
 }
 
 .loading {

@@ -1,6 +1,9 @@
 import { useRef, useEffect } from 'react';
 import type { InputHTMLAttributes } from 'react';
+
+import { AppTypography } from 'shared/ui/app-typography';
 import { classNames } from 'shared/lib/class-names';
+
 import classes from './text-field.module.scss';
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -33,24 +36,42 @@ const TextField = (props: TextFieldProps) => {
     [className]: Boolean(className),
   });
 
+  const inputClasses = classNames(classes.input, {
+    'app-transition': true,
+  });
+
   return (
     <div className={textFieldClasses} data-testid="text-field">
       {title && (
-        <h6 className={classes.title} data-testid="text-field-title">
+        <AppTypography
+          capitalizeFirstLetter
+          className={classes.title}
+          data-testid="text-field-title"
+          tag="h6"
+          weight="bold"
+        >
           {title}
-        </h6>
+        </AppTypography>
       )}
       <input
-        className={classes.input}
+        autoComplete="off"
+        className={inputClasses}
         data-testid="text-field-input"
         ref={inputRef}
         type={type}
         {...otherProps}
       />
       {error && (
-        <p className={classes.error} data-testid="text-field-error">
+        <AppTypography
+          capitalizeFirstLetter
+          className={classes.error}
+          data-testid="text-field-error"
+          error
+          size="small"
+          weight="bold"
+        >
           {error}
-        </p>
+        </AppTypography>
       )}
     </div>
   );

@@ -2,6 +2,7 @@ import { useState, useCallback, useRef } from 'react';
 import type { MouseEvent } from 'react';
 
 import { classNames } from 'shared/lib/class-names';
+import { AppTypography } from 'shared/ui/app-typography';
 import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
 
 import type { AppSelectOption } from '../model/types';
@@ -46,12 +47,33 @@ const AppSelect = ({
     [className]: !!className,
   });
 
+  const valueClasses = classNames(classes.value, {
+    'app-transition': true,
+  });
+
   return (
     <div className={selectClasses} ref={parent} data-testid="app-select">
-      {title && <h6 className={classes.title}>{title}</h6>}
-      <p className={classes.value} onClick={onOpenMenu} aria-hidden>
-        {value}
-      </p>
+      {title && (
+        <AppTypography
+          capitalizeFirstLetter
+          className={classes.title}
+          tag="h6"
+          weight="bold"
+        >
+          {title}
+        </AppTypography>
+      )}
+
+      <div onClick={onOpenMenu}>
+        <AppTypography
+          aria-hidden
+          capitalizeFirstLetter
+          className={valueClasses}
+        >
+          {value}
+        </AppTypography>
+      </div>
+
       <Dropdown
         fullWidth
         isOpen={isOpen}

@@ -3,7 +3,6 @@ import type { Profile } from 'entities/profile';
 
 import { deepCopy } from 'shared/lib/deep-copy';
 import { Country } from 'entities/country';
-
 import { validateProfile } from './validate-profile';
 import { ValidateProfileError } from '../../constants';
 
@@ -43,10 +42,10 @@ describe('test feature/edit-profile/validate-profile', () => {
 
   it('should return all errors', () => {
     const customMock: Profile = {
+      id: '1',
       age: 0,
       avatar: '',
       country: Country.CANADA,
-      name: '',
       position: '',
     };
 
@@ -55,8 +54,6 @@ describe('test feature/edit-profile/validate-profile', () => {
       ValidateProfileError.AGE_RANGE_LESS,
       ValidateProfileError.AVATAR_EMPTY,
       ValidateProfileError.AVATAR_INVALID_URL,
-      ValidateProfileError.NAME_EMPTY,
-      ValidateProfileError.NAME_RANGE,
       ValidateProfileError.POSITION_EMPTY,
       ValidateProfileError.POSITION_RANGE_LESS,
     ]);

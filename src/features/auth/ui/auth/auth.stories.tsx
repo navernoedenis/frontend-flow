@@ -27,7 +27,6 @@ const Template: ComponentStory<typeof Auth> = () => {
 
 export const Light = Template.bind({});
 export const Dark = Template.bind({});
-
 Dark.decorators = [ThemeDecorator('dark')];
 
 const ModalTemplate: ComponentStory<typeof AuthModal> = () => {

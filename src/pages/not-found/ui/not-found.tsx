@@ -1,14 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import classes from './not-found.module.scss';
+import { AppTypography } from 'shared/ui/app-typography';
 
-const NotFoundPage = () => {
-  const { t } = useTranslation('not-found-page');
+function NotFoundPage() {
+  const { t } = useTranslation('page.not-found');
 
   return (
-    <div className={classes.container} data-testid="not-found">
-      <h1>{t('title')}</h1>
+    <div data-testid="not-found">
+      <AppTypography tag="h1" error>
+        {t('title')}
+      </AppTypography>
     </div>
   );
-};
+}
 
 export default NotFoundPage;

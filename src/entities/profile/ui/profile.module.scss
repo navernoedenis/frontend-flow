@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  align-items: flex-start;
 }
 
 .avatar {
@@ -13,8 +14,7 @@
 .form {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 10px;
+  gap: 10px 20px;
 }
 
 .field {

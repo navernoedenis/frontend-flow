@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import AppSelect from './app-select';
@@ -6,9 +6,18 @@ import AppSelect from './app-select';
 export default {
   title: 'shared/AppSelect',
   component: AppSelect,
+  args: {
+    title: '',
+    isDisabled: false,
+  },
 } as ComponentMeta<typeof AppSelect>;
 
-const Template: ComponentStory<typeof AppSelect> = () => {
+const Template: ComponentStory<typeof AppSelect> = ({
+  onSelect,
+  options,
+  value: componentValue,
+  ...otherProps
+}) => {
   const [value, setValue] = useState('item 1');
 
   return (
@@ -23,12 +32,12 @@ const Template: ComponentStory<typeof AppSelect> = () => {
         ]}
         title="Select item"
         value={value}
+        {...otherProps}
       />
     </div>
   );
 };
 
 export const Light = Template.bind({});
-
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator('dark')];

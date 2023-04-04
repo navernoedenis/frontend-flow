@@ -34,7 +34,7 @@ function App() {
       <Header />
       <main className="app-container main">
         {/* <Aside /> */}
-        <div className="page-wrapper">
+        <div className="app-page">
           <AppRouter />
         </div>
       </main>

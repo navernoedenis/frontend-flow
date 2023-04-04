@@ -6,11 +6,14 @@ import type { Profile } from 'entities/profile';
 
 export const updateProfile = createAsyncThunk<Profile, Profile, ThunkConfig>(
   'profile/update-profile',
-  async (payload, config) => {
+  async (profile, config) => {
     const { extra, rejectWithValue } = config;
 
     try {
-      const response = await extra.client.put<Profile>('/profile', payload);
+      const response = await extra.client.put<Profile>(
+        `/profiles/${profile.id}`,
+        profile,
+      );
       return response.data;
     } catch (error) {
       return rejectWithValue(errorMessage(error));

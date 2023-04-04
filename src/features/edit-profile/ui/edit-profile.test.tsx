@@ -12,11 +12,4 @@ describe('test features/edit-profile', () => {
     });
     expect(screen.getByTestId('edit-profile')).toBeInTheDocument();
   });
-
-  it("shouldn't be should be in the document", () => {
-    renderWithAll(<EditProfile />, {
-      profile: { isLoading: false, error: '', data: null },
-    });
-    expect(screen.queryByTestId('edit-profile')).not.toBeInTheDocument();
-  });
 });

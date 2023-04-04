@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getArticle } from '../../api/get-article/get-article';
 import type { ArticleState } from '../types';
 
-export const initialState: ArticleState = {
+const initialState: ArticleState = {
   data: null,
   isLoading: false,
   error: '',
@@ -29,5 +29,4 @@ const articleSlice = createSlice({
   },
 });
 
-export const { actions: articleActions } = articleSlice;
 export const { reducer: articleReducer } = articleSlice;

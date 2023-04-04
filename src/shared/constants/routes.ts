@@ -4,7 +4,7 @@ export enum AppRoute {
   COUNTER = 'counter',
   HOME = 'home',
   NOT_FOUND = 'not_found',
-  PROFILE = 'profile',
+  PROFILES = 'profiles',
 }
 
 export const AppRoutePath: Record<AppRoute, string> = {
@@ -13,5 +13,5 @@ export const AppRoutePath: Record<AppRoute, string> = {
   [AppRoute.COUNTER]: '/counter',
   [AppRoute.HOME]: '/',
   [AppRoute.NOT_FOUND]: '*',
-  [AppRoute.PROFILE]: '/profile',
+  [AppRoute.PROFILES]: '/profiles', // + profileId,
 };

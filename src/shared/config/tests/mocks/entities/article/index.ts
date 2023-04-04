@@ -1,5 +1,5 @@
 import type { Article } from 'entities/article';
-import { ArticleBlockType } from 'entities/article/model/types';
+import { ArticleBlockType } from 'entities/article/article-entity/model/types';
 
 export const articleMock: Article = {
   blocks: [

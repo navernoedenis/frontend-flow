@@ -29,7 +29,7 @@ const LazyImage = ({
   });
 
   return (
-    <div className={containerClasses}>
+    <div className={containerClasses} data-testid="lazy-image">
       {!isLoaded && <AppSkeleton className={classes.skeleton} />}
       <img
         alt={alt}

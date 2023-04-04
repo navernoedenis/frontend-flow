@@ -18,7 +18,7 @@ describe('test entities/profile/get-profile', () => {
 
   it('should be: success', async () => {
     mockedAxios.get.mockResolvedValue({ data: profileMock });
-    const action = getProfile();
+    const action = getProfile('1');
     const response = await action(dispatch, getState, { client: mockedAxios });
 
     expect(mockedAxios.get).toHaveBeenCalled();
@@ -29,7 +29,7 @@ describe('test entities/profile/get-profile', () => {
 
   it('should be: failure', async () => {
     mockedAxios.get.mockRejectedValue(new Error('Invalid token'));
-    const action = getProfile();
+    const action = getProfile('1');
     const response = await action(dispatch, getState, { client: mockedAxios });
 
     expect(mockedAxios.get).toHaveBeenCalled();

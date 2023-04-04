@@ -1,0 +1,66 @@
+.container {
+  line-height: 1.2;
+  font-weight: normal;
+  color: var(--primary-color);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.capitalizeFirstLetter {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  white-space: pre-wrap;
+}
+
+.error {
+  color: var(--color-red);
+}
+
+.noShrink {
+  flex-shrink: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.size {
+  &-huge {
+    font-size: 24px;
+  }
+
+  &-large {
+    font-size: 18px;
+  }
+
+  &-medium {
+    font-size: 16px;
+  }
+
+  &-small {
+    font-size: 14px;
+  }
+}
+
+.weight {
+  &-heavy {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 500;
+  }
+
+  &-normal {
+    font-weight: 400;
+  }
+}

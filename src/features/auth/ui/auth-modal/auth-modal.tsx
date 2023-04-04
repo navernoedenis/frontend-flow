@@ -6,7 +6,7 @@ interface AuthModalProps {
   onClose: VoidFunction;
 }
 
-const AuthModal = (props: AuthModalProps) => {
+function AuthModal(props: AuthModalProps) {
   const { isOpen, onClose } = props;
 
   return (
@@ -14,6 +14,6 @@ const AuthModal = (props: AuthModalProps) => {
       <Auth />
     </AppModal>
   );
-};
+}
 
 export default AuthModal;

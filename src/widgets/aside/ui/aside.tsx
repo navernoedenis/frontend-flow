@@ -12,10 +12,14 @@ function Aside() {
     [classes.collapsed]: !isOpen,
   });
 
+  const arrowClasses = classNames(classes.arrow, {
+    'app-transition': true,
+  });
+
   return (
     <aside className={asideClasses} data-testid="aside">
       <button
-        className={classes.arrow}
+        className={arrowClasses}
         data-testid="arrow-button"
         onClick={toggleOpen}
         style={{ transform: `rotate(${isOpen ? 180 : 0}deg)` }}

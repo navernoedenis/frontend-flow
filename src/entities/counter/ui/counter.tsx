@@ -1,8 +1,10 @@
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import type { AppReducersLazy } from 'app/providers/store';
 
 import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
 import { LazyReducers } from 'shared/lib/lazy-reducers';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 
@@ -15,27 +17,26 @@ const reducers: AppReducersLazy = {
   counter: counterReducer,
 };
 
-const CounterEntity = () => {
-  const { t } = useTranslation('counter');
-
+function CounterEntity() {
+  const { t } = useTranslation('entities.counter');
   const dispatch = useAppDispatch();
   const value = useAppSelector(selectCountertValue);
 
-  const decrement = () => {
+  const decrement = useCallback(() => {
     dispatch(counterActions.decrement());
-  };
+  }, [dispatch]);
 
-  const increment = () => {
+  const increment = useCallback(() => {
     dispatch(counterActions.increment());
-  };
+  }, [dispatch]);
 
   return (
     <LazyReducers reducers={reducers}>
       <div data-testid="counter">
-        <h2 data-testid="title">
+        <AppTypography data-testid="title" size="large">
           {t('title')}
           {`: ${value}`}
-        </h2>
+        </AppTypography>
 
         <div className={classes.buttons}>
           <AppButton
@@ -58,6 +59,6 @@ const CounterEntity = () => {
       </div>
     </LazyReducers>
   );
-};
+}
 
 export default CounterEntity;

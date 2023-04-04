@@ -13,14 +13,14 @@ interface CountrySelectProps {
   title?: string;
 }
 
-const CountrySelect = ({
+function CountrySelect({
   className = '',
   currentCountry,
   isDisabled = false,
   onSelectCountry,
   title = '',
-}: CountrySelectProps) => {
-  const { t } = useTranslation('select-country');
+}: CountrySelectProps) {
+  const { t } = useTranslation('entities.select-country');
 
   const countriesRecord: CountriesRecord = useMemo(
     () => ({
@@ -52,6 +52,6 @@ const CountrySelect = ({
       value={countriesRecord[currentCountry].toLowerCase()}
     />
   );
-};
+}
 
 export default CountrySelect;

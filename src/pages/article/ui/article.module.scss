@@ -1,22 +1,21 @@
-.commentsTitle {
-  margin: 20px 0;
-  font-size: 24px;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+.header {
+  margin-bottom: 10px;
 }
 
-.comments {
+.skeleton {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.notComments {
-  font-size: 20px;
+.addComment {
+  margin: 20px 0;
+}
 
-  &::first-letter {
-    text-transform: uppercase;
-  }
+.comments {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
 }

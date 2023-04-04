@@ -21,9 +21,9 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
   className = '',
   isInversed = false,
 }) => {
+  const { t } = useTranslation('shared.theme-switcher');
   const { theme, setTheme } = useTheme();
 
-  const { t } = useTranslation('theme-switcher');
   const [isMenuOpened, setMenuOpened] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 

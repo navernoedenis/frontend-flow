@@ -18,6 +18,7 @@ const DropdownItem = ({
   title,
 }: DropdownItemProps) => {
   const dropdownItemClasses = classNames(classes.container, {
+    'app-transition': true,
     [className]: !!className,
     [classes.active]: isChecked,
   });

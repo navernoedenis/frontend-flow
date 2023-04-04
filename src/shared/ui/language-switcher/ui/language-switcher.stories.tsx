@@ -7,13 +7,12 @@ export default {
   component: LanguageSwitcher,
 } as ComponentMeta<typeof LanguageSwitcher>;
 
-const Template: ComponentStory<typeof LanguageSwitcher> = (args) => (
+const Template: ComponentStory<typeof LanguageSwitcher> = () => (
   <div style={{ display: 'inline-block' }}>
-    <LanguageSwitcher {...args} />
+    <LanguageSwitcher />
   </div>
 );
 
 export const Light = Template.bind({});
-
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator('dark')];

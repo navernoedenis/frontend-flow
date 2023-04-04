@@ -2,9 +2,10 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 import type { Comment } from 'entities/comment';
 import type { CommentsState } from '../types';
 
+import { addComment } from '../../api/add-comment/add-comment';
 import { getComments } from '../../api/get-comments/get-comments';
 
-export const initialState: CommentsState = {
+const initialState: CommentsState = {
   entities: {},
   error: '',
   ids: [],
@@ -15,7 +16,7 @@ export const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
 });
 
-const commentsSlice = createSlice({
+const articleCommentsSlice = createSlice({
   name: 'article-comments',
   initialState: commentsAdapter.getInitialState(initialState),
   reducers: {},
@@ -26,15 +27,28 @@ const commentsSlice = createSlice({
         state.error = '';
       })
       .addCase(getComments.fulfilled, (state, action) => {
+        commentsAdapter.addMany(state, action.payload);
         state.isLoading = false;
-        commentsAdapter.setAll(state, action.payload);
       })
       .addCase(getComments.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      })
+
+      .addCase(addComment.pending, (state) => {
+        state.isLoading = true;
+        state.error = '';
+      })
+      .addCase(addComment.fulfilled, (state, action) => {
+        commentsAdapter.addOne(state, action.payload);
+        state.isLoading = false;
+        state.error = '';
+      })
+      .addCase(addComment.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
       });
   },
 });
 
-export const { actions: commentsActions } = commentsSlice;
-export const { reducer: commentsReducer } = commentsSlice;
+export const { reducer: commentsReducer } = articleCommentsSlice;

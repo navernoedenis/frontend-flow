@@ -12,6 +12,7 @@ import type {
 } from '@reduxjs/toolkit';
 
 import type { ArticleState, CommentsState } from 'pages/article';
+import type { ArticlesState } from 'pages/articles';
 import type { AuthState } from 'features/auth';
 import type { CounterState } from 'entities/counter';
 import type { ProfileState } from 'features/edit-profile';
@@ -25,6 +26,7 @@ export type AppState = AppStateLazy & {
 
 export type AppStateLazy = Partial<{
   article: ArticleState;
+  articles: ArticlesState;
   comments: CommentsState;
   counter: CounterState;
   profile: ProfileState;
@@ -45,27 +47,28 @@ export interface AppStore
 }
 
 export interface AppStoreParams {
-  preloadedState?: AppStatePreloaded;
   lazyReducers?: AppReducersLazy;
+  preloadedState?: AppStatePreloaded;
 }
 
 export type AppStatePreloaded = DeepPartial<AppState>;
 
 export interface ReducerManager {
+  add: (key: AppStateLazyKey, reducer: Reducer) => void;
   getReducerMap: () => ReducersMapObject<AppState>;
   reduce: (state: AppState, action: AnyAction) => CombinedState<AppState>;
-  add: (key: AppStateLazyKey, reducer: Reducer) => void;
   remove: (key: AppStateLazyKey) => void;
 }
 
 export interface StoreProviderProps {
-  lazyReducers?: AppReducersLazy;
   children: ReactNode;
+  lazyReducers?: AppReducersLazy;
 }
 
 export interface ThunkConfig {
   extra: ThunkExtra;
   rejectValue: string;
+  state: AppState;
 }
 
 export interface ThunkExtra {

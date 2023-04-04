@@ -8,14 +8,26 @@ import SelectCountry from './select-country';
 export default {
   title: 'entities/SelectCountry',
   component: SelectCountry,
+  args: {
+    title: '',
+    isDisabled: false,
+  },
 } as ComponentMeta<typeof SelectCountry>;
 
-const Template: ComponentStory<typeof SelectCountry> = () => {
+const Template: ComponentStory<typeof SelectCountry> = ({
+  currentCountry,
+  onSelectCountry,
+  ...otherProps
+}) => {
   const [country, setCountry] = useState(Country.UKRAINE);
 
   return (
     <div style={{ maxWidth: '240px' }}>
-      <SelectCountry currentCountry={country} onSelectCountry={setCountry} />
+      <SelectCountry
+        currentCountry={country}
+        onSelectCountry={setCountry}
+        {...otherProps}
+      />
     </div>
   );
 };

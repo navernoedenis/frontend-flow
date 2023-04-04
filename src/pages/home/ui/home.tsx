@@ -1,13 +1,16 @@
 import { useTranslation } from 'react-i18next';
+import { AppTypography } from 'shared/ui/app-typography';
 
-const HomePage = () => {
-  const { t } = useTranslation('home-page');
+function HomePage() {
+  const { t } = useTranslation('page.home');
 
   return (
     <div data-testid="home">
-      <h1>{t('title')}</h1>
+      <AppTypography tag="h1" size="huge" weight="heavy">
+        {t('title')}
+      </AppTypography>
     </div>
   );
-};
+}
 
 export default HomePage;

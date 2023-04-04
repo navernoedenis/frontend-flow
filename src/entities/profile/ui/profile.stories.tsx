@@ -17,11 +17,15 @@ const preloadedState: AppStatePreloaded = {
 export default {
   title: 'entities/Profile',
   component: ProfileEntity,
+  args: {
+    isDisabled: true,
+  },
 } as ComponentMeta<typeof ProfileEntity>;
 
-const Template: ComponentStory<typeof ProfileEntity> = () => (
-  <ProfileEntity isDisabled profile={profileMock} />
-);
+const Template: ComponentStory<typeof ProfileEntity> = ({
+  profile,
+  ...otherProps
+}) => <ProfileEntity profile={profileMock} {...otherProps} />;
 
 const Skeleton: ComponentStory<typeof ProfileSkeleton> = () => (
   <ProfileSkeleton />

@@ -2,20 +2,30 @@ import { useState, useEffect, useMemo, useReducer } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ChangeEvent } from 'react';
 
-import { ProfileEntity, ProfileSkeleton } from 'entities/profile';
+import type { AppReducersLazy } from 'app/providers/store';
 import type { Profile } from 'entities/profile';
 import type { Country } from 'entities/country';
 
+import { selectAuthMe } from 'features/auth';
+import { ProfileEntity, ProfileSkeleton } from 'entities/profile';
+
 import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { deepCopy } from 'shared/lib/deep-copy';
+import { LazyReducers } from 'shared/lib/lazy-reducers';
 
 import { updateProfile } from '../api/update-profile/update-profile';
-import { ValidateProfileError } from '../model/constants';
+import { profileReducer } from '../model/slice';
 import { validateProfile } from '../model/lib/validate-profile/validate-profile';
+import { ValidateProfileError } from '../model/constants';
+import {
+  selectProfileData,
+  selectProfileError,
+  selectProfileLoading,
+} from '../model/selectors';
 
-import { selectProfile } from '../model/selectors/select-profile/select-profile';
 import type {
   ErrorsRecord,
   ProfileFormCountryField,
@@ -25,18 +35,27 @@ import type {
 
 import classes from './edit-profile.module.scss';
 
-const EditProfile = () => {
-  const { t } = useTranslation('edit-profile');
+const reducers: AppReducersLazy = {
+  profile: profileReducer,
+};
+
+function EditProfile() {
+  const { t } = useTranslation('features.edit-profile');
   const dispatch = useAppDispatch();
-  const profile = useAppSelector(selectProfile);
+
+  const me = useAppSelector(selectAuthMe);
+
+  const profile = useAppSelector(selectProfileData);
+  const error = useAppSelector(selectProfileError);
+  const isLoading = useAppSelector(selectProfileLoading);
 
   const [isDisabled, onToggleDisabled] = useReducer((prev) => !prev, true);
   const [profileCopy, setProfileCopy] = useState<Profile | null>(null);
   const [errors, setErrors] = useState<ValidateProfileError[]>([]);
 
   useEffect(() => {
-    if (profile?.data) {
-      setProfileCopy(deepCopy(profile.data));
+    if (profile) {
+      setProfileCopy(deepCopy(profile));
     }
   }, [profile]);
 
@@ -46,8 +65,6 @@ const EditProfile = () => {
       [ValidateProfileError.AGE_RANGE_LESS]: t('errors.age_range_less'),
       [ValidateProfileError.AVATAR_EMPTY]: t('errors.avatar_empty'),
       [ValidateProfileError.AVATAR_INVALID_URL]: t('errors.avatar_invalid_url'),
-      [ValidateProfileError.NAME_EMPTY]: t('errors.name_empty'),
-      [ValidateProfileError.NAME_RANGE]: t('errors.name_range'),
       [ValidateProfileError.POSITION_EMPTY]: t('errors.position_empty'),
       [ValidateProfileError.POSITION_RANGE_LESS]: t(
         'errors.position_range_less',
@@ -71,8 +88,8 @@ const EditProfile = () => {
   };
 
   const onCancelEditing = () => {
-    if (profile?.data) {
-      setProfileCopy(profile.data);
+    if (profile) {
+      setProfileCopy(profile);
       setErrors([]);
       onToggleDisabled();
     }
@@ -103,55 +120,60 @@ const EditProfile = () => {
     setProfileCopy({ ...profileCopy, [name]: value });
   };
 
-  if (!profile || profile.isLoading) {
-    return <ProfileSkeleton />;
-  }
-
-  if (!profileCopy) {
-    return null;
-  }
-
-  const hasErrors = !!profile.error || !!errors.length;
+  const isMyProfile = me?.id === profile?.id;
 
   return (
-    <div data-testid="edit-profile">
-      {hasErrors && (
+    <LazyReducers reducers={reducers}>
+      <div data-testid="edit-profile">
+        {isLoading && <ProfileSkeleton />}
+
         <div className={classes.errors}>
-          {profile.error && (
-            <span className={classes.error}>{profile.error}</span>
+          {error && (
+            <AppTypography className={classes.error} error>
+              {error}
+            </AppTypography>
           )}
           {errors.map((error) => (
-            <h4 className={classes.error} key={error}>
+            <AppTypography className={classes.error} key={error} error>
               {errorsRecord[error]}
-            </h4>
+            </AppTypography>
           ))}
         </div>
-      )}
 
-      <ProfileEntity
-        isDisabled={isDisabled}
-        profile={profileCopy}
-        formEvents={{
-          onChangeDigitField,
-          onChangeTextField,
-          onSelectCountryField,
-        }}
-      />
+        {!isLoading && profileCopy && (
+          <ProfileEntity
+            isDisabled={isDisabled}
+            profile={profileCopy}
+            formEvents={{
+              onChangeDigitField,
+              onChangeTextField,
+              onSelectCountryField,
+            }}
+          />
+        )}
 
-      <div className={classes.buttons}>
-        {isDisabled ? (
-          <AppButton onClick={onToggleDisabled}>{t('buttons.edit')}</AppButton>
-        ) : (
-          <>
-            <AppButton onClick={onCancelEditing}>
-              {t('buttons.cancel')}
-            </AppButton>
-            <AppButton onClick={onUpdateProfile}>{t('buttons.save')}</AppButton>
-          </>
+        {!isLoading && isMyProfile && (
+          <div className={classes.buttons}>
+            {isDisabled ? (
+              <AppButton onClick={onToggleDisabled}>
+                {t('buttons.edit')}
+              </AppButton>
+            ) : (
+              <>
+                <AppButton onClick={onCancelEditing}>
+                  {t('buttons.cancel')}
+                </AppButton>
+
+                <AppButton onClick={onUpdateProfile}>
+                  {t('buttons.save')}
+                </AppButton>
+              </>
+            )}
+          </div>
         )}
       </div>
-    </div>
+    </LazyReducers>
   );
-};
+}
 
 export default EditProfile;

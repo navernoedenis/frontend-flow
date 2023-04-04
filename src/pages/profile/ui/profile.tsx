@@ -1,42 +1,42 @@
-import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import type { AppReducersLazy } from 'app/providers/store';
-import { EditProfile, getProfile, profileReducer } from 'features/edit-profile';
+import { EditProfile, getProfile } from 'features/edit-profile';
 
-import { LazyReducers } from 'shared/lib/lazy-reducers';
-import { useAppDispatch } from 'shared/hooks';
+import { useAppDispatch, useEffectOnce } from 'shared/hooks';
+import { AppTypography } from 'shared/ui/app-typography';
 
 import classes from './profile.module.scss';
 
-const reducers: AppReducersLazy = {
-  profile: profileReducer,
-};
-
 const translations: string[] = [
-  'profile-page',
-  'edit-profile',
-  'profile',
-  'select-country',
+  'page.profile',
+  'features.edit-profile',
+  'entities.profile',
+  'entities.select-country',
 ];
 
-const ProfilePage = () => {
+function ProfilePage() {
+  const { id = '' } = useParams<{ id: string }>();
   const { t } = useTranslation(translations);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (__IS_STORYBOOK__) return;
-    dispatch(getProfile());
-  }, [dispatch]);
+  useEffectOnce(() => {
+    dispatch(getProfile(id));
+  });
 
   return (
-    <LazyReducers reducers={reducers}>
-      <div data-testid="profile-page">
-        <h1 className={classes.title}>{t('title')}</h1>
-        <EditProfile />
-      </div>
-    </LazyReducers>
+    <div data-testid="profile-page">
+      <AppTypography
+        className={classes.title}
+        size="huge"
+        tag="h1"
+        weight="heavy"
+      >
+        {t('title')}
+      </AppTypography>
+      <EditProfile />
+    </div>
   );
-};
+}
 
 export default ProfilePage;

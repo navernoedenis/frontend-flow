@@ -1,6 +1,9 @@
+import type { Profile } from 'entities/profile';
+
 export interface User {
   id: string;
-  avatar: string;
   name: string;
   password: string;
+  profile: Profile;
+  profileId: string;
 }

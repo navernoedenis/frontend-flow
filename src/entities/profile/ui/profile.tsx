@@ -20,12 +20,12 @@ interface ProfileEntityProps {
   profile: Profile;
 }
 
-const ProfileEntity = ({
+function ProfileEntity({
   isDisabled = true,
   formEvents,
   profile,
-}: ProfileEntityProps) => {
-  const { t } = useTranslation('profile');
+}: ProfileEntityProps) {
+  const { t } = useTranslation('entities.profile');
 
   return (
     <div className={classes.container} data-testid="profile-entity">
@@ -52,15 +52,6 @@ const ProfileEntity = ({
         <TextField
           className={classes.field}
           disabled={isDisabled}
-          name="name"
-          onChange={formEvents?.onChangeTextField}
-          title={t('name')}
-          value={profile.name}
-        />
-
-        <TextField
-          className={classes.field}
-          disabled={isDisabled}
           maxLength={2}
           name="age"
           onChange={formEvents?.onChangeDigitField}
@@ -79,6 +70,6 @@ const ProfileEntity = ({
       </form>
     </div>
   );
-};
+}
 
 export default ProfileEntity;

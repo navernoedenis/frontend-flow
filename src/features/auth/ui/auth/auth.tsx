@@ -3,15 +3,16 @@ import type { ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
 import { TextField } from 'shared/ui/text-field';
-
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
-import classes from './auth.module.scss';
 
 import { signIn } from '../../api/sign-in/sign-in';
 import { authActions } from '../../model/slice';
-import { selectAuth } from '../../model/selectors/select-auth/select-auth';
+import { selectAuthError, selectAuthLoading } from '../../model/selectors';
 import type { AuthForm } from '../../model/types';
+
+import classes from './auth.module.scss';
 
 const INITIAL_FORM: AuthForm = {
   name: '',
@@ -19,10 +20,11 @@ const INITIAL_FORM: AuthForm = {
 };
 
 function Auth() {
-  const { t } = useTranslation('auth');
+  const { t } = useTranslation('features.auth');
 
   const dispatch = useAppDispatch();
-  const auth = useAppSelector(selectAuth);
+  const error = useAppSelector(selectAuthError);
+  const isLoading = useAppSelector(selectAuthLoading);
 
   const [form, setForm] = useState<AuthForm>(INITIAL_FORM);
 
@@ -56,11 +58,14 @@ function Auth() {
 
   return (
     <div data-testid="auth">
-      <h2 className={classes.title}>{t('title')}</h2>
-      {auth.error.length > 0 && (
-        <h5 className={classes.error} data-testid="error">
-          {auth.error}
-        </h5>
+      <AppTypography className={classes.title} tag="h2" size="huge">
+        {t('title')}
+      </AppTypography>
+
+      {error.length > 0 && (
+        <AppTypography className={classes.error} data-testid="error" error>
+          {error}
+        </AppTypography>
       )}
 
       <form onSubmit={onSubmitForm}>
@@ -88,7 +93,7 @@ function Auth() {
         <div className={classes.buttons}>
           <AppButton
             data-testid="reset"
-            disabled={!canFormBeReset || auth.isLoading}
+            disabled={!canFormBeReset || isLoading}
             onClick={onResetForm}
             type="button"
           >
@@ -98,7 +103,7 @@ function Auth() {
           <AppButton
             data-testid="submit"
             disabled={!isFormValid}
-            isLoading={auth.isLoading}
+            isLoading={isLoading}
             type="submit"
           >
             {t('buttons.enter')}

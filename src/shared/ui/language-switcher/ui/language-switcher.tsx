@@ -16,7 +16,8 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className = '' }) => {
   };
 
   const buttonClasses = classNames(classes.button, {
-    [className]: Boolean(className),
+    'app-transition': true,
+    [className]: !!className,
   });
 
   return (

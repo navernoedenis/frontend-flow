@@ -6,19 +6,18 @@ import {
 
 import { AppStatePreloaded } from 'app/providers/store';
 import { articleMock } from 'shared/config/tests/mocks/entities';
+import ArticlePage from './article';
 
-import Article from './article';
+export default {
+  title: 'pages/Article',
+  component: ArticlePage,
+} as ComponentMeta<typeof ArticlePage>;
 
 const preloadedState: AppStatePreloaded = {
   article: { isLoading: false, error: '', data: articleMock },
 };
 
-export default {
-  title: 'pages/Article',
-  component: Article,
-} as ComponentMeta<typeof Article>;
-
-const Template: ComponentStory<typeof Article> = () => <Article />;
+const Template: ComponentStory<typeof ArticlePage> = () => <ArticlePage />;
 
 export const Light = Template.bind({});
 Light.decorators = [StoreDecorator(preloadedState)];

@@ -94,6 +94,2079 @@
         "views": 84
       },
       "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "3",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "4",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "5",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "6",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "7",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "8",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "9",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "10",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "11",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "12",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "13",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "14",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "15",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "16",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "17",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "18",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "19",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "20",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "21",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "22",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "23",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "24",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "25",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "26",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "27",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "28",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "29",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "30",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "31",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "32",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "33",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "34",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "35",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "36",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "37",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "38",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "39",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "40",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "41",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "42",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "43",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "44",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "45",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "46",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "47",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "48",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "49",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Quokka.js — это плагин для JavaScript и TypeScript, который отображает результаты выполнения кода в редакторе, непосредственно во время его написания. Попробуйте сами!",
+            "Установив расширение, нажмите Ctrl/Cmd(⌘) + Shift + P, чтобы запустить палитру команд редактора, и затем введите Quokka, чтобы увидеть список доступных команд плагина. Выберите и запустите команду New JavaScript File или нажмите ⌘ + K + J, чтобы создать новый файл. Любой введенный код будет выполнен немедленно."
+          ],
+          "title": "Quokka.js",
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://hsto.org/webt/hz/pv/yz/hzpvyzjbiqurmuenttdxk7d84hw.gif",
+          "title": "Quokka.js",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "Часто бывает, написав функцию, вы понимаете, что есть лучший способ написать то же самое. Вы оставляете комментарий // TODO: Необходим рефакторинг, но затем забываете об этом и выкладываете код в production. C Todo Highlighter подобного не произойдет.",
+            "Плагин выделяет TODO/FIXME или другие комментарии в яркие цвета, что довольно тяжело не заметить. Модное нововведение Todo Highlighter — список выделенных комментариев, который выводится в консоли."
+          ],
+          "title": "Todo Highlighter",
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://hsto.org/r/w1560/webt/f8/as/3i/f8as3ivldtrlocqvuabosay7afe.png",
+          "type": "image"
+        },
+        {
+          "id": "5",
+          "paragraphs": [
+            "GPM позволяет открыть окно с новым репозиторием напрямую из редактора. Проще говоря, вы можете открыть другой репозиторий не покидая VSCode.",
+            "После установки данного расширения, пропишите gitProjectManager.baseProjectsFolders в список адресов, содержащих репозитории."
+          ],
+          "title": "Git Project Manager",
+          "type": "text"
+        },
+        {
+          "code": "{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n",
+          "id": "6",
+          "type": "code"
+        }
+      ],
+      "id": "50",
+      "image": "https://hsto.org/r/w1560/webt/xc/em/qk/xcemqk7gj4f2k6bjawuol5t3yj4.jpeg",
+      "info": {
+        "createdAt": "2022.04.14",
+        "tags": [
+          "it",
+          "programming"
+        ],
+        "views": 164
+      },
+      "title": "Топ VSCode расширений, которые ускорят вашу разработку на JavaScript"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Today I will discover America to you based on OpenStreetMap data in PostgreSQL15/PostGIS and my project openstreetmap_h3. Let's run the query and compare its execution time on the Citus column store in PostgreSQL and on the standard 100GB database partitioned by H3 geoindex.",
+            "We will find the top15 buildable locations in North America and the total length of roads, as well as their type and surface. I will not overload the publication with program logs, let's focus on the data! You can easily repeat all requests yourself on your laptop/computer."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "We live in an amazing world where the modern laptop is running the maker of many supercomputers 20 years ago and the available storage drives allow you to store terabytes of data with fast access. In addition, every year more and more open data becomes available geographical, economic. New specialized databases and Big Data movements are emerging. New tools that make it easy to get answers to questions.",
+            "As Mark Twain said, “there are three types of lies: Lies, damned lies, and statistics” We will not believe the available statistics, but will recalculate everything on our own based on open data."
+          ],
+          "title": "Statistics",
+          "type": "text"
+        },
+        {
+          "id": "3",
+          "image": "https://hsto.org/r/w780/getpro/habr/upload_files/e7b/637/d9a/e7b637d9a42420c9c46b62ec3e1c9156.jpg",
+          "title": "USA",
+          "type": "image"
+        }
+      ],
+      "id": "51",
+      "image": "https://wallpaperaccess.com/full/1540001.jpg",
+      "info": {
+        "createdAt": "2022.02.03",
+        "tags": [
+          "technologies"
+        ],
+        "views": 84
+      },
+      "title": "Roads and building density in North America. 100GB geodata processing OSM data in PostgreSQL"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "The New York Times has lost its blue tick on Twitter after it said it would not pay to remain verified.",
+            "NY-Times, along with several other organisations and celebrities, said they would not pay for the tick.",
+            "The real tragedy of @NYTimes is that their propaganda isn't even interesting",
+            "Mr Musk, who owns Twitter, wrote on the platform."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "52",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/12507/production/_129251057_gettyimages-1128061419.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "politics"
+        ],
+        "views": 343
+      },
+      "title": "Twitter's blue ticks disappear as Musk attacks NY Times"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "British billionaire Sir Richard Branson's rocket company Virgin Orbit says it will cut 85% of its workforce after failing to secure new investment.",
+            "The firm will also cease operations for the foreseeable future, according to media reports.",
+            "It comes weeks after the company paused operations in an apparent attempt to shore up its finances.",
+            "Earlier this year, a Virgin Orbit rocket failed to complete the first ever satellite launch from UK soil.",
+            "The company's shares plunged by more than 44% in after-hours trading in New York on Thursday."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "paragraphs": [
+            "The company's LauncherOne rocket - which was launched from the Boeing 747 aircraft Cosmic Girl - reached space but fell short of reaching its target orbit.",
+            "The mission was billed as a milestone for UK space exploration. It was hoped it would mark a major step forward in fulfilling an ambition to turn the country into a global player - from manufacturing satellites to building rockets and creating new spaceports.",
+            "Earlier this month, Virgin Orbit said it was 'initiating a company-wide operational pause' and 'anticipates providing an update on go-forward operations in the coming weeks.'"
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "53",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C14A/production/_129228494_virgin-orbit-17.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "business"
+        ],
+        "views": 610
+      },
+      "title": "Virgin Orbit: Sir Richard Branson's rocket company cuts 85% of workforce"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "UN chief Antonio Guterres says a major new report on climate change is a survival guide for humanity",
+            "Clean energy and technology can be exploited to avoid the growing climate disaster, the report says.",
+            "But at a meeting in Switzerland to agree their findings, climate scientists warned a key global temperature goal will likely be missed.",
+            "Their report lays out how rapid cuts to fossil fuels can avert the worst effects of climate change."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1443C/production/_129040038_ipcc_climat_maps_2x640-nc.png.webp",
+          "title": "Concentrations of the warming gas CO2 in the atmosphere are at their highest in 2 million years",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "paragraphs": [
+            "And while not explicitly mentioning new projects like Willow oil in the US or the Cumbria coal mine in the UK, the scientists involved have few doubts about their impact.",
+            "The authors say that they are optimistic that dramatic changes can be achieved rapidly, pointing to the massive falls in the price of energy made from solar and wind."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "4",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/36B4/production/_129040041_ipccscientistsinterlaken.jpg.webp",
+          "title": "World-leading scientists wrote the UN report which must also be agreed on by governments",
+          "type": "image"
+        }
+      ],
+      "id": "54",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11D2C/production/_129040037_gettyimages-1124433825.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.27",
+        "tags": [
+          "science",
+          "environment"
+        ],
+        "views": 184
+      },
+      "title": "UN climate report: Scientists release 'survival guide' to avert climate disaster"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "Key figures in artificial intelligence want training of powerful AI systems to be suspended amid fears of a threat to humanity.",
+            "They have signed an open letter warning of potential risks, and say the race to develop AI systems is out of control.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Apple co-founder Steve Wozniak and some researchers at DeepMind also signed.",
+            "The letter, from Future of Life Institute and signed by the luminaries, wants development to be halted temporarily at that level, warning in their letter of the risks future, more advanced systems might pose."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "55",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/981A/production/_129183983_gettyimages-1239416791.jpg.webp",
+      "info": {
+        "createdAt": "2022.02.04",
+        "tags": [
+          "technology"
+        ],
+        "views": 932
+      },
+      "title": "Elon Musk among experts urging a halt to AI training"
+    },
+    {
+      "blocks": [
+        {
+          "id": "1",
+          "paragraphs": [
+            "A blood test which can detect traces of cancer cells could spare thousands of patients unnecessary chemotherapy every year.",
+            "A major bowel cancer trial is examining whether the test can show if surgery has removed all of the tumour.",
+            "Twitter chief Elon Musk is among those who want training of AIs above a certain capacity to be halted for at least six months.",
+            "Doctors say half of patients with stage 3 bowel cancer are cured by surgery alone so by using chemotherapy they are over-treating many people.",
+            "About 1,600 bowel cancer patients are being recruited to the UK study."
+          ],
+          "type": "text"
+        },
+        {
+          "id": "2",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1D8E/production/_129166570_976xbloodclose.jpg.webp",
+          "title": "Ben's blood is extracted for the liquid biopsy",
+          "type": "image"
+        },
+        {
+          "id": "3",
+          "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/56AC/production/_129088122_976xbiopsies.jpg.webp",
+          "title": "The liquid biopsies being packaged to send to California",
+          "type": "image"
+        },
+        {
+          "id": "4",
+          "paragraphs": [
+            "The trial, funded by the National Institute for Health & Care Research (NIHR), will examine any difference in survival rates after three years between those patients whose treatment was guided by the blood test compared with the standard-of-care chemotherapy group.",
+            "Trials are also under way in the UK to monitor patients with lung and breast cancer in the same way.",
+            "Dr Starling says the potential for this new technology across cancer care is immense, not just when it comes to detecting residual disease after surgery, but also for early diagnosis.",
+            "What is clear already, from multiple studies, is that so-called liquid biopsy blood tests can reveal the lingering presence of cancer long before it would be found using traditional methods.",
+            "The tests have already been available to private patients."
+          ],
+          "type": "text"
+        }
+      ],
+      "id": "56",
+      "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/D33E/production/_129087045_976xbenchelse.jpg.webp",
+      "info": {
+        "createdAt": "2022.01.02",
+        "tags": [
+          "health"
+        ],
+        "views": 78
+      },
+      "title": "Blood tests may spare cancer patients chemo"
     }
   ],
   "comments": [
@@ -114,33 +2187,103 @@
       "id": "3",
       "text": ":)",
       "userId": "1"
+    },
+    {
+      "articleId": "3",
+      "text": "STARTTTTTTTT",
+      "userId": "1",
+      "id": "FbAY7RB"
+    },
+    {
+      "articleId": "3",
+      "text": "Hello!",
+      "userId": "2",
+      "id": "Ui1NJMI"
+    },
+    {
+      "articleId": "3",
+      "text": ":O",
+      "userId": "3",
+      "id": "s54WyU7"
+    },
+    {
+      "articleId": "4",
+      "text": " :)",
+      "userId": "3",
+      "id": "zc_rrM4"
+    },
+    {
+      "articleId": "2",
+      "text": "ohhhh",
+      "userId": "1",
+      "id": "zl1c0IF"
+    },
+    {
+      "articleId": "13",
+      "text": "!!!!!!",
+      "userId": "1",
+      "id": "4eIVwZf"
+    },
+    {
+      "articleId": "7",
+      "text": "Test 2023",
+      "userId": "1",
+      "id": "sWlpI8C"
+    },
+    {
+      "articleId": "14",
+      "text": "nice",
+      "userId": "1",
+      "id": "1mWINvo"
+    },
+    {
+      "articleId": "11",
+      "text": "2023",
+      "userId": "1",
+      "id": "a7HB65g"
     }
   ],
-  "profile": {
-    "age": 29,
-    "avatar": "https://i.imgur.com/RB4D6Pk.jpeg",
-    "country": "usa",
-    "name": "navernoedenis",
-    "position": "FullStack Developer"
-  },
+  "profiles": [
+    {
+      "age": 29,
+      "avatar": "https://i.imgur.com/RB4D6Pk.jpeg",
+      "country": "usa",
+      "id": "1",
+      "position": "FullStack Developer"
+    },
+    {
+      "age": 30,
+      "avatar": "https://easydrawingguides.com/wp-content/uploads/2018/10/Angry-Birds-10.png",
+      "country": "ukraine",
+      "id": "2",
+      "position": "Dentist"
+    },
+    {
+      "age": 32,
+      "avatar": "https://assets.website-files.com/61554cf069663530fc823d21/6369fed004b5b041b7ed686a_download-8-min.png",
+      "country": "ukraine",
+      "id": "3",
+      "position": "Python Developer"
+    }
+  ],
   "users": [
     {
-      "avatar": "https://i.imgur.com/RB4D6Pk.jpg",
       "id": "1",
-      "name": "navernoedenis",
-      "password": "12345"
+      "name": "denis",
+      "password": "12345",
+      "profileId": "1"
     },
     {
-      "avatar": "https://i.pinimg.com/736x/63/00/ea/6300eaf582ef094d257361a2b3fe1ab7.jpg",
       "id": "2",
       "name": "roma",
-      "password": "12345"
+      "password": "12345",
+      "profileId": "2"
     },
     {
-      "avatar": "https://www.meme-arsenal.com/memes/1c1ef07b5c0e4521b8216cd15ad2440a.jpg",
       "id": "3",
       "name": "evgen",
-      "password": "12345"
+      "password": "12345",
+      "profileId": "3"
     }
   ]
 }

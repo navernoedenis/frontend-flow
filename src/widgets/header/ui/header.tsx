@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AuthModal, authActions, selectAuth } from 'features/auth';
+import { AuthModal, authActions, selectAuthMe } from 'features/auth';
 
 import { AppRoutePath } from 'shared/constants/routes';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
@@ -14,10 +14,9 @@ import { LanguageSwitcher } from 'shared/ui/language-switcher';
 import classes from './header.module.scss';
 
 function Header() {
-  const { t } = useTranslation('header');
-
+  const { t } = useTranslation('widgets.header');
   const dispatch = useAppDispatch();
-  const auth = useAppSelector(selectAuth);
+  const me = useAppSelector(selectAuthMe);
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -34,10 +33,10 @@ function Header() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (auth.me) {
+    if (me) {
       onModalClose();
     }
-  }, [auth.me, onModalClose]);
+  }, [me, onModalClose]);
 
   return (
     <header className={classes.header} data-testid="header">
@@ -51,13 +50,16 @@ function Header() {
             {t('navigation.counter')}
           </AppLink>
 
-          {auth.me && (
+          {me && (
             <>
               <AppLink to={AppRoutePath.articles} isNavLink>
                 {t('navigation.articles')}
               </AppLink>
 
-              <AppLink to={AppRoutePath.profile} isNavLink>
+              <AppLink
+                to={`${AppRoutePath.profiles}/${me.profileId}`}
+                isNavLink
+              >
                 {t('navigation.profile')}
               </AppLink>
             </>
@@ -68,7 +70,7 @@ function Header() {
           <ThemeSwitcher />
           <LanguageSwitcher />
 
-          {auth.me ? (
+          {me ? (
             <AppButton onClick={handleLogout}>{t('buttons.logout')}</AppButton>
           ) : (
             <AppButton onClick={onModalShow}>{t('buttons.login')}</AppButton>

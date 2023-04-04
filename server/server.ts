@@ -2,6 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import jsonServer from 'json-server';
 
+import type { User } from '../src/entities/user';
+import type { Profile } from '../src/entities/profile';
+
 const db = path.resolve(__dirname, 'db.json');
 
 const server = jsonServer.create();
@@ -22,12 +25,6 @@ server.use(async (req, res, next) => {
 
   next();
 });
-
-interface User {
-  id: number;
-  name: string;
-  password: string;
-}
 
 server.post('/sign-in', (req, res) => {
   try {
@@ -50,7 +47,11 @@ server.post('/sign-in', (req, res) => {
       throw new Error('Wrong password');
     }
 
-    res.status(200).json(user);
+    const profile: Profile = database.profiles.find(
+      (p: Profile) => user.id === p.id,
+    );
+
+    res.status(200).json({ ...user, profile });
   } catch (error) {
     if (error instanceof Error) {
       res.status(401).json({ error: error.message });

@@ -4,6 +4,10 @@
   font-weight: 700;
   color: var(--primary-color);
   text-transform: uppercase;
+
+  &:hover {
+    color: var(--accent-color);
+  }
 }
 
 .inversed {

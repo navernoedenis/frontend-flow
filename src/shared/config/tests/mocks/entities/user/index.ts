@@ -1,9 +1,10 @@
 import type { User } from 'entities/user';
+import { profileMock } from '../profile';
 
 export const userMock: User = {
   id: '1',
-  avatar:
-    'https://thumbs.dreamstime.com/b/lamberto-bava-film-director-photographed-livorno-italy-filmmaking-workshops-fi-pi-li-horror-festival-40159292.jpg',
-  name: 'Lamberto Bava',
+  name: 'Carl Sagan',
   password: '12345',
+  profileId: '1',
+  profile: profileMock,
 };

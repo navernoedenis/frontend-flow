@@ -23,6 +23,7 @@ const AppLink: FC<AppLinkProps> = (props) => {
   const LinkComponent = isNavLink ? NavLink : Link;
 
   const linkClasses = classNames(classes.link, {
+    'app-transition': true,
     [className]: Boolean(className),
     [classes.inversed]: isInversed,
   });

@@ -6,7 +6,10 @@ export default {
   title: 'shared/TextField',
   component: TextField,
   args: {
-    title: 'Storybook',
+    error: '',
+    isFocused: false,
+    title: '',
+    value: 'My custom value',
   },
 } as ComponentMeta<typeof TextField>;
 
@@ -15,12 +18,5 @@ const Template: ComponentStory<typeof TextField> = (args) => (
 );
 
 export const Light = Template.bind({});
-export const Light_Error = Template.bind({});
-Light_Error.args = { error: 'Error...' };
-
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator('dark')];
-
-export const Dark_Error = Template.bind({});
-Dark_Error.args = { error: 'Error...' };
-Dark_Error.decorators = [ThemeDecorator('dark')];

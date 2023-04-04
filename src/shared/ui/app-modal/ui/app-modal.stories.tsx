@@ -28,6 +28,5 @@ const Template: ComponentStory<typeof AppModal> = () => {
 };
 
 export const Light = Template.bind({});
-
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator('dark')];
