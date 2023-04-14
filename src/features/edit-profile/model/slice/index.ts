@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { getProfile } from '../../api/get-profile/get-profile';
 import { updateProfile } from '../../api/update-profile/update-profile';
 
 import type { ProfileState } from '../types';
 
 export const initialState: ProfileState = {
-  isLoading: false,
   data: null,
   error: '',
+  isLoading: false,
 };
 
 const profileSlice = createSlice({
@@ -44,4 +45,5 @@ const profileSlice = createSlice({
   },
 });
 
+export const { actions: profileActions } = profileSlice;
 export const { reducer: profileReducer } = profileSlice;

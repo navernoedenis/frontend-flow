@@ -1,17 +1,22 @@
 .button {
-  border: 1px solid var(--theme-menu-border-color);
   border-radius: 50%;
+  border: 1px solid var(--theme-menu-border-color);
+  background-color: var(--theme-menu-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
   width: 36px;
   height: 36px;
-  background-color: var(--theme-menu-bg-color);
   color: var(--primary-color);
 
   svg {
     transform: scale(1.2);
+  }
+
+  &:hover {
+    transition: var(--transition-base);
+    opacity: 0.9;
   }
 }
 

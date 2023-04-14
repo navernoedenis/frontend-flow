@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import classes from './app-typography.module.scss';
 
 interface AppTypographyProps {
@@ -9,6 +9,7 @@ interface AppTypographyProps {
   children: ReactNode;
   className?: string;
   error?: boolean;
+  inversed?: boolean;
   lineClamp?: number;
   noShrink?: boolean;
   onClick?: VoidFunction;
@@ -25,6 +26,7 @@ const AppTypography = ({
   children,
   className = '',
   error = false,
+  inversed = false,
   lineClamp = 0,
   noShrink = false,
   onClick,
@@ -39,6 +41,7 @@ const AppTypography = ({
     [classes.capitalizeFirstLetter]: capitalizeFirstLetter,
     [classes.ellipsis]: lineClamp > 0,
     [classes.error]: error,
+    [classes.inversed]: inversed,
     [classes.noShrink]: noShrink,
     [classes.uppercase]: uppercase,
     [classes[`size-${size}`]]: true,

@@ -1,0 +1,17 @@
+{
+  "key": {
+    "options": {
+      "all": "all",
+      "createdAt": "created",
+      "views": "views"
+    },
+    "title": "key"
+  },
+  "order": {
+    "options": {
+      "asc": "asc",
+      "desc": "desc"
+    },
+    "title": "order"
+  }
+}

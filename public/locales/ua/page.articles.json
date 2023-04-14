@@ -1,7 +1,17 @@
 {
-  "select": {
-    "compact": "компактний",
-    "normal": "звичайний",
-    "view": "вигляд"
+  "cards": {
+    "no_articles": "немає статей"
+  },
+  "header": {
+    "buttons": {
+      "all": "всі",
+      "business": "бізнес",
+      "programming": "програмування",
+      "science": "наука"
+    },
+    "search": {
+      "placeholder": "пошук статей",
+      "title": "пошук"
+    }
   }
 }

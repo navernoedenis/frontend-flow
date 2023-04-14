@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes } from 'react';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import classes from './app-button.module.scss';
 
 import SpinnerIcon from './assets/spinner.svg';
@@ -22,7 +22,6 @@ function AppButton(props: AppButtonProps) {
   } = props;
 
   const buttonClasses = classNames(classes.button, {
-    'app-transition': true,
     [classes.loading]: isLoading,
     [classes[size]]: true,
     [className]: Boolean(className),

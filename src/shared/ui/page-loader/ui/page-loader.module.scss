@@ -11,7 +11,7 @@
   background-color: var(--overlay-bg);
   animation-name: fadeIn;
   animation-duration: 300ms;
-  z-index: var(--overlay-z-index);
+  z-index: var(--zindex-overlay);
 }
 
 @keyframes fadeIn {

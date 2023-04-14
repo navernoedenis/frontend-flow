@@ -14,7 +14,7 @@ import { AppTypography } from 'shared/ui/app-typography';
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { deepCopy } from 'shared/lib/deep-copy';
-import { LazyReducers } from 'shared/lib/lazy-reducers';
+import { LazyReducers } from 'shared/lib/components';
 
 import { updateProfile } from '../api/update-profile/update-profile';
 import { profileReducer } from '../model/slice';
@@ -39,7 +39,11 @@ const reducers: AppReducersLazy = {
   profile: profileReducer,
 };
 
-function EditProfile() {
+interface EditProfileProps {
+  showEditableButtons?: boolean;
+}
+
+function EditProfile({ showEditableButtons = true }: EditProfileProps) {
   const { t } = useTranslation('features.edit-profile');
   const dispatch = useAppDispatch();
 
@@ -127,18 +131,20 @@ function EditProfile() {
       <div data-testid="edit-profile">
         {isLoading && <ProfileSkeleton />}
 
-        <div className={classes.errors}>
-          {error && (
-            <AppTypography className={classes.error} error>
-              {error}
-            </AppTypography>
-          )}
-          {errors.map((error) => (
-            <AppTypography className={classes.error} key={error} error>
-              {errorsRecord[error]}
-            </AppTypography>
-          ))}
-        </div>
+        {!isLoading && (
+          <div className={classes.errors}>
+            {error && (
+              <AppTypography className={classes.error} error>
+                {error}
+              </AppTypography>
+            )}
+            {errors.map((error) => (
+              <AppTypography className={classes.error} key={error} error>
+                {errorsRecord[error]}
+              </AppTypography>
+            ))}
+          </div>
+        )}
 
         {!isLoading && profileCopy && (
           <ProfileEntity
@@ -153,23 +159,27 @@ function EditProfile() {
         )}
 
         {!isLoading && isMyProfile && (
-          <div className={classes.buttons}>
-            {isDisabled ? (
-              <AppButton onClick={onToggleDisabled}>
-                {t('buttons.edit')}
-              </AppButton>
-            ) : (
-              <>
-                <AppButton onClick={onCancelEditing}>
-                  {t('buttons.cancel')}
-                </AppButton>
+          <>
+            {showEditableButtons && (
+              <div className={classes.buttons}>
+                {isDisabled ? (
+                  <AppButton onClick={onToggleDisabled}>
+                    {t('buttons.edit')}
+                  </AppButton>
+                ) : (
+                  <>
+                    <AppButton onClick={onCancelEditing}>
+                      {t('buttons.cancel')}
+                    </AppButton>
 
-                <AppButton onClick={onUpdateProfile}>
-                  {t('buttons.save')}
-                </AppButton>
-              </>
+                    <AppButton onClick={onUpdateProfile}>
+                      {t('buttons.save')}
+                    </AppButton>
+                  </>
+                )}
+              </div>
             )}
-          </div>
+          </>
         )}
       </div>
     </LazyReducers>

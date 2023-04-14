@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import CheckIcon from './assets/check.svg';
 import classes from './dropdown-item.module.scss';
 
@@ -18,7 +18,6 @@ const DropdownItem = ({
   title,
 }: DropdownItemProps) => {
   const dropdownItemClasses = classNames(classes.container, {
-    'app-transition': true,
     [className]: !!className,
     [classes.active]: isChecked,
   });

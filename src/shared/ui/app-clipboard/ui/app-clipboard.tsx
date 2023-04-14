@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import CopyIcon from './assets/copy.svg';
 import classes from './app-clipboard.module.scss';
 
@@ -23,14 +23,10 @@ const AppClipboard = ({ className = '', text }: AppClipboardProps) => {
     [className]: !!className,
   });
 
-  const buttonClasses = classNames(classes.button, {
-    'app-transition': true,
-  });
-
   return (
     <div className={clipboardClasses} data-testid="app-clipboard">
       <pre className={classes.text}>{text}</pre>
-      <button className={buttonClasses} onClick={onCopyCode}>
+      <button className={classes.button} onClick={onCopyCode}>
         <CopyIcon />
       </button>
     </div>

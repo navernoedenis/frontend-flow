@@ -8,7 +8,9 @@ import { authActions } from 'features/auth';
 import { useAppDispatch } from 'shared/hooks';
 import { applyTheme, getSystemTheme } from 'shared/lib/theme';
 
+import { NetworkStatus, networkStatusActions } from 'widgets/network-status';
 import { AppRouter } from './providers/router';
+
 import './styles/global.scss';
 
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -17,6 +19,13 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    window.addEventListener('online', () => {
+      dispatch(networkStatusActions.setStatus(true));
+    });
+    window.addEventListener('offline', () => {
+      dispatch(networkStatusActions.setStatus(false));
+    });
+
     dispatch(authActions.init());
   }, [dispatch]);
 
@@ -30,16 +39,20 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Header />
-      <main className="app-container main">
-        {/* <Aside /> */}
-        <div className="app-page">
-          <AppRouter />
-        </div>
-      </main>
+    <>
+      <div className="app">
+        <Header />
+        <main className="app-container main">
+          {/* <Aside /> */}
+          <div className="app-page">
+            <AppRouter />
+          </div>
+        </main>
+      </div>
+
+      <NetworkStatus />
       <Toaster />
-    </div>
+    </>
   );
 }
 

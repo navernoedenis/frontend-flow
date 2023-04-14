@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LocalStorage } from 'shared/services/local-storage';
+import { LocalStorage } from 'shared/services/local-storage/local-storage';
 import { LS_AUTH_KEY } from 'shared/constants/local-storage';
 
 import type { User } from 'entities/user';

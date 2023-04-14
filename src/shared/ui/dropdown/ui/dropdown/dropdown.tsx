@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import throttle from 'lodash.throttle';
 import type { ReactNode } from 'react';
 
 import { Portal } from 'shared/ui/portal';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
+import { useThrottle } from 'shared/hooks';
 
 import { calcCoords } from '../../model/utils/calc-cords';
 import type { Coords } from '../../model/utils/calc-cords';
@@ -29,6 +29,12 @@ const Dropdown = ({
 }: DropdownProps) => {
   const [coords, setCoords] = useState<Coords>({ top: 0, right: 0 });
 
+  const onResizeListener = useThrottle(() => {
+    if (parent) {
+      setCoords(calcCoords(parent, fullWidth));
+    }
+  }, 150);
+
   useEffect(() => {
     if (parent) {
       setCoords(calcCoords(parent, fullWidth));
@@ -36,21 +42,15 @@ const Dropdown = ({
   }, [isOpen, parent, fullWidth]);
 
   useEffect(() => {
-    const onResizeListener = throttle(() => {
-      if (parent) {
-        setCoords(calcCoords(parent, fullWidth));
-      }
-    }, 100);
-
     if (isOpen) {
-      document.addEventListener('click', onClose);
       window.addEventListener('resize', onResizeListener);
+      document.addEventListener('click', onClose);
     }
     return () => {
-      document.removeEventListener('click', onClose);
       window.removeEventListener('resize', onResizeListener);
+      document.removeEventListener('click', onClose);
     };
-  }, [isOpen, onClose, parent, fullWidth]);
+  }, [isOpen, onClose, onResizeListener]);
 
   const dropdownClasses = classNames(classes.container, {
     [className]: !!className,

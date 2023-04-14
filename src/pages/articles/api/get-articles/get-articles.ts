@@ -1,29 +1,54 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { errorMessage } from 'shared/lib/error-message';
-
 import type { Article } from 'entities/article';
 import type { ThunkConfig } from 'app/providers/store';
 
-import { selectArticlesPage, selectArticlesLimit } from '../../model/selectors';
+import { addSearchParams, buildSearchParams } from 'shared/lib/search-params';
+import { errorMessage } from 'shared/lib/transforms/error-message';
 
-export const getArticles = createAsyncThunk<Article[], undefined, ThunkConfig>(
-  'articles/get-articles',
-  async (_, config) => {
-    const { extra, rejectWithValue, getState } = config;
+import {
+  selectArticlesSortKey,
+  selectArticlesSortLimit,
+  selectArticlesSortOrder,
+  selectArticlesSortPage,
+  selectArticlesSortQuery,
+  selectArticlesSortTag,
+} from '../../model/selectors';
 
-    const page = selectArticlesPage(getState());
-    const limit = selectArticlesLimit(getState());
+interface GetArticlesProps {
+  destroyPrevious?: boolean;
+}
 
-    try {
-      const response = await extra.client.get<Article[]>('/articles', {
-        params: {
-          _page: page,
-          _limit: limit,
-        },
-      });
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(errorMessage(error));
-    }
-  },
-);
+export const getArticles = createAsyncThunk<
+  Article[],
+  GetArticlesProps | undefined,
+  ThunkConfig
+>('articles/get-articles', async (_, config) => {
+  const { extra, rejectWithValue, getState } = config;
+
+  const _limit = selectArticlesSortLimit(getState());
+  const _order = selectArticlesSortOrder(getState());
+  const _page = selectArticlesSortPage(getState());
+  const _sort = selectArticlesSortKey(getState());
+  const q = selectArticlesSortQuery(getState());
+  const tags = selectArticlesSortTag(getState());
+
+  const params = buildSearchParams({
+    _limit,
+    _order,
+    _sort,
+    q,
+    tags,
+  });
+
+  addSearchParams(params);
+
+  try {
+    const response = await extra.client.get<Article[]>('/articles', {
+      params: { ...params, _page },
+    });
+
+    return response.data;
+  } catch (error) {
+    return rejectWithValue(errorMessage(error));
+  }
+});

@@ -1,15 +1,15 @@
 import { screen } from '@testing-library/react';
-import { renderWithRouter } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 import AppLink from './app-link';
 
 describe('test shared/app-link', () => {
   test('should be in the document', () => {
-    renderWithRouter(<AppLink to="/">Home</AppLink>);
+    renderWithAll(<AppLink to="/">Home</AppLink>);
     expect(screen.getByTestId('app-link')).toBeInTheDocument();
   });
 
   test('should have aditional classname: turbo ', () => {
-    renderWithRouter(
+    renderWithAll(
       <AppLink className="turbo" to="/">
         Home
       </AppLink>,
@@ -18,7 +18,7 @@ describe('test shared/app-link', () => {
   });
 
   test('should have classname: inversed ', () => {
-    renderWithRouter(
+    renderWithAll(
       <AppLink to="/" isInversed>
         Home
       </AppLink>,

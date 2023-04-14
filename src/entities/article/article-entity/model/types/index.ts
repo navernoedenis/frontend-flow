@@ -2,11 +2,9 @@ export interface Article {
   id: string;
   title: string;
   image: string;
-  info: {
-    createdAt: string;
-    tags: string[];
-    views: number;
-  };
+  views: number;
+  tags: string[];
+  createdAt: string;
   blocks: ArticleBlock[];
 }
 

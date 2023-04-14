@@ -1,4 +1,4 @@
-name: ADVANCE FRONTEND CI
+name: FRONTEND FLOW CI
 
 on:
   push:

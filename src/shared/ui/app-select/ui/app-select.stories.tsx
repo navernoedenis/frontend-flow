@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof AppSelect> = ({
   const [value, setValue] = useState('item 1');
 
   return (
-    <div style={{ display: 'inline-block', width: '160px' }}>
+    <div style={{ display: 'inline-block' }}>
       <AppSelect
         onSelect={setValue}
         options={[

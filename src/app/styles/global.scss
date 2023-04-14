@@ -1,14 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 @import "./vendors/normalize";
-@import "./variables/colors";
-@import "./variables/sizes";
-@import "./variables/z-index";
 @import "./themes/dark";
+@import "./reset";
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:root {
+  --app-padding: 24px;
+  --aside-width-collapsed: 80px;
+  --aside-width: 300px;
+  --header-height: 60px;
+
+  --color-black: #131517;
+  --color-green: #4eb8a4;
+  --color-grey: #ebebeb;
+  --color-orange: #fb8c00;
+  --color-red: #e91e63;
+  --color-white: #fff;
+
+  --zindex-overlay: 500;
+  --transition-base: 150ms linear;
 }
 
 html {
@@ -26,48 +41,12 @@ html {
 }
 
 body {
+  background-color: var(--secondary-color);
   font-family: Ubuntu, sans-serif;
   font-size: 16px;
   line-height: 1.2;
   font-weight: 400;
-  background-color: var(--secondary-color);
   color: var(--primary-color);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-
-  &.active {
-    color: var(--accent-color);
-  }
-}
-
-button {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  display: block;
 }
 
 .app {
@@ -83,14 +62,10 @@ img {
   &-page {
     width: 100%;
   }
-
-  &-transition {
-    transition: 150ms linear;
-  }
 }
 
 .main {
   display: flex;
-  padding: 0 var(--app-padding) var(--app-padding);
+  padding: var(--app-padding);
   min-height: calc(100vh - var(--header-height));
 }

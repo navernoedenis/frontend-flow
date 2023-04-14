@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
-import { renderWithAll } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 
 import AuthModal from './auth-modal';
 

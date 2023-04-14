@@ -23,7 +23,7 @@ function ArticleHeader({ article }: ArticleHeaderProps) {
             {t('info.date')}
             {': '}
           </AppTypography>
-          <AppTypography tag="span">{article.info.createdAt}</AppTypography>
+          <AppTypography tag="span">{article.createdAt}</AppTypography>
         </li>
 
         <li className={classes.subitem}>
@@ -35,7 +35,7 @@ function ArticleHeader({ article }: ArticleHeaderProps) {
             {t('info.views')}
             {': '}
           </AppTypography>
-          <AppTypography tag="span">{article.info.views}</AppTypography>
+          <AppTypography tag="span">{article.views}</AppTypography>
         </li>
 
         <li className={classes.subitem}>
@@ -48,7 +48,7 @@ function ArticleHeader({ article }: ArticleHeaderProps) {
             {': '}
           </AppTypography>
 
-          {article.info.tags.map((tag) => (
+          {article.tags.map((tag) => (
             <AppTypography className={classes.tag} key={tag} tag="span">
               {tag}
             </AppTypography>

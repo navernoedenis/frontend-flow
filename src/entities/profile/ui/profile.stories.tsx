@@ -6,12 +6,13 @@ import {
 
 import { AppStatePreloaded } from 'app/providers/store';
 import { profileMock } from 'shared/config/tests/mocks/entities';
+import { profileStateMock } from 'shared/config/tests/mocks/states';
 
 import ProfileEntity from './profile';
 import ProfileSkeleton from './profile.skeleton';
 
 const preloadedState: AppStatePreloaded = {
-  profile: { isLoading: false, error: '', data: profileMock },
+  profile: profileStateMock,
 };
 
 export default {

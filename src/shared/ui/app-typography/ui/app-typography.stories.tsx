@@ -14,6 +14,7 @@ export default {
     capitalizeFirstLetter: false,
     children: mockText,
     error: false,
+    inversed: false,
     lineClamp: 0,
     noShrink: false,
     size: 'medium',

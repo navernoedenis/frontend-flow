@@ -19,7 +19,7 @@ describe('test feature/auth/sign-in', () => {
   it('should be: success', async () => {
     mockedAxios.post.mockResolvedValue({ data: userMock });
 
-    const action = signIn({ name: 'navernoedenis', password: '12345' });
+    const action = signIn({ name: 'denis', password: '12345' });
     const response = await action(dispatch, getState, { client: mockedAxios });
 
     expect(mockedAxios.post).toHaveBeenCalled();

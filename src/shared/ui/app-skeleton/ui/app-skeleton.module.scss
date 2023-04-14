@@ -1,9 +1,9 @@
 .container {
   border-radius: 4px;
+  background-color: var(--skeleton-bg);
   height: 140px;
   width: 100%;
   animation: 1.5s ease-in-out 0.5s infinite normal none pulse;
-  background-color: var(--skeleton-bg);
 }
 
 @keyframes pulse {

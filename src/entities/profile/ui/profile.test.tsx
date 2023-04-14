@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 import { profileMock } from 'shared/config/tests/mocks/entities';
 
 import ProfileEntity from './profile';

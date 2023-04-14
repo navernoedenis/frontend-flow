@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from './store';
+import { AppStoreProvider } from './store';
 import { ErrorBoundary } from './error-boundary';
 
 interface AppProvidersProps {
@@ -9,8 +9,8 @@ interface AppProvidersProps {
 
 export const AppProviders = ({ children }: AppProvidersProps) => (
   <BrowserRouter>
-    <StoreProvider>
+    <AppStoreProvider>
       <ErrorBoundary>{children}</ErrorBoundary>
-    </StoreProvider>
+    </AppStoreProvider>
   </BrowserRouter>
 );

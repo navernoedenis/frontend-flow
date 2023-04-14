@@ -1,7 +1,17 @@
 {
-  "select": {
-    "compact": "compact",
-    "normal": "normal",
-    "view": "view"
+  "cards": {
+    "no_articles": "no articles"
+  },
+  "header": {
+    "buttons": {
+      "all": "all",
+      "business": "business",
+      "programming": "programming",
+      "science": "science"
+    },
+    "search": {
+      "placeholder": "search articles",
+      "title": "search"
+    }
   }
 }

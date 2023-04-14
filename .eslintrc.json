@@ -1,13 +1,13 @@
 {
   "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
   "globals": {
     "__HOST__": true,
     "__IS_DEV__": true,
     "__IS_STORYBOOK__": true
-  },
-  "env": {
-    "browser": true,
-    "es2021": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -65,9 +65,16 @@
       "rules": {
         "i18next/no-literal-string": "off"
       }
+    },
+    {
+      "files": ["./*-worker.ts"],
+      "rules": {
+        "no-restricted-globals": "off"
+      }
     }
   ],
   "ignorePatterns": [
+    "build/**/*",
     "*.test.ts",
     "*.test.tsx",
     "*.config.ts",

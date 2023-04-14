@@ -1,5 +1,6 @@
 import type { Article } from '../../article-entity/model/types';
 import { ArticleCard, ArticleCardSkeleton } from '../../article-card';
+
 import classes from './article-list.module.scss';
 
 interface ArticlesList {
@@ -15,7 +16,7 @@ const ArticleList = ({
 }: ArticlesList) => (
   <div className={classes.container} data-testid="article-list">
     {articles.map((article) => (
-      <ArticleCard key={article.id} article={article} isCompact={isCompact} />
+      <ArticleCard article={article} isCompact={isCompact} key={article.id} />
     ))}
     {isLoading && (
       <>

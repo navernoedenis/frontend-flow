@@ -6,6 +6,7 @@
   width: 100%;
 
   &:hover {
+    transition: var(--transition-base);
     color: var(--accent-color);
   }
 }

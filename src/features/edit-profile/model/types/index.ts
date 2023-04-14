@@ -3,9 +3,9 @@ import type { Country } from 'entities/country';
 import type { ValidateProfileError } from '../constants';
 
 export interface ProfileState {
-  isLoading: boolean;
   data: Profile | null;
   error: string;
+  isLoading: boolean;
 }
 
 export interface ProfileFormTextField {

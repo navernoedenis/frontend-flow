@@ -1,5 +1,5 @@
-export { StoreProvider } from './store-provider';
-export { createAppStore } from './create-store';
+export { AppStoreProvider } from './store-provider';
+export { createAppStore } from './create-store/create-store';
 
 export type {
   AppDispatch,

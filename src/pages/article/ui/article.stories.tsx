@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { AppStatePreloaded } from 'app/providers/store';
+import { articleMock } from 'shared/config/tests/mocks/entities';
 import {
   ThemeDecorator,
   StoreDecorator,
 } from 'shared/config/storybook/decorators';
 
-import { AppStatePreloaded } from 'app/providers/store';
-import { articleMock } from 'shared/config/tests/mocks/entities';
 import ArticlePage from './article';
 
 export default {

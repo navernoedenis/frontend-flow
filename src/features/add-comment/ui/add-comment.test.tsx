@@ -1,5 +1,5 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 import AddComment from './add-comment';
 
 describe('test features/add-comment', () => {

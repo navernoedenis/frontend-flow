@@ -1,8 +1,8 @@
 import { useState, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { FC } from 'react';
+import type { FC, MouseEvent } from 'react';
 
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
 import { useTheme } from 'shared/hooks';
 
@@ -32,7 +32,8 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
     [classes.inversed]: isInversed,
   });
 
-  const onMenuToggle = useCallback(() => {
+  const onMenuToggle = useCallback((event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     setMenuOpened((prev) => !prev);
   }, []);
 
@@ -46,10 +47,7 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
         aria-hidden
         className={buttonClasses}
         data-testid="theme-menu"
-        onClick={(event) => {
-          event.stopPropagation();
-          onMenuToggle();
-        }}
+        onClick={onMenuToggle}
         ref={buttonRef}
       >
         {theme === 'auto' && <AutoIcon />}

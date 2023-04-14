@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import type { FC } from 'react';
 import type { LinkProps } from 'react-router-dom';
 
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import classes from './app-link.module.scss';
 
 interface AppLinkProps extends LinkProps {
@@ -23,7 +23,6 @@ const AppLink: FC<AppLinkProps> = (props) => {
   const LinkComponent = isNavLink ? NavLink : Link;
 
   const linkClasses = classNames(classes.link, {
-    'app-transition': true,
     [className]: Boolean(className),
     [classes.inversed]: isInversed,
   });

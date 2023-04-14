@@ -6,7 +6,7 @@ import { selectAuthMe } from 'features/auth';
 import type { Comment } from 'entities/comment';
 import type { User } from 'entities/user';
 
-import { errorMessage } from 'shared/lib/error-message';
+import { errorMessage } from 'shared/lib/transforms/error-message';
 
 interface AddCommentProps {
   articleId: string;
@@ -43,7 +43,7 @@ export const addComment = createAsyncThunk<
       setTimeout(resolve, 3000);
     });
 
-    // Would be better to create new comment
+    // Would be better to create a new comment
     // and get it back, like one request with user relation.
     // Unforunatelly, it's impossible at the current moment.
     // POST method doesn't support '_expand' param.

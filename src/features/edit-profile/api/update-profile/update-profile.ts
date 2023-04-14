@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { errorMessage } from 'shared/lib/error-message';
+import { errorMessage } from 'shared/lib/transforms/error-message';
 
 import type { ThunkConfig } from 'app/providers/store';
 import type { Profile } from 'entities/profile';

@@ -1,6 +1,8 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/wrappers';
+
+import { articlesStateMock } from 'shared/config/tests/mocks/states';
 import { mockIntersectionObserver } from 'shared/config/tests/mocks/dom';
+import { renderWithAll } from 'shared/config/tests/rtl';
 
 import ArticlesPage from './articles';
 
@@ -10,17 +12,7 @@ describe('test pages/articles', () => {
   });
 
   it('should be in the document', () => {
-    renderWithAll(<ArticlesPage />, {
-      articles: {
-        entities: {},
-        error: '',
-        hasMore: true,
-        ids: [],
-        isLoading: false,
-        limit: 1,
-        page: 1,
-      },
-    });
+    renderWithAll(<ArticlesPage />, { articles: articlesStateMock });
     expect(screen.getByTestId('articles-page')).toBeInTheDocument();
   });
 });

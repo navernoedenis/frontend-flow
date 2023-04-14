@@ -5,6 +5,7 @@ import type { ChangeEvent, FormEvent } from 'react';
 import { AppButton } from 'shared/ui/app-button';
 import { AppTypography } from 'shared/ui/app-typography';
 import { TextField } from 'shared/ui/text-field';
+import { capitalizeFirstWord } from 'shared/lib/transforms/capitalize-first-word';
 
 import classes from './add-comment.module.scss';
 
@@ -34,7 +35,7 @@ function AddComment({ className = '', onSendComment }: AddCommentProps) {
     setValue('');
   }, []);
 
-  const isValueValid = value.trim().length > 0;
+  const isValidValue = value.trim().length > 0;
 
   return (
     <form
@@ -42,26 +43,25 @@ function AddComment({ className = '', onSendComment }: AddCommentProps) {
       data-testid="add-comment"
       onSubmit={handleSubmit}
     >
-      <AppTypography capitalizeFirstLetter size="large" weight="bold">
+      <AppTypography capitalizeFirstLetter size="huge" weight="bold">
         {t('title')}
       </AppTypography>
+
       <TextField
+        className={classes.field}
         data-testid="add-comment-input"
         name="comment"
         onChange={handleChange}
-        placeholder={t('placeholder')}
+        placeholder={capitalizeFirstWord(t('placeholder'))}
         value={value}
       />
+
       <div className={classes.buttons}>
-        <AppButton
-          disabled={!isValueValid}
-          onClick={handleReset}
-          size="small"
-          type="button"
-        >
+        <AppButton disabled={!isValidValue} onClick={handleReset} type="button">
           {t('buttons.reset')}
         </AppButton>
-        <AppButton disabled={!isValueValid} size="small" type="submit">
+
+        <AppButton disabled={!isValidValue} type="submit">
           {t('buttons.send')}
         </AppButton>
       </div>

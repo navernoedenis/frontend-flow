@@ -11,7 +11,8 @@ export function buildConfig(options: BuildOptions): Configuration {
   return {
     entry: {
       main: paths.entry,
-      initTheme: paths.initTheme,
+      'init-theme': paths.initTheme,
+      'service-worker': paths.serviceWorker,
     },
     mode: buildMode,
     module: {

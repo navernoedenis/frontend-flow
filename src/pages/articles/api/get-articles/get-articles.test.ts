@@ -1,8 +1,9 @@
 import axios from 'axios';
 import type { AppState, AppDispatch } from 'app/providers/store';
-import { getArticles } from './get-articles';
-
+import { articlesStateMock } from 'shared/config/tests/mocks/states';
 import { articleMock } from 'shared/config/tests/mocks/entities';
+
+import { getArticles } from './get-articles';
 
 jest.mock('axios');
 const mockedAxios = jest.mocked(axios);
@@ -13,7 +14,7 @@ describe('test pages/articles/get-articles', () => {
 
   beforeEach(() => {
     dispatch = jest.fn();
-    getState = jest.fn().mockReturnValue({ articles: { page: 1, limit: 1 } });
+    getState = jest.fn().mockReturnValue({ articles: articlesStateMock });
   });
 
   it('should return articles', async () => {

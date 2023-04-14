@@ -46,23 +46,14 @@ function Header() {
             {t('navigation.home')}
           </AppLink>
 
-          <AppLink to={AppRoutePath.counter} isNavLink>
-            {t('navigation.counter')}
+          <AppLink to={AppRoutePath.articles} isNavLink>
+            {t('navigation.articles')}
           </AppLink>
 
           {me && (
-            <>
-              <AppLink to={AppRoutePath.articles} isNavLink>
-                {t('navigation.articles')}
-              </AppLink>
-
-              <AppLink
-                to={`${AppRoutePath.profiles}/${me.profileId}`}
-                isNavLink
-              >
-                {t('navigation.profile')}
-              </AppLink>
-            </>
+            <AppLink to={`${AppRoutePath.profiles}/${me.profileId}`} isNavLink>
+              {t('navigation.profile')}
+            </AppLink>
           )}
         </div>
 

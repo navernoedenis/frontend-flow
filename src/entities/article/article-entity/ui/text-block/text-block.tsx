@@ -18,6 +18,7 @@ function TextBlock({ data }: TextBlockProps) {
         <AppTypography
           className={classes.paragpaph}
           key={`${paragraph.slice(0, 16)}`}
+          size="large"
         >
           {paragraph}
         </AppTypography>

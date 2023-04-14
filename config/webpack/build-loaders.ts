@@ -1,17 +1,26 @@
-import type { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import type { RuleSetRule } from 'webpack';
 import type { BuildOptions } from './types';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const { isDevelopment } = options;
 
-  const tsLoader = {
-    test: /\.tsx?$/,
+  const workerLoader: RuleSetRule = {
+    test: /worker\.ts$/,
     use: 'ts-loader',
-    exclude: /node_modules/,
+    type: 'asset/resource',
+    generator: {
+      filename: '[name].js',
+    },
   };
 
-  const cssLoader = {
+  const tsLoader: RuleSetRule = {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: [/node_modules/, /worker\.ts/],
+  };
+
+  const cssLoader: RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
       MiniCssExtractPlugin.loader,
@@ -44,5 +53,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     },
   ];
 
-  return [tsLoader, cssLoader, ...svgLoaders];
+  return [workerLoader, tsLoader, cssLoader, ...svgLoaders];
 }

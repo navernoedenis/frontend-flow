@@ -1,6 +1,6 @@
 import { act } from 'react-dom/test-utils';
 import { screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 
 import ProfilePage from './profile';
 

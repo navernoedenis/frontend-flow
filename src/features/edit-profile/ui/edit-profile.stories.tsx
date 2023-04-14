@@ -5,22 +5,32 @@ import {
   StoreDecorator,
 } from 'shared/config/storybook/decorators';
 
-import { profileMock } from 'shared/config/tests/mocks/entities';
+import {
+  authStateMock,
+  profileStateMock,
+} from 'shared/config/tests/mocks/states';
+
 import EditProfile from './edit-profile';
 
-const statePreloaded: AppStatePreloaded = {
-  profile: { isLoading: false, error: '', data: profileMock },
+const preloadedState: AppStatePreloaded = {
+  auth: authStateMock,
+  profile: profileStateMock,
 };
 
 export default {
   title: 'features/EditProfile',
   component: EditProfile,
+  args: {
+    showEditableButtons: true,
+  },
 } as ComponentMeta<typeof EditProfile>;
 
-const Template: ComponentStory<typeof EditProfile> = () => <EditProfile />;
+const Template: ComponentStory<typeof EditProfile> = (props) => (
+  <EditProfile {...props} />
+);
 
 export const Light = Template.bind({});
-Light.decorators = [StoreDecorator(statePreloaded)];
+Light.decorators = [StoreDecorator(preloadedState)];
 
 export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(statePreloaded)];
+Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(preloadedState)];

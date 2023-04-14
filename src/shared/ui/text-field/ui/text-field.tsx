@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import type { InputHTMLAttributes } from 'react';
 
 import { AppTypography } from 'shared/ui/app-typography';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 
 import classes from './text-field.module.scss';
 
@@ -36,10 +36,6 @@ const TextField = (props: TextFieldProps) => {
     [className]: Boolean(className),
   });
 
-  const inputClasses = classNames(classes.input, {
-    'app-transition': true,
-  });
-
   return (
     <div className={textFieldClasses} data-testid="text-field">
       {title && (
@@ -55,7 +51,7 @@ const TextField = (props: TextFieldProps) => {
       )}
       <input
         autoComplete="off"
-        className={inputClasses}
+        className={classes.input}
         data-testid="text-field-input"
         ref={inputRef}
         type={type}

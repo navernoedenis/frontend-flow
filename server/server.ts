@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import jsonServer from 'json-server';
+import type { RequestHandler } from 'express';
 
 import type { User } from '../src/entities/user';
 import type { Profile } from '../src/entities/profile';
@@ -15,6 +16,16 @@ const port = 4000;
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
+
+const authMiddleware: RequestHandler = (req, res, next) => {
+  const { authorization } = req.headers;
+
+  if (!authorization) {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+
+  return next();
+};
 
 // Emulating server delay
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -59,16 +70,7 @@ server.post('/sign-in', (req, res) => {
   }
 });
 
-server.use((req, res, next) => {
-  const { authorization } = req.headers;
-
-  if (!authorization) {
-    res.status(401).json({ error: 'Invalid token' });
-  }
-
-  next();
-});
-
+server.post('/comments', authMiddleware);
 server.use(router);
 
 server.listen(port, () => {

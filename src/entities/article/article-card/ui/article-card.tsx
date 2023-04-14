@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import { LazyImage } from 'shared/ui/lazy-image';
 import { AppTypography } from 'shared/ui/app-typography';
 
@@ -15,14 +15,19 @@ import classes from './article-card.module.scss';
 
 interface ArticleCardProps {
   article: Article;
+  className?: string;
   isCompact?: boolean;
 }
 
-function ArticleCard({ article, isCompact = false }: ArticleCardProps) {
+function ArticleCard({
+  article,
+  className = '',
+  isCompact = false,
+}: ArticleCardProps) {
   const { t } = useTranslation('entities.article');
 
   const containerClasses = classNames(classes.container, {
-    'app-transition': true,
+    [className]: Boolean(className),
     [classes.compact]: isCompact,
   });
 
@@ -52,13 +57,13 @@ function ArticleCard({ article, isCompact = false }: ArticleCardProps) {
           <AppTypography capitalizeFirstLetter size="small" noShrink>
             {t('info.date')}
             {': '}
-            {article.info.createdAt}
+            {article.createdAt}
           </AppTypography>
 
           <AppTypography capitalizeFirstLetter size="small" noShrink>
             {t('info.views')}
             {': '}
-            {article.info.views}
+            {article.views}
           </AppTypography>
         </div>
 
@@ -70,7 +75,7 @@ function ArticleCard({ article, isCompact = false }: ArticleCardProps) {
           uppercase={!isCompact}
         >
           {isCompact && `${t('info.tags')}: `}
-          {article.info.tags.join(', ')}
+          {article.tags.join(', ')}
         </AppTypography>
       </div>
     </Link>

@@ -3,15 +3,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import type { AppReducersLazy } from 'app/providers/store';
+import { selectNetworkStatusOnline } from 'widgets/network-status';
 
 import { AddComment } from 'features/add-comment';
+import { selectAuthMe } from 'features/auth';
 
 import { ArticleEntity, ArticleSkeleton } from 'entities/article';
 import { CommentEntity, CommentSkeleton } from 'entities/comment';
 
 import { AppButton } from 'shared/ui/app-button';
 import { AppTypography } from 'shared/ui/app-typography';
-import { LazyReducers } from 'shared/lib/lazy-reducers';
+import { LazyReducers } from 'shared/lib/components';
 import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
 import { AppRoutePath } from 'shared/constants/routes';
 
@@ -46,10 +48,13 @@ function ArticlePage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const me = useAppSelector(selectAuthMe);
+
   const article = useAppSelector(selectArticle);
   const comments = useAppSelector(selectComments.selectAll);
-  const commentsLoading = useAppSelector(selectCommentsLoading);
   const commentsError = useAppSelector(selectCommentsError);
+  const commentsLoading = useAppSelector(selectCommentsLoading);
+  const isOnline = useAppSelector(selectNetworkStatusOnline);
 
   useEffectOnce(() => {
     dispatch(getArticle(params.id as string));
@@ -89,6 +94,13 @@ function ArticlePage() {
         {article?.isLoading && <ArticleSkeleton />}
         {article?.data && <ArticleEntity article={article.data} />}
 
+        {!commentsLoading && me && isOnline && (
+          <AddComment
+            className={classes.addComment}
+            onSendComment={handleSendComment}
+          />
+        )}
+
         {commentsLoading ? (
           <div className={classes.skeleton}>
             <CommentSkeleton />
@@ -96,17 +108,11 @@ function ArticlePage() {
             <CommentSkeleton />
           </div>
         ) : (
-          <>
-            <AddComment
-              className={classes.addComment}
-              onSendComment={handleSendComment}
-            />
-            <div className={classes.comments}>
-              {comments.map((comment) => (
-                <CommentEntity key={comment.id} comment={comment} />
-              ))}
-            </div>
-          </>
+          <div className={classes.comments}>
+            {comments.map((comment) => (
+              <CommentEntity key={comment.id} comment={comment} />
+            ))}
+          </div>
         )}
       </div>
     </LazyReducers>

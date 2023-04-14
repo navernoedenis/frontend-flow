@@ -6,6 +6,7 @@
   text-transform: uppercase;
 
   &:hover {
+    transition: var(--transition-base);
     color: var(--accent-color);
   }
 }

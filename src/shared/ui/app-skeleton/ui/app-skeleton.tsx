@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import classes from './app-skeleton.module.scss';
 
 interface AppSkeletonProps {

@@ -2,12 +2,12 @@
   position: absolute;
   box-shadow: var(--app-shadow);
   border-radius: 12px;
+  background-color: var(--secondary-color);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   padding: 8px 0;
-  background-color: var(--secondary-color);
-  animation: fadeIn 100ms ease-in-out;
+  animation: fadeIn var(--transition-base);
   transform: translateY(5px);
 }
 

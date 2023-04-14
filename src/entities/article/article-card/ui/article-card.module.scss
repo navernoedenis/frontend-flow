@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  transition: var(--transition-base);
 
   &:hover {
     transform: scale(1.01);
@@ -42,7 +43,7 @@
 
 .compact {
   flex-direction: column;
-  width: 284px;
+  max-width: 284px;
 
   .image {
     border-bottom-right-radius: 0;

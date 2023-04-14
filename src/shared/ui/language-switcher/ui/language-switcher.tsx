@@ -1,7 +1,11 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/class-names';
+import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
+
+import { classNames } from 'shared/lib/transforms/class-names';
+
 import classes from './language-switcher.module.scss';
 
 interface LanguageSwitcherProps {
@@ -15,20 +19,20 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className = '' }) => {
     i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua');
   };
 
-  const buttonClasses = classNames(classes.button, {
-    'app-transition': true,
+  const buttonContainer = classNames(classes.container, {
     [className]: !!className,
   });
 
   return (
-    <div
-      aria-hidden
-      className={buttonClasses}
+    <AppButton
+      className={buttonContainer}
       data-testid="language-switcher"
       onClick={onToggleLanguage}
     >
-      {`${i18n.language}`.slice(0, 2)}
-    </div>
+      <AppTypography tag="span" inversed uppercase weight="bold">
+        {`${i18n.language}`.slice(0, 2)}
+      </AppTypography>
+    </AppButton>
   );
 };
 

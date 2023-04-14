@@ -5,7 +5,10 @@ import {
 } from 'shared/config/storybook/decorators';
 
 import { AppStatePreloaded } from 'app/providers/store';
+
 import { articleMock } from 'shared/config/tests/mocks/entities';
+import { articlesStateMock } from 'shared/config/tests/mocks/states';
+
 import ArticlesPage from './articles';
 
 export default {
@@ -15,13 +18,9 @@ export default {
 
 const preloadedState: AppStatePreloaded = {
   articles: {
-    isLoading: false,
-    error: '',
-    entities: { [articleMock.id]: articleMock },
+    ...articlesStateMock,
     ids: [articleMock.id],
-    page: 1,
-    limit: 1,
-    hasMore: false,
+    entities: { [articleMock.id]: articleMock },
   },
 };
 

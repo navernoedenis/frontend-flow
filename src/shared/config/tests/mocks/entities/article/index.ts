@@ -2,6 +2,13 @@ import type { Article } from 'entities/article';
 import { ArticleBlockType } from 'entities/article/article-entity/model/types';
 
 export const articleMock: Article = {
+  id: '1',
+  title: "DanucD's team won Twitch Rivals",
+  image:
+    'https://wildcard.gg/wildcarddevgaming/wp-content/uploads/2019/02/Danaspotlightbanner.png',
+  views: 422,
+  tags: ['technologies'],
+  createdAt: '2022.01.15',
   blocks: [
     {
       id: '11',
@@ -25,13 +32,4 @@ export const articleMock: Article = {
       code: '{\n  gitProjectManager.baseProjectsFolders: [\n   /home/user/nodeProjects,\n   /home/user/personal/pocs\n ] \n}\n',
     },
   ],
-  id: '11111',
-  image:
-    'https://wildcard.gg/wildcarddevgaming/wp-content/uploads/2019/02/Danaspotlightbanner.png',
-  info: {
-    createdAt: '2022.01.15',
-    tags: ['technologies'],
-    views: 422,
-  },
-  title: "DanucD's team won Twitch Rivals",
 };

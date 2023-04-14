@@ -1,20 +1,20 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithI18n } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 import LanguageSwitcher from './language-switcher';
 
 describe('test shared/language-switcher', () => {
   it('should be in the document', () => {
-    renderWithI18n(<LanguageSwitcher />);
+    renderWithAll(<LanguageSwitcher />);
     expect(screen.getByTestId('language-switcher')).toBeInTheDocument();
   });
 
   it('add: has additional className', () => {
-    renderWithI18n(<LanguageSwitcher className="test-1" />);
+    renderWithAll(<LanguageSwitcher className="test-1" />);
     expect(screen.getByTestId('language-switcher')).toHaveClass('test-1');
   });
 
   it('toggle: language', () => {
-    renderWithI18n(<LanguageSwitcher />);
+    renderWithAll(<LanguageSwitcher />);
 
     const initialLanguage = screen.getByTestId('language-switcher').textContent;
     fireEvent.click(screen.getByTestId('language-switcher'));

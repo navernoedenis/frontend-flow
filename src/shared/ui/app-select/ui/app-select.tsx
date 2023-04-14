@@ -1,30 +1,30 @@
 import { useState, useCallback, useRef } from 'react';
 import type { MouseEvent } from 'react';
 
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import { AppTypography } from 'shared/ui/app-typography';
 import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
 
 import type { AppSelectOption } from '../model/types';
 import classes from './app-select.module.scss';
 
-interface AppSelectProps {
+interface AppSelectProps<T extends string> {
   className?: string;
   isDisabled?: boolean;
-  onSelect: (value: string) => void;
-  options: AppSelectOption[];
+  onSelect: (value: T) => void;
+  options: Array<AppSelectOption<T>>;
   title?: string;
   value: string;
 }
 
-const AppSelect = ({
+const AppSelect = <T extends string>({
   className = '',
   isDisabled = false,
   onSelect,
   options,
   title,
   value,
-}: AppSelectProps) => {
+}: AppSelectProps<T>) => {
   const parent = useRef<HTMLDivElement | null>(null);
   const [isOpen, setOpen] = useState(false);
 
@@ -47,10 +47,6 @@ const AppSelect = ({
     [className]: !!className,
   });
 
-  const valueClasses = classNames(classes.value, {
-    'app-transition': true,
-  });
-
   return (
     <div className={selectClasses} ref={parent} data-testid="app-select">
       {title && (
@@ -68,7 +64,7 @@ const AppSelect = ({
         <AppTypography
           aria-hidden
           capitalizeFirstLetter
-          className={valueClasses}
+          className={classes.value}
         >
           {value}
         </AppTypography>

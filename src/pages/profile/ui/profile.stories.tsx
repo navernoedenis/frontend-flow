@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import type { AppStatePreloaded } from 'app/providers/store';
 
-import { profileMock } from 'shared/config/tests/mocks/entities';
+import {
+  authStateMock,
+  profileStateMock,
+} from 'shared/config/tests/mocks/states';
 import {
   ThemeDecorator,
   StoreDecorator,
@@ -9,7 +12,9 @@ import {
 import ProfilePage from './profile';
 
 const preloadedState: AppStatePreloaded = {
-  profile: { isLoading: false, error: '', data: profileMock },
+  auth: authStateMock,
+  profile: profileStateMock,
+  networkStatus: { isOnline: true },
 };
 
 export default {

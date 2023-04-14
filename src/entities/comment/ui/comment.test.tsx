@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { commentMock } from 'shared/config/tests/mocks/entities';
-import { renderWithAll } from 'shared/config/tests/wrappers';
+import { renderWithAll } from 'shared/config/tests/rtl';
 
 import CommentEntity from './comment';
 

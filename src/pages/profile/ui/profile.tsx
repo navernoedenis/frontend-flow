@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { EditProfile, getProfile } from 'features/edit-profile';
+import { selectNetworkStatusOnline } from 'widgets/network-status';
 
-import { useAppDispatch, useEffectOnce } from 'shared/hooks';
+import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
 import { AppTypography } from 'shared/ui/app-typography';
 
 import classes from './profile.module.scss';
@@ -18,7 +19,9 @@ const translations: string[] = [
 function ProfilePage() {
   const { id = '' } = useParams<{ id: string }>();
   const { t } = useTranslation(translations);
+
   const dispatch = useAppDispatch();
+  const isOnline = useAppSelector(selectNetworkStatusOnline);
 
   useEffectOnce(() => {
     dispatch(getProfile(id));
@@ -34,7 +37,7 @@ function ProfilePage() {
       >
         {t('title')}
       </AppTypography>
-      <EditProfile />
+      <EditProfile showEditableButtons={isOnline} />
     </div>
   );
 }

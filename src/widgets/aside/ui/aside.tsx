@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { classNames } from 'shared/lib/class-names';
+import { classNames } from 'shared/lib/transforms/class-names';
 import { LanguageSwitcher } from 'shared/ui/language-switcher';
 
 import ArrowRight from './assets/arrow-right.svg';
@@ -12,14 +12,10 @@ function Aside() {
     [classes.collapsed]: !isOpen,
   });
 
-  const arrowClasses = classNames(classes.arrow, {
-    'app-transition': true,
-  });
-
   return (
     <aside className={asideClasses} data-testid="aside">
       <button
-        className={arrowClasses}
+        className={classes.arrow}
         data-testid="arrow-button"
         onClick={toggleOpen}
         style={{ transform: `rotate(${isOpen ? 180 : 0}deg)` }}

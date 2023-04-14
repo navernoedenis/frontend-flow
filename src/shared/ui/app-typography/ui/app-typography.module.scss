@@ -25,6 +25,10 @@
   color: var(--color-red);
 }
 
+.inversed {
+  color: var(--secondary-color);
+}
+
 .noShrink {
   flex-shrink: 0;
 }
