@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from 'shared/ui';
+
 import type { Article } from '../../model/types';
 import classes from './article-header.module.scss';
 

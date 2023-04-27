@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from 'shared/ui';
 import { useAppSelector } from 'shared/hooks';
 
 import { selectNetworkStatusOnline } from '../model/selectors/network-status-online/network-status-online';

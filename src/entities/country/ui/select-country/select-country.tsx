@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppSelect } from 'shared/ui/app-select';
+import { AppSelect } from 'shared/ui';
 import { Country } from '../../model/constants';
 import type { CountriesRecord, CountryOption } from '../../model/types';
 

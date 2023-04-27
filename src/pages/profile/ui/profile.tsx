@@ -5,7 +5,7 @@ import { EditProfile, getProfile } from 'features/edit-profile';
 import { selectNetworkStatusOnline } from 'widgets/network-status';
 
 import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from 'shared/ui';
 
 import classes from './profile.module.scss';
 

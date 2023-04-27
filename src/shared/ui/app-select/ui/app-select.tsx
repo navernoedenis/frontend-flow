@@ -1,9 +1,8 @@
 import { useState, useCallback, useRef } from 'react';
 import type { MouseEvent } from 'react';
 
+import { AppTypography, Dropdown, DropdownItem } from 'shared/ui';
 import { classNames } from 'shared/lib/transforms/class-names';
-import { AppTypography } from 'shared/ui/app-typography';
-import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
 
 import type { AppSelectOption } from '../model/types';
 import classes from './app-select.module.scss';
@@ -25,14 +24,14 @@ const AppSelect = <T extends string>({
   title,
   value,
 }: AppSelectProps<T>) => {
-  const parent = useRef<HTMLDivElement | null>(null);
+  const appSelectRef = useRef<HTMLDivElement | null>(null);
   const [isOpen, setOpen] = useState(false);
 
   const onOpenMenu = useCallback(
-    (event: MouseEvent<HTMLElement>) => {
+    (event: MouseEvent) => {
       if (isDisabled) return;
       event.stopPropagation();
-      setOpen(true);
+      setOpen((prev) => !prev);
     },
     [isDisabled],
   );
@@ -48,11 +47,12 @@ const AppSelect = <T extends string>({
   });
 
   return (
-    <div className={selectClasses} ref={parent} data-testid="app-select">
+    <div className={selectClasses} ref={appSelectRef} data-testid="app-select">
       {title && (
         <AppTypography
           capitalizeFirstLetter
           className={classes.title}
+          data-testid="app-select-title"
           tag="h6"
           weight="bold"
         >
@@ -74,7 +74,7 @@ const AppSelect = <T extends string>({
         fullWidth
         isOpen={isOpen}
         onClose={onCloseMenu}
-        parent={parent.current}
+        parentRef={appSelectRef}
       >
         {options.map((option) => (
           <DropdownItem

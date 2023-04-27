@@ -1,4 +1,4 @@
-import { AppSkeleton } from 'shared/ui/app-skeleton';
+import { AppSkeleton, Flexbox } from 'shared/ui';
 
 interface ArticleCardSkeletonProps {
   isCompact?: boolean;
@@ -7,14 +7,12 @@ interface ArticleCardSkeletonProps {
 function ArticleCardSkeleton({ isCompact = false }: ArticleCardSkeletonProps) {
   if (isCompact) {
     return (
-      <div
+      <Flexbox
+        direction="column"
         style={{
           overflow: 'hidden',
           boxShadow: 'var(--app-shadow)',
           borderRadius: '8px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
           width: '284px',
         }}
       >
@@ -26,11 +24,10 @@ function ArticleCardSkeleton({ isCompact = false }: ArticleCardSkeletonProps) {
             width: '100%',
           }}
         />
-        <div
+        <Flexbox
+          direction="column"
+          gap="12"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
             padding: '12px',
             height: '100%',
             width: '100%',
@@ -41,17 +38,15 @@ function ArticleCardSkeleton({ isCompact = false }: ArticleCardSkeletonProps) {
           <AppSkeleton style={{ height: '17px' }} />
           <AppSkeleton style={{ height: '17px' }} />
           <AppSkeleton style={{ height: '17px' }} />
-        </div>
-      </div>
+        </Flexbox>
+      </Flexbox>
     );
   }
 
   return (
-    <div
+    <Flexbox
       style={{
         boxShadow: 'var(--app-shadow)',
-        display: 'flex',
-        alignItems: 'center',
         width: '100%',
       }}
     >
@@ -62,11 +57,10 @@ function ArticleCardSkeleton({ isCompact = false }: ArticleCardSkeletonProps) {
           width: '244px',
         }}
       />
-      <div
+      <Flexbox
+        direction="column"
+        gap="12"
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px',
           width: '100%',
           height: '100%',
           padding: '16px',
@@ -76,8 +70,8 @@ function ArticleCardSkeleton({ isCompact = false }: ArticleCardSkeletonProps) {
         <AppSkeleton style={{ height: '57.5px' }} />
         <AppSkeleton style={{ height: '17px' }} />
         <AppSkeleton style={{ marginTop: 'auto', height: '17px' }} />
-      </div>
-    </div>
+      </Flexbox>
+    </Flexbox>
   );
 }
 

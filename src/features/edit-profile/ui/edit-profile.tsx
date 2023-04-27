@@ -7,10 +7,9 @@ import type { Profile } from 'entities/profile';
 import type { Country } from 'entities/country';
 
 import { selectAuthMe } from 'features/auth';
-import { ProfileEntity, ProfileSkeleton } from 'entities/profile';
+import { ProfileForm, ProfileFormSkeleton } from 'entities/profile';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppButton, AppTypography, Flexbox } from 'shared/ui';
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { deepCopy } from 'shared/lib/deep-copy';
@@ -129,7 +128,7 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
   return (
     <LazyReducers reducers={reducers}>
       <div data-testid="edit-profile">
-        {isLoading && <ProfileSkeleton />}
+        {isLoading && <ProfileFormSkeleton />}
 
         {!isLoading && (
           <div className={classes.errors}>
@@ -147,7 +146,7 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
         )}
 
         {!isLoading && profileCopy && (
-          <ProfileEntity
+          <ProfileForm
             isDisabled={isDisabled}
             profile={profileCopy}
             formEvents={{
@@ -161,7 +160,7 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
         {!isLoading && isMyProfile && (
           <>
             {showEditableButtons && (
-              <div className={classes.buttons}>
+              <Flexbox className={classes.buttons} gap="8">
                 {isDisabled ? (
                   <AppButton onClick={onToggleDisabled}>
                     {t('buttons.edit')}
@@ -177,7 +176,7 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
                     </AppButton>
                   </>
                 )}
-              </div>
+              </Flexbox>
             )}
           </>
         )}

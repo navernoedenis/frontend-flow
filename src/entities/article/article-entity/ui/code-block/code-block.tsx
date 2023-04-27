@@ -1,4 +1,4 @@
-import { AppClipboard } from 'shared/ui/app-clipboard';
+import { AppClipboard } from 'shared/ui';
 import type { ArticleCodeBlock } from '../../model/types';
 
 interface CodeBlockProps {

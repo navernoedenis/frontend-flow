@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from 'shared/ui';
 
 function HomePage() {
   const { t } = useTranslation('page.home');

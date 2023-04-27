@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppSelect } from 'shared/ui/app-select';
-import type { AppSelectOption } from 'shared/ui/app-select';
+import { AppSelect } from 'shared/ui';
+import type { AppSelectOption } from 'shared/ui';
 
 import { ArticleView } from '../model/constants';
 import classes from './select-article-view.module.scss';

@@ -9,7 +9,7 @@ export default {
   component: ArticleList,
   args: {
     isCompact: false,
-    isLoading: false,
+    isLoading: true,
   },
 } as ComponentMeta<typeof ArticleList>;
 
@@ -18,7 +18,11 @@ const mockArticles = [articleMock, articleMock];
 const Template: ComponentStory<typeof ArticleList> = ({
   articles,
   ...otherProps
-}) => <ArticleList articles={mockArticles} {...otherProps} />;
+}) => (
+  <div className="app-page">
+    <ArticleList articles={mockArticles} {...otherProps} />
+  </div>
+);
 
 export const Light = Template.bind({});
 export const Dark = Template.bind({});

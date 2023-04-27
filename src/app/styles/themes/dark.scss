@@ -8,6 +8,9 @@ html[theme="dark"] {
   --overlay-bg: rgb(255 255 255 / 5%);
   --skeleton-bg: rgb(255 255 255 / 10%);
 
-  --theme-menu-bg-color: #353a40;
+  --theme-menu-bg-color: var(--color-gray);
   --theme-menu-border-color: transparent;
+
+  --scrollbar-bg: var(--color-gray);
+  --scrollbar-thumb-bg: var(--color-white);
 }

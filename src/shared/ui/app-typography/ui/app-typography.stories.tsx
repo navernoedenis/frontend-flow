@@ -43,10 +43,9 @@ export default {
 } as ComponentMeta<typeof AppTypography>;
 
 const Template: ComponentStory<typeof AppTypography> = (args) => (
-  <AppTypography {...args} />
+  <AppTypography {...args}>{mockText}</AppTypography>
 );
 
 export const Light = Template.bind({});
-
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator('dark')];

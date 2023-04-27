@@ -1,11 +1,13 @@
 {
   "buttons": {
-    "login": "login",
+    "login": "login"
+  },
+  "menu": {
+    "profile": "my profile",
     "logout": "logout"
   },
   "navigation": {
     "articles": "articles",
-    "home": "home",
-    "profile": "profile"
+    "home": "home"
   }
 }

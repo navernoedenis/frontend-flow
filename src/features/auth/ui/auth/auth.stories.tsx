@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { useAppDispatch } from 'shared/hooks/use-store';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { AppButton } from 'shared/ui/app-button';
+import { AppButton } from 'shared/ui';
 
 import { authActions } from '../../model/slice';
 

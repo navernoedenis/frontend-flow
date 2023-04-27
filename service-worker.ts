@@ -40,9 +40,9 @@ sw.addEventListener('fetch', (event) => {
     event.respondWith(
       (async () => {
         if (destination === 'image') {
-          const imageCached = await caches.match(request);
-          if (imageCached) {
-            return imageCached;
+          const cachedImage = await caches.match(request);
+          if (cachedImage) {
+            return cachedImage;
           }
         }
 

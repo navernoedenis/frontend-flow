@@ -15,7 +15,7 @@ import { SelectArticleTag } from 'features/select-article-tag';
 import { SelectArticleView } from 'features/select-article-view';
 
 import { classNames } from 'shared/lib/transforms/class-names';
-import { TextField } from 'shared/ui/text-field';
+import { Flexbox, TextField } from 'shared/ui';
 import { useAppDispatch, useAppSelector, useDebounce } from 'shared/hooks';
 
 import { getArticles } from '../../../api/get-articles/get-articles';
@@ -36,7 +36,6 @@ interface ArticlesHeaderProps {
 
 function ArticlesHeader({ className = '' }: ArticlesHeaderProps) {
   const { t } = useTranslation('page.articles', { keyPrefix: 'header' });
-
   const dispatch = useAppDispatch();
 
   const searchQuery = useAppSelector(selectArticlesSortQuery);
@@ -97,8 +96,15 @@ function ArticlesHeader({ className = '' }: ArticlesHeaderProps) {
   });
 
   return (
-    <header className={containerClassName} data-testid="articles-header">
-      <div className={classes.toggles}>
+    <Flexbox
+      alignItems="stretch"
+      className={containerClassName}
+      data-testid="articles-header"
+      direction="column"
+      gap="20"
+      tag="header"
+    >
+      <Flexbox justifyContent="between">
         <SelectArticleView currentView={view} onSelectView={onSelectView} />
         <SelectArticleSort
           currentSortKey={sortKey}
@@ -106,7 +112,8 @@ function ArticlesHeader({ className = '' }: ArticlesHeaderProps) {
           onSelectKey={onSelectSortKey}
           onSelectOrder={onSelectSortOrder}
         />
-      </div>
+      </Flexbox>
+
       <TextField
         onChange={onSearchQuery}
         placeholder={`${t('search.placeholder')}...`}
@@ -114,7 +121,7 @@ function ArticlesHeader({ className = '' }: ArticlesHeaderProps) {
         value={searchQuery}
       />
       <SelectArticleTag currentTag={sortTag} onSelect={onSelectSortTag} />
-    </header>
+    </Flexbox>
   );
 }
 

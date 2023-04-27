@@ -11,16 +11,13 @@ import { selectAuthMe } from 'features/auth';
 import { ArticleEntity, ArticleSkeleton } from 'entities/article';
 import { CommentEntity, CommentSkeleton } from 'entities/comment';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppButton, AppTypography, Flexbox } from 'shared/ui';
+
 import { LazyReducers } from 'shared/lib/components';
 import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
 import { AppRoutePath } from 'shared/constants/routes';
 
-import { addComment } from '../api/add-comment/add-comment';
-import { getArticle } from '../api/get-article/get-article';
-import { getComments } from '../api/get-comments/get-comments';
-
+import { addComment, getArticle, getComments } from '../api';
 import { articleReducer, commentsReducer } from '../model/slice';
 import { selectArticle } from '../model/selectors/select-article/select-article';
 import {
@@ -53,7 +50,7 @@ function ArticlePage() {
   const article = useAppSelector(selectArticle);
   const comments = useAppSelector(selectComments.selectAll);
   const commentsError = useAppSelector(selectCommentsError);
-  const commentsLoading = useAppSelector(selectCommentsLoading);
+  const isCommentsLoading = useAppSelector(selectCommentsLoading);
   const isOnline = useAppSelector(selectNetworkStatusOnline);
 
   useEffectOnce(() => {
@@ -94,26 +91,33 @@ function ArticlePage() {
         {article?.isLoading && <ArticleSkeleton />}
         {article?.data && <ArticleEntity article={article.data} />}
 
-        {!commentsLoading && me && isOnline && (
+        {!isCommentsLoading && me && isOnline && (
           <AddComment
             className={classes.addComment}
             onSendComment={handleSendComment}
           />
         )}
 
-        {commentsLoading ? (
-          <div className={classes.skeleton}>
-            <CommentSkeleton />
-            <CommentSkeleton />
-            <CommentSkeleton />
-          </div>
-        ) : (
-          <div className={classes.comments}>
-            {comments.map((comment) => (
-              <CommentEntity key={comment.id} comment={comment} />
-            ))}
-          </div>
-        )}
+        <Flexbox
+          className={classes.comments}
+          alignItems="start"
+          direction="column-reverse"
+          gap="12"
+        >
+          {isCommentsLoading ? (
+            <>
+              <CommentSkeleton />
+              <CommentSkeleton />
+              <CommentSkeleton />
+            </>
+          ) : (
+            <>
+              {comments.map((comment) => (
+                <CommentEntity key={comment.id} comment={comment} />
+              ))}
+            </>
+          )}
+        </Flexbox>
       </div>
     </LazyReducers>
   );

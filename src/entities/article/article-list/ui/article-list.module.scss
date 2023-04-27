@@ -1,5 +1,9 @@
-.container {
+.list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.skeleton {
+  margin-top: 20px;
 }

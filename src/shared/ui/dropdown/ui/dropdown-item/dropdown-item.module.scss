@@ -4,6 +4,7 @@
   padding: 8px 16px;
   color: var(--primary-color);
   width: 100%;
+  min-width: 80px;
 
   &:hover {
     transition: var(--transition-base);
@@ -16,10 +17,12 @@
 }
 
 .title {
-  margin-right: 10px;
-
   &::first-letter {
     text-transform: uppercase;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
   }
 }
 
@@ -31,6 +34,6 @@
   color: var(--accent-color);
 }
 
-.active .title {
+.active {
   color: var(--accent-color);
 }

@@ -1,8 +1,5 @@
 import { memo } from 'react';
-import { LazyImage } from 'shared/ui/lazy-image';
-
-import { AppLink } from 'shared/ui/app-link';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppLink, AppTypography, LazyImage } from 'shared/ui';
 import type { Comment } from '../model/types';
 
 import classes from './comment.module.scss';

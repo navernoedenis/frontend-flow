@@ -1,4 +1,4 @@
-import { AppModal } from 'shared/ui/app-modal';
+import { AppModal } from 'shared/ui';
 import Auth from '../auth/auth.lazy';
 
 interface AuthModalProps {

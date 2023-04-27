@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import { AppTypography, Flexbox, LazyImage } from 'shared/ui';
 import { classNames } from 'shared/lib/transforms/class-names';
-import { LazyImage } from 'shared/ui/lazy-image';
-import { AppTypography } from 'shared/ui/app-typography';
 
 import { ArticleBlockType } from '../../article-entity/model/types';
 import type {
@@ -42,7 +41,13 @@ function ArticleCard({
       to={`/articles/${article.id}`}
     >
       <LazyImage className={classes.image} src={article.image} />
-      <div className={classes.content}>
+
+      <Flexbox
+        className={classes.content}
+        direction="column"
+        alignItems="start"
+        gap="12"
+      >
         <AppTypography className={classes.title} tag="h4" lineClamp={1}>
           {article.title}
         </AppTypography>
@@ -53,7 +58,7 @@ function ArticleCard({
           </AppTypography>
         )}
 
-        <div className={classes.info}>
+        <Flexbox gap="12">
           <AppTypography capitalizeFirstLetter size="small" noShrink>
             {t('info.date')}
             {': '}
@@ -65,19 +70,19 @@ function ArticleCard({
             {': '}
             {article.views}
           </AppTypography>
-        </div>
+        </Flexbox>
 
         <AppTypography
+          capitalize={isCompact}
           className={classes.tags}
           noShrink
           size="small"
-          capitalize={isCompact}
           uppercase={!isCompact}
         >
           {isCompact && `${t('info.tags')}: `}
           {article.tags.join(', ')}
         </AppTypography>
-      </div>
+      </Flexbox>
     </Link>
   );
 }

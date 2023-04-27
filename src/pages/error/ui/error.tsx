@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppButton, AppTypography } from 'shared/ui';
+
 import classes from './error.module.scss';
 
 function ErrorPage() {

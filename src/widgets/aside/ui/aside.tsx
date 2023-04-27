@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import { classNames } from 'shared/lib/transforms/class-names';
-import { LanguageSwitcher } from 'shared/ui/language-switcher';
+import { Flexbox, LanguageSwitcher } from 'shared/ui';
 
 import ArrowRight from './assets/arrow-right.svg';
 import classes from './aside.module.scss';
@@ -13,7 +13,13 @@ function Aside() {
   });
 
   return (
-    <aside className={asideClasses} data-testid="aside">
+    <Flexbox
+      className={asideClasses}
+      data-testid="aside"
+      direction="column"
+      noShrink
+      tag="aside"
+    >
       <button
         className={classes.arrow}
         data-testid="arrow-button"
@@ -23,10 +29,10 @@ function Aside() {
         <ArrowRight />
       </button>
 
-      <div className={classes.buttons}>
+      <Flexbox className={classes.buttons} direction="column" gap="8">
         <LanguageSwitcher />
-      </div>
-    </aside>
+      </Flexbox>
+    </Flexbox>
   );
 }
 

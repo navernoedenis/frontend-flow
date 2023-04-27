@@ -1,11 +1,9 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppSelect } from 'shared/ui/app-select';
-import type { AppSelectOption } from 'shared/ui/app-select';
+import { AppSelect, Flexbox } from 'shared/ui';
+import type { AppSelectOption } from 'shared/ui';
 import type { ArticleSortKey, ArticleSortOrder } from '../model/types';
-
-import classes from './select-article-sort.module.scss';
 
 interface SelectArticleSortProps {
   currentSortKey: ArticleSortKey;
@@ -40,7 +38,7 @@ function SelectArticleSort({
   );
 
   return (
-    <div className={classes.container}>
+    <Flexbox gap="20">
       <AppSelect
         onSelect={onSelectKey}
         options={keyOptions}
@@ -55,7 +53,7 @@ function SelectArticleSort({
         title={t('order.title')}
         value={currentSortOrder}
       />
-    </div>
+    </Flexbox>
   );
 }
 

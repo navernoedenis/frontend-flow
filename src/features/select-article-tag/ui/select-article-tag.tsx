@@ -1,11 +1,10 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppButton } from 'shared/ui/app-button';
+import { AppButton, Flexbox } from 'shared/ui';
 import { classNames } from 'shared/lib/transforms/class-names';
 
 import type { ArticleTag, ArticleTagButton } from '../model/types';
-
 import classes from './select-article-tag.module.scss';
 
 interface SelectArticleSortProps {
@@ -40,12 +39,12 @@ function SelectArticleTag({
     [t],
   );
 
-  const containerClasses = classNames(classes.container, {
+  const containerClasses = classNames('', {
     [className]: !!className,
   });
 
   return (
-    <div className={containerClasses}>
+    <Flexbox className={containerClasses} gap="8">
       {buttonOptions.map((option) => (
         <AppButton
           className={currentTag === option.value ? classes.active : ''}
@@ -55,7 +54,7 @@ function SelectArticleTag({
           {option.title}
         </AppButton>
       ))}
-    </div>
+    </Flexbox>
   );
 }
 

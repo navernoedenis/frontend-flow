@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { AppButton } from 'shared/ui/app-button';
+import { AppButton } from 'shared/ui';
 
 import AppModal from './app-modal';
 

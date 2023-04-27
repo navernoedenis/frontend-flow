@@ -1,4 +1,4 @@
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from 'shared/ui';
 import classes from './text-block.module.scss';
 import type { ArticleTextBlock } from '../../model/types';
 

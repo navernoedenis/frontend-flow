@@ -47,8 +47,8 @@ export const addComment = createAsyncThunk<
     // and get it back, like one request with user relation.
     // Unforunatelly, it's impossible at the current moment.
     // POST method doesn't support '_expand' param.
-    // issue: https://github.com/typicode/json-server/issues/1158.
     // That's why we are using the second method here.
+    // issue: https://github.com/typicode/json-server/issues/1158
     const responseWithAuthor = await extra.client.get<Comment>(
       `/comments/${response.data.id}`,
       {

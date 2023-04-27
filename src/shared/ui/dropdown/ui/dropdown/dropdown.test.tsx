@@ -1,15 +1,34 @@
-import { render, screen } from '@testing-library/react';
+import { useRef } from 'react';
+import { render, renderHook, screen } from '@testing-library/react';
 import Dropdown from './dropdown';
 
 describe('test shared/dropdown', () => {
+  const handleClose = jest.fn();
+
   it('should be in the document', () => {
-    render(<Dropdown isOpen parent={null} onClose={() => {}} children />);
+    const { result } = renderHook(() => useRef(null));
+
+    render(
+      <Dropdown
+        children
+        isOpen
+        onClose={handleClose}
+        parentRef={result.current}
+      />,
+    );
     expect(screen.getByTestId('dropdown')).toBeInTheDocument();
   });
 
   it("shouldn't be should be in the document", () => {
+    const { result } = renderHook(() => useRef(null));
+
     render(
-      <Dropdown isOpen={false} parent={null} onClose={() => {}} children />,
+      <Dropdown
+        children
+        isOpen={false}
+        onClose={handleClose}
+        parentRef={result.current}
+      />,
     );
     expect(screen.queryByTestId('dropdown')).not.toBeInTheDocument();
   });

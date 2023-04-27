@@ -1,11 +1,13 @@
 {
   "buttons": {
-    "login": "логін",
+    "login": "логін"
+  },
+  "menu": {
+    "profile": "мій профіль",
     "logout": "вийти"
   },
   "navigation": {
     "articles": "статті",
-    "home": "домашня",
-    "profile": "профіль"
+    "home": "домашня"
   }
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { FC, MouseEvent } from 'react';
 
 import { classNames } from 'shared/lib/transforms/class-names';
-import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
+import { Dropdown, DropdownItem } from 'shared/ui';
 import { useTheme } from 'shared/hooks';
 
 import classes from './theme-switcher.module.scss';
@@ -32,7 +32,7 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
     [classes.inversed]: isInversed,
   });
 
-  const onMenuToggle = useCallback((event: MouseEvent<HTMLButtonElement>) => {
+  const onMenuToggle = useCallback((event: MouseEvent) => {
     event.stopPropagation();
     setMenuOpened((prev) => !prev);
   }, []);
@@ -59,7 +59,7 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
         className={classes.dropdown}
         isOpen={isMenuOpened}
         onClose={onMenuClose}
-        parent={buttonRef.current}
+        parentRef={buttonRef}
       >
         <DropdownItem
           icon={<AutoIcon />}

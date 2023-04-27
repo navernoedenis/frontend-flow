@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { selectAuthMe, selectAuthLoading } from 'features/auth';
 
-import { PageLoader } from 'shared/ui/page-loader';
+import { PageLoader } from 'shared/ui';
 import { useAppSelector } from 'shared/hooks/use-store';
 
 interface PrivateRouteProps {

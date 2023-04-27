@@ -1,10 +1,8 @@
 import { useState, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import type { ChangeEvent, FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
-import { TextField } from 'shared/ui/text-field';
+import { AppButton, AppTypography, Flexbox, TextField } from 'shared/ui';
 import { capitalizeFirstWord } from 'shared/lib/transforms/capitalize-first-word';
 
 import classes from './add-comment.module.scss';
@@ -56,7 +54,7 @@ function AddComment({ className = '', onSendComment }: AddCommentProps) {
         value={value}
       />
 
-      <div className={classes.buttons}>
+      <Flexbox className={classes.buttons} gap="8">
         <AppButton disabled={!isValidValue} onClick={handleReset} type="button">
           {t('buttons.reset')}
         </AppButton>
@@ -64,7 +62,7 @@ function AddComment({ className = '', onSendComment }: AddCommentProps) {
         <AppButton disabled={!isValidValue} type="submit">
           {t('buttons.send')}
         </AppButton>
-      </div>
+      </Flexbox>
     </form>
   );
 }

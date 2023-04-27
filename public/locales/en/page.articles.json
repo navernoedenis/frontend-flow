@@ -1,7 +1,4 @@
 {
-  "cards": {
-    "no_articles": "no articles"
-  },
   "header": {
     "buttons": {
       "all": "all",
@@ -13,5 +10,6 @@
       "placeholder": "search articles",
       "title": "search"
     }
-  }
+  },
+  "no_articles": "no articles"
 }

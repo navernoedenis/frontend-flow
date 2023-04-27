@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import type { ReactNode } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 
-import { Portal } from 'shared/ui/portal';
+import { Portal } from 'shared/ui';
 import { classNames } from 'shared/lib/transforms/class-names';
 import { useThrottle } from 'shared/hooks';
 
@@ -16,7 +16,7 @@ interface DropdownProps {
   fullWidth?: boolean;
   isOpen: boolean;
   onClose: VoidFunction;
-  parent: HTMLElement | null;
+  parentRef: MutableRefObject<HTMLElement | null>;
 }
 
 const Dropdown = ({
@@ -25,27 +25,28 @@ const Dropdown = ({
   fullWidth = false,
   isOpen,
   onClose,
-  parent,
+  parentRef,
 }: DropdownProps) => {
   const [coords, setCoords] = useState<Coords>({ top: 0, right: 0 });
 
   const onResizeListener = useThrottle(() => {
-    if (parent) {
-      setCoords(calcCoords(parent, fullWidth));
+    if (parentRef.current) {
+      setCoords(calcCoords(parentRef.current, fullWidth));
     }
   }, 150);
 
   useEffect(() => {
-    if (parent) {
-      setCoords(calcCoords(parent, fullWidth));
+    if (parentRef.current) {
+      setCoords(calcCoords(parentRef.current, fullWidth));
     }
-  }, [isOpen, parent, fullWidth]);
+  }, [isOpen, parentRef, fullWidth]);
 
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('resize', onResizeListener);
       document.addEventListener('click', onClose);
     }
+
     return () => {
       window.removeEventListener('resize', onResizeListener);
       document.removeEventListener('click', onClose);

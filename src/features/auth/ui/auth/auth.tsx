@@ -2,15 +2,13 @@ import { useState, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
-import { TextField } from 'shared/ui/text-field';
+import { AppButton, AppTypography, Flexbox, TextField } from 'shared/ui';
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 
+import type { AuthForm } from '../../model/types';
 import { signIn } from '../../api/sign-in/sign-in';
 import { authActions } from '../../model/slice';
 import { selectAuthError, selectAuthLoading } from '../../model/selectors';
-import type { AuthForm } from '../../model/types';
 
 import classes from './auth.module.scss';
 
@@ -69,7 +67,7 @@ function Auth() {
       )}
 
       <form onSubmit={onSubmitForm}>
-        <div className={classes.fields}>
+        <Flexbox alignItems="stretch" direction="column" gap="16">
           <TextField
             data-testid="name"
             isFocused
@@ -88,9 +86,9 @@ function Auth() {
             type="password"
             value={form.password}
           />
-        </div>
+        </Flexbox>
 
-        <div className={classes.buttons}>
+        <Flexbox className={classes.buttons} gap="8">
           <AppButton
             data-testid="reset"
             disabled={!canFormBeReset || isLoading}
@@ -108,7 +106,7 @@ function Auth() {
           >
             {t('buttons.enter')}
           </AppButton>
-        </div>
+        </Flexbox>
       </form>
     </div>
   );

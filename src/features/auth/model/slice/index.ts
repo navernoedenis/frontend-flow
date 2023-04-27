@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LocalStorage } from 'shared/services/local-storage/local-storage';
+import { Storage } from 'shared/services';
 import { LS_AUTH_KEY } from 'shared/constants/local-storage';
 
 import type { User } from 'entities/user';
@@ -17,12 +17,12 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     init: (state) => {
-      state.me = LocalStorage.get<User>(LS_AUTH_KEY);
+      state.me = Storage.local.get<User>(LS_AUTH_KEY);
       state.isLoading = false;
     },
     logout: (state) => {
       state.me = null;
-      LocalStorage.remove(LS_AUTH_KEY);
+      Storage.local.remove(LS_AUTH_KEY);
     },
     resetError: (state) => {
       state.error = '';
@@ -37,7 +37,7 @@ export const authSlice = createSlice({
       .addCase(signIn.fulfilled, (state, action) => {
         state.isLoading = false;
         state.me = action.payload;
-        LocalStorage.save(LS_AUTH_KEY, action.payload);
+        Storage.local.save(LS_AUTH_KEY, action.payload);
       })
       .addCase(signIn.rejected, (state, action) => {
         state.isLoading = false;

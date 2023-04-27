@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { LS_AUTH_KEY } from 'shared/constants/local-storage';
-import { LocalStorage } from 'shared/services/local-storage/local-storage';
+import { Storage } from 'shared/services';
 
 export const client = axios.create({
   baseURL: __HOST__,
@@ -8,7 +8,7 @@ export const client = axios.create({
 
 client.interceptors.request.use(
   (config) => {
-    const isAuthorized = Boolean(LocalStorage.get(LS_AUTH_KEY)) || false;
+    const isAuthorized = Boolean(Storage.local.get(LS_AUTH_KEY)) || false;
 
     if (isAuthorized) {
       config.headers.Authorization = isAuthorized;

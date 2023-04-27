@@ -12,7 +12,7 @@ import type {
 import { ArticleView } from 'features/select-article-view';
 
 import { LS_ARTICLES_VIEW_KEY } from 'shared/constants/local-storage';
-import { LocalStorage } from 'shared/services/local-storage/local-storage';
+import { Storage } from 'shared/services';
 
 import { getArticles } from '../../api/get-articles/get-articles';
 import type { ArticlesState } from '../types';
@@ -20,19 +20,19 @@ import type { ArticlesState } from '../types';
 const initialState: ArticlesState = {
   entities: {},
   error: '',
-  hasMore: true,
+  hasMore: false,
   ids: [],
   isLoading: false,
   isMounted: false,
   sort: {
     key: 'all',
-    limit: 8,
+    limit: 9,
     order: 'asc',
     page: 1,
     query: '',
     tag: 'all',
   },
-  view: LocalStorage.get(LS_ARTICLES_VIEW_KEY) ?? ArticleView.NORMAL,
+  view: Storage.local.get(LS_ARTICLES_VIEW_KEY) ?? ArticleView.NORMAL,
 };
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -73,14 +73,14 @@ const articlesSlice = createSlice({
     },
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;
-      LocalStorage.save(LS_ARTICLES_VIEW_KEY, action.payload);
+      Storage.local.save(LS_ARTICLES_VIEW_KEY, action.payload);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getArticles.pending, (state, action) => {
-        state.isLoading = true;
         state.error = '';
+        state.isLoading = true;
 
         if (action.meta.arg?.destroyPrevious) {
           articlesAdapter.removeAll(state);
@@ -88,7 +88,6 @@ const articlesSlice = createSlice({
       })
       .addCase(getArticles.fulfilled, (state, action) => {
         const isLastPage = action.payload.length !== state.sort.limit;
-
         state.error = '';
         state.hasMore = !isLastPage;
         state.isLoading = false;

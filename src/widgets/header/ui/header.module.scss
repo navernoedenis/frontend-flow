@@ -3,21 +3,10 @@
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: var(--header-height);
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  padding: 0 var(--app-padding);
 }
 
 .controls {
   margin-left: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }

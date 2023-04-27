@@ -1,5 +1,4 @@
-import { AppTypography } from 'shared/ui/app-typography';
-import { LazyImage } from 'shared/ui/lazy-image';
+import { AppTypography, LazyImage } from 'shared/ui';
 
 import type { ArticleImageBlock } from '../../model/types';
 import classes from './image-block.module.scss';

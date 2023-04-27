@@ -1,47 +1,48 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AuthModal, authActions, selectAuthMe } from 'features/auth';
+import { AuthModal, selectAuthMe } from 'features/auth';
 
 import { AppRoutePath } from 'shared/constants/routes';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppSelector } from 'shared/hooks';
+import {
+  AppButton,
+  AppLink,
+  Flexbox,
+  LanguageSwitcher,
+  ThemeSwitcher,
+} from 'shared/ui';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppLink } from 'shared/ui/app-link';
-import { ThemeSwitcher } from 'shared/ui/theme-switcher';
-import { LanguageSwitcher } from 'shared/ui/language-switcher';
-
+import { UserMenu } from './user-menu';
 import classes from './header.module.scss';
 
 function Header() {
   const { t } = useTranslation('widgets.header');
-  const dispatch = useAppDispatch();
   const me = useAppSelector(selectAuthMe);
 
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const onModalShow = useCallback(() => {
+  const onShowModal = useCallback(() => {
     setModalOpen(true);
   }, []);
 
-  const onModalClose = useCallback(() => {
+  const onCloseModal = useCallback(() => {
     setModalOpen(false);
   }, []);
 
-  const handleLogout = useCallback(() => {
-    dispatch(authActions.logout());
-  }, [dispatch]);
-
   useEffect(() => {
     if (me) {
-      onModalClose();
+      onCloseModal();
     }
-  }, [me, onModalClose]);
+  }, [me, onCloseModal]);
 
   return (
     <header className={classes.header} data-testid="header">
-      <div className={`app-container ${classes.container}`}>
-        <div className={classes.links}>
+      <Flexbox
+        className={`app-container ${classes.container}`}
+        justifyContent="between"
+      >
+        <Flexbox gap="12">
           <AppLink to={AppRoutePath.home} isNavLink>
             {t('navigation.home')}
           </AppLink>
@@ -49,27 +50,18 @@ function Header() {
           <AppLink to={AppRoutePath.articles} isNavLink>
             {t('navigation.articles')}
           </AppLink>
+        </Flexbox>
 
-          {me && (
-            <AppLink to={`${AppRoutePath.profiles}/${me.profileId}`} isNavLink>
-              {t('navigation.profile')}
-            </AppLink>
-          )}
-        </div>
-
-        <div className={classes.controls}>
+        <Flexbox className={classes.controls} gap="8">
           <ThemeSwitcher />
-          <LanguageSwitcher />
-
-          {me ? (
-            <AppButton onClick={handleLogout}>{t('buttons.logout')}</AppButton>
-          ) : (
-            <AppButton onClick={onModalShow}>{t('buttons.login')}</AppButton>
+          <UserMenu />
+          {!me && (
+            <AppButton onClick={onShowModal}>{t('buttons.login')}</AppButton>
           )}
-        </div>
-
-        <AuthModal isOpen={isModalOpen} onClose={onModalClose} />
-      </div>
+          <LanguageSwitcher />
+        </Flexbox>
+        <AuthModal isOpen={isModalOpen} onClose={onShowModal} />
+      </Flexbox>
     </header>
   );
 }

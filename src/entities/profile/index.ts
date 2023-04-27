@@ -1,4 +1,3 @@
-export { default as ProfileEntity } from './ui/profile';
-export { default as ProfileSkeleton } from './ui/profile.skeleton';
+export * from './profile-form';
 
-export type { Profile } from './model/types';
+export type { Profile } from './profile-entity';

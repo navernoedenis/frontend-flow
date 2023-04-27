@@ -1,8 +1,8 @@
-import { AppSkeleton } from 'shared/ui/app-skeleton';
+import { AppSkeleton, Flexbox } from 'shared/ui';
 
 function ArticleSkeleton() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <Flexbox alignItems="start" direction="column" gap="12">
       <AppSkeleton style={{ height: '24px', maxWidth: '700px' }} />
 
       <AppSkeleton style={{ height: '19px', maxWidth: '500px' }} />
@@ -17,7 +17,7 @@ function ArticleSkeleton() {
 
       <AppSkeleton style={{ height: '19px' }} />
       <AppSkeleton style={{ height: '19px', maxWidth: '730px' }} />
-    </div>
+    </Flexbox>
   );
 }
 

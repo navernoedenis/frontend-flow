@@ -1,3 +1,4 @@
+import { act } from 'react-dom/test-utils';
 import { screen } from '@testing-library/react';
 
 import { articlesStateMock } from 'shared/config/tests/mocks/states';
@@ -11,8 +12,12 @@ describe('test pages/articles', () => {
     mockIntersectionObserver();
   });
 
-  it('should be in the document', () => {
-    renderWithAll(<ArticlesPage />, { articles: articlesStateMock });
+  it('should be in the document', async () => {
+    await act(() =>
+      renderWithAll(<ArticlesPage />, {
+        articles: articlesStateMock,
+      }),
+    );
     expect(screen.getByTestId('articles-page')).toBeInTheDocument();
   });
 });

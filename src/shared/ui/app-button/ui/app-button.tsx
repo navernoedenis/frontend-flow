@@ -24,7 +24,7 @@ function AppButton(props: AppButtonProps) {
   const buttonClasses = classNames(classes.button, {
     [classes.loading]: isLoading,
     [classes[size]]: true,
-    [className]: Boolean(className),
+    [className]: !!className,
   });
 
   return (

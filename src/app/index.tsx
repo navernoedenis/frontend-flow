@@ -42,7 +42,7 @@ function App() {
     <>
       <div className="app">
         <Header />
-        <main className="app-container main">
+        <main className="app-container">
           {/* <Aside /> */}
           <div className="app-page">
             <AppRouter />

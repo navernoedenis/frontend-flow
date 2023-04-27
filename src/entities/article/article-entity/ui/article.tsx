@@ -1,4 +1,5 @@
-import { LazyImage } from 'shared/ui/lazy-image';
+import { Flexbox, LazyImage } from 'shared/ui';
+
 import { ArticleBlockType } from '../model/types';
 import type { Article, ArticleBlock } from '../model/types';
 
@@ -35,7 +36,9 @@ function ArticleEntity({ article, className = '' }: ArticleEntityProps) {
     <div className={className} data-testid="article-entity">
       <ArticleHeader article={article} />
       <LazyImage className={classes.image} src={article.image} />
-      <div className={classes.blocks}>{article.blocks.map(renderBlock)}</div>
+      <Flexbox direction="column" gap="20">
+        {article.blocks.map(renderBlock)}
+      </Flexbox>
     </div>
   );
 }
