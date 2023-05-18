@@ -5,7 +5,7 @@ import { articlesStateMock } from 'shared/config/tests/mocks/states';
 import ArticlesHeader from './articles-header';
 
 describe('test pages/articles/articles-header', () => {
-  it('should be in the document', () => {
+  it('be in the document', () => {
     renderWithAll(<ArticlesHeader />, { articles: articlesStateMock });
     expect(screen.getByTestId('articles-header')).toBeInTheDocument();
   });

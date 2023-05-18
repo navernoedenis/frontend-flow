@@ -10,5 +10,6 @@ export const authStateMock: AuthState = {
     password: '12345',
     profile: profileMock,
     profileId: '1',
+    roles: ['user'],
   },
 };

@@ -16,7 +16,7 @@ describe('test entities/profile/update-profile', () => {
     getState = jest.fn();
   });
 
-  it('should be: success', async () => {
+  it('success', async () => {
     mockedAxios.put.mockResolvedValue({ data: profileMock });
     const action = updateProfile(profileMock);
     const response = await action(dispatch, getState, { client: mockedAxios });
@@ -27,7 +27,7 @@ describe('test entities/profile/update-profile', () => {
     expect(response.payload).toEqual(profileMock);
   });
 
-  it('should be: failure', async () => {
+  it('failure', async () => {
     mockedAxios.put.mockRejectedValue(new Error('Invalid token'));
     const action = updateProfile(profileMock);
     const response = await action(dispatch, getState, { client: mockedAxios });

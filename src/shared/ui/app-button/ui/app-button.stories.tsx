@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import AppButton from './app-button';
 
-export default {
+const meta: Meta = {
   title: 'shared/AppButton',
   component: AppButton,
   args: {
@@ -16,12 +16,13 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as ComponentMeta<typeof AppButton>;
+} satisfies Meta<typeof AppButton>;
 
-const Template: ComponentStory<typeof AppButton> = (args) => (
-  <AppButton {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Light = Template.bind({});
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark')];
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

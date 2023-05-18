@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { PageLoader } from 'shared/ui';
+import { PageLoader } from 'shared/ui/page-loader';
 import { PrivateRoute } from 'shared/lib/components';
 
 import { AppRoutes } from './routes';
@@ -11,19 +11,25 @@ export function AppRouter() {
     <Suspense fallback={<PageLoader />}>
       <Routes>
         {Object.entries(AppRoutes).map(([key, route]) => {
-          const privateElement = (
-            <PrivateRoute>
-              <>{route.element}</>
-            </PrivateRoute>
-          );
+          let routeElement = route.element;
 
-          return (
-            <Route
-              key={key}
-              path={route.path}
-              element={route.isPrivate ? privateElement : route.element}
-            />
-          );
+          if (route.isPrivate) {
+            routeElement = (
+              <PrivateRoute>
+                <>{route.element}</>
+              </PrivateRoute>
+            );
+          }
+
+          if (route.isAdmin) {
+            routeElement = (
+              <PrivateRoute isAdminRoute>
+                <>{route.element}</>
+              </PrivateRoute>
+            );
+          }
+
+          return <Route key={key} path={route.path} element={routeElement} />;
         })}
       </Routes>
     </Suspense>

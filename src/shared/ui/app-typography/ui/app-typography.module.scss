@@ -39,19 +39,23 @@
 
 .size {
   &-huge {
-    font-size: 24px;
+    font-size: 38px;
   }
 
   &-large {
-    font-size: 18px;
+    font-size: 30px;
   }
 
   &-medium {
-    font-size: 16px;
+    font-size: 24px;
   }
 
-  &-small {
-    font-size: 14px;
+  &-normal {
+    font-size: 20px;
+  }
+
+  &-default {
+    font-size: 16px;
   }
 }
 

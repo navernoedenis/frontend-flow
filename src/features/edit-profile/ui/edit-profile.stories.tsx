@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { AppStatePreloaded } from 'app/providers/store';
 import {
   ThemeDecorator,
@@ -17,20 +17,20 @@ const preloadedState: AppStatePreloaded = {
   profile: profileStateMock,
 };
 
-export default {
+const meta: Meta = {
   title: 'features/EditProfile',
+  decorators: [StoreDecorator(preloadedState)],
   component: EditProfile,
   args: {
-    showEditableButtons: true,
+    showEditableButtons: false,
   },
-} as ComponentMeta<typeof EditProfile>;
+} satisfies Meta<typeof EditProfile>;
 
-const Template: ComponentStory<typeof EditProfile> = (props) => (
-  <EditProfile {...props} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Light = Template.bind({});
-Light.decorators = [StoreDecorator(preloadedState)];
+export const Light: Story = {};
 
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(preloadedState)];
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

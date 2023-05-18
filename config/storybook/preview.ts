@@ -1,6 +1,6 @@
-import { addDecorator } from '@storybook/react';
-import type { DecoratorFn, Parameters } from '@storybook/react';
+import type { Preview } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
+
 import {
   I18nDecorator,
   StoreDecorator,
@@ -9,18 +9,22 @@ import {
 
 import 'app/styles/global.scss';
 
-export const parameters: Parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+const preview: Preview = {
+  decorators: [
+    I18nDecorator,
+    StoreDecorator(),
+    ThemeDecorator('light'),
+    withRouter,
+  ],
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
     },
   },
 };
 
-export const decorators: DecoratorFn[] = [withRouter];
-
-addDecorator(StoreDecorator());
-addDecorator(I18nDecorator);
-addDecorator(ThemeDecorator('light'));
+export default preview;

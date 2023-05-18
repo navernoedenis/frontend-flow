@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { MutableRefObject, ReactNode } from 'react';
 
-import { Portal } from 'shared/ui';
+import { Portal } from 'shared/ui/portal';
 import { classNames } from 'shared/lib/transforms/class-names';
 import { useThrottle } from 'shared/hooks';
 

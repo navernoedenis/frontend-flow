@@ -3,19 +3,18 @@ import { renderWithAll } from 'shared/config/tests/rtl';
 import LanguageSwitcher from './language-switcher';
 
 describe('test shared/language-switcher', () => {
-  it('should be in the document', () => {
+  it('be in the document', () => {
     renderWithAll(<LanguageSwitcher />);
     expect(screen.getByTestId('language-switcher')).toBeInTheDocument();
   });
 
-  it('add: has additional className', () => {
-    renderWithAll(<LanguageSwitcher className="test-1" />);
-    expect(screen.getByTestId('language-switcher')).toHaveClass('test-1');
+  it('has classname: over', () => {
+    renderWithAll(<LanguageSwitcher className="over" />);
+    expect(screen.getByTestId('language-switcher')).toHaveClass('over');
   });
 
-  it('toggle: language', () => {
+  it('toggle language', () => {
     renderWithAll(<LanguageSwitcher />);
-
     const initialLanguage = screen.getByTestId('language-switcher').textContent;
     fireEvent.click(screen.getByTestId('language-switcher'));
 

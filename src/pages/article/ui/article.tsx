@@ -3,15 +3,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import type { AppReducersLazy } from 'app/providers/store';
-import { selectNetworkStatusOnline } from 'widgets/network-status';
 
 import { AddComment } from 'features/add-comment';
+import { ArticlesRecommended } from 'features/articles-recommended';
 import { selectAuthMe } from 'features/auth';
 
-import { ArticleEntity, ArticleSkeleton } from 'entities/article';
-import { CommentEntity, CommentSkeleton } from 'entities/comment';
+import { ArticleEntity } from 'entities/article';
+import { CommentList } from 'entities/comment';
 
-import { AppButton, AppTypography, Flexbox } from 'shared/ui';
+import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
+import { Flexbox } from 'shared/ui/flexbox';
 
 import { LazyReducers } from 'shared/lib/components';
 import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
@@ -26,22 +28,18 @@ import {
   selectCommentsError,
 } from '../model/selectors/select-comments/select-comments';
 
-import classes from './article.module.scss';
-
 const reducers: AppReducersLazy = {
   article: articleReducer,
   comments: commentsReducer,
 };
 
-const translations: string[] = [
-  'page.article',
-  'entities.article',
-  'shared.clipboard',
-];
-
 function ArticlePage() {
-  const { t } = useTranslation(translations);
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'page.article',
+  });
+
   const params = useParams<{ id: string }>();
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -51,7 +49,6 @@ function ArticlePage() {
   const comments = useAppSelector(selectComments.selectAll);
   const commentsError = useAppSelector(selectCommentsError);
   const isCommentsLoading = useAppSelector(selectCommentsLoading);
-  const isOnline = useAppSelector(selectNetworkStatusOnline);
 
   useEffectOnce(() => {
     dispatch(getArticle(params.id as string));
@@ -74,51 +71,43 @@ function ArticlePage() {
   if (errorMessage) {
     return (
       <LazyReducers reducers={reducers}>
-        <AppTypography tag="h1">{errorMessage}</AppTypography>
+        <AppTypography className="article-page-error" tag="h1">
+          {errorMessage}
+        </AppTypography>
       </LazyReducers>
     );
   }
 
   return (
     <LazyReducers reducers={reducers}>
-      <div data-testid="article-page">
-        <header className={classes.header}>
+      <Flexbox
+        alignItems="stretch"
+        data-testid="article-page"
+        direction="column"
+        gap="30"
+      >
+        <header>
           <AppButton onClick={onGoBack} size="small">
             {t('buttons.go_back')}
           </AppButton>
         </header>
 
-        {article?.isLoading && <ArticleSkeleton />}
-        {article?.data && <ArticleEntity article={article.data} />}
+        <ArticleEntity
+          article={article?.data ?? null}
+          isLoading={!article || article.isLoading}
+        />
 
-        {!isCommentsLoading && me && isOnline && (
+        <ArticlesRecommended />
+
+        {me && (
           <AddComment
-            className={classes.addComment}
+            isDisabled={isCommentsLoading}
             onSendComment={handleSendComment}
           />
         )}
 
-        <Flexbox
-          className={classes.comments}
-          alignItems="start"
-          direction="column-reverse"
-          gap="12"
-        >
-          {isCommentsLoading ? (
-            <>
-              <CommentSkeleton />
-              <CommentSkeleton />
-              <CommentSkeleton />
-            </>
-          ) : (
-            <>
-              {comments.map((comment) => (
-                <CommentEntity key={comment.id} comment={comment} />
-              ))}
-            </>
-          )}
-        </Flexbox>
-      </div>
+        <CommentList comments={comments} isLoading={isCommentsLoading} />
+      </Flexbox>
     </LazyReducers>
   );
 }

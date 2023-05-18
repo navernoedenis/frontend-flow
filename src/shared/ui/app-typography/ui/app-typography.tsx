@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 import { classNames } from 'shared/lib/transforms/class-names';
 import classes from './app-typography.module.scss';
 
@@ -13,8 +13,8 @@ interface AppTypographyProps {
   lineClamp?: number;
   noShrink?: boolean;
   onClick?: VoidFunction;
-  size?: 'small' | 'medium' | 'large' | 'huge';
-  tag?: keyof JSX.IntrinsicElements;
+  size?: 'default' | 'normal' | 'medium' | 'large' | 'huge';
+  tag?: ElementType;
   uppercase?: boolean;
   weight?: 'normal' | 'bold' | 'heavy';
 }
@@ -30,7 +30,7 @@ const AppTypography = ({
   lineClamp = 0,
   noShrink = false,
   onClick,
-  size = 'medium',
+  size = 'default',
   tag: Tag = 'p',
   uppercase = false,
   weight = 'normal',

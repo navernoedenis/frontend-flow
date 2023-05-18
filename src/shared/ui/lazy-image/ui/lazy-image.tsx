@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AppSkeleton } from 'shared/ui';
+import { AppSkeleton } from 'shared/ui/app-skeleton';
 import { classNames } from 'shared/lib/transforms/class-names';
 
 import classes from './lazy-image.module.scss';

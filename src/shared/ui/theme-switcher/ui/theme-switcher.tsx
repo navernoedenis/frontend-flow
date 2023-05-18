@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { FC, MouseEvent } from 'react';
 
 import { classNames } from 'shared/lib/transforms/class-names';
-import { Dropdown, DropdownItem } from 'shared/ui';
+import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
 import { useTheme } from 'shared/hooks';
 
 import classes from './theme-switcher.module.scss';
@@ -21,9 +21,11 @@ const ThemeSwitcher: FC<ThemeMenuProps> = ({
   className = '',
   isInversed = false,
 }) => {
-  const { t } = useTranslation('shared.theme-switcher');
-  const { theme, setTheme } = useTheme();
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'shared.theme-switcher',
+  });
 
+  const { theme, setTheme } = useTheme();
   const [isMenuOpened, setMenuOpened] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 

@@ -1,5 +1,5 @@
 import type { ArticlesState } from 'pages/articles/model/types';
-import { ArticleView } from 'features/select-article-view';
+import { ArticleView } from 'pages/articles/ui/articles-header/ui/select-article-view';
 
 export const articlesStateMock: ArticlesState = {
   entities: {},
@@ -8,10 +8,11 @@ export const articlesStateMock: ArticlesState = {
   ids: [],
   isLoading: false,
   isMounted: false,
+  shouldScrollToTop: false,
   sort: {
-    key: 'all',
+    key: 'createdAt',
     limit: 8,
-    order: 'asc',
+    order: 'desc',
     page: 1,
     query: '',
     tag: 'all',

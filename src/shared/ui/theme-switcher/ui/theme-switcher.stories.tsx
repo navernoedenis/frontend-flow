@@ -1,18 +1,31 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import ThemeSwitcher from './theme-switcher';
 
-export default {
+const meta: Meta = {
   title: 'shared/ThemeSwitcher',
   component: ThemeSwitcher,
   args: {
     isInversed: false,
   },
-} as ComponentMeta<typeof ThemeSwitcher>;
+} satisfies Meta<typeof ThemeSwitcher>;
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <ThemeSwitcher {...args} />
-  </div>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default = Template.bind({});
+export const Light: Story = {
+  render: (props) => (
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <ThemeSwitcher {...props} />
+    </div>
+  ),
+};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+  render: (props) => (
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <ThemeSwitcher {...props} />
+    </div>
+  ),
+};

@@ -1,0 +1,41 @@
+.container {
+  overflow: hidden;
+  width: 100%;
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.image {
+  flex-shrink: 0;
+  height: 186px;
+  width: 244px;
+}
+
+.content {
+  height: 100%;
+  padding: 16px;
+}
+
+.title {
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.tags {
+  margin-top: auto;
+}
+
+.compact {
+  max-width: 284px;
+  flex-direction: column;
+
+  .image {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+  }
+
+  .content {
+    padding: 12px 0;
+  }
+}

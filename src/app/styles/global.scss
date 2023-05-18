@@ -28,11 +28,11 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
   background-color: var(--scrollbar-bg);
 
   &-thumb {
-    border-radius: 3px;
+    border-radius: 4px;
     background: var(--scrollbar-thumb-bg);
   }
 }
@@ -66,17 +66,16 @@ body {
 .app {
   overflow: hidden;
   height: 100vh;
-  padding-bottom: var(--app-padding);
 
   &-container {
     margin: 0 auto;
-    max-width: 1144px;
+    max-width: 1200px;
     width: 100%;
   }
 
   &-page {
     overflow-y: auto;
-    height: calc(100vh - var(--header-height) - var(--app-padding));
+    height: calc(100vh - var(--header-height));
     width: 100%;
     padding: var(--app-padding);
   }

@@ -3,16 +3,17 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 import type { AppState } from 'app/providers/store';
 import type { Article } from 'entities/article';
-import type { ArticleTag } from 'features/select-article-tag';
-import type {
-  ArticleSortKey,
-  ArticleSortOrder,
-} from 'features/select-article-sort';
 
-import { ArticleView } from 'features/select-article-view';
+import { ArticleView } from 'pages/articles/ui/articles-header/ui/select-article-view';
 
 import { LS_ARTICLES_VIEW_KEY } from 'shared/constants/local-storage';
 import { Storage } from 'shared/services';
+
+import type { ArticleTag } from '../../ui/articles-header/ui/select-article-tag';
+import type {
+  ArticleSortKey,
+  ArticleSortOrder,
+} from '../../ui/articles-header/ui/select-article-sort';
 
 import { getArticles } from '../../api/get-articles/get-articles';
 import type { ArticlesState } from '../types';
@@ -20,14 +21,15 @@ import type { ArticlesState } from '../types';
 const initialState: ArticlesState = {
   entities: {},
   error: '',
-  hasMore: false,
+  hasMore: true,
   ids: [],
   isLoading: false,
   isMounted: false,
+  shouldScrollToTop: false,
   sort: {
-    key: 'all',
+    key: 'createdAt',
     limit: 9,
-    order: 'asc',
+    order: 'desc',
     page: 1,
     query: '',
     tag: 'all',
@@ -46,15 +48,8 @@ const articlesSlice = createSlice({
     setHasMore: (state, action: PayloadAction<boolean>) => {
       state.hasMore = action.payload;
     },
-    setMounted: (state, action: PayloadAction<boolean>) => {
-      state.isMounted = action.payload;
-    },
     setSortKey: (state, action: PayloadAction<ArticleSortKey>) => {
       state.sort.key = action.payload;
-
-      if (action.payload === 'all') {
-        state.sort.order = 'asc';
-      }
     },
     setSortOrder: (state, action: PayloadAction<ArticleSortOrder>) => {
       state.sort.order = action.payload;
@@ -67,9 +62,15 @@ const articlesSlice = createSlice({
     },
     setSortQuery: (state, action: PayloadAction<string>) => {
       state.sort.query = action.payload;
+      state.shouldScrollToTop = true;
     },
     setSortTag: (state, action: PayloadAction<ArticleTag>) => {
       state.sort.tag = action.payload;
+      state.shouldScrollToTop = true;
+
+      if (state.isMounted) {
+        state.sort.query = '';
+      }
     },
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;
@@ -91,6 +92,8 @@ const articlesSlice = createSlice({
         state.error = '';
         state.hasMore = !isLastPage;
         state.isLoading = false;
+        state.isMounted = true;
+        state.shouldScrollToTop = false;
 
         if (!isLastPage) {
           state.sort.page += 1;
@@ -99,8 +102,10 @@ const articlesSlice = createSlice({
         articlesAdapter.addMany(state, action.payload);
       })
       .addCase(getArticles.rejected, (state, action) => {
-        state.isLoading = false;
         state.error = action.payload as string;
+        state.isLoading = false;
+        state.isMounted = true;
+        state.shouldScrollToTop = false;
       });
   },
 });

@@ -1,6 +1,8 @@
 import { useReducer } from 'react';
 import { classNames } from 'shared/lib/transforms/class-names';
-import { Flexbox, LanguageSwitcher } from 'shared/ui';
+
+import { Flexbox } from 'shared/ui/flexbox';
+import { LanguageSwitcher } from 'shared/ui/language-switcher';
 
 import ArrowRight from './assets/arrow-right.svg';
 import classes from './aside.module.scss';
@@ -14,6 +16,7 @@ function Aside() {
 
   return (
     <Flexbox
+      alignItems="stretch"
       className={asideClasses}
       data-testid="aside"
       direction="column"

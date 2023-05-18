@@ -1109,7 +1109,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/97EB/production/_129319883_gettyimages-1206007979.jpg.webp",
       "views": 912,
       "tags": ["science"],
-      "createdAt": "2019.06.20",
+      "createdAt": "2019.06.29",
       "blocks": [
         {
           "id": "1",
@@ -1139,7 +1139,7 @@
     {
       "age": 29,
       "avatar": "https://i.imgur.com/RB4D6Pk.jpeg",
-      "country": "usa",
+      "country": "canada",
       "id": "1",
       "position": "FullStack Developer"
     },
@@ -1163,19 +1163,22 @@
       "id": "1",
       "name": "denis",
       "password": "12345",
-      "profileId": "1"
+      "profileId": "1",
+      "roles": ["root", "admin", "user"]
     },
     {
       "id": "2",
       "name": "roma",
       "password": "12345",
-      "profileId": "2"
+      "profileId": "2",
+      "roles": ["user"]
     },
     {
       "id": "3",
       "name": "evgen",
       "password": "12345",
-      "profileId": "3"
+      "profileId": "3",
+      "roles": ["user"]
     }
   ]
 }

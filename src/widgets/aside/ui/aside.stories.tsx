@@ -1,15 +1,17 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import Aside from './aside';
 
-export default {
+const meta: Meta = {
   title: 'widgets/Aside',
   component: Aside,
-} as ComponentMeta<typeof Aside>;
+} satisfies Meta<typeof Aside>;
 
-const Template: ComponentStory<typeof Aside> = () => (
-  <main className="app-container main" style={{ padding: 0 }}>
-    <Aside />
-  </main>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default = Template.bind({});
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

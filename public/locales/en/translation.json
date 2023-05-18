@@ -1,0 +1,153 @@
+{
+  "entities": {
+    "article": {
+      "date": "date",
+      "no_article": "no articles",
+      "tags": "tags",
+      "views": "views"
+    },
+    "country": {
+      "canada": "canada",
+      "france": "france",
+      "germany": "germany",
+      "spain": "spain",
+      "ukraine": "ukraine",
+      "usa": "usa"
+    },
+    "profile": {
+      "age": "age",
+      "avatar": "avatar",
+      "country": "country",
+      "position": "position"
+    }
+  },
+  "features": {
+    "add-comment": {
+      "buttons": {
+        "reset": "reset",
+        "send": "send"
+      },
+      "placeholder": "message",
+      "title": "add comment"
+    },
+    "articles-recommended": {
+      "title": "articles recommended"
+    },
+    "auth": {
+      "buttons": {
+        "enter": "enter",
+        "reset": "reset"
+      },
+      "label": {
+        "name": "name",
+        "password": "password"
+      },
+      "placeholder": {
+        "name": "please, type your name",
+        "password": "please, type your password"
+      },
+      "title": "sign in"
+    },
+    "edit-profile": {
+      "buttons": {
+        "cancel": "cancel",
+        "edit": "edit",
+        "save": "save"
+      },
+      "errors": {
+        "age_empty": "age can't be empty",
+        "age_range_less": "age must be over 17",
+        "avatar_empty": "avatar can't be empty",
+        "avatar_invalid_url": "invalid avatar url",
+        "name_empty": "name can't be empty",
+        "name_range": "name must be between 3-15 characters",
+        "position_empty": "position can't be empty",
+        "position_range_less": "position can't be less 3 characters"
+      }
+    }
+  },
+  "page": {
+    "admin": {
+      "title": "admin page"
+    },
+    "article": {
+      "buttons": {
+        "go_back": "go back"
+      }
+    },
+    "articles": {
+      "header": {
+        "buttons": {
+          "all": "all",
+          "business": "business",
+          "programming": "programming",
+          "science": "science"
+        },
+        "search": {
+          "placeholder": "search articles",
+          "title": "search"
+        },
+        "sort": {
+          "options": {
+            "asc": "asc",
+            "createdAt": "created",
+            "desc": "desc",
+            "views": "views"
+          },
+          "titles": {
+            "key": "key",
+            "order": "order"
+          }
+        },
+        "views": {
+          "compact": "compact",
+          "normal": "normal",
+          "view": "view"
+        }
+      },
+      "no_articles": "немає статей"
+    },
+    "error": {
+      "button": "reload page",
+      "title": "something went wrong"
+    },
+    "home": {
+      "title": "home page"
+    },
+    "not-found": {
+      "title": "not found"
+    },
+    "profile": {
+      "title": "profile page"
+    }
+  },
+  "shared": {
+    "clipboard": {
+      "coppied": "code coppied"
+    },
+    "theme-switcher": {
+      "auto": "auto",
+      "dark": "dark",
+      "light": "light"
+    }
+  },
+  "widgets": {
+    "header": {
+      "buttons": {
+        "login": "login"
+      },
+      "menu": {
+        "admin": "admin",
+        "logout": "logout",
+        "profile": "my profile"
+      },
+      "navigation": {
+        "articles": "articles",
+        "home": "home"
+      }
+    },
+    "network-status": {
+      "message": "you are offline. please check your network"
+    }
+  }
+}

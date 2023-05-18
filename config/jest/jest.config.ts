@@ -66,7 +66,7 @@ export default {
 
   // A set of global variables that need to be available in all test environments
   globals: {
-    __HOST__: true,
+    __HOST__: 'https://mock-jest.com',
     __IS_DEV__: true,
     __IS_STORYBOOK__: true,
   },
@@ -104,7 +104,17 @@ export default {
   // projects: undefined,
 
   // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        filename: 'report.html',
+        openReport: false,
+        publicPath: './jest-report',
+      },
+    ],
+  ],
 
   // Automatically reset mock state before every test
   // resetMocks: false,
@@ -138,7 +148,7 @@ export default {
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
 
-  // A list of paths to snapshot serializer modules Jest should use for snapshot testing
+  // A list of paths to snapshot seriali-zer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing

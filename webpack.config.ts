@@ -16,6 +16,7 @@ export default (env: BuildEnv): Configuration => {
   const port = +env.port || 3000;
 
   const isDevelopment = buildMode === 'development';
+  const isProduction = buildMode === 'production';
   const isStorybook = false;
 
   const paths: BuildPaths = {
@@ -58,6 +59,7 @@ export default (env: BuildEnv): Configuration => {
     buildMode,
     host,
     isDevelopment,
+    isProduction,
     isStorybook,
     manifest,
     paths,

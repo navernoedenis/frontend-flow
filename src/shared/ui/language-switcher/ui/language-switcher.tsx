@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppButton, AppTypography } from 'shared/ui';
+
+import { AppButton } from 'shared/ui/app-button';
+import { AppTypography } from 'shared/ui/app-typography';
 import { classNames } from 'shared/lib/transforms/class-names';
 
 import classes from './language-switcher.module.scss';

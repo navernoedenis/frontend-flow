@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import type { InputHTMLAttributes } from 'react';
-import { AppTypography } from 'shared/ui';
+
+import { AppTypography } from 'shared/ui/app-typography';
 import { classNames } from 'shared/lib/transforms/class-names';
 
 import classes from './text-field.module.scss';
@@ -48,6 +49,7 @@ const TextField = (props: TextFieldProps) => {
           {title}
         </AppTypography>
       )}
+
       <input
         autoComplete="off"
         className={classes.input}
@@ -56,13 +58,13 @@ const TextField = (props: TextFieldProps) => {
         type={type}
         {...otherProps}
       />
+
       {error && (
         <AppTypography
           capitalizeFirstLetter
           className={classes.error}
           data-testid="text-field-error"
           error
-          size="small"
           weight="bold"
         >
           {error}

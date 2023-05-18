@@ -1,6 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Toaster } from 'react-hot-toast';
+import type { Meta, StoryObj } from '@storybook/react';
 import { AppStatePreloaded } from 'app/providers/store';
-import { articleMock } from 'shared/config/tests/mocks/entities';
+import { articleMock, articlesMock } from 'shared/config/tests/mocks/entities';
 import {
   ThemeDecorator,
   StoreDecorator,
@@ -8,19 +9,36 @@ import {
 
 import ArticlePage from './article';
 
-export default {
-  title: 'pages/Article',
-  component: ArticlePage,
-} as ComponentMeta<typeof ArticlePage>;
-
 const preloadedState: AppStatePreloaded = {
   article: { isLoading: false, error: '', data: articleMock },
 };
 
-const Template: ComponentStory<typeof ArticlePage> = () => <ArticlePage />;
+const meta: Meta = {
+  title: 'pages/Article',
+  decorators: [StoreDecorator(preloadedState)],
+  parameters: {
+    mockData: [
+      {
+        url: `${__HOST__}/articles?_limit=3`,
+        method: 'GET',
+        status: 200,
+        response: articlesMock.slice(0, 3),
+      },
+    ],
+  },
+  component: () => (
+    <>
+      <ArticlePage />
+      <Toaster />
+    </>
+  ),
+} satisfies Meta<typeof ArticlePage>;
 
-export const Light = Template.bind({});
-Light.decorators = [StoreDecorator(preloadedState)];
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(preloadedState)];
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

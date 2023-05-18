@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom';
-
 import type { FC } from 'react';
 import type { LinkProps } from 'react-router-dom';
 

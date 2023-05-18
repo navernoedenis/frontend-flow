@@ -1,18 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import type { ThunkConfig } from 'app/providers/store';
 
-import type { ArticleTag } from 'features/select-article-tag';
+import { getSearchParams } from 'shared/lib/search-params';
+import type { ArticleTag } from '../../ui/articles-header/ui/select-article-tag';
 import type {
   ArticleSortKey,
   ArticleSortOrder,
-} from 'features/select-article-sort';
-
-import { getSearchParams } from 'shared/lib/search-params';
+} from '../../ui/articles-header/ui/select-article-sort';
 
 import { getArticles } from '../get-articles/get-articles';
 import { articlesActions } from '../../model/slice';
 
-export const mountPage = createAsyncThunk<undefined, undefined, ThunkConfig>(
+export const onMountPage = createAsyncThunk<undefined, undefined, ThunkConfig>(
   'articles/mount-page',
   (_, config) => {
     const { dispatch } = config;
@@ -41,8 +40,6 @@ export const mountPage = createAsyncThunk<undefined, undefined, ThunkConfig>(
     if (!__IS_STORYBOOK__) {
       dispatch(getArticles());
     }
-
-    dispatch(articlesActions.setMounted(true));
 
     return undefined;
   },

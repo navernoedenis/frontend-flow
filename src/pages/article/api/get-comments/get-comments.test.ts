@@ -16,7 +16,7 @@ describe('test pages/article/get-comments', () => {
     getState = jest.fn();
   });
 
-  it('should be: success', async () => {
+  it('return comments', async () => {
     mockedAxios.get.mockResolvedValue({ data: [commentMock] });
     const action = getComments('1');
     const response = await action(dispatch, getState, { client: mockedAxios });
@@ -27,7 +27,7 @@ describe('test pages/article/get-comments', () => {
     expect(response.payload).toEqual([commentMock]);
   });
 
-  it('should be: failure', async () => {
+  it('return error', async () => {
     mockedAxios.get.mockRejectedValue(new Error('Something went wrong...'));
     const action = getComments('');
     const response = await action(dispatch, getState, { client: mockedAxios });

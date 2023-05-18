@@ -5,21 +5,22 @@ import { AuthModal, selectAuthMe } from 'features/auth';
 
 import { AppRoutePath } from 'shared/constants/routes';
 import { useAppSelector } from 'shared/hooks';
-import {
-  AppButton,
-  AppLink,
-  Flexbox,
-  LanguageSwitcher,
-  ThemeSwitcher,
-} from 'shared/ui';
+
+import { AppButton } from 'shared/ui/app-button';
+import { AppLink } from 'shared/ui/app-link';
+import { Flexbox } from 'shared/ui/flexbox';
+import { LanguageSwitcher } from 'shared/ui/language-switcher';
+import { ThemeSwitcher } from 'shared/ui/theme-switcher';
 
 import { UserMenu } from './user-menu';
 import classes from './header.module.scss';
 
 function Header() {
-  const { t } = useTranslation('widgets.header');
-  const me = useAppSelector(selectAuthMe);
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'widgets.header',
+  });
 
+  const me = useAppSelector(selectAuthMe);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const onShowModal = useCallback(() => {
@@ -37,12 +38,12 @@ function Header() {
   }, [me, onCloseModal]);
 
   return (
-    <header className={classes.header} data-testid="header">
+    <Flexbox className={classes.header} data-testid="header" tag="header">
       <Flexbox
         className={`app-container ${classes.container}`}
         justifyContent="between"
       >
-        <Flexbox gap="12">
+        <Flexbox gap="16">
           <AppLink to={AppRoutePath.home} isNavLink>
             {t('navigation.home')}
           </AppLink>
@@ -60,9 +61,9 @@ function Header() {
           )}
           <LanguageSwitcher />
         </Flexbox>
-        <AuthModal isOpen={isModalOpen} onClose={onShowModal} />
+        <AuthModal isOpen={isModalOpen} onClose={onCloseModal} />
       </Flexbox>
-    </header>
+    </Flexbox>
   );
 }
 

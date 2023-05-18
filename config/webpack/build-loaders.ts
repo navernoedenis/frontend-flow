@@ -2,22 +2,38 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type { RuleSetRule } from 'webpack';
 import type { BuildOptions } from './types';
 
-export function buildLoaders(options: BuildOptions): RuleSetRule[] {
-  const { isDevelopment } = options;
+import babelRemoveAttributes from './plugins/babel-remove-attributes';
 
-  const workerLoader: RuleSetRule = {
-    test: /worker\.ts$/,
-    use: 'ts-loader',
+export function buildLoaders(options: BuildOptions): RuleSetRule[] {
+  const { isDevelopment, isProduction } = options;
+
+  const serviceWorkerLoader: RuleSetRule = {
+    test: /service-worker\.ts$/,
+    use: 'babel-loader',
     type: 'asset/resource',
     generator: {
       filename: '[name].js',
     },
   };
 
-  const tsLoader: RuleSetRule = {
+  const babelLoader: RuleSetRule = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: [/node_modules/, /worker\.ts/],
+    use: {
+      loader: 'babel-loader',
+      options: {
+        plugins: [
+          ['@babel/plugin-transform-runtime', { isTsx: isDevelopment }],
+
+          isProduction && [
+            babelRemoveAttributes,
+            {
+              attributes: ['data-testid'],
+            },
+          ],
+        ].filter(Boolean),
+      },
+    },
+    exclude: [/service-worker\.ts$/],
   };
 
   const cssLoader: RuleSetRule = {
@@ -53,5 +69,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     },
   ];
 
-  return [workerLoader, tsLoader, cssLoader, ...svgLoaders];
+  return [serviceWorkerLoader, babelLoader, cssLoader, ...svgLoaders];
 }

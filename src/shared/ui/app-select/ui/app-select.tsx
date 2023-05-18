@@ -1,7 +1,8 @@
 import { useState, useCallback, useRef } from 'react';
 import type { MouseEvent } from 'react';
 
-import { AppTypography, Dropdown, DropdownItem } from 'shared/ui';
+import { AppTypography } from 'shared/ui/app-typography';
+import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
 import { classNames } from 'shared/lib/transforms/class-names';
 
 import type { AppSelectOption } from '../model/types';
@@ -23,6 +24,7 @@ const AppSelect = <T extends string>({
   options,
   title,
   value,
+  ...otherProps
 }: AppSelectProps<T>) => {
   const appSelectRef = useRef<HTMLDivElement | null>(null);
   const [isOpen, setOpen] = useState(false);
@@ -47,7 +49,12 @@ const AppSelect = <T extends string>({
   });
 
   return (
-    <div className={selectClasses} ref={appSelectRef} data-testid="app-select">
+    <div
+      className={selectClasses}
+      data-testid="app-select"
+      ref={appSelectRef}
+      {...otherProps}
+    >
       {title && (
         <AppTypography
           capitalizeFirstLetter
@@ -60,11 +67,12 @@ const AppSelect = <T extends string>({
         </AppTypography>
       )}
 
-      <div onClick={onOpenMenu}>
+      <div data-testid="app-select-value-wrapper" onClick={onOpenMenu}>
         <AppTypography
           aria-hidden
           capitalizeFirstLetter
           className={classes.value}
+          data-testid="app-select-value"
         >
           {value}
         </AppTypography>

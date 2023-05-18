@@ -1,19 +1,21 @@
 import { DefinePlugin, ProgressPlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-import CopyPlugin from 'copy-webpack-plugin';
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
-import HtmlInlineScriptPlugin from 'html-inline-script-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CircularDependency from 'circular-dependency-plugin';
+import Copy from 'copy-webpack-plugin';
+import FaviconsWebpack from 'favicons-webpack-plugin';
+import ForkTsCheckerWebpack from 'fork-ts-checker-webpack-plugin';
+import HtmlInlineScript from 'html-inline-script-webpack-plugin';
+import HtmlWebpack from 'html-webpack-plugin';
+import MiniCssExtract from 'mini-css-extract-plugin';
+import ReactRefreshWebpack from '@pmmmwh/react-refresh-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 
 import type { WebpackPluginInstance } from 'webpack';
 import type { BuildOptions } from './types';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
-  const { host, isDevelopment, isStorybook, manifest, paths } = options;
+  const { manifest, paths, host, isDevelopment, isStorybook } = options;
 
   const plugins: WebpackPluginInstance[] = [
     new ProgressPlugin(),
@@ -22,19 +24,20 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
       __IS_DEV__: JSON.stringify(isDevelopment),
       __IS_STORYBOOK__: JSON.stringify(isStorybook),
     }),
-    new FaviconsWebpackPlugin(paths.favicon),
-    new HtmlInlineScriptPlugin({
+    new FaviconsWebpack(paths.favicon),
+    new HtmlInlineScript({
       scriptMatchPattern: [/init-theme.+[.]js$/],
     }),
-    new HtmlWebpackPlugin({
+    new HtmlWebpack({
       template: paths.html,
       excludeChunks: ['service-worker'],
+      cwd: process.cwd(),
     }),
-    new MiniCssExtractPlugin({
+    new MiniCssExtract({
       filename: 'css/[name].[hash].css',
     }),
     new WebpackPwaManifest(manifest) as WebpackPluginInstance,
-    new CopyPlugin({
+    new Copy({
       patterns: [
         {
           from: paths.locales.from,
@@ -47,8 +50,26 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     }),
   ];
 
+  const devPlugins: WebpackPluginInstance[] = [
+    new CircularDependency({
+      allowAsyncCycles: false,
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
+    new ForkTsCheckerWebpack({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
+    }),
+    new ReactRefreshWebpack(),
+  ];
+
   if (isDevelopment) {
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(...devPlugins);
   }
 
   return plugins;

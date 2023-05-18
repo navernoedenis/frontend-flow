@@ -1,8 +1,16 @@
 import React, { Suspense } from 'react';
-import { ErrorPage } from 'pages';
-import { PageLoader } from 'shared/ui';
+import type { ReactNode } from 'react';
 
-import type { ErrorBoundaryProps, ErrorBoundaryState } from './types';
+import { ErrorPage } from 'pages';
+import { PageLoader } from 'shared/ui/page-loader';
+
+interface ErrorBoundaryProps {
+  children: ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
 
 export class ErrorBoundary extends React.Component<
   ErrorBoundaryProps,

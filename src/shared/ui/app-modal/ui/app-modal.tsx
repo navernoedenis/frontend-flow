@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { ReactNode } from 'react';
 
-import { Portal } from 'shared/ui';
+import { Portal } from 'shared/ui/portal';
 import { classNames } from 'shared/lib/transforms/class-names';
 
 import CrossIcon from './assets/cross.svg';

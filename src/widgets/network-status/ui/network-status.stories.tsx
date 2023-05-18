@@ -1,14 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { AppStatePreloaded } from 'app/providers/store';
-import { StoreDecorator } from 'shared/config/storybook/decorators';
+import {
+  StoreDecorator,
+  ThemeDecorator,
+} from 'shared/config/storybook/decorators';
 
 import NetworkStatus from './network-status';
-
-export default {
-  title: 'widgets/NetworkStatus',
-  component: NetworkStatus,
-} as ComponentMeta<typeof NetworkStatus>;
 
 const preloadedState: AppStatePreloaded = {
   networkStatus: {
@@ -16,7 +13,17 @@ const preloadedState: AppStatePreloaded = {
   },
 };
 
-const Template: ComponentStory<typeof NetworkStatus> = () => <NetworkStatus />;
+const meta: Meta = {
+  title: 'widgets/NetworkStatus',
+  decorators: [StoreDecorator(preloadedState)],
+  component: NetworkStatus,
+} satisfies Meta<typeof NetworkStatus>;
 
-export const Default = Template.bind({});
-Default.decorators = [StoreDecorator(preloadedState)];
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

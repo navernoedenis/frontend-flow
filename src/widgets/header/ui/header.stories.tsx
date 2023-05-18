@@ -1,23 +1,26 @@
 import { useEffect } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Header from './header';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { authActions } from 'features/auth';
 import { useAppDispatch } from 'shared/hooks';
 
-export default {
+import Header from './header';
+
+const meta: Meta = {
   title: 'widgets/Header',
   component: Header,
-} as ComponentMeta<typeof Header>;
+  render: () => {
+    const dispatch = useAppDispatch();
 
-const Template: ComponentStory<typeof Header> = () => {
-  const dispatch = useAppDispatch();
+    useEffect(() => {
+      dispatch(authActions.init());
+    }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(authActions.init());
-  }, [dispatch]);
+    return <Header />;
+  },
+} satisfies Meta<typeof Header>;
 
-  return <Header />;
-};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default = Template.bind({});
+export const Light: Story = {};

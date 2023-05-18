@@ -4,20 +4,29 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { authActions, selectAuthMe } from 'features/auth';
+
+import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
+import { LazyImage } from 'shared/ui/lazy-image';
+
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
-import { Dropdown, DropdownItem, LazyImage } from 'shared/ui';
 import { AppRoutePath } from 'shared/constants/routes';
+import { isAdminRole } from 'shared/lib/user-roles';
 
 import classes from './user-menu.module.scss';
 
 const UserMenu = () => {
-  const { t } = useTranslation('widgets.header');
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'widgets.header',
+  });
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const me = useAppSelector(selectAuthMe);
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const isAdmin = me && isAdminRole(me.roles);
 
   const handleToggleMenu = useCallback((event: MouseEvent) => {
     event.stopPropagation();
@@ -52,6 +61,13 @@ const UserMenu = () => {
         onClose={handleCloseMenu}
         parentRef={buttonRef}
       >
+        {isAdmin && (
+          <DropdownItem
+            onClick={() => navigate(AppRoutePath.admin)}
+            title={t('menu.admin')}
+          />
+        )}
+
         <DropdownItem
           onClick={() => navigate(`${AppRoutePath.profiles}/${me.id}`)}
           title={t('menu.profile')}

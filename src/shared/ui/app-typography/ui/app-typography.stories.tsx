@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import AppTypography from './app-typography';
 
 const mockText =
   'horror films have existed for more than a century. Early inspirations from before the development of film include folklore, religious beliefs and superstitions of different cultures, and the Gothic and horror literature of authors such as Edgar Allan Poe, Bram Stoker, and Mary Shelley. From origins in silent films and German Expressionism, horror only became a codified genre after the release of Dracula (1931). Many sub-genres emerged in subsequent decades, including body horror, comedy horror, slasher films, supernatural horror and psychological horror. The genre has been produced worldwide, varying in content and style between regions. Horror is particularly prominent in the cinema of Japan, Korea, Italy and Thailand, among other countries.';
 
-export default {
+const meta: Meta = {
   title: 'shared/AppTypography',
   component: AppTypography,
   args: {
@@ -40,12 +40,13 @@ export default {
       control: { type: 'radio' },
     },
   },
-} as ComponentMeta<typeof AppTypography>;
+} satisfies Meta<typeof AppTypography>;
 
-const Template: ComponentStory<typeof AppTypography> = (args) => (
-  <AppTypography {...args}>{mockText}</AppTypography>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Light = Template.bind({});
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark')];
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

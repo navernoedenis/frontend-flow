@@ -1,2 +1,2 @@
 export * from './lazy-reducers';
-export * from './private-router';
+export * from './private-route';

@@ -1,18 +1,19 @@
 import type { EntityState } from '@reduxjs/toolkit';
+import type { Article } from 'entities/article';
+
+import type { ArticleTag } from '../../ui/articles-header/ui/select-article-tag';
+import type { ArticleView } from '../../ui/articles-header/ui/select-article-view';
 import type {
   ArticleSortKey,
   ArticleSortOrder,
-} from 'features/select-article-sort';
-
-import type { ArticleTag } from 'features/select-article-tag';
-import type { ArticleView } from 'features/select-article-view';
-import type { Article } from 'entities/article';
+} from '../../ui/articles-header/ui/select-article-sort';
 
 export interface ArticlesState extends EntityState<Article> {
   error: string;
   hasMore: boolean;
   isLoading: boolean;
   isMounted: boolean;
+  shouldScrollToTop: boolean;
   sort: {
     key: ArticleSortKey;
     limit: number;

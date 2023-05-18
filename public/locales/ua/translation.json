@@ -1,0 +1,153 @@
+{
+  "entities": {
+    "article": {
+      "date": "дата",
+      "no_article": "немає статей",
+      "tags": "теги",
+      "views": "переглядів"
+    },
+    "country": {
+      "canada": "канада",
+      "france": "франція",
+      "germany": "германія",
+      "spain": "іспанія",
+      "ukraine": "україна",
+      "usa": "сша"
+    },
+    "profile": {
+      "age": "вік",
+      "avatar": "аватарка",
+      "country": "країна",
+      "position": "посада"
+    }
+  },
+  "features": {
+    "add-comment": {
+      "buttons": {
+        "reset": "скинути",
+        "send": "відправити"
+      },
+      "placeholder": "повідомлення",
+      "title": "додати коментар"
+    },
+    "articles-recommended": {
+      "title": "рекомендуемые статьи"
+    },
+    "auth": {
+      "buttons": {
+        "enter": "ввійти",
+        "reset": "скинути"
+      },
+      "label": {
+        "name": "ім'я",
+        "password": "пароль"
+      },
+      "placeholder": {
+        "name": "будь ласка, введіть ваше ім'я",
+        "password": "будь ласка, введіть свій пароль"
+      },
+      "title": "увійдти до системи"
+    },
+    "edit-profile": {
+      "buttons": {
+        "cancel": "скасувати",
+        "edit": "редагувати",
+        "save": "зберегти"
+      },
+      "errors": {
+        "age_empty": "вік не може бути порожнім",
+        "age_range_less": "вік повинен бути більше 17 років",
+        "avatar_empty": "аватар не може бути порожнім",
+        "avatar_invalid_url": "невірна адреса аватара",
+        "name_empty": "ім'я не може бути порожнім",
+        "name_range": "ім'я повинно містити від 3 до 15 символів",
+        "position_empty": "позиція не може бути порожньою",
+        "position_range_less": "позиція не може бути менше 3 символів"
+      }
+    }
+  },
+  "page": {
+    "admin": {
+      "title": "сторінка адміністратора"
+    },
+    "article": {
+      "buttons": {
+        "go_back": "повернутися назад"
+      }
+    },
+    "articles": {
+      "header": {
+        "buttons": {
+          "all": "всі",
+          "business": "бізнес",
+          "programming": "програмування",
+          "science": "наука"
+        },
+        "search": {
+          "placeholder": "пошук статей",
+          "title": "пошук"
+        },
+        "sort": {
+          "options": {
+            "asc": "зростанню",
+            "createdAt": "по створенню",
+            "desc": "зменшення",
+            "views": "перегляди"
+          },
+          "titles": {
+            "key": "ключ",
+            "order": "порядок"
+          }
+        },
+        "views": {
+          "compact": "компактний",
+          "normal": "звичайний",
+          "view": "вигляд"
+        }
+      },
+      "no_articles": "немає статей"
+    },
+    "error": {
+      "button": "перезавантажити сторінку",
+      "title": "щось пішло не так"
+    },
+    "home": {
+      "title": "домашня сторінка"
+    },
+    "not-found": {
+      "title": "не знайдено"
+    },
+    "profile": {
+      "title": "профайл сторінка"
+    }
+  },
+  "shared": {
+    "clipboard": {
+      "coppied": "код скопійовано"
+    },
+    "theme-switcher": {
+      "auto": "авто",
+      "dark": "темна",
+      "light": "світла"
+    }
+  },
+  "widgets": {
+    "header": {
+      "buttons": {
+        "login": "логін"
+      },
+      "menu": {
+        "admin": "адмін",
+        "logout": "вийти",
+        "profile": "мій профіль"
+      },
+      "navigation": {
+        "articles": "статті",
+        "home": "домашня"
+      }
+    },
+    "network-status": {
+      "message": "ви перебуваєте поза мережею. будь ласка, перевірте вашу мережу"
+    }
+  }
+}

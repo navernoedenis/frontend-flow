@@ -1,4 +1,5 @@
 export enum AppRoute {
+  ADMIN = 'admin',
   ARTICLE = 'article',
   ARTICLES = 'articles',
   HOME = 'home',
@@ -7,6 +8,7 @@ export enum AppRoute {
 }
 
 export const AppRoutePath: Record<AppRoute, string> = {
+  [AppRoute.ADMIN]: '/admin',
   [AppRoute.ARTICLE]: '/articles', // + articleId
   [AppRoute.ARTICLES]: '/articles',
   [AppRoute.HOME]: '/',

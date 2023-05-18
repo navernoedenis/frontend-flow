@@ -12,7 +12,9 @@ interface AppClipboardProps {
 }
 
 const AppClipboard = ({ className = '', text }: AppClipboardProps) => {
-  const { t } = useTranslation('shared.clipboard');
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'shared.clipboard',
+  });
 
   const onCopyCode = useCallback(() => {
     window.navigator.clipboard.writeText(text);
@@ -26,7 +28,11 @@ const AppClipboard = ({ className = '', text }: AppClipboardProps) => {
   return (
     <div className={clipboardClasses} data-testid="app-clipboard">
       <pre className={classes.text}>{text}</pre>
-      <button className={classes.button} onClick={onCopyCode}>
+      <button
+        className={classes.button}
+        data-testid="app-clipboard-copy"
+        onClick={onCopyCode}
+      >
         <CopyIcon />
       </button>
     </div>

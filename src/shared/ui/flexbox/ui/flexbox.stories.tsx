@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import Flebox from './flexbox';
 
-export default {
+const meta: Meta = {
   title: 'shared/Flebox',
   component: Flebox,
   args: {
@@ -11,21 +11,38 @@ export default {
     tag: 'div',
     wrap: false,
   },
-} as ComponentMeta<typeof Flebox>;
+} satisfies Meta<typeof Flebox>;
 
-const Template: ComponentStory<typeof Flebox> = (args) => (
-  <div>
-    <Flebox style={{ border: '2px dashed #66BB6A', height: '197px' }} {...args}>
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Light: Story = {
+  render: (props) => (
+    <Flebox
+      style={{ border: '2px dashed #66BB6A', height: '197px' }}
+      {...props}
+    >
       {Array.from({ length: 4 }, (_, index) => (
         <div style={{ border: '2px dashed #DCE775', padding: '5px' }}>
           {index + 1}
         </div>
       ))}
     </Flebox>
-  </div>
-);
+  ),
+};
 
-export const Light = Template.bind({});
-
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark')];
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+  render: (props) => (
+    <Flebox
+      style={{ border: '2px dashed #66BB6A', height: '197px' }}
+      {...props}
+    >
+      {Array.from({ length: 4 }, (_, index) => (
+        <div style={{ border: '2px dashed #DCE775', padding: '5px' }}>
+          {index + 1}
+        </div>
+      ))}
+    </Flebox>
+  ),
+};

@@ -1,5 +1,5 @@
-export type { Article } from './article-entity';
+export type { Article } from './model/types';
 
-export { ArticleCard, ArticleCardSkeleton } from './article-card';
-export { ArticleEntity, ArticleSkeleton } from './article-entity';
-export { ArticleList } from './article-list';
+export { ArticleCard, ArticleCardSkeleton } from './ui/article-card';
+export { ArticleEntity, ArticleSkeleton } from './ui/article-entity';
+export { ArticleList } from './ui/article-list';

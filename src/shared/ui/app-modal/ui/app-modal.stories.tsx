@@ -1,32 +1,36 @@
 import { useReducer } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { AppButton } from 'shared/ui';
+import { AppButton } from 'shared/ui/app-button';
 
 import AppModal from './app-modal';
 
-export default {
+const meta: Meta = {
   title: 'shared/AppModal',
   component: AppModal,
-} as ComponentMeta<typeof AppModal>;
+  render: () => {
+    const [isOpen, toggleOpen] = useReducer((prev) => !prev, false);
 
-const Template: ComponentStory<typeof AppModal> = () => {
-  const [isOpen, toggleOpen] = useReducer((prev) => !prev, false);
+    return (
+      <div style={{ display: 'inline-block' }}>
+        <AppButton onClick={toggleOpen} size="small">
+          Show Modal
+        </AppButton>
 
-  return (
-    <div style={{ display: 'inline-block' }}>
-      <AppButton onClick={toggleOpen} size="small">
-        Show Modal
-      </AppButton>
+        <AppModal isOpen={isOpen} onClose={toggleOpen}>
+          <h1>App Modal</h1>
+        </AppModal>
+      </div>
+    );
+  },
+} satisfies Meta<typeof AppModal>;
 
-      <AppModal isOpen={isOpen} onClose={toggleOpen}>
-        <h1>App Modal</h1>
-      </AppModal>
-    </div>
-  );
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
 };
-
-export const Light = Template.bind({});
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark')];

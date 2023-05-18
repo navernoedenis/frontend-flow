@@ -1,0 +1,25 @@
+.staticContainer {
+  overflow-y: auto;
+  height: 100%;
+  padding: 10px 12px 10px 0;
+  scroll-behavior: smooth;
+}
+
+.virtualizedContainer {
+  height: 100%;
+
+  [data-test-id="virtuoso-scroller"] > div {
+    padding: 10px 12px 10px 0;
+  }
+}
+
+.virtualizedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.noArticles {
+  font-size: 40px;
+  color: var(--color-red);
+}

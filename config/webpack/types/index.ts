@@ -26,6 +26,7 @@ export interface BuildOptions {
   buildMode: BuildMode;
   host: string;
   isDevelopment: boolean;
+  isProduction: boolean;
   isStorybook: boolean;
   manifest: ManifestOptions;
   paths: BuildPaths;

@@ -22,6 +22,7 @@ function App() {
     window.addEventListener('online', () => {
       dispatch(networkStatusActions.setStatus(true));
     });
+
     window.addEventListener('offline', () => {
       dispatch(networkStatusActions.setStatus(false));
     });

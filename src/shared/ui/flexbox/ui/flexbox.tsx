@@ -1,4 +1,5 @@
-import type { CSSProperties, ReactNode } from 'react';
+import { forwardRef } from 'react';
+import type { ElementType, CSSProperties, ReactNode } from 'react';
 import { classNames } from 'shared/lib/transforms/class-names';
 import classes from './flexbox.module.scss';
 
@@ -10,17 +11,18 @@ interface FlexboxProps {
   gap?: Gap;
   justifyContent?: JustifyContent;
   noShrink?: boolean;
+  onClick?: VoidFunction;
   style?: CSSProperties;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: ElementType;
   wrap?: boolean;
 }
 
 type AlignItems = 'start' | 'center' | 'end' | 'stretch';
 type Direction = 'column' | 'column-reverse' | 'row' | 'row-reverse';
-type Gap = '8' | '12' | '16' | '20';
+type Gap = '8' | '16' | '20' | '30';
 type JustifyContent = AlignItems | 'around' | 'evenly' | 'between';
 
-function Flexbox(props: FlexboxProps) {
+const Flexbox = forwardRef((props: FlexboxProps, ref) => {
   const {
     alignItems = 'center',
     children,
@@ -45,10 +47,15 @@ function Flexbox(props: FlexboxProps) {
   });
 
   return (
-    <Tag className={flexboxClasses} data-testid="flexbox" {...otherProps}>
+    <Tag
+      className={flexboxClasses}
+      data-testid="flexbox"
+      ref={ref}
+      {...otherProps}
+    >
       {children}
     </Tag>
   );
-}
+});
 
 export default Flexbox;

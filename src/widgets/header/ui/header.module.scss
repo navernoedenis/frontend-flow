@@ -1,9 +1,10 @@
 .header {
+  border-bottom: 2px solid var(--color-orange);
   background-color: var(--secondary-color);
+  height: var(--header-height);
 }
 
 .container {
-  height: var(--header-height);
   padding: 0 var(--app-padding);
 }
 

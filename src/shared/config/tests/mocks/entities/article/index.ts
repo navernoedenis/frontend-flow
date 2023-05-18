@@ -1,5 +1,5 @@
 import type { Article } from 'entities/article';
-import { ArticleBlockType } from 'entities/article/article-entity/model/types';
+import { ArticleBlockType } from 'entities/article/model/types';
 
 export const articleMock: Article = {
   id: '1',
@@ -33,3 +33,10 @@ export const articleMock: Article = {
     },
   ],
 };
+
+export const articlesMock: Article[] = Array.from({ length: 10 }).map(
+  (_, index) => ({
+    ...articleMock,
+    id: `${index}`,
+  }),
+);

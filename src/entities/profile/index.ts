@@ -1,3 +1,3 @@
-export * from './profile-form';
+export type { Profile } from './model/types';
 
-export type { Profile } from './profile-entity';
+export { ProfileForm, ProfileFormSkeleton } from './ui/profile-form';

@@ -1,22 +1,22 @@
 import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import type { ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import type {
-  ArticleSortKey,
-  ArticleSortOrder,
-} from 'features/select-article-sort';
-
-import type { ArticleView } from 'features/select-article-view';
-import type { ArticleTag } from 'features/select-article-tag';
-
-import { SelectArticleSort } from 'features/select-article-sort';
-import { SelectArticleTag } from 'features/select-article-tag';
-import { SelectArticleView } from 'features/select-article-view';
-
+import { LS_ARTICLES_VIRTUOSO_SCROLL_INDEX } from 'shared/constants/local-storage';
 import { classNames } from 'shared/lib/transforms/class-names';
-import { Flexbox, TextField } from 'shared/ui';
 import { useAppDispatch, useAppSelector, useDebounce } from 'shared/hooks';
+import { Storage } from 'shared/services';
+
+import { Flexbox } from 'shared/ui/flexbox';
+import { TextField } from 'shared/ui/text-field';
+
+import type { ArticleSortKey, ArticleSortOrder } from './select-article-sort';
+import type { ArticleView } from './select-article-view';
+import type { ArticleTag } from './select-article-tag';
+
+import { SelectArticleSort } from './select-article-sort';
+import { SelectArticleTag } from './select-article-tag';
+import { SelectArticleView } from './select-article-view';
 
 import { getArticles } from '../../../api/get-articles/get-articles';
 import { articlesActions } from '../../../model/slice';
@@ -28,14 +28,15 @@ import {
   selectArticlesView,
 } from '../../../model/selectors';
 
-import classes from './articles-header.module.scss';
-
 interface ArticlesHeaderProps {
   className?: string;
 }
 
 function ArticlesHeader({ className = '' }: ArticlesHeaderProps) {
-  const { t } = useTranslation('page.articles', { keyPrefix: 'header' });
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'page.articles.header',
+  });
+
   const dispatch = useAppDispatch();
 
   const searchQuery = useAppSelector(selectArticlesSortQuery);
@@ -87,11 +88,12 @@ function ArticlesHeader({ className = '' }: ArticlesHeaderProps) {
     (event: ChangeEvent<HTMLInputElement>) => {
       dispatch(articlesActions.setSortQuery(event.target.value));
       onGetArticlesDebounced();
+      Storage.session.remove(LS_ARTICLES_VIRTUOSO_SCROLL_INDEX);
     },
     [dispatch, onGetArticlesDebounced],
   );
 
-  const containerClassName = classNames(classes.container, {
+  const containerClassName = classNames('', {
     [className]: !!className,
   });
 

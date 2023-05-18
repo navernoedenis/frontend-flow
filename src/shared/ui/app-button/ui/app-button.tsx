@@ -1,8 +1,8 @@
 import type { ButtonHTMLAttributes } from 'react';
 import { classNames } from 'shared/lib/transforms/class-names';
-import classes from './app-button.module.scss';
 
 import SpinnerIcon from './assets/spinner.svg';
+import classes from './app-button.module.scss';
 
 type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -36,7 +36,7 @@ function AppButton(props: AppButtonProps) {
     >
       {children}
       {isLoading && (
-        <span className={classes.spinner}>
+        <span className={classes.spinner} data-testid="app-button-spinner">
           <SpinnerIcon />
         </span>
       )}

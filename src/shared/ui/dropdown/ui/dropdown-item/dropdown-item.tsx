@@ -33,7 +33,11 @@ const DropdownItem = ({
           {icon}
         </div>
       )}
-      <span className={classes.title}>{title}</span>
+
+      <span className={classes.title} data-testid="dropdown-item-title">
+        {title}
+      </span>
+
       {isChecked && (
         <div className={classes.check} data-testid="dropdown-item-checked">
           <CheckIcon />

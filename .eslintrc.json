@@ -57,6 +57,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/jsx-no-useless-fragment": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unstable-nested-components": "off",
     "react/require-default-props": "off"
   },
   "overrides": [

@@ -20,6 +20,6 @@
   border-bottom: 1px solid var(--accent-color);
   padding: 8px 0;
   line-height: 1.15;
-  transition-property: border-color;
+  transition: var(--transition-base);
   cursor: pointer;
 }

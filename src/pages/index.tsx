@@ -1,3 +1,4 @@
+export { AdminPage } from './admin';
 export { ArticlePage } from './article';
 export { ArticlesPage } from './articles';
 export { ErrorPage } from './error';

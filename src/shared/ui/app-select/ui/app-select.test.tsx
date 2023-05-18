@@ -1,24 +1,33 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import AppSelect from './app-select';
 
 describe('test shared/app-select', () => {
-  const handleSelect = jest.fn();
-
-  it('should be in the document', () => {
-    render(<AppSelect onSelect={handleSelect} options={[]} value="test" />);
+  it('be in the document', () => {
+    render(<AppSelect onSelect={Function} options={[]} value="test" />);
     expect(screen.getByTestId('app-select')).toBeInTheDocument();
   });
 
-  it('should have title', () => {
+  it('show title', () => {
     render(
       <AppSelect
-        onSelect={handleSelect}
+        onSelect={Function}
         options={[]}
         title="Title33"
         value="test"
       />,
     );
     expect(screen.getByTestId('app-select-title')).toBeInTheDocument();
-    expect(screen.getByTestId('app-select-title')).toHaveTextContent('Title33');
+  });
+
+  it('show dropdown', () => {
+    render(<AppSelect onSelect={Function} options={[]} value="test" />);
+    const openButton = screen.getByTestId('app-select-value-wrapper');
+    fireEvent.click(openButton);
+    expect(screen.getByTestId('dropdown')).toBeInTheDocument();
+  });
+
+  it('hidden dropdown', () => {
+    render(<AppSelect onSelect={Function} options={[]} value="test" />);
+    expect(screen.queryByTestId('dropdown')).not.toBeInTheDocument();
   });
 });

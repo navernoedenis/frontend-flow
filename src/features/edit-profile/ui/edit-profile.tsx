@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useReducer } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ChangeEvent } from 'react';
 
@@ -9,11 +9,13 @@ import type { Country } from 'entities/country';
 import { selectAuthMe } from 'features/auth';
 import { ProfileForm, ProfileFormSkeleton } from 'entities/profile';
 
-import { AppButton, AppTypography, Flexbox } from 'shared/ui';
+import { AppTypography } from 'shared/ui/app-typography';
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks';
 import { deepCopy } from 'shared/lib/deep-copy';
 import { LazyReducers } from 'shared/lib/components';
+
+import { EditButtons } from './edit-buttons';
 
 import { updateProfile } from '../api/update-profile/update-profile';
 import { profileReducer } from '../model/slice';
@@ -38,27 +40,25 @@ const reducers: AppReducersLazy = {
   profile: profileReducer,
 };
 
-interface EditProfileProps {
-  showEditableButtons?: boolean;
-}
+function EditProfile() {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'features.edit-profile',
+  });
 
-function EditProfile({ showEditableButtons = true }: EditProfileProps) {
-  const { t } = useTranslation('features.edit-profile');
   const dispatch = useAppDispatch();
-
   const me = useAppSelector(selectAuthMe);
 
   const profile = useAppSelector(selectProfileData);
   const error = useAppSelector(selectProfileError);
   const isLoading = useAppSelector(selectProfileLoading);
 
-  const [isDisabled, onToggleDisabled] = useReducer((prev) => !prev, true);
-  const [profileCopy, setProfileCopy] = useState<Profile | null>(null);
+  const [isDisabled, setDisabled] = useState(true);
+  const [profileForm, setProfileForm] = useState<Profile | null>(null);
   const [errors, setErrors] = useState<ValidateProfileError[]>([]);
 
   useEffect(() => {
     if (profile) {
-      setProfileCopy(deepCopy(profile));
+      setProfileForm(deepCopy(profile));
     }
   }, [profile]);
 
@@ -76,12 +76,16 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
     [t],
   );
 
+  const onToggleDisabled = useCallback(() => {
+    setDisabled((prev) => !prev);
+  }, []);
+
   const onUpdateProfile = () => {
-    if (!profileCopy) return;
-    const profileErrors = validateProfile(profileCopy);
+    if (!profileForm) return;
+    const profileErrors = validateProfile(profileForm);
 
     if (!profileErrors.length) {
-      dispatch(updateProfile(profileCopy)).then(() => {
+      dispatch(updateProfile(profileForm)).then(() => {
         setErrors([]);
         onToggleDisabled();
       });
@@ -90,65 +94,79 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
     }
   };
 
-  const onCancelEditing = () => {
+  const onCancelEditing = useCallback(() => {
     if (profile) {
-      setProfileCopy(profile);
+      setProfileForm(profile);
       setErrors([]);
       onToggleDisabled();
     }
-  };
+  }, [onToggleDisabled, profile]);
 
   const onChangeDigitField = (event: ChangeEvent<HTMLInputElement>) => {
-    if (!profileCopy) return;
+    if (!profileForm) return;
     const { name, value } = event.target as ProfileFormDigitField;
     const REGEX_NOT_NUMBERS = /\D/g;
     const number = +value.replace(REGEX_NOT_NUMBERS, '');
-    setProfileCopy({ ...profileCopy, [name]: number });
+    setProfileForm({ ...profileForm, [name]: number });
   };
 
   const onChangeTextField = (event: ChangeEvent<HTMLInputElement>) => {
-    if (!profileCopy) return;
+    if (!profileForm) return;
     const { name, value } = event.target as ProfileFormTextField;
-    setProfileCopy({ ...profileCopy, [name]: value });
+    setProfileForm({ ...profileForm, [name]: value });
   };
 
   const onSelectCountryField = (country: Country) => {
-    if (!profileCopy) return;
+    if (!profileForm) return;
 
     const { name, value }: ProfileFormCountryField = {
       name: 'country',
       value: country,
     };
 
-    setProfileCopy({ ...profileCopy, [name]: value });
+    setProfileForm({ ...profileForm, [name]: value });
   };
+
+  if (isLoading || (!profile && !error)) {
+    return (
+      <LazyReducers reducers={reducers}>
+        <ProfileFormSkeleton />
+      </LazyReducers>
+    );
+  }
 
   const isMyProfile = me?.id === profile?.id;
 
   return (
     <LazyReducers reducers={reducers}>
       <div data-testid="edit-profile">
-        {isLoading && <ProfileFormSkeleton />}
+        <div className={classes.errors}>
+          {error && (
+            <AppTypography
+              className={classes.error}
+              data-testid="edit-profile-error"
+              error
+            >
+              {error}
+            </AppTypography>
+          )}
 
-        {!isLoading && (
-          <div className={classes.errors}>
-            {error && (
-              <AppTypography className={classes.error} error>
-                {error}
-              </AppTypography>
-            )}
-            {errors.map((error) => (
-              <AppTypography className={classes.error} key={error} error>
-                {errorsRecord[error]}
-              </AppTypography>
-            ))}
-          </div>
-        )}
+          {errors.map((error) => (
+            <AppTypography
+              className={classes.error}
+              data-testid="edit-profile-error"
+              error
+              key={error}
+            >
+              {errorsRecord[error]}
+            </AppTypography>
+          ))}
+        </div>
 
-        {!isLoading && profileCopy && (
+        {profileForm && (
           <ProfileForm
             isDisabled={isDisabled}
-            profile={profileCopy}
+            profile={profileForm}
             formEvents={{
               onChangeDigitField,
               onChangeTextField,
@@ -157,28 +175,13 @@ function EditProfile({ showEditableButtons = true }: EditProfileProps) {
           />
         )}
 
-        {!isLoading && isMyProfile && (
-          <>
-            {showEditableButtons && (
-              <Flexbox className={classes.buttons} gap="8">
-                {isDisabled ? (
-                  <AppButton onClick={onToggleDisabled}>
-                    {t('buttons.edit')}
-                  </AppButton>
-                ) : (
-                  <>
-                    <AppButton onClick={onCancelEditing}>
-                      {t('buttons.cancel')}
-                    </AppButton>
-
-                    <AppButton onClick={onUpdateProfile}>
-                      {t('buttons.save')}
-                    </AppButton>
-                  </>
-                )}
-              </Flexbox>
-            )}
-          </>
+        {isMyProfile && (
+          <EditButtons
+            isFormDisabled={isDisabled}
+            onCancelEditing={onCancelEditing}
+            onToggleDisabled={onToggleDisabled}
+            onUpdateProfile={onUpdateProfile}
+          />
         )}
       </div>
     </LazyReducers>

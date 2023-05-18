@@ -1,3 +1,3 @@
-export { mockIntersectionObserver } from './intersection-observer';
-export { mockLocationSearch } from './location-search';
-export { mockMatchMedia } from './match-media';
+export { intersectionObserver } from './intersection-observer';
+export { locationSearch } from './location-search';
+export { matchMedia } from './match-media';

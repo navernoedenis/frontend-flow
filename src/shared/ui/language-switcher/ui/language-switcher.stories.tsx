@@ -1,18 +1,17 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
 import LanguageSwitcher from './language-switcher';
 
-export default {
+const meta: Meta = {
   title: 'shared/LanguageSwitcher',
   component: LanguageSwitcher,
-} as ComponentMeta<typeof LanguageSwitcher>;
+} satisfies Meta<typeof LanguageSwitcher>;
 
-const Template: ComponentStory<typeof LanguageSwitcher> = () => (
-  <div style={{ display: 'inline-block' }}>
-    <LanguageSwitcher />
-  </div>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Light = Template.bind({});
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark')];
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

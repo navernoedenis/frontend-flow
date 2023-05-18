@@ -15,7 +15,7 @@ describe('test pages/article/add-comment', () => {
     getState = jest.fn().mockReturnValue({ auth: { me: userMock } });
   });
 
-  it('should return new comment', async () => {
+  it('return new comment', async () => {
     mockedAxios.post.mockResolvedValue({ data: commentMock });
     mockedAxios.get.mockResolvedValue({ data: commentMock });
 
@@ -28,7 +28,7 @@ describe('test pages/article/add-comment', () => {
     expect(response.payload).toEqual(commentMock);
   });
 
-  it('should return error', async () => {
+  it('return error', async () => {
     mockedAxios.post.mockRejectedValue(new Error('Not found'));
 
     const action = addComment({ articleId: '', comment: '' });

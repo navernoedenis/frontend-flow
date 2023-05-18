@@ -1,20 +1,14 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   ThemeDecorator,
   StoreDecorator,
 } from 'shared/config/storybook/decorators';
 
 import { AppStatePreloaded } from 'app/providers/store';
-
 import { articleMock } from 'shared/config/tests/mocks/entities';
 import { articlesStateMock } from 'shared/config/tests/mocks/states';
 
 import ArticlesPage from './articles';
-
-export default {
-  title: 'pages/Articles',
-  component: ArticlesPage,
-} as ComponentMeta<typeof ArticlesPage>;
 
 const preloadedState: AppStatePreloaded = {
   articles: {
@@ -24,10 +18,22 @@ const preloadedState: AppStatePreloaded = {
   },
 };
 
-const Template: ComponentStory<typeof ArticlesPage> = () => <ArticlesPage />;
+const meta: Meta = {
+  title: 'pages/Articles',
+  component: ArticlesPage,
+  decorators: [StoreDecorator(preloadedState)],
+  render: () => (
+    <div className="app-page">
+      <ArticlesPage />
+    </div>
+  ),
+} satisfies Meta<typeof ArticlesPage>;
 
-export const Light = Template.bind({});
-Light.decorators = [StoreDecorator(preloadedState)];
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator('dark'), StoreDecorator(preloadedState)];
+export const Light: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator('dark')],
+};

@@ -1,4 +1,4 @@
-export function mockIntersectionObserver() {
+export function intersectionObserver() {
   const mockIntersectionObserver = jest.fn();
   mockIntersectionObserver.mockReturnValue({
     observe: () => null,

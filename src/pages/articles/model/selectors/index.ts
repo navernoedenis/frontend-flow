@@ -2,6 +2,7 @@ export * from './select-error/select-error';
 export * from './select-has-more/select-has-more';
 export * from './select-loading/select-loading';
 export * from './select-mounted/select-mounted';
+export * from './select-should-scroll-to-top/select-should-scroll-to-top';
 export * from './select-sort-key/select-sort-key';
 export * from './select-sort-limit/select-sort-limit';
 export * from './select-sort-order/select-sort-order';

@@ -16,7 +16,7 @@ describe('test pages/article/get-article', () => {
     getState = jest.fn();
   });
 
-  it('should return article', async () => {
+  it('return article', async () => {
     mockedAxios.get.mockResolvedValue({ data: articleMock });
 
     const action = getArticle('1');
@@ -28,7 +28,7 @@ describe('test pages/article/get-article', () => {
     expect(response.payload).toEqual(articleMock);
   });
 
-  it('should return error', async () => {
+  it('return error', async () => {
     mockedAxios.get.mockRejectedValue(new Error('Not found'));
 
     const action = getArticle('');

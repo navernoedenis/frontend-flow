@@ -4,7 +4,7 @@ import { renderWithAll } from 'shared/config/tests/rtl';
 import ErrorPage from './error';
 
 describe('test pages/error', () => {
-  it('should be in the document', () => {
+  it('be in the document', () => {
     renderWithAll(<ErrorPage />);
     expect(screen.getByTestId('error-page')).toBeInTheDocument();
   });

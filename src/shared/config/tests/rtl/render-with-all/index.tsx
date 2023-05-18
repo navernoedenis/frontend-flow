@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { I18nextProvider } from 'react-i18next';
 import { render } from '@testing-library/react';
 
-import { createAppStore } from 'app/providers/store';
+import { createStore } from 'app/providers/store';
 import type {
   AppState,
   AppStatePreloaded,
@@ -28,7 +28,7 @@ export function renderWithAll(
   component: ReactNode,
   preloadedState: AppStatePreloaded = {},
 ) {
-  const store = createAppStore({
+  const store = createStore({
     lazyReducers,
     preloadedState: preloadedState as AppState,
   });

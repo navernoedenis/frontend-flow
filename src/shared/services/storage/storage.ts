@@ -6,8 +6,8 @@ function get(storage: globalThis.Storage) {
 }
 
 function remove(storage: globalThis.Storage) {
-  return function remove(key: string): void {
-    storage.removeItem(key);
+  return function remove(...keys: string[]): void {
+    keys.forEach((key) => storage.removeItem(key));
   };
 }
 
