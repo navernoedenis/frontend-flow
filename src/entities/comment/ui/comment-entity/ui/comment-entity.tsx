@@ -1,9 +1,10 @@
 import { memo } from 'react';
 
-import { AppLink } from 'shared/ui/app-link';
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
-import { LazyImage } from 'shared/ui/lazy-image';
+import { AppLink } from '@/shared/ui/app-link';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { LazyImage } from '@/shared/ui/lazy-image';
+import { routes } from '@/shared/constants/routes';
 
 import type { Comment } from '../../../model/types';
 import classes from './comment-entity.module.scss';
@@ -30,7 +31,7 @@ function CommentEntity({ comment }: CommentEntityProps) {
         <AppLink
           className={classes.username}
           data-testid="comment-entity-link"
-          to={`/profiles/${comment.user.profileId}`}
+          to={routes.profile(comment.user.profileId)}
         >
           {comment.user.name}
         </AppLink>

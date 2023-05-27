@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import type { Article } from 'entities/article';
-import type { ThunkConfig } from 'app/providers/store';
+import type { ThunkConfig } from '@/app/providers/store';
+import type { Article } from '@/entities/article';
 
-import { addSearchParams, buildSearchParams } from 'shared/lib/search-params';
-import { errorMessage } from 'shared/lib/transforms/error-message';
+import { addSearchParams, buildSearchParams } from '@/shared/lib/search-params';
+import { errorMessage } from '@/shared/lib/transforms/error-message';
 
 import {
   selectArticlesSortKey,

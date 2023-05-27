@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/rtl';
-import { profileStateMock } from 'shared/config/tests/mocks/states';
-import { adminMock, userMock } from 'shared/config/tests/mocks/entities';
+import { renderWithAll } from '@/shared/config/jest/providers';
+import { profileStateMock } from '@/shared/config/jest/mocks/states';
+import { adminMock, userMock } from '@/shared/config/jest/mocks/entities';
 
 import EditProfile from './edit-profile';
 

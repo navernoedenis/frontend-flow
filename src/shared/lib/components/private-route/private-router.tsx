@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router-dom';
-import { selectAuthMe, selectAuthLoading } from 'features/auth';
+import { selectAuthMe, selectAuthLoading } from '@/features/auth';
 
-import { isAdminRole, isUserRole } from 'shared/lib/user-roles';
-import { PageLoader } from 'shared/ui/page-loader';
-import { useAppSelector } from 'shared/hooks/use-store';
+import { isAdminRole, isUserRole } from '@/shared/lib/user-roles';
+import { PageLoader } from '@/shared/ui/page-loader';
+import { useAppSelector } from '@/shared/hooks/use-store';
 
 interface PrivateRouteProps {
   children: JSX.Element;

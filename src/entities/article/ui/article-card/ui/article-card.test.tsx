@@ -1,6 +1,6 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/rtl';
-import { articleMock } from 'shared/config/tests/mocks/entities';
+import { renderWithAll } from '@/shared/config/jest/providers';
+import { articleMock } from '@/shared/config/jest/mocks/entities';
 
 import ArticleCard from './article-card';
 

@@ -82,10 +82,12 @@ export default {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+
     '\\.(css|scss)$': 'identity-obj-proxy',
 
     '\\.(jpg|jpeg|png|gif|eot|svg|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/src/shared/config/tests/mocks/asset-file.tsx',
+      '<rootDir>/src/shared/config/jest/mocks/asset-file.tsx',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

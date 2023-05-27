@@ -3,14 +3,14 @@ import type { MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { authActions, selectAuthMe } from 'features/auth';
+import { authActions, selectAuthMe } from '@/features/auth';
 
-import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
-import { LazyImage } from 'shared/ui/lazy-image';
+import { Dropdown, DropdownItem } from '@/shared/ui/dropdown';
+import { LazyImage } from '@/shared/ui/lazy-image';
 
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
-import { AppRoutePath } from 'shared/constants/routes';
-import { isAdminRole } from 'shared/lib/user-roles';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks';
+import { routes } from '@/shared/constants/routes';
+import { isAdminRole } from '@/shared/lib/user-roles';
 
 import classes from './user-menu.module.scss';
 
@@ -63,13 +63,13 @@ const UserMenu = () => {
       >
         {isAdmin && (
           <DropdownItem
-            onClick={() => navigate(AppRoutePath.admin)}
+            onClick={() => navigate(routes.admin())}
             title={t('menu.admin')}
           />
         )}
 
         <DropdownItem
-          onClick={() => navigate(`${AppRoutePath.profiles}/${me.id}`)}
+          onClick={() => navigate(routes.profile(me.id))}
           title={t('menu.profile')}
         />
         <DropdownItem onClick={handleLogout} title={t('menu.logout')} />

@@ -7,6 +7,8 @@ import type {
 } from 'webpack';
 
 export function buildWebpackConfig(config: Configuration): Configuration {
+  const rootDir = path.resolve(__dirname, '..', '..', 'src');
+
   const filesRule = config.module?.rules?.find((rule) => {
     // @ts-ignore
     return rule.test.test('.svg');
@@ -27,12 +29,15 @@ export function buildWebpackConfig(config: Configuration): Configuration {
 
   config.module?.rules?.push(...rules);
 
-  const modules: string[] = [
-    path.resolve(__dirname, '..', '..', 'src'),
-    'node_modules',
-  ];
+  const modules: string[] = [rootDir, 'node_modules'];
 
   config.resolve?.modules?.push(...modules);
+
+  // @ts-ignore
+  config.resolve.alias = {
+    ...config.resolve?.alias,
+    '@': rootDir,
+  };
 
   const plugins: WebpackPluginInstance[] = [
     new DefinePlugin({

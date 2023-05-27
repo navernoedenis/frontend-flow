@@ -1,5 +1,5 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/rtl';
+import { renderWithAll } from '@/shared/config/jest/providers';
 import Auth from './auth';
 
 describe('test features/auth', () => {

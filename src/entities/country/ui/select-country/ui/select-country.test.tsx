@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/rtl';
+import { renderWithAll } from '@/shared/config/jest/providers';
 import { Country } from '../../../model/constants';
 
 import SelectCountry from './select-country';

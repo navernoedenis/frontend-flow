@@ -1,4 +1,4 @@
-import type { Country } from 'entities/country';
+import type { Country } from '@/entities/country';
 
 export interface Profile {
   id: string;

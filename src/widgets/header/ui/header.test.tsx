@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { matchMedia } from 'shared/config/tests/mocks/dom';
-import { renderWithAll } from 'shared/config/tests/rtl';
+import { matchMedia } from '@/shared/config/jest/mocks/dom';
+import { renderWithAll } from '@/shared/config/jest/providers';
 
 import Header from './header';
 

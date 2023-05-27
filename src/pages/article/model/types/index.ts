@@ -1,7 +1,7 @@
 import type { EntityState } from '@reduxjs/toolkit';
 
-import type { Article } from 'entities/article';
-import type { Comment } from 'entities/comment';
+import type { Article } from '@/entities/article';
+import type { Comment } from '@/entities/comment';
 
 export interface ArticleState {
   data: Article | null;

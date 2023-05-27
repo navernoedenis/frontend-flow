@@ -14,6 +14,9 @@
       "ukraine": "ukraine",
       "usa": "usa"
     },
+    "notification": {
+      "error_message": "something went wrong"
+    },
     "profile": {
       "age": "age",
       "avatar": "avatar",
@@ -29,6 +32,41 @@
       },
       "placeholder": "message",
       "title": "add comment"
+    },
+    "article-rating": {
+      "modal": {
+        "cancel": "cancel",
+        "failure_message": "something wen't wrong... unfortunately, can't leave a feeback right now",
+        "placeholder": "your message",
+        "submit": "submit",
+        "success_message": "success! thank you for feeback",
+        "title": "feedback"
+      },
+      "rated_title": "thank you so much for rate",
+      "unrated_title": "please, rate the article"
+    },
+    "article-select-sort": {
+      "options": {
+        "asc": "asc",
+        "created": "created",
+        "desc": "desc",
+        "views": "views"
+      },
+      "titles": {
+        "key": "key",
+        "order": "order"
+      }
+    },
+    "article-select-tag": {
+      "all": "all",
+      "business": "business",
+      "programming": "programming",
+      "science": "science"
+    },
+    "article-select-view": {
+      "compact": "compact",
+      "normal": "normal",
+      "view": "view"
     },
     "articles-recommended": {
       "title": "articles recommended"
@@ -64,6 +102,11 @@
         "position_empty": "position can't be empty",
         "position_range_less": "position can't be less 3 characters"
       }
+    },
+    "theme-switcher": {
+      "auto": "auto",
+      "dark": "dark",
+      "light": "light"
     }
   },
   "page": {
@@ -76,36 +119,10 @@
       }
     },
     "articles": {
-      "header": {
-        "buttons": {
-          "all": "all",
-          "business": "business",
-          "programming": "programming",
-          "science": "science"
-        },
-        "search": {
-          "placeholder": "search articles",
-          "title": "search"
-        },
-        "sort": {
-          "options": {
-            "asc": "asc",
-            "createdAt": "created",
-            "desc": "desc",
-            "views": "views"
-          },
-          "titles": {
-            "key": "key",
-            "order": "order"
-          }
-        },
-        "views": {
-          "compact": "compact",
-          "normal": "normal",
-          "view": "view"
-        }
-      },
-      "no_articles": "немає статей"
+      "selects": {
+        "placeholder": "search articles",
+        "title": "search"
+      }
     },
     "error": {
       "button": "reload page",
@@ -124,11 +141,6 @@
   "shared": {
     "clipboard": {
       "coppied": "code coppied"
-    },
-    "theme-switcher": {
-      "auto": "auto",
-      "dark": "dark",
-      "light": "light"
     }
   },
   "widgets": {

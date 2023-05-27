@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { signIn } from './sign-in';
 
-import type { AppDispatch, AppState } from 'app/providers/store';
-import { userMock } from 'shared/config/tests/mocks/entities';
+import type { AppDispatch, AppState } from '@/app/providers/store';
+import { userMock } from '@/shared/config/jest/mocks/entities';
 
 jest.mock('axios');
 const mockedAxios = jest.mocked(axios);

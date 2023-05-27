@@ -1,6 +1,6 @@
 import axios from 'axios';
-import type { AppState, AppDispatch } from 'app/providers/store';
-import { commentMock, userMock } from 'shared/config/tests/mocks/entities';
+import type { AppState, AppDispatch } from '@/app/providers/store';
+import { commentMock, userMock } from '@/shared/config/jest/mocks/entities';
 import { addComment } from './add-comment';
 
 jest.mock('axios');

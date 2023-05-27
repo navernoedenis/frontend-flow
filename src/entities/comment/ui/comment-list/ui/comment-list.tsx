@@ -1,4 +1,4 @@
-import { Flexbox } from 'shared/ui/flexbox';
+import { Flexbox } from '@/shared/ui/flexbox';
 import type { Comment } from '../../../model/types';
 
 import { CommentEntity, CommentSkeleton } from '../../comment-entity';

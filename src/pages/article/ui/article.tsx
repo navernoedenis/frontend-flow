@@ -2,22 +2,23 @@ import { useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import type { AppReducersLazy } from 'app/providers/store';
+import type { AppReducersLazy } from '@/app/providers/store';
 
-import { AddComment } from 'features/add-comment';
-import { ArticlesRecommended } from 'features/articles-recommended';
-import { selectAuthMe } from 'features/auth';
+import { AddComment } from '@/features/add-comment';
+import { ArticleRating } from '@/features/article-rating';
+import { ArticlesRecommended } from '@/features/articles-recommended';
+import { selectAuthMe } from '@/features/auth';
 
-import { ArticleEntity } from 'entities/article';
-import { CommentList } from 'entities/comment';
+import { ArticleEntity } from '@/entities/article';
+import { CommentList } from '@/entities/comment';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
+import { AppButton } from '@/shared/ui/app-button';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
 
-import { LazyReducers } from 'shared/lib/components';
-import { useAppDispatch, useAppSelector, useEffectOnce } from 'shared/hooks';
-import { AppRoutePath } from 'shared/constants/routes';
+import { LazyReducers } from '@/shared/lib/components';
+import { useAppDispatch, useAppSelector, useEffectOnce } from '@/shared/hooks';
+import { routes } from '@/shared/constants/routes';
 
 import { addComment, getArticle, getComments } from '../api';
 import { articleReducer, commentsReducer } from '../model/slice';
@@ -65,7 +66,7 @@ function ArticlePage() {
   );
 
   const onGoBack = useCallback(() => {
-    navigate(AppRoutePath.articles);
+    navigate(routes.articles());
   }, [navigate]);
 
   if (errorMessage) {
@@ -100,10 +101,13 @@ function ArticlePage() {
         <ArticlesRecommended />
 
         {me && (
-          <AddComment
-            isDisabled={isCommentsLoading}
-            onSendComment={handleSendComment}
-          />
+          <>
+            <ArticleRating articleId={params.id as string} userId={me.id} />
+            <AddComment
+              isDisabled={isCommentsLoading}
+              onSendComment={handleSendComment}
+            />
+          </>
         )}
 
         <CommentList comments={comments} isLoading={isCommentsLoading} />

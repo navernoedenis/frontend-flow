@@ -23,10 +23,14 @@ jobs:
       - name: install dependencies
         run: npm i
 
-      - name: run eslint
-        run: npm run lint:ts
+      - name: run stylelint
+        run: npm run test:stylelint
         if: always()
 
-      - name: run stylelint
-        run: npm run lint:css
+      - name: run eslint
+        run: npm run test:eslint
+        if: always()
+
+      - name: run jest
+        run: npm run test:jest
         if: always()

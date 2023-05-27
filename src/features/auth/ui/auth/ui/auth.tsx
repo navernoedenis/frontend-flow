@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
-import { TextField } from 'shared/ui/text-field';
+import { AppButton } from '@/shared/ui/app-button';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { TextField } from '@/shared/ui/text-field';
 
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 
 import type { AuthForm } from '../../../model/types';
 import { signIn } from '../../../api/sign-in/sign-in';

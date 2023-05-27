@@ -1,5 +1,5 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import type { Comment } from 'entities/comment';
+import type { Comment } from '@/entities/comment';
 import type { CommentsState } from '../types';
 
 import { addComment } from '../../api/add-comment/add-comment';

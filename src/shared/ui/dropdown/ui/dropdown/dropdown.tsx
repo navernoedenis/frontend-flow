@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import type { MutableRefObject, ReactNode } from 'react';
 
-import { Portal } from 'shared/ui/portal';
-import { classNames } from 'shared/lib/transforms/class-names';
-import { useThrottle } from 'shared/hooks';
+import { Portal } from '@/shared/ui/portal';
+import { classNames } from '@/shared/lib/transforms/class-names';
+import { useThrottle } from '@/shared/hooks';
 
 import { calcCoords } from '../../model/utils/calc-cords';
 import type { Coords } from '../../model/utils/calc-cords';
@@ -15,6 +15,7 @@ interface DropdownProps {
   className?: string;
   fullWidth?: boolean;
   isOpen: boolean;
+  isSidePadding?: boolean;
   onClose: VoidFunction;
   parentRef: MutableRefObject<HTMLElement | null>;
 }
@@ -24,6 +25,7 @@ const Dropdown = ({
   className = '',
   fullWidth = false,
   isOpen,
+  isSidePadding = false,
   onClose,
   parentRef,
 }: DropdownProps) => {
@@ -55,6 +57,7 @@ const Dropdown = ({
 
   const dropdownClasses = classNames(classes.container, {
     [className]: !!className,
+    [classes.sidePadding]: isSidePadding,
   });
 
   if (!isOpen) {

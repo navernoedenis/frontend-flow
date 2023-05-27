@@ -1,5 +1,5 @@
-import type { Profile } from 'entities/profile';
-import type { Country } from 'entities/country';
+import type { Profile } from '@/entities/profile';
+import type { Country } from '@/entities/country';
 import type { ValidateProfileError } from '../constants';
 
 export interface ProfileState {

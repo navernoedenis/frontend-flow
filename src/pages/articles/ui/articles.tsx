@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import type { AppReducersLazy } from 'app/providers/store/types';
-import { LazyReducers } from 'shared/lib/components';
-import { Flexbox } from 'shared/ui/flexbox';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import type { AppReducersLazy } from '@/app/providers/store/types';
+import { LazyReducers } from '@/shared/lib/components';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 
-import { ArticlesHeader } from './articles-header';
+import { ArticlesSelects } from './articles-selects';
 import { ArticlesInfiniteScroll } from './articles-infinite-scroll';
 
 import { onMountPage } from '../api/mount-page/mount-page';
@@ -36,7 +36,7 @@ function ArticlesPage() {
         direction="column"
         gap="20"
       >
-        <ArticlesHeader />
+        <ArticlesSelects />
         <ArticlesInfiniteScroll />
       </Flexbox>
     </LazyReducers>

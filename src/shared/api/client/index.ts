@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { LS_AUTH_KEY } from 'shared/constants/local-storage';
-import { Storage } from 'shared/services';
+import { LS_AUTH_KEY } from '@/shared/constants/local-storage';
+import { Storage } from '@/shared/services';
 
 export const client = axios.create({
   baseURL: __HOST__,

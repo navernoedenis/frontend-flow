@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { AppButton } from 'shared/ui/app-button';
-import { Flexbox } from 'shared/ui/flexbox';
+import { AppButton } from '@/shared/ui/app-button';
+import { Flexbox } from '@/shared/ui/flexbox';
 
 import classes from './edit-buttons.module.scss';
 

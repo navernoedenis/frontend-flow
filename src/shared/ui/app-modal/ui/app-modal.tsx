@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { ReactNode } from 'react';
 
-import { Portal } from 'shared/ui/portal';
-import { classNames } from 'shared/lib/transforms/class-names';
+import { Portal } from '@/shared/ui/portal';
+import { classNames } from '@/shared/lib/transforms/class-names';
 
 import CrossIcon from './assets/cross.svg';
 import classes from './app-modal.module.scss';
@@ -67,13 +67,10 @@ const AppModal = (props: AppModalProps) => {
         >
           <div
             className={classes.content}
-            onClick={(event) => {
-              event.stopPropagation();
-            }}
+            onClick={(event) => event.stopPropagation()}
             style={{ animationDuration: `${ANIMATION_DURATION}ms` }}
           >
             {children}
-
             <button className={classes.button} onClick={handleClosing}>
               <CrossIcon />
             </button>

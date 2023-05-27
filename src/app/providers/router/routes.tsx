@@ -1,6 +1,4 @@
 import type { RouteProps } from 'react-router-dom';
-import { AppRoute, AppRoutePath } from 'shared/constants/routes';
-
 import {
   AdminPage,
   ArticlePage,
@@ -8,7 +6,9 @@ import {
   HomePage,
   NotFoundPage,
   ProfilePage,
-} from 'pages';
+} from '@/pages';
+
+import { AppRoute, routes } from '@/shared/constants/routes';
 
 type AppRouteProps = RouteProps & {
   isAdmin?: boolean;
@@ -17,29 +17,29 @@ type AppRouteProps = RouteProps & {
 
 export const AppRoutes: Record<AppRoute, AppRouteProps> = {
   [AppRoute.ADMIN]: {
-    path: AppRoutePath.admin,
+    path: routes.admin(),
     element: <AdminPage />,
     isAdmin: true,
   },
   [AppRoute.HOME]: {
-    path: AppRoutePath.home,
+    path: routes.home(),
     element: <HomePage />,
   },
   [AppRoute.PROFILES]: {
-    path: `${AppRoutePath.profiles}/:id`,
+    path: routes.profile(':id'),
     element: <ProfilePage />,
     isPrivate: true,
   },
   [AppRoute.ARTICLE]: {
-    path: `${AppRoutePath.article}/:id`,
+    path: routes.article(':id'),
     element: <ArticlePage />,
   },
   [AppRoute.ARTICLES]: {
-    path: AppRoutePath.articles,
+    path: routes.articles(),
     element: <ArticlesPage />,
   },
   [AppRoute.NOT_FOUND]: {
-    path: AppRoutePath.not_found,
+    path: '*',
     element: <NotFoundPage />,
   },
 };

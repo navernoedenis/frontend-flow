@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/transforms/class-names';
 import CheckIcon from './assets/check.svg';
 import classes from './dropdown-item.module.scss';
 

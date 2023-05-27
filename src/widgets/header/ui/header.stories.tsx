@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { authActions } from 'features/auth';
-import { useAppDispatch } from 'shared/hooks';
+import { authActions } from '@/features/auth';
+import { useAppDispatch } from '@/shared/hooks';
 
 import Header from './header';
 
@@ -23,4 +23,4 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
+export const Component: Story = {};

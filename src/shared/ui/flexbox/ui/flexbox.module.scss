@@ -3,16 +3,40 @@
 }
 
 .align {
-  &-start {
-    align-items: flex-start;
+  &-items {
+    &-start {
+      align-items: flex-start;
+    }
+
+    &-center {
+      align-items: center;
+    }
+
+    &-end {
+      align-items: flex-end;
+    }
+
+    &-stretch {
+      align-items: stretch;
+    }
   }
 
-  &-center {
-    align-items: center;
-  }
+  &-content {
+    &-start {
+      align-content: flex-start;
+    }
 
-  &-end {
-    align-items: flex-end;
+    &-center {
+      align-content: center;
+    }
+
+    &-end {
+      align-content: flex-end;
+    }
+
+    &-stretch {
+      align-content: stretch;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import type { AnyAction } from '@reduxjs/toolkit';
 
 import { authReducer, initialState } from '.';
-import { userMock } from 'shared/config/tests/mocks/entities';
+import { userMock } from '@/shared/config/jest/mocks/entities';
 
 import { AuthState } from '../types';
 import { signIn } from '../../api/sign-in/sign-in';

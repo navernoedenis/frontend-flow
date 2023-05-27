@@ -2,13 +2,12 @@ import { useState, useRef } from 'react';
 import type { MouseEvent } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
 
-import AutoIcon from 'shared/ui/theme-switcher/ui/assets/auto.svg';
-import MoonIcon from 'shared/ui/theme-switcher/ui/assets/moon.svg';
-import SunIcon from 'shared/ui/theme-switcher/ui/assets/sun.svg';
+import AutoIcon from '@/features/theme-switcher/ui/assets/auto.svg';
+import MoonIcon from '@/features/theme-switcher/ui/assets/moon.svg';
+import SunIcon from '@/features/theme-switcher/ui/assets/sun.svg';
 
 import Dropdown from './dropdown';
 import DropdownItem from '../dropdown-item/dropdown-item';
@@ -21,7 +20,7 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
+export const Component: Story = {
   render: () => {
     const [isOpen, setOpen] = useState(false);
     const [selected, setSelected] = useState('option 1');
@@ -57,7 +56,7 @@ export const Light: Story = {
   },
 };
 
-export const LightChecked: Story = {
+export const Checked: Story = {
   render: () => {
     const [isOpen, setOpen] = useState(false);
     const parentRef = useRef<HTMLButtonElement | null>(null);
@@ -87,117 +86,7 @@ export const LightChecked: Story = {
   },
 };
 
-export const LightIcon: Story = {
-  render: () => {
-    const [isOpen, setOpen] = useState(false);
-    const [selected, setSelected] = useState('auto');
-    const parentRef = useRef<HTMLButtonElement | null>(null);
-
-    function handleToggle(event: MouseEvent) {
-      event.stopPropagation();
-      setOpen((prev) => !prev);
-    }
-
-    function handleClose() {
-      setOpen(false);
-    }
-
-    return (
-      <Flexbox justifyContent="center">
-        <button onClick={handleToggle} ref={parentRef}>
-          <AppTypography tag="span">Checked dropdown</AppTypography>
-        </button>
-
-        <Dropdown isOpen={isOpen} onClose={handleClose} parentRef={parentRef}>
-          {[
-            { icon: AutoIcon, title: 'Auto', value: 'auto' },
-            { icon: SunIcon, title: 'Light', value: 'light' },
-            { icon: MoonIcon, title: 'Dark', value: 'dark' },
-          ].map(({ icon: Icon, title, value }) => (
-            <DropdownItem
-              icon={<Icon />}
-              isChecked={selected === value}
-              key={title}
-              onClick={() => setSelected(value)}
-              title={title}
-            />
-          ))}
-        </Dropdown>
-      </Flexbox>
-    );
-  },
-};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-  render: () => {
-    const [isOpen, setOpen] = useState(false);
-    const [selected, setSelected] = useState('option 1');
-    const parentRef = useRef<HTMLButtonElement | null>(null);
-
-    function handleToggle(event: MouseEvent) {
-      event.stopPropagation();
-      setOpen((prev) => !prev);
-    }
-
-    function handleClose() {
-      setOpen(false);
-    }
-
-    return (
-      <Flexbox justifyContent="center">
-        <button onClick={handleToggle} ref={parentRef}>
-          <AppTypography tag="span">Checked dropdown</AppTypography>
-        </button>
-
-        <Dropdown isOpen={isOpen} onClose={handleClose} parentRef={parentRef}>
-          {['option 1', 'option 2', 'option 3'].map((option) => (
-            <DropdownItem
-              isChecked={selected === option}
-              key={option}
-              onClick={() => setSelected(option)}
-              title={option}
-            />
-          ))}
-        </Dropdown>
-      </Flexbox>
-    );
-  },
-};
-
-export const DarkChecked: Story = {
-  decorators: [ThemeDecorator('dark')],
-  render: () => {
-    const [isOpen, setOpen] = useState(false);
-    const parentRef = useRef<HTMLButtonElement | null>(null);
-
-    function handleToggle(event: MouseEvent) {
-      event.stopPropagation();
-      setOpen((prev) => !prev);
-    }
-
-    function handleClose() {
-      setOpen(false);
-    }
-
-    return (
-      <Flexbox justifyContent="center">
-        <button onClick={handleToggle} ref={parentRef}>
-          <AppTypography tag="span">Checked dropdown</AppTypography>
-        </button>
-
-        <Dropdown isOpen={isOpen} onClose={handleClose} parentRef={parentRef}>
-          {['option 1', 'option 2', 'option 3'].map((option) => (
-            <DropdownItem key={option} onClick={() => {}} title={option} />
-          ))}
-        </Dropdown>
-      </Flexbox>
-    );
-  },
-};
-
-export const DarkIcon: Story = {
-  decorators: [ThemeDecorator('dark')],
+export const Icon: Story = {
   render: () => {
     const [isOpen, setOpen] = useState(false);
     const [selected, setSelected] = useState('auto');

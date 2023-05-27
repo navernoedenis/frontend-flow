@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
 import { I18nextProvider } from 'react-i18next';
-import type { DecoratorFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 
-import i18n from 'shared/config/i18n/i18n.config';
+import i18n from '@/shared/config/i18n/i18n.config';
 
-export const I18nDecorator: DecoratorFn = (Story) => (
-  <I18nextProvider i18n={i18n}>
-    <Suspense fallback="">
+export const I18nDecorator = (Story: StoryFn) => (
+  <Suspense fallback="">
+    <I18nextProvider i18n={i18n}>
       <Story />
-    </Suspense>
-  </I18nextProvider>
+    </I18nextProvider>
+  </Suspense>
 );

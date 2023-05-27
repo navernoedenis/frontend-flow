@@ -1,13 +1,12 @@
 import { Toaster } from 'react-hot-toast';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { articleMock } from 'shared/config/tests/mocks/entities';
+import { articleMock } from '@/shared/config/jest/mocks/entities';
 
 import Article from './article';
 import ArticleSkeleton from './article.skeleton';
 
 const meta: Meta = {
-  title: 'entities/ArticleEntity',
+  title: 'entities/article/ArticleEntity',
   component: Article,
   render: () => (
     <>
@@ -20,17 +19,8 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
+export const Component: Story = {};
 
-export const LightSkeleton: Story = {
-  render: () => <ArticleSkeleton />,
-};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-};
-
-export const DarkSkeleton: Story = {
-  decorators: [ThemeDecorator('dark')],
+export const Skeleton: Story = {
   render: () => <ArticleSkeleton />,
 };

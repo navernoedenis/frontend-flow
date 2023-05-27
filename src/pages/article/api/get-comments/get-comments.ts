@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import type { ThunkConfig } from 'app/providers/store';
-import type { Comment } from 'entities/comment';
+import type { ThunkConfig } from '@/app/providers/store';
+import type { Comment } from '@/entities/comment';
 
-import { errorMessage } from 'shared/lib/transforms/error-message';
+import { errorMessage } from '@/shared/lib/transforms/error-message';
 
 export const getComments = createAsyncThunk<Comment[], string, ThunkConfig>(
   'article/get-comments',

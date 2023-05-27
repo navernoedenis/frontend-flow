@@ -1,12 +1,12 @@
 import type { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { SelectCountry } from 'entities/country';
-import type { Country } from 'entities/country';
+import { SelectCountry } from '@/entities/country';
+import type { Country } from '@/entities/country';
 
-import { Flexbox } from 'shared/ui/flexbox';
-import { LazyImage } from 'shared/ui/lazy-image';
-import { TextField } from 'shared/ui/text-field';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { LazyImage } from '@/shared/ui/lazy-image';
+import { TextField } from '@/shared/ui/text-field';
 
 import classes from './profile-form.module.scss';
 import type { Profile } from '../../../model/types';

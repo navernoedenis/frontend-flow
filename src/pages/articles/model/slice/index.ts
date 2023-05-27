@@ -1,19 +1,19 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { AppState } from 'app/providers/store';
-import type { Article } from 'entities/article';
+import type { AppState } from '@/app/providers/store';
 
-import { ArticleView } from 'pages/articles/ui/articles-header/ui/select-article-view';
-
-import { LS_ARTICLES_VIEW_KEY } from 'shared/constants/local-storage';
-import { Storage } from 'shared/services';
-
-import type { ArticleTag } from '../../ui/articles-header/ui/select-article-tag';
+import { ArticleView } from '@/features/article-select-view';
+import type { ArticleTag } from '@/features/article-select-tag';
 import type {
   ArticleSortKey,
   ArticleSortOrder,
-} from '../../ui/articles-header/ui/select-article-sort';
+} from '@/features/article-select-sort';
+
+import type { Article } from '@/entities/article';
+
+import { LS_ARTICLES_VIEW_KEY } from '@/shared/constants/local-storage';
+import { Storage } from '@/shared/services';
 
 import { getArticles } from '../../api/get-articles/get-articles';
 import type { ArticlesState } from '../types';
@@ -27,7 +27,7 @@ const initialState: ArticlesState = {
   isMounted: false,
   shouldScrollToTop: false,
   sort: {
-    key: 'createdAt',
+    key: 'created',
     limit: 9,
     order: 'desc',
     page: 1,

@@ -18,13 +18,29 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
   const { manifest, paths, host, isDevelopment, isStorybook } = options;
 
   const plugins: WebpackPluginInstance[] = [
-    new ProgressPlugin(),
+    new Copy({
+      patterns: [
+        {
+          from: paths.locales.from,
+          to: paths.locales.to,
+        },
+      ],
+    }),
     new DefinePlugin({
       __HOST__: JSON.stringify(host),
       __IS_DEV__: JSON.stringify(isDevelopment),
       __IS_STORYBOOK__: JSON.stringify(isStorybook),
     }),
     new FaviconsWebpack(paths.favicon),
+    new ForkTsCheckerWebpack({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
+    }),
     new HtmlInlineScript({
       scriptMatchPattern: [/init-theme.+[.]js$/],
     }),
@@ -36,34 +52,18 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     new MiniCssExtract({
       filename: 'css/[name].[hash].css',
     }),
+    new ProgressPlugin(),
     new WebpackPwaManifest(manifest) as WebpackPluginInstance,
-    new Copy({
-      patterns: [
-        {
-          from: paths.locales.from,
-          to: paths.locales.to,
-        },
-      ],
-    }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
   ];
 
   const devPlugins: WebpackPluginInstance[] = [
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
     new CircularDependency({
       allowAsyncCycles: false,
       exclude: /node_modules/,
       failOnError: true,
-    }),
-    new ForkTsCheckerWebpack({
-      typescript: {
-        diagnosticOptions: {
-          semantic: true,
-          syntactic: true,
-        },
-        mode: 'write-references',
-      },
     }),
     new ReactRefreshWebpack(),
   ];

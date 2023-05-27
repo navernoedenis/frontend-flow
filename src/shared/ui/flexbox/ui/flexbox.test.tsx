@@ -14,7 +14,7 @@ describe('test shared/flexbox', () => {
 
   it('set align: end', () => {
     render(<Flexbox alignItems="end" children />);
-    expect(screen.getByTestId('flexbox')).toHaveClass('align-end');
+    expect(screen.getByTestId('flexbox')).toHaveClass('align-items-end');
   });
 
   it('set direction: column-reverse', () => {

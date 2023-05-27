@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
-import { LazyImage } from 'shared/ui/lazy-image';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { LazyImage } from '@/shared/ui/lazy-image';
 
-import { classNames } from 'shared/lib/transforms/class-names';
-import { openInNewTab } from 'shared/lib/open-in-new-tab';
+import { classNames } from '@/shared/lib/transforms/class-names';
+import { openInNewTab } from '@/shared/lib/open-in-new-tab';
 
 import { ArticleBlockType } from '../../../model/types';
 import type { Article, ArticleTextBlock } from '../../../model/types';
@@ -84,7 +84,7 @@ function ArticleCard({
 
         <Flexbox gap="16">
           <AppTypography capitalizeFirstLetter noShrink>
-            {`${t('date')}: ${article.createdAt}`}
+            {`${t('date')}: ${article.created}`}
           </AppTypography>
 
           <AppTypography capitalizeFirstLetter noShrink>

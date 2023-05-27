@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 
-import type { AppReducersLazy, AppStateLazyKey } from 'app/providers/store';
-import { useAppStore } from 'shared/hooks';
+import type { AppReducersLazy, AppStateLazyKey } from '@/app/providers/store';
+import { useAppStore } from '@/shared/hooks';
 
 interface LazyReducersProps {
   children: ReactNode;

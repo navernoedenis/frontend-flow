@@ -5,8 +5,10 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
   const { paths } = options;
 
   return {
-    alias: {},
-    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@': paths.src,
+    },
+    extensions: ['.js', '.ts', '.tsx'],
     modules: [paths.src, 'node_modules'],
     preferAbsolute: true,
   };

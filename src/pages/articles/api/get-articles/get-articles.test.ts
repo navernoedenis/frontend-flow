@@ -1,7 +1,7 @@
 import axios from 'axios';
-import type { AppState, AppDispatch } from 'app/providers/store';
-import { articlesStateMock } from 'shared/config/tests/mocks/states';
-import { articleMock } from 'shared/config/tests/mocks/entities';
+import type { AppState, AppDispatch } from '@/app/providers/store';
+import { articlesStateMock } from '@/shared/config/jest/mocks/states';
+import { articleMock } from '@/shared/config/jest/mocks/entities';
 
 import { getArticles } from './get-articles';
 

@@ -1,4 +1,4 @@
-import type { UserRole } from 'entities/user';
+import type { UserRole } from '@/entities/user';
 
 export function isAdminRole(roles: UserRole[]) {
   return roles.includes('admin');

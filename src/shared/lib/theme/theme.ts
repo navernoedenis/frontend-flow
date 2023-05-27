@@ -1,5 +1,5 @@
-import { LS_THEME_KEY } from 'shared/constants/local-storage';
-import { Storage } from 'shared/services';
+import { LS_THEME_KEY } from '@/shared/constants/local-storage';
+import { Storage } from '@/shared/services';
 
 export type Theme = 'auto' | 'light' | 'dark';
 export type LS_Theme = Exclude<Theme, 'auto'>;

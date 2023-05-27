@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  height: 40px;
+  padding: 0 4px;
+  transition: var(--transition-base);
+  cursor: pointer;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  &:hover {
+    fill: var(--primary-color);
+  }
+
+  &.active {
+    fill: var(--primary-color);
+  }
+}
+
+.selected {
+  .star {
+    pointer-events: none;
+  }
+}
+
+.align {
+  &-start {
+    text-align: start;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-end {
+    text-align: center;
+  }
+}

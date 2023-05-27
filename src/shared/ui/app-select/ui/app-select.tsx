@@ -1,9 +1,9 @@
 import { useState, useCallback, useRef } from 'react';
 import type { MouseEvent } from 'react';
 
-import { AppTypography } from 'shared/ui/app-typography';
-import { Dropdown, DropdownItem } from 'shared/ui/dropdown';
-import { classNames } from 'shared/lib/transforms/class-names';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Dropdown, DropdownItem } from '@/shared/ui/dropdown';
+import { classNames } from '@/shared/lib/transforms/class-names';
 
 import type { AppSelectOption } from '../model/types';
 import classes from './app-select.module.scss';

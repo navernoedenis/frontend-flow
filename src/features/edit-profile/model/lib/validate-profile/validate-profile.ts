@@ -1,4 +1,4 @@
-import type { Profile } from 'entities/profile';
+import type { Profile } from '@/entities/profile';
 import { ValidateProfileError } from '../../constants';
 
 export function validateProfile(profile: Profile) {

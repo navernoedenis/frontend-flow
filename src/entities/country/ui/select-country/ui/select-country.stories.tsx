@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
 
 import { Country } from '../../../model/constants';
 import SelectCountry from './select-country';
 
 const meta: Meta = {
-  title: 'entities/SelectCountry',
+  title: 'entities/country/SelectCountry',
   component: SelectCountry,
   args: {
     title: '',
@@ -17,8 +16,4 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-};
+export const Component: Story = {};

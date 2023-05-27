@@ -1,15 +1,14 @@
 import { useEffect, useReducer } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppButton } from 'shared/ui/app-button';
-import { useAppDispatch } from 'shared/hooks/use-store';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
+import { AppButton } from '@/shared/ui/app-button';
+import { useAppDispatch } from '@/shared/hooks/use-store';
 
 import { authActions } from '../../../model/slice';
 import AuthModal from './auth-modal';
 
 const meta: Meta = {
-  title: 'features/AuthModal',
+  title: 'features/auth/AuthModal',
   component: AuthModal,
   args: {
     isOpen: false,
@@ -27,7 +26,6 @@ const meta: Meta = {
         <AppButton onClick={toggleOpen} size="small">
           Show Modal
         </AppButton>
-
         <AuthModal isOpen={isOpen} onClose={toggleOpen} />
       </div>
     );
@@ -37,8 +35,4 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-};
+export const Component: Story = {};

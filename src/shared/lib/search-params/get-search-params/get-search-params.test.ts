@@ -1,4 +1,4 @@
-import { locationSearch } from 'shared/config/tests/mocks/dom';
+import { locationSearch } from '@/shared/config/jest/mocks/dom';
 import { getSearchParams } from './get-search-params';
 
 describe('test shared/lib/search-params/get-search-params', () => {

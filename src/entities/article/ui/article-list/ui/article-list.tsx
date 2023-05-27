@@ -3,16 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { VirtuosoGrid } from 'react-virtuoso';
 import type { VirtuosoGridHandle } from 'react-virtuoso';
 
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
 
-import { Storage } from 'shared/services';
-import { useEffectOnce, useInfiniteScroll, useThrottle } from 'shared/hooks';
+import { Storage } from '@/shared/services';
+import { useEffectOnce, useInfiniteScroll, useThrottle } from '@/shared/hooks';
 
 import {
   LS_ARTICLES_STATIC_SCROLLED_HEIGHT,
   LS_ARTICLES_VIRTUOSO_SCROLL_INDEX,
-} from 'shared/constants/local-storage';
+} from '@/shared/constants/local-storage';
 
 import type { Article } from '../../../model/types';
 import { ArticleCard, ArticleCardSkeleton } from '../../article-card';
@@ -21,21 +21,21 @@ import classes from './article-list.module.scss';
 
 interface ArticlesList {
   articles: Article[];
-  callback?: VoidFunction;
   isCompact?: boolean;
   isInfiniteScroll?: boolean;
   isLoading?: boolean;
   isVirtualized?: boolean;
+  onLoadMore?: VoidFunction;
   shouldScrollToTop?: boolean;
 }
 
 const ArticleList = ({
   articles,
-  callback = Function,
   isCompact = false,
   isInfiniteScroll = false,
   isLoading = false,
   isVirtualized = false,
+  onLoadMore = Function,
   shouldScrollToTop = false,
 }: ArticlesList) => {
   const { t } = useTranslation('translation', {
@@ -76,17 +76,22 @@ const ArticleList = ({
 
   const skeletonLoaders = useMemo(
     () => (
-      <Flexbox data-testid="article-list-skeleton" gap="16" wrap>
-        {Array.from({ length: 9 }, (_, index) => (
+      <Flexbox
+        className={classes.skeletonsContainer}
+        data-testid="article-list-skeleton"
+        gap="16"
+        wrap
+      >
+        {Array.from({ length: isVirtualized ? 2 : 6 }, (_, index) => (
           <ArticleCardSkeleton key={index} isCompact={isCompact} />
         ))}
       </Flexbox>
     ),
-    [isCompact],
+    [isCompact, isVirtualized],
   );
 
   const { triggerRef } = useInfiniteScroll({
-    callback,
+    callback: onLoadMore,
   });
 
   useEffectOnce(() => {
@@ -178,7 +183,7 @@ const ArticleList = ({
             ),
           }}
           data={articles}
-          endReached={callback}
+          endReached={onLoadMore}
           isScrolling={setVirtuosoScrolling}
           itemContent={renderArticle}
           listClassName={classes.virtualizedList}
@@ -191,6 +196,7 @@ const ArticleList = ({
 
   return (
     <Flexbox
+      alignContent="start"
       alignItems="start"
       className={classes.staticContainer}
       data-testid="article-list"

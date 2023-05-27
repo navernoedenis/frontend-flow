@@ -2,18 +2,18 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ChangeEvent } from 'react';
 
-import type { AppReducersLazy } from 'app/providers/store';
-import type { Profile } from 'entities/profile';
-import type { Country } from 'entities/country';
+import type { AppReducersLazy } from '@/app/providers/store';
+import type { Profile } from '@/entities/profile';
+import type { Country } from '@/entities/country';
 
-import { selectAuthMe } from 'features/auth';
-import { ProfileForm, ProfileFormSkeleton } from 'entities/profile';
+import { selectAuthMe } from '@/features/auth';
+import { ProfileForm, ProfileFormSkeleton } from '@/entities/profile';
 
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from '@/shared/ui/app-typography';
 
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
-import { deepCopy } from 'shared/lib/deep-copy';
-import { LazyReducers } from 'shared/lib/components';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks';
+import { deepCopy } from '@/shared/lib/deep-copy';
+import { LazyReducers } from '@/shared/lib/components';
 
 import { EditButtons } from './edit-buttons';
 

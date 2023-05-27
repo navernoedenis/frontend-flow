@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
-import { ArticleView } from 'pages/articles/ui/articles-header/ui/select-article-view';
-import { ArticleList } from 'entities/article';
+import { ArticleView } from '@/features/article-select-view';
+import { ArticleList } from '@/entities/article';
 
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 import { getArticles } from '../../../api/get-articles/get-articles';
 import { articlesSelectors } from '../../../model/slice';
 
@@ -16,8 +16,6 @@ import {
 } from '../../../model/selectors';
 
 function ArticlesInfiniteScroll() {
-  const dispatch = useAppDispatch();
-
   const articles = useAppSelector(articlesSelectors.selectAll);
   const hasMore = useAppSelector(selectArticlesHasMore);
   const isLoading = useAppSelector(selectArticlesLoading);
@@ -25,7 +23,9 @@ function ArticlesInfiniteScroll() {
   const shouldScrollToTop = useAppSelector(selectShouldScrollToTop);
   const view = useAppSelector(selectArticlesView);
 
-  const onGetArticles = useCallback(() => {
+  const dispatch = useAppDispatch();
+
+  const handleLoadMore = useCallback(() => {
     if (hasMore) {
       dispatch(getArticles());
     }
@@ -34,11 +34,11 @@ function ArticlesInfiniteScroll() {
   return (
     <ArticleList
       articles={articles}
-      callback={onGetArticles}
       isCompact={view === ArticleView.COMPACT}
       isInfiniteScroll={hasMore}
       isLoading={!isMounted || isLoading}
       isVirtualized
+      onLoadMore={handleLoadMore}
       shouldScrollToTop={shouldScrollToTop}
     />
   );

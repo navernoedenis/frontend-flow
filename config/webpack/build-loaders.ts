@@ -7,39 +7,38 @@ import babelRemoveAttributes from './plugins/babel-remove-attributes';
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const { isDevelopment, isProduction } = options;
 
-  const serviceWorkerLoader: RuleSetRule = {
-    test: /service-worker\.ts$/,
-    use: 'babel-loader',
-    type: 'asset/resource',
-    generator: {
-      filename: '[name].js',
-    },
-  };
-
   const babelLoader: RuleSetRule = {
     test: /\.tsx?$/,
     use: {
       loader: 'babel-loader',
       options: {
+        cacheDirectory: true,
+        presets: ['@babel/preset-env'],
         plugins: [
-          ['@babel/plugin-transform-runtime', { isTsx: isDevelopment }],
-
+          '@babel/plugin-transform-typescript',
+          [
+            '@babel/plugin-transform-runtime',
+            {
+              isTsx: isDevelopment,
+            },
+          ],
           isProduction && [
             babelRemoveAttributes,
             {
               attributes: ['data-testid'],
             },
           ],
+          isDevelopment && require.resolve('react-refresh/babel'),
         ].filter(Boolean),
       },
     },
-    exclude: [/service-worker\.ts$/],
+    exclude: [/node_modules/, /service-worker\.ts$/],
   };
 
   const cssLoader: RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
-      MiniCssExtractPlugin.loader,
+      isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
@@ -53,6 +52,15 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
       },
       'sass-loader',
     ],
+  };
+
+  const serviceWorkerLoader: RuleSetRule = {
+    test: /service-worker\.ts$/,
+    use: 'babel-loader',
+    type: 'asset/resource',
+    generator: {
+      filename: '[name].js',
+    },
   };
 
   const svgLoaders: RuleSetRule[] = [

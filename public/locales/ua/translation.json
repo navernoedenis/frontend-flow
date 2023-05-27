@@ -14,6 +14,9 @@
       "ukraine": "україна",
       "usa": "сша"
     },
+    "notification": {
+      "error_message": "щось пішло не так"
+    },
     "profile": {
       "age": "вік",
       "avatar": "аватарка",
@@ -29,6 +32,41 @@
       },
       "placeholder": "повідомлення",
       "title": "додати коментар"
+    },
+    "article-rating": {
+      "modal": {
+        "cancel": "відмінити",
+        "failure_message": "щось сталося... нажаль, не можемо залишити відгук зараз",
+        "placeholder": "ваше повідомлення",
+        "submit": "надіслати",
+        "success_message": "успіх! дякуємо за зворотній зв'язок",
+        "title": "відгук"
+      },
+      "rated_title": "щиро дякуємо за оцінку",
+      "unrated_title": "будь ласка, оцініть статтю"
+    },
+    "article-select-sort": {
+      "options": {
+        "asc": "зростанню",
+        "created": "по створенню",
+        "desc": "зменшення",
+        "views": "перегляди"
+      },
+      "titles": {
+        "key": "ключ",
+        "order": "порядок"
+      }
+    },
+    "article-select-tag": {
+      "all": "всі",
+      "business": "бізнес",
+      "programming": "програмування",
+      "science": "наука"
+    },
+    "article-select-view": {
+      "compact": "компактний",
+      "normal": "звичайний",
+      "view": "вигляд"
     },
     "articles-recommended": {
       "title": "рекомендуемые статьи"
@@ -64,6 +102,11 @@
         "position_empty": "позиція не може бути порожньою",
         "position_range_less": "позиція не може бути менше 3 символів"
       }
+    },
+    "theme-switcher": {
+      "auto": "авто",
+      "dark": "темна",
+      "light": "світла"
     }
   },
   "page": {
@@ -76,36 +119,10 @@
       }
     },
     "articles": {
-      "header": {
-        "buttons": {
-          "all": "всі",
-          "business": "бізнес",
-          "programming": "програмування",
-          "science": "наука"
-        },
-        "search": {
-          "placeholder": "пошук статей",
-          "title": "пошук"
-        },
-        "sort": {
-          "options": {
-            "asc": "зростанню",
-            "createdAt": "по створенню",
-            "desc": "зменшення",
-            "views": "перегляди"
-          },
-          "titles": {
-            "key": "ключ",
-            "order": "порядок"
-          }
-        },
-        "views": {
-          "compact": "компактний",
-          "normal": "звичайний",
-          "view": "вигляд"
-        }
-      },
-      "no_articles": "немає статей"
+      "selects": {
+        "placeholder": "пошук статей",
+        "title": "пошук"
+      }
     },
     "error": {
       "button": "перезавантажити сторінку",
@@ -124,11 +141,6 @@
   "shared": {
     "clipboard": {
       "coppied": "код скопійовано"
-    },
-    "theme-switcher": {
-      "auto": "авто",
-      "dark": "темна",
-      "light": "світла"
     }
   },
   "widgets": {

@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
+import { articleMock } from '@/shared/config/jest/mocks/entities';
 
 import ArticleCard from './article-card';
 import ArticleCardSkeleton from './article-card.skeleton';
 
-import { articleMock } from 'shared/config/tests/mocks/entities';
-
 const meta: Meta = {
-  title: 'entities/ArticleCard',
+  title: 'entities/article/ArticleCard',
   component: ArticleCard,
   args: {
     isCompact: false,
@@ -17,28 +15,13 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
+export const Component: Story = {
   args: {
     article: articleMock,
   },
 };
 
-export const LightSkeleton: Story = {
-  args: {
-    isCompact: false,
-  },
-  render: (props) => <ArticleCardSkeleton {...props} />,
-};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-  args: {
-    article: articleMock,
-  },
-};
-
-export const DarkSkeleton: Story = {
-  decorators: [ThemeDecorator('dark')],
+export const Skeleton: Story = {
   args: {
     isCompact: false,
   },

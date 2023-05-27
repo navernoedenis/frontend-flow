@@ -1,4 +1,4 @@
-import { AppLoader } from 'shared/ui/app-loader';
+import { AppLoader } from '@/shared/ui/app-loader';
 import classes from './page-loader.module.scss';
 
 function PageLoader() {

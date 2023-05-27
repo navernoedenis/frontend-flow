@@ -1,4 +1,4 @@
-import type { Profile } from 'entities/profile';
+import type { Profile } from '@/entities/profile';
 
 export type UserRole = 'root' | 'admin' | 'user';
 

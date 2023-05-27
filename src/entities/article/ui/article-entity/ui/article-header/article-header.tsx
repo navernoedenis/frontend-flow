@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { AppTypography } from 'shared/ui/app-typography';
+import { AppTypography } from '@/shared/ui/app-typography';
 
 import type { Article } from '../../../../model/types';
 import classes from './article-header.module.scss';
@@ -34,7 +34,7 @@ function ArticleHeader({ article }: ArticleHeaderProps) {
             {t('date')}
             {': '}
           </AppTypography>
-          <AppTypography tag="span">{article.createdAt}</AppTypography>
+          <AppTypography tag="span">{article.created}</AppTypography>
         </li>
 
         <li className={classes.subitem}>

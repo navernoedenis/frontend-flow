@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { EditProfile, getProfile } from 'features/edit-profile';
-import { useAppDispatch, useEffectOnce } from 'shared/hooks';
-import { AppTypography } from 'shared/ui/app-typography';
+import { EditProfile, getProfile } from '@/features/edit-profile';
+import { useAppDispatch, useEffectOnce } from '@/shared/hooks';
+import { AppTypography } from '@/shared/ui/app-typography';
 
 import classes from './profile.module.scss';
 

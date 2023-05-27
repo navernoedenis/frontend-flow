@@ -1,3 +1,3 @@
-import type { AppState } from 'app/providers/store';
+import type { AppState } from '@/app/providers/store';
 
-export const selectArticlesSortKey = (state: AppState) => state.articles?.sort.key ?? 'createdAt';
+export const selectArticlesSortKey = (state: AppState) => state.articles?.sort.key ?? 'created';

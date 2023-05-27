@@ -1,0 +1,17 @@
+.button {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  height: 34px;
+}
+
+.modal {
+  overflow-y: auto;
+  height: 192px;
+  width: 300px;
+  padding-right: 5px;
+}

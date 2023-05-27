@@ -4,7 +4,7 @@ export interface Article {
   image: string;
   views: number;
   tags: string[];
-  createdAt: string;
+  created: string;
   blocks: ArticleBlock[];
 }
 

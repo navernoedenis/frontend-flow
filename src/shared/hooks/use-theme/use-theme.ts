@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import type { Theme } from 'shared/lib/theme';
+import type { Theme } from '@/shared/lib/theme';
 import {
   applyTheme,
   getSavedTheme,
   getSystemTheme,
   removeSavedTheme,
-} from 'shared/lib/theme';
+} from '@/shared/lib/theme';
 
 const defaultTheme: Theme = getSavedTheme() ?? 'auto';
 

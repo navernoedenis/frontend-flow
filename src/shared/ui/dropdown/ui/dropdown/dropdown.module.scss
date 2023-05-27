@@ -11,6 +11,11 @@
   transform: translateY(5px);
 }
 
+.sidePadding {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

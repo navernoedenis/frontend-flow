@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
-import { commentMock } from 'shared/config/tests/mocks/entities';
-import { renderWithAll } from 'shared/config/tests/rtl';
+import { commentMock } from '@/shared/config/jest/mocks/entities';
+import { renderWithAll } from '@/shared/config/jest/providers';
+import { routes } from '@/shared/constants/routes';
 
 import CommentEntity from './comment-entity';
 
@@ -14,6 +15,6 @@ describe('test entities/comment', () => {
     renderWithAll(<CommentEntity comment={commentMock} />);
     const { id: userId } = commentMock.user;
     const link = screen.getByTestId('comment-entity-link');
-    expect(link).toHaveAttribute('href', `/profiles/${userId}`);
+    expect(link).toHaveAttribute('href', routes.profile(userId));
   });
 });

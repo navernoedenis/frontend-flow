@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes } from 'react';
-import { classNames } from 'shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/transforms/class-names';
 
 import SpinnerIcon from './assets/spinner.svg';
 import classes from './app-button.module.scss';

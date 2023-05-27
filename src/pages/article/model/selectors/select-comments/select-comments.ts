@@ -1,4 +1,4 @@
-import type { AppState } from 'app/providers/store';
+import type { AppState } from '@/app/providers/store';
 import { commentsAdapter } from '../../slice/comments';
 
 export const selectCommentsLoading = (state: AppState) => state.comments?.isLoading ?? false;

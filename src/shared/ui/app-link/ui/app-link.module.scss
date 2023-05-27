@@ -3,7 +3,6 @@
   line-height: 24px;
   font-weight: 700;
   color: var(--primary-color);
-  text-transform: uppercase;
 
   &:hover {
     transition: var(--transition-base);
@@ -13,4 +12,8 @@
 
 .inversed {
   color: var(--secondary-color);
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

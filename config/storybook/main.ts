@@ -10,7 +10,9 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     'storybook-addon-mock',
+    'storybook-addon-paddings',
     'storybook-addon-react-router-v6',
+    'storybook-addon-root-attributes',
   ],
   docs: {
     autodocs: 'tag',

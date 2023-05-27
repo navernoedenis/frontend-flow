@@ -6,7 +6,7 @@
       "image": "https://code.visualstudio.com/assets/docs/editor/extension-marketplace/recommendations.png",
       "views": 431,
       "tags": ["programming"],
-      "createdAt": "2018.01.13",
+      "created": "2018.01.13",
       "blocks": [
         {
           "id": "1",
@@ -59,7 +59,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/4F60/production/_129302302_samsung.png.webp",
       "views": 218,
       "tags": ["business"],
-      "createdAt": "2018.01.13",
+      "created": "2018.01.13",
       "blocks": [
         {
           "id": "1",
@@ -89,7 +89,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/13530/production/_129325197_04dab25c4796561338596c7c574257c33712b260.jpg.webp",
       "views": 527,
       "tags": ["business"],
-      "createdAt": "2018.01.14",
+      "created": "2018.01.14",
       "blocks": [
         {
           "id": "1",
@@ -119,7 +119,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/17ED3/production/_129330089_gettyimages-1244873183.jpg.webp",
       "views": 119,
       "tags": ["science"],
-      "createdAt": "2018.01.15",
+      "created": "2018.01.15",
       "blocks": [
         {
           "id": "1",
@@ -149,7 +149,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/5A9B/production/_128459132_gettyimages-1344732001.jpg.webp",
       "views": 748,
       "tags": ["business"],
-      "createdAt": "2018.02.03",
+      "created": "2018.02.03",
       "blocks": [
         {
           "id": "1",
@@ -179,7 +179,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/127DD/production/_127514757_gettyimages-1346128155.jpg.webp",
       "views": 514,
       "tags": ["business"],
-      "createdAt": "2018.02.08",
+      "created": "2018.02.08",
       "blocks": [
         {
           "id": "1",
@@ -209,7 +209,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1380B/production/_129238897_gettyimages-691127471.jpg.webp",
       "views": 1034,
       "tags": ["business"],
-      "createdAt": "2018.02.08",
+      "created": "2018.02.08",
       "blocks": [
         {
           "id": "1",
@@ -239,7 +239,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/3F57/production/_128351261_8b02722d-d1c6-4a72-ab7e-713f6d4d2bbb.jpg.webp",
       "views": 847,
       "tags": ["business"],
-      "createdAt": "2018.02.14",
+      "created": "2018.02.14",
       "blocks": [
         {
           "id": "1",
@@ -269,7 +269,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/21C9/production/_129094680_loscoe.png.webp",
       "views": 289,
       "tags": ["science"],
-      "createdAt": "2018.02.24",
+      "created": "2018.02.24",
       "blocks": [
         {
           "id": "1",
@@ -299,7 +299,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/10896/production/_124943776_hi073870675.jpg.webp",
       "views": 502,
       "tags": ["science"],
-      "createdAt": "2018.04.26",
+      "created": "2018.04.26",
       "blocks": [
         {
           "id": "1",
@@ -329,7 +329,7 @@
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202212/2022%20Andreas%20Refsgaard%20Workshop_Sept%2029_Lewis%20Library_Credit%20HErickson_DSC_6760.jpg",
       "views": 502,
       "tags": ["programming"],
-      "createdAt": "2018.05.06",
+      "created": "2018.05.06",
       "blocks": [
         {
           "id": "1",
@@ -359,7 +359,7 @@
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202211/ICPC%20contest%20pic%20of%20three.png",
       "views": 798,
       "tags": ["programming"],
-      "createdAt": "2018.05.06",
+      "created": "2018.05.06",
       "blocks": [
         {
           "id": "1",
@@ -389,7 +389,7 @@
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202206/MIT-Shell-Scripts-01-PRESS_0.jpg?itok=N2GIg4Ug",
       "views": 1054,
       "tags": ["programming"],
-      "createdAt": "2018.05.11",
+      "created": "2018.05.11",
       "blocks": [
         {
           "id": "1",
@@ -419,7 +419,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/1CFF/production/_129232470_mediaitem129232469.jpg.webp",
       "views": 620,
       "tags": ["business"],
-      "createdAt": "2018.04.14",
+      "created": "2018.04.14",
       "blocks": [
         {
           "id": "1",
@@ -449,7 +449,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/11C2/production/_129164540_590640dd-38f5-47c6-8d7f-135dd6cdc873.jpg.webp",
       "views": 1435,
       "tags": ["business"],
-      "createdAt": "2018.06.20",
+      "created": "2018.06.20",
       "blocks": [
         {
           "id": "1",
@@ -479,7 +479,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/A5EA/production/_128847424_gettyimages-1224858543.jpg.webp",
       "views": 841,
       "tags": ["business"],
-      "createdAt": "2018.06.24",
+      "created": "2018.06.24",
       "blocks": [
         {
           "id": "1",
@@ -509,7 +509,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/547A/production/_128462612_preet955.jpg.webp",
       "views": 376,
       "tags": ["science"],
-      "createdAt": "2018.06.24",
+      "created": "2018.06.24",
       "blocks": [
         {
           "id": "1",
@@ -539,7 +539,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/5635/production/_128496022_pg-wodehouse-books-found-at-five-lanes-hrc.jpg.webp",
       "views": 276,
       "tags": ["science"],
-      "createdAt": "2018.06.24",
+      "created": "2018.06.24",
       "blocks": [
         {
           "id": "1",
@@ -569,7 +569,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/144A/production/_128549150_gettyimages-1458666666.jpg.webp",
       "views": 448,
       "tags": ["science"],
-      "createdAt": "2018.06.24",
+      "created": "2018.06.24",
       "blocks": [
         {
           "id": "1",
@@ -599,7 +599,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/914E/production/_128689173_fpzuj1gwaaegvyx.jpg.webp",
       "views": 448,
       "tags": ["science"],
-      "createdAt": "2018.08.23",
+      "created": "2018.08.23",
       "blocks": [
         {
           "id": "1",
@@ -629,7 +629,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/C4F8/production/_126442405_shell1.jpg.webp",
       "views": 540,
       "tags": ["science"],
-      "createdAt": "2018.08.23",
+      "created": "2018.08.23",
       "blocks": [
         {
           "id": "1",
@@ -659,7 +659,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/FCC6/production/_126601746_markets_gettyimages-1216511842.jpg.webp",
       "views": 176,
       "tags": ["business"],
-      "createdAt": "2018.10.12",
+      "created": "2018.10.12",
       "blocks": [
         {
           "id": "1",
@@ -689,7 +689,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/A870/production/_126602134_gettyimages-1311333416.jpg.webp",
       "views": 966,
       "tags": ["business"],
-      "createdAt": "2018.10.15",
+      "created": "2018.10.15",
       "blocks": [
         {
           "id": "1",
@@ -719,7 +719,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/3386/production/_126609131_beavertown.jpg.webp",
       "views": 284,
       "tags": ["business"],
-      "createdAt": "2018.10.18",
+      "created": "2018.10.18",
       "blocks": [
         {
           "id": "1",
@@ -749,7 +749,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/13AD0/production/_126629508_whatsubject.jpg.webp",
       "views": 732,
       "tags": ["science"],
-      "createdAt": "2018.11.02",
+      "created": "2018.11.02",
       "blocks": [
         {
           "id": "1",
@@ -779,7 +779,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16C72/production/_126989239_railnew.jpg.webp",
       "views": 338,
       "tags": ["business"],
-      "createdAt": "2018.11.02",
+      "created": "2018.11.02",
       "blocks": [
         {
           "id": "1",
@@ -809,7 +809,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/15B65/production/_129333988_mediaitem129333983.jpg.webp",
       "views": 624,
       "tags": ["business"],
-      "createdAt": "2018.11.12",
+      "created": "2018.11.12",
       "blocks": [
         {
           "id": "1",
@@ -839,7 +839,7 @@
       "image": "https://image.cnbcfm.com/api/v1/image/107222005-1680811220042-IMG_8882r.jpg",
       "views": 84,
       "tags": ["business"],
-      "createdAt": "2018.11.12",
+      "created": "2018.11.12",
       "blocks": [
         {
           "id": "1",
@@ -869,7 +869,7 @@
       "image": "https://image.cnbcfm.com/api/v1/image/106561846-1591111044206gettyimages-1225857596.jpeg",
       "views": 138,
       "tags": ["business"],
-      "createdAt": "2018.11.15",
+      "created": "2018.11.15",
       "blocks": [
         {
           "id": "1",
@@ -899,7 +899,7 @@
       "image": "https://image.cnbcfm.com/api/v1/image/107218033-1680204235893-Virgin-Orbit-88.jpg",
       "views": 238,
       "tags": ["business"],
-      "createdAt": "2019.02.12",
+      "created": "2019.02.12",
       "blocks": [
         {
           "id": "1",
@@ -929,7 +929,7 @@
       "image": "https://image.cnbcfm.com/api/v1/image/106938671-1631116931701Redwire-OB-Photo-20210908-DN-345-PRESS-4.jpg",
       "views": 638,
       "tags": ["business"],
-      "createdAt": "2019.03.25",
+      "created": "2019.03.25",
       "blocks": [
         {
           "id": "1",
@@ -959,7 +959,7 @@
       "image": "https://image.cnbcfm.com/api/v1/image/107216346-1680015995594-gettyimages-1473987041-dsc_0324_7d21b28f-ca38-482b-9287-a4413d9d350e.jpeg",
       "views": 386,
       "tags": ["business"],
-      "createdAt": "2019.04.01",
+      "created": "2019.04.01",
       "blocks": [
         {
           "id": "1",
@@ -989,7 +989,7 @@
       "image": "https://image.cnbcfm.com/api/v1/image/107106470-1660912536432-gettyimages-1242585894-PWeaver-logos-220818-26.jpeg",
       "views": 242,
       "tags": ["business"],
-      "createdAt": "2019.05.12",
+      "created": "2019.05.12",
       "blocks": [
         {
           "id": "1",
@@ -1019,7 +1019,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/3EC0/production/_129346061_gettyimages-1148474010.jpg.webp",
       "views": 367,
       "tags": ["science"],
-      "createdAt": "2019.05.18",
+      "created": "2019.05.18",
       "blocks": [
         {
           "id": "1",
@@ -1049,7 +1049,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/F41C/production/_129329426_gettyimages-1364851169.jpg.webp",
       "views": 798,
       "tags": ["science"],
-      "createdAt": "2019.05.25",
+      "created": "2019.05.25",
       "blocks": [
         {
           "id": "1",
@@ -1079,7 +1079,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/725C/production/_129267292_88cf00bb-a10d-4b26-88ca-bdbbd9c4d9ce.jpg.webp",
       "views": 620,
       "tags": ["science"],
-      "createdAt": "2019.06.13",
+      "created": "2019.06.13",
       "blocks": [
         {
           "id": "1",
@@ -1109,7 +1109,7 @@
       "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/97EB/production/_129319883_gettyimages-1206007979.jpg.webp",
       "views": 912,
       "tags": ["science"],
-      "createdAt": "2019.06.29",
+      "created": "2019.06.29",
       "blocks": [
         {
           "id": "1",
@@ -1132,6 +1132,29 @@
           "type": "text"
         }
       ]
+    }
+  ],
+  "articles-rating": [
+    {
+      "id": "1",
+      "articleId": "37",
+      "userId": "1",
+      "feedback": "Test feedback message",
+      "rating": 4
+    },
+    {
+      "id": "2",
+      "articleId": "36",
+      "userId": "1",
+      "feedback": null,
+      "rating": 2
+    },
+    {
+      "articleId": "25",
+      "feedback": null,
+      "rating": 3,
+      "userId": "1",
+      "id": "apPvEri"
     }
   ],
   "comments": [],
@@ -1179,6 +1202,61 @@
       "password": "12345",
       "profileId": "3",
       "roles": ["user"]
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Title 1",
+      "description": "Lorem 1 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "1",
+      "link": "http://localhost:3000/articles/37"
+    },
+    {
+      "id": "2",
+      "title": "Title 2",
+      "description": "Lorem 2 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Title 3",
+      "description": "Lorem 3 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "1",
+      "link": "http://localhost:3000/articles/35"
+    },
+    {
+      "id": "4",
+      "title": "Title 4",
+      "description": "Lorem 4 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Title 5",
+      "description": "Lorem 5 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "2",
+      "link": "http://localhost:3000/articles/25"
+    },
+    {
+      "id": "6",
+      "title": "Title 6",
+      "description": "Lorem 6 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "2",
+      "link": "http://localhost:3000/articles/18"
+    },
+    {
+      "id": "7",
+      "title": "Title 7",
+      "description": "Lorem 7 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "1"
+    },
+    {
+      "id": "8",
+      "title": "Title 8",
+      "description": "Lorem 7 Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "userId": "2",
+      "link": "http://localhost:3000/articles/4"
     }
   ]
 }

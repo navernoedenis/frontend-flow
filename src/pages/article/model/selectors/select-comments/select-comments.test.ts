@@ -1,4 +1,4 @@
-import type { AppState } from 'app/providers/store';
+import type { AppState } from '@/app/providers/store';
 import { selectCommentsLoading, selectCommentsError } from './select-comments';
 
 describe('test pages/article/select-comments', () => {

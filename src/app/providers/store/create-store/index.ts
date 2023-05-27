@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import type { ReducersMapObject, Reducer } from '@reduxjs/toolkit';
 
-import { authReducer } from 'features/auth';
-import { networkStatusReducer } from 'widgets/network-status';
-import { client, rtk } from 'shared/api';
+import { networkStatusReducer } from '@/widgets/network-status';
+import { authReducer } from '@/features/auth';
+import { client, rtk } from '@/shared/api';
 
 import { createReducerManager } from '../create-manager';
 import type { AppState, AppStoreParams, ThunkExtra } from '../types';

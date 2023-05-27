@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AppStatePreloaded } from 'app/providers/store';
-import {
-  StoreDecorator,
-  ThemeDecorator,
-} from 'shared/config/storybook/decorators';
+import { AppStatePreloaded } from '@/app/providers/store';
+import { StoreDecorator } from '@/shared/config/storybook/decorators';
 
 import NetworkStatus from './network-status';
 
@@ -22,8 +19,4 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-};
+export const Component: Story = {};

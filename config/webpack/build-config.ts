@@ -26,7 +26,7 @@ export function buildConfig(options: BuildOptions): Configuration {
       path: paths.build,
       publicPath: '/',
     },
-    devtool: isDevelopment ? 'inline-source-map' : undefined,
+    devtool: isDevelopment ? 'eval-cheap-module-source-map' : undefined,
     devServer: isDevelopment ? buildDevServer(options) : undefined,
   };
 }

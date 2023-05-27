@@ -16,10 +16,15 @@
 .virtualizedList {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 12px;
 }
 
 .noArticles {
   font-size: 40px;
   color: var(--color-red);
+}
+
+.skeletonsContainer {
+  width: 100%;
 }

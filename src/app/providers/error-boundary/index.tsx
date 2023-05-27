@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import type { ReactNode } from 'react';
 
-import { ErrorPage } from 'pages';
-import { PageLoader } from 'shared/ui/page-loader';
+import { ErrorPage } from '@/pages';
+import { PageLoader } from '@/shared/ui/page-loader';
 
 interface ErrorBoundaryProps {
   children: ReactNode;

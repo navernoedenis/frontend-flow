@@ -1,4 +1,4 @@
-import type { User } from 'entities/user';
+import type { User } from '@/entities/user';
 
 export type AuthForm = Pick<User, 'name' | 'password'>;
 

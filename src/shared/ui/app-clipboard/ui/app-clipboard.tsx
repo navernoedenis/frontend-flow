@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 
-import { classNames } from 'shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/transforms/class-names';
 import CopyIcon from './assets/copy.svg';
 import classes from './app-clipboard.module.scss';
 

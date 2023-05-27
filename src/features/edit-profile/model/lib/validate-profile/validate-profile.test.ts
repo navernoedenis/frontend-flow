@@ -1,8 +1,8 @@
-import { profileMock } from 'shared/config/tests/mocks/entities';
-import type { Profile } from 'entities/profile';
+import { profileMock } from '@/shared/config/jest/mocks/entities';
+import type { Profile } from '@/entities/profile';
 
-import { deepCopy } from 'shared/lib/deep-copy';
-import { Country } from 'entities/country';
+import { deepCopy } from '@/shared/lib/deep-copy';
+import { Country } from '@/entities/country';
 import { validateProfile } from './validate-profile';
 import { ValidateProfileError } from '../../constants';
 

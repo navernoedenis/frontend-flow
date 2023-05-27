@@ -1,8 +1,8 @@
 import { useReducer } from 'react';
-import { classNames } from 'shared/lib/transforms/class-names';
 
-import { Flexbox } from 'shared/ui/flexbox';
-import { LanguageSwitcher } from 'shared/ui/language-switcher';
+import { LanguageSwitcher } from '@/features/language-switcher';
+import { classNames } from '@/shared/lib/transforms/class-names';
+import { Flexbox } from '@/shared/ui/flexbox';
 
 import ArrowRight from './assets/arrow-right.svg';
 import classes from './aside.module.scss';

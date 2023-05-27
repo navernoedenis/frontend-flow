@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { ErrorBoundary, StoreProvider } from 'app/providers';
+import { ErrorBoundary, StoreProvider } from '@/app/providers';
 
 import App from './app';
 import './shared/config/i18n/i18n.config';

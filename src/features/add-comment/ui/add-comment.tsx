@@ -2,12 +2,12 @@ import { useState, useCallback } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppButton } from 'shared/ui/app-button';
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
-import { TextField } from 'shared/ui/text-field';
+import { AppButton } from '@/shared/ui/app-button';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { TextField } from '@/shared/ui/text-field';
 
-import { capitalizeFirstWord } from 'shared/lib/transforms/capitalize-first-word';
+import { capitalizeFirstWord } from '@/shared/lib/transforms/capitalize-first-word';
 
 import classes from './add-comment.module.scss';
 

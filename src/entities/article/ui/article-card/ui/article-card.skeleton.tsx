@@ -1,5 +1,5 @@
-import { AppSkeleton } from 'shared/ui/app-skeleton';
-import { Flexbox } from 'shared/ui/flexbox';
+import { AppSkeleton } from '@/shared/ui/app-skeleton';
+import { Flexbox } from '@/shared/ui/flexbox';
 
 interface ArticleCardSkeletonProps {
   isCompact?: boolean;

@@ -1,7 +1,7 @@
 import axios from 'axios';
-import type { AppState, AppDispatch } from 'app/providers/store';
+import type { AppState, AppDispatch } from '@/app/providers/store';
 
-import { profileMock } from 'shared/config/tests/mocks/entities';
+import { profileMock } from '@/shared/config/jest/mocks/entities';
 import { getProfile } from './get-profile';
 
 jest.mock('axios');

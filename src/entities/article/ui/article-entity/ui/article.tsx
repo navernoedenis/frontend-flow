@@ -1,5 +1,5 @@
-import { Flexbox } from 'shared/ui/flexbox';
-import { LazyImage } from 'shared/ui/lazy-image';
+import { Flexbox } from '@/shared/ui/flexbox';
+import { LazyImage } from '@/shared/ui/lazy-image';
 
 import { ArticleBlockType } from '../../../model/types';
 import type { Article, ArticleBlock } from '../../../model/types';

@@ -1,0 +1,18 @@
+.container {
+  cursor: default;
+}
+
+.title {
+  margin-bottom: 5px;
+}
+
+.link {
+  .container {
+    cursor: pointer;
+  }
+
+  .title,
+  .description {
+    color: var(--accent-color);
+  }
+}

@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { commentMock } from 'shared/config/tests/mocks/entities';
+import { commentMock } from '@/shared/config/jest/mocks/entities';
 
 import Comment from './comment-entity';
 import CommentSkeleton from './comment-entity.skeleton';
 
 const meta: Meta = {
-  title: 'entities/Comment',
+  title: 'entities/comment/CommentEntity',
   component: Comment,
   args: {
     comment: commentMock,
@@ -16,17 +15,8 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
+export const Component: Story = {};
 
-export const LightSkeleton: Story = {
-  render: () => <CommentSkeleton />,
-};
-
-export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
-};
-
-export const DarkSkeleton: Story = {
-  decorators: [ThemeDecorator('dark')],
+export const Skeleton: Story = {
   render: () => <CommentSkeleton />,
 };

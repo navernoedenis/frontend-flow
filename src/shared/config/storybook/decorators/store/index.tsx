@@ -5,13 +5,13 @@ import type {
   AppState,
   AppReducersLazy,
   AppStatePreloaded,
-} from 'app/providers/store';
+} from '@/app/providers/store';
 
-import { createStore } from 'app/providers/store';
+import { createStore } from '@/app/providers/store';
 
-import { articleReducer, commentsReducer } from 'pages/article/model/slice';
-import { articlesReducer } from 'pages/articles/model/slice';
-import { profileReducer } from 'features/edit-profile/model/slice';
+import { articleReducer, commentsReducer } from '@/pages/article/model/slice';
+import { articlesReducer } from '@/pages/articles/model/slice';
+import { profileReducer } from '@/features/edit-profile/model/slice';
 
 const lazyReducers: AppReducersLazy = {
   article: articleReducer,

@@ -1,12 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import type { ThunkConfig } from 'app/providers/store';
+import type { ThunkConfig } from '@/app/providers/store';
 
-import { getSearchParams } from 'shared/lib/search-params';
-import type { ArticleTag } from '../../ui/articles-header/ui/select-article-tag';
+import type { ArticleTag } from '@/features/article-select-tag';
 import type {
   ArticleSortKey,
   ArticleSortOrder,
-} from '../../ui/articles-header/ui/select-article-sort';
+} from '@/features/article-select-sort';
+
+import { getSearchParams } from '@/shared/lib/search-params';
 
 import { getArticles } from '../get-articles/get-articles';
 import { articlesActions } from '../../model/slice';

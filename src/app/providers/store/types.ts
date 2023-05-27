@@ -9,13 +9,13 @@ import type {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 
-import type { ArticlesState } from 'pages/articles';
-import type { ArticleState, CommentsState } from 'pages/article';
-import type { AuthState } from 'features/auth';
-import type { NetworkStatusState } from 'widgets/network-status';
-import type { ProfileState } from 'features/edit-profile';
+import type { ArticlesState } from '@/pages/articles';
+import type { ArticleState, CommentsState } from '@/pages/article';
+import type { AuthState } from '@/features/auth';
+import type { NetworkStatusState } from '@/widgets/network-status';
+import type { ProfileState } from '@/features/edit-profile';
 
-import type { rtk } from 'shared/api';
+import type { rtk } from '@/shared/api';
 import type { createStore } from './create-store';
 
 export interface AppStore extends EnhancedStore<AppState> {

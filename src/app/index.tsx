@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 
-import { Header } from 'widgets/header';
-// import { Aside } from 'widgets/aside';
+import { Header } from '@/widgets/header';
+// import { Aside } from '@/widgets/aside';
 
-import { authActions } from 'features/auth';
-import { useAppDispatch } from 'shared/hooks';
-import { applyTheme, getSystemTheme } from 'shared/lib/theme';
+import { authActions } from '@/features/auth';
+import { NetworkStatus, networkStatusActions } from '@/widgets/network-status';
+import { useAppDispatch } from '@/shared/hooks';
+import { applyTheme, getSystemTheme } from '@/shared/lib/theme';
 
-import { NetworkStatus, networkStatusActions } from 'widgets/network-status';
 import { AppRouter } from './providers/router';
 
 import './styles/global.scss';

@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/rtl';
+import { renderWithAll } from '@/shared/config/jest/providers';
 import ArticleList from './article-list';
 
-import { intersectionObserver } from 'shared/config/tests/mocks/dom';
-import { articleMock } from 'shared/config/tests/mocks/entities';
+import { intersectionObserver } from '@/shared/config/jest/mocks/dom';
+import { articleMock } from '@/shared/config/jest/mocks/entities';
 
 const articles = Array.from({ length: 10 }).map((_, index) => ({
   ...articleMock,

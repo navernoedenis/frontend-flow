@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { errorMessage } from 'shared/lib/transforms/error-message';
 
-import type { ThunkConfig } from 'app/providers/store';
-import type { User } from 'entities/user';
+import type { ThunkConfig } from '@/app/providers/store';
+import type { User } from '@/entities/user';
+import { errorMessage } from '@/shared/lib/transforms/error-message';
 import type { AuthForm } from '../../model/types';
 
 export const signIn = createAsyncThunk<User, AuthForm, ThunkConfig>(

@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from 'shared/config/tests/rtl';
+import { renderWithAll } from '@/shared/config/jest/providers';
 import AppLink from './app-link';
 
 describe('test shared/app-link', () => {

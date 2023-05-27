@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 
-import { ArticleCard, ArticleCardSkeleton } from 'entities/article';
-import { AppTypography } from 'shared/ui/app-typography';
-import { Flexbox } from 'shared/ui/flexbox';
+import { ArticleCard, ArticleCardSkeleton } from '@/entities/article';
+import { AppTypography } from '@/shared/ui/app-typography';
+import { Flexbox } from '@/shared/ui/flexbox';
 
-import { useGetRecommendedQuery } from '../api/use-articles-recommended';
+import { useGetRecommendedQuery } from '../api/articles-recommended';
 import classes from './articles-recommended.module.scss';
 
 interface ArticlesRecommendedProp {

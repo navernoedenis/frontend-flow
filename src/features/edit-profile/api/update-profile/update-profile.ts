@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { errorMessage } from 'shared/lib/transforms/error-message';
 
-import type { ThunkConfig } from 'app/providers/store';
-import type { Profile } from 'entities/profile';
+import type { ThunkConfig } from '@/app/providers/store';
+import type { Profile } from '@/entities/profile';
+import { errorMessage } from '@/shared/lib/transforms/error-message';
 
 export const updateProfile = createAsyncThunk<Profile, Profile, ThunkConfig>(
   'profile/update-profile',

@@ -19,7 +19,7 @@
   --color-green: #4eb8a4;
   --color-grey: #ebebeb;
   --color-orange: #fb8c00;
-  --color-red: #e91e63;
+  --color-red: #e92626;
   --color-white: #fff;
   --color-gray: #353a40;
 
@@ -30,6 +30,7 @@
 ::-webkit-scrollbar {
   width: 8px;
   background-color: var(--scrollbar-bg);
+  border-radius: 4px;
 
   &-thumb {
     border-radius: 4px;
