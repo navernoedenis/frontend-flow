@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { commentsMock } from '@/shared/config/jest/mocks/entities';
+import { commentsMock } from '../../../model/mocks';
 
 import CommentList from './comment-list';
 

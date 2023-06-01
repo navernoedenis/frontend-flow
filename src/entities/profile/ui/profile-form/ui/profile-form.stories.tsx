@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/decorators';
 
 import { AppStatePreloaded } from '@/app/providers/store';
-import { profileMock } from '@/shared/config/jest/mocks/entities';
-import { profileStateMock } from '@/shared/config/jest/mocks/states';
+import { profileStateMock } from '@/features/edit-profile';
 
+import { profileMock } from '../../../model/mocks';
 import ProfileForm from './profile-form';
 import ProfileSkeleton from './profile-form.skeleton';
 

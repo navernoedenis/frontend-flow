@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import CheckIcon from './assets/check.svg';
 import classes from './dropdown-item.module.scss';
 
@@ -16,6 +16,7 @@ const DropdownItem = ({
   isChecked = false,
   onClick,
   title,
+  ...otherProps
 }: DropdownItemProps) => {
   const dropdownItemClasses = classNames(classes.container, {
     [className]: !!className,
@@ -27,6 +28,7 @@ const DropdownItem = ({
       className={dropdownItemClasses}
       data-testid="dropdown-item"
       onClick={onClick}
+      {...otherProps}
     >
       {icon && (
         <div className={classes.icon} data-testid="dropdown-item-icon">

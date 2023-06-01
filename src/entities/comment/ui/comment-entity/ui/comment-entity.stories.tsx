@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { commentMock } from '@/shared/config/jest/mocks/entities';
+import { commentMock } from '../../../model/mocks';
 
 import Comment from './comment-entity';
 import CommentSkeleton from './comment-entity.skeleton';
@@ -18,5 +18,8 @@ type Story = StoryObj<typeof meta>;
 export const Component: Story = {};
 
 export const Skeleton: Story = {
-  render: () => <CommentSkeleton />,
+  args: {
+    repeat: 1,
+  },
+  render: (props) => <CommentSkeleton {...props} />,
 };

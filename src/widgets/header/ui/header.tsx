@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AuthModal, selectAuthMe } from '@/features/auth';
+import { AuthModal } from '@/features/auth';
 import { LanguageSwitcher } from '@/features/language-switcher';
 import { NotificationButton } from '@/features/notification-button';
 import { ThemeSwitcher } from '@/features/theme-switcher';
+
+import { selectUserAuth } from '@/entities/user';
 
 import { routes } from '@/shared/constants/routes';
 import { useAppSelector } from '@/shared/hooks';
@@ -21,7 +23,7 @@ function Header() {
     keyPrefix: 'widgets.header',
   });
 
-  const me = useAppSelector(selectAuthMe);
+  const me = useAppSelector(selectUserAuth);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const onShowModal = useCallback(() => {
@@ -59,7 +61,9 @@ function Header() {
 
           <UserMenu />
           {!me && (
-            <AppButton onClick={onShowModal}>{t('buttons.login')}</AppButton>
+            <AppButton data-testid="header.sign-in-button" onClick={onShowModal}>
+              {t('buttons.login')}
+            </AppButton>
           )}
           <LanguageSwitcher />
         </Flexbox>

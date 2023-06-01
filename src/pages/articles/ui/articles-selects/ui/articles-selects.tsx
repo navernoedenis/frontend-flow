@@ -13,8 +13,8 @@ import { ArticleSelectSort } from '@/features/article-select-sort';
 import { ArticleSelectTag } from '@/features/article-select-tag';
 import { ArticleSelectView } from '@/features/article-select-view';
 
-import { LS_ARTICLES_VIRTUOSO_SCROLL_INDEX } from '@/shared/constants/local-storage';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { LS_ARTICLES_LIST_SCROLLED_INDEX } from '@/entities/article';
+import { classNames } from '@/shared/lib/class-names';
 import { useAppDispatch, useAppSelector, useDebounce } from '@/shared/hooks';
 import { Storage } from '@/shared/services';
 
@@ -91,7 +91,7 @@ function ArticlesSelects({ className = '' }: ArticlesSelectsProps) {
     (event: ChangeEvent<HTMLInputElement>) => {
       dispatch(articlesActions.setSortQuery(event.target.value));
       onGetArticlesDebounced();
-      Storage.session.remove(LS_ARTICLES_VIRTUOSO_SCROLL_INDEX);
+      Storage.session.remove(LS_ARTICLES_LIST_SCROLLED_INDEX);
     },
     [dispatch, onGetArticlesDebounced],
   );

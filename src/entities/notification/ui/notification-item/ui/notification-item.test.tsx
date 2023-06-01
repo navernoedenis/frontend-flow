@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { notificationMock } from '@/shared/config/jest/mocks/entities';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { notificationMock } from '../../../model/mocks';
 
 import NotificatitonItem from './notification-item';
 

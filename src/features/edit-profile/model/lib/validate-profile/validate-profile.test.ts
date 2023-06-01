@@ -1,4 +1,4 @@
-import { profileMock } from '@/shared/config/jest/mocks/entities';
+import { profileMock } from '@/entities/profile';
 import type { Profile } from '@/entities/profile';
 
 import { deepCopy } from '@/shared/lib/deep-copy';

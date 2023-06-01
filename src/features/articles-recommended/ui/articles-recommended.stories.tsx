@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { articlesMock } from '@/shared/config/jest/mocks/entities';
-import { makeGetRequest } from '@/shared/config/storybook/utils';
+import { articlesMock } from '@/entities/article';
+import { makeGetRequest } from '@/shared/config/storybook/make-request';
 
 import ArticleRecommended from './articles-recommended';
 

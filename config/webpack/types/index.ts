@@ -23,12 +23,13 @@ export interface BuildPaths {
 }
 
 export interface BuildOptions {
-  buildMode: BuildMode;
   host: string;
   isDevelopment: boolean;
   isProduction: boolean;
   isStorybook: boolean;
   manifest: ManifestOptions;
+  mode: BuildMode;
   paths: BuildPaths;
   port: number;
+  prefix: string;
 }

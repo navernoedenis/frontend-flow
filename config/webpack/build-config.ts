@@ -6,7 +6,7 @@ import { buildPlugins } from './build-plugins';
 import { buildResolvers } from './build-resolvers';
 
 export function buildConfig(options: BuildOptions): Configuration {
-  const { isDevelopment, buildMode, paths } = options;
+  const { isDevelopment, mode, paths } = options;
 
   return {
     entry: {
@@ -14,7 +14,7 @@ export function buildConfig(options: BuildOptions): Configuration {
       'init-theme': paths.initTheme,
       'service-worker': paths.serviceWorker,
     },
-    mode: buildMode,
+    mode,
     module: {
       rules: buildLoaders(options),
     },

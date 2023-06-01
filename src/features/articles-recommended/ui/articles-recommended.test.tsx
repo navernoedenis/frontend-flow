@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { makeServerError } from '@/shared/config/jest/server';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { makeResponseError } from '@/shared/config/jest/server';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
 
 import ArticlesRecommended from './articles-recommended';
 
@@ -20,7 +20,7 @@ describe('test features/articles-recommended', () => {
   });
 
   it('not be in the document, if catched error', async () => {
-    makeServerError('/articles');
+    makeResponseError('/articles');
     renderWithAll(<ArticlesRecommended />);
 
     await waitFor(() => {

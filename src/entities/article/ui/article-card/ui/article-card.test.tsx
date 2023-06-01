@@ -1,19 +1,17 @@
+import * as router from 'react-router';
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { articleMock } from '../../../model/mocks';
 
 import ArticleCard from './article-card';
 
-const navigate = jest.fn();
-
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => navigate,
-}));
+let mockedCallback = jest.fn();
 
 describe('test entities/article-card', () => {
   beforeEach(() => {
     window.open = jest.fn();
+    mockedCallback = jest.fn();
+    jest.spyOn(router, 'useNavigate').mockImplementation(() => mockedCallback);
   });
 
   test('be in the document', () => {
@@ -38,14 +36,15 @@ describe('test entities/article-card', () => {
     const card = screen.getByTestId('article-card');
     const url = `/articles/${articleMock.id}`;
     fireEvent.click(card);
-    expect(navigate).toHaveBeenCalledWith(url);
+    expect(mockedCallback).toHaveBeenCalledWith(url);
   });
 
   test('extra function called', () => {
-    const func = jest.fn();
-    renderWithAll(<ArticleCard article={articleMock} onClick={func} />);
+    renderWithAll(
+      <ArticleCard article={articleMock} onClick={mockedCallback} />,
+    );
     const card = screen.getByTestId('article-card');
     fireEvent.click(card);
-    expect(func).toBeCalled();
+    expect(mockedCallback).toBeCalled();
   });
 });

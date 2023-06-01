@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import { renderWithAll } from '@/shared/config/jest/providers';
-import { userMock } from '@/shared/config/jest/mocks/entities';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { userMock } from '@/entities/user';
 
 import ArticlePage from './article';
 
@@ -13,8 +13,8 @@ describe('test pages/article', () => {
 
   it('if authorized, show add comment', async () => {
     renderWithAll(<ArticlePage />, {
-      auth: {
-        me: userMock,
+      user: {
+        auth: userMock,
       },
     });
     expect(screen.getByTestId('add-comment')).toBeInTheDocument();

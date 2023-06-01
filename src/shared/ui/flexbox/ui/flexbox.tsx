@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import type { ElementType, CSSProperties, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import classes from './flexbox.module.scss';
 
 interface FlexboxProps {

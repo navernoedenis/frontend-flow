@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { authActions } from '@/features/auth';
+import { userActions } from '@/entities/user';
 import { useAppDispatch } from '@/shared/hooks';
 
 import Header from './header';
@@ -13,7 +13,7 @@ const meta: Meta = {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-      dispatch(authActions.init());
+      dispatch(userActions.init());
     }, [dispatch]);
 
     return <Header />;

@@ -9,12 +9,11 @@ import { Flexbox } from '@/shared/ui/flexbox';
 import { Storage } from '@/shared/services';
 import { useEffectOnce, useInfiniteScroll, useThrottle } from '@/shared/hooks';
 
-import {
-  LS_ARTICLES_STATIC_SCROLLED_HEIGHT,
-  LS_ARTICLES_VIRTUOSO_SCROLL_INDEX,
-} from '@/shared/constants/local-storage';
-
 import type { Article } from '../../../model/types';
+import {
+  LS_ARTICLES_LIST_SCROLLED_HEIGHT,
+  LS_ARTICLES_LIST_SCROLLED_INDEX,
+} from '../model/constants';
 import { ArticleCard, ArticleCardSkeleton } from '../../article-card';
 
 import classes from './article-list.module.scss';
@@ -48,15 +47,10 @@ const ArticleList = ({
 
   const onSaveStaticScroll = useThrottle(() => {
     Storage.session.save(
-      LS_ARTICLES_STATIC_SCROLLED_HEIGHT,
+      LS_ARTICLES_LIST_SCROLLED_HEIGHT,
       staticRef.current?.scrollTop ?? 0,
     );
   }, 300);
-
-  const onRemoveScroll = useCallback(() => {
-    Storage.session.remove(LS_ARTICLES_STATIC_SCROLLED_HEIGHT);
-    Storage.session.remove(LS_ARTICLES_VIRTUOSO_SCROLL_INDEX);
-  }, []);
 
   const renderArticle = useCallback(
     (index: number, article: Article) => (
@@ -66,7 +60,7 @@ const ArticleList = ({
         key={article.id}
         onClick={() => {
           if (isVirtualized) {
-            Storage.session.save(LS_ARTICLES_VIRTUOSO_SCROLL_INDEX, index);
+            Storage.session.save(LS_ARTICLES_LIST_SCROLLED_INDEX, index);
           }
         }}
       />
@@ -82,9 +76,10 @@ const ArticleList = ({
         gap="16"
         wrap
       >
-        {Array.from({ length: isVirtualized ? 2 : 6 }, (_, index) => (
-          <ArticleCardSkeleton key={index} isCompact={isCompact} />
-        ))}
+        <ArticleCardSkeleton
+          isCompact={isCompact}
+          repeat={isVirtualized ? 2 : 6}
+        />
       </Flexbox>
     ),
     [isCompact, isVirtualized],
@@ -97,7 +92,7 @@ const ArticleList = ({
   useEffectOnce(() => {
     if (isVirtualized) {
       const index = Storage.session.get<number>(
-        LS_ARTICLES_VIRTUOSO_SCROLL_INDEX,
+        LS_ARTICLES_LIST_SCROLLED_INDEX,
       );
 
       if (typeof index === 'number') {
@@ -115,12 +110,17 @@ const ArticleList = ({
     }
 
     if (!isVirtualized) {
-      const height = Storage.session.get<number>(LS_ARTICLES_STATIC_SCROLLED_HEIGHT) ?? 0;
+      const height = Storage.session.get<number>(LS_ARTICLES_LIST_SCROLLED_HEIGHT) ?? 0;
       staticRef.current?.scrollTo(0, height);
     }
   });
 
   useEffect(() => {
+    const onRemoveScroll = () => {
+      Storage.session.remove(LS_ARTICLES_LIST_SCROLLED_HEIGHT);
+      Storage.session.remove(LS_ARTICLES_LIST_SCROLLED_INDEX);
+    };
+
     window.addEventListener('beforeunload', onRemoveScroll);
     staticRef.current?.addEventListener('scroll', onSaveStaticScroll);
 
@@ -129,11 +129,11 @@ const ArticleList = ({
       staticRef.current?.removeEventListener('scroll', onSaveStaticScroll);
       staticRef.current = null;
     };
-  }, [onRemoveScroll, onSaveStaticScroll]);
+  }, [onSaveStaticScroll]);
 
   useEffect(() => {
     if (isVirtuosoScrolling) {
-      Storage.session.remove(LS_ARTICLES_VIRTUOSO_SCROLL_INDEX);
+      Storage.session.remove(LS_ARTICLES_LIST_SCROLLED_INDEX);
     }
   }, [isVirtuosoScrolling]);
 
@@ -150,7 +150,7 @@ const ArticleList = ({
     }
   }, [isVirtualized, shouldScrollToTop]);
 
-  if (!articles.length && !isLoading) {
+  if (!isLoading && !articles.length) {
     return (
       <AppTypography
         align="center"
@@ -176,7 +176,7 @@ const ArticleList = ({
             Footer: () => (
               <div
                 data-testid="virtualized-article-skeletons"
-                style={{ marginTop: articles.length ? 12 : 0 }}
+                style={{ marginTop: articles.length ? 16 : 0 }}
               >
                 {isLoading && skeletonLoaders}
               </div>

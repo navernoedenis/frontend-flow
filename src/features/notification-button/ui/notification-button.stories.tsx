@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { notificationsMock } from '@/shared/config/jest/mocks/entities';
-import { makeGetRequest } from '@/shared/config/storybook/utils';
+import { notificationsMock } from '@/entities/notification';
+import { makeGetRequest } from '@/shared/config/storybook/make-request';
 
 import { Flexbox } from '@/shared/ui/flexbox';
 import NotificationButton from './notification-button';

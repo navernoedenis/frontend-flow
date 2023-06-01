@@ -10,13 +10,14 @@ import type {
 } from './config/webpack/types';
 
 export default (env: BuildEnv): Configuration => {
-  const buildMode: BuildMode = env.mode || 'development';
+  const mode: BuildMode = env.mode || 'development';
 
   const host = env.host || 'http://localhost:4000';
   const port = +env.port || 3000;
+  const prefix = 'fe_flow';
 
-  const isDevelopment = buildMode === 'development';
-  const isProduction = buildMode === 'production';
+  const isDevelopment = mode === 'development';
+  const isProduction = mode === 'production';
   const isStorybook = false;
 
   const paths: BuildPaths = {
@@ -55,16 +56,15 @@ export default (env: BuildEnv): Configuration => {
     ],
   };
 
-  const config = buildConfig({
-    buildMode,
+  return buildConfig({
     host,
     isDevelopment,
     isProduction,
     isStorybook,
     manifest,
+    mode,
     paths,
     port,
+    prefix,
   });
-
-  return config;
 };

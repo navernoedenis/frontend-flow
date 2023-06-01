@@ -1,5 +1,5 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
 import AddComment from './add-comment';
 
 describe('test features/add-comment', () => {

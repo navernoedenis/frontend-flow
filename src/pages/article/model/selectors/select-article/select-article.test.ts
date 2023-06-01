@@ -1,5 +1,5 @@
 import type { AppState } from '@/app/providers/store';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
+import { articleMock } from '@/entities/article';
 import { selectArticle } from './select-article';
 
 describe('test pages/article/select-article', () => {

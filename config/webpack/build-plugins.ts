@@ -15,7 +15,7 @@ import type { WebpackPluginInstance } from 'webpack';
 import type { BuildOptions } from './types';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
-  const { manifest, paths, host, isDevelopment, isStorybook } = options;
+  const { manifest, paths, host, isDevelopment, isStorybook, prefix } = options;
 
   const plugins: WebpackPluginInstance[] = [
     new Copy({
@@ -30,6 +30,7 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
       __HOST__: JSON.stringify(host),
       __IS_DEV__: JSON.stringify(isDevelopment),
       __IS_STORYBOOK__: JSON.stringify(isStorybook),
+      __LS_PREFIX__: JSON.stringify(prefix),
     }),
     new FaviconsWebpack(paths.favicon),
     new ForkTsCheckerWebpack({

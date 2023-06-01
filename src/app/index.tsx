@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { Header } from '@/widgets/header';
 // import { Aside } from '@/widgets/aside';
 
-import { authActions } from '@/features/auth';
+import { userActions } from '@/entities/user';
 import { NetworkStatus, networkStatusActions } from '@/widgets/network-status';
 import { useAppDispatch } from '@/shared/hooks';
 import { applyTheme, getSystemTheme } from '@/shared/lib/theme';
@@ -27,7 +27,7 @@ function App() {
       dispatch(networkStatusActions.setStatus(false));
     });
 
-    dispatch(authActions.init());
+    dispatch(userActions.init());
   }, [dispatch]);
 
   useEffect(() => {

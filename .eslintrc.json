@@ -7,7 +7,8 @@
   "globals": {
     "__HOST__": true,
     "__IS_DEV__": true,
-    "__IS_STORYBOOK__": true
+    "__IS_STORYBOOK__": true,
+    "__LS_PREFIX__": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -77,6 +78,7 @@
   ],
   "ignorePatterns": [
     "build/**/*",
+    "cypress/**/*",
     "*.test.ts",
     "*.test.tsx",
     "*.config.ts",

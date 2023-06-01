@@ -47,11 +47,7 @@ function ArticlesRecommended({
       </AppTypography>
 
       <Flexbox gap="20" wrap>
-        {isLoading
-          && Array.from({ length: 3 }).map((_, index) => (
-            <ArticleCardSkeleton key={index} isCompact />
-          ))}
-
+        {isLoading && <ArticleCardSkeleton isCompact repeat={3} />}
         {articles.map((article) => (
           <ArticleCard
             article={article}

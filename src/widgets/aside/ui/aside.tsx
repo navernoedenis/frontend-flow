@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 
 import { LanguageSwitcher } from '@/features/language-switcher';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import { Flexbox } from '@/shared/ui/flexbox';
 
 import ArrowRight from './assets/arrow-right.svg';

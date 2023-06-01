@@ -71,7 +71,7 @@
     "articles-recommended": {
       "title": "рекомендуемые статьи"
     },
-    "auth": {
+    "auth-card": {
       "buttons": {
         "enter": "ввійти",
         "reset": "скинути"

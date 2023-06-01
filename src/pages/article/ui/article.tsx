@@ -7,16 +7,16 @@ import type { AppReducersLazy } from '@/app/providers/store';
 import { AddComment } from '@/features/add-comment';
 import { ArticleRating } from '@/features/article-rating';
 import { ArticlesRecommended } from '@/features/articles-recommended';
-import { selectAuthMe } from '@/features/auth';
 
 import { ArticleEntity } from '@/entities/article';
 import { CommentList } from '@/entities/comment';
+import { selectUserAuth } from '@/entities/user';
 
 import { AppButton } from '@/shared/ui/app-button';
 import { AppTypography } from '@/shared/ui/app-typography';
 import { Flexbox } from '@/shared/ui/flexbox';
 
-import { LazyReducers } from '@/shared/lib/components';
+import { LazyReducers } from '@/shared/providers';
 import { useAppDispatch, useAppSelector, useEffectOnce } from '@/shared/hooks';
 import { routes } from '@/shared/constants/routes';
 
@@ -44,7 +44,7 @@ function ArticlePage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const me = useAppSelector(selectAuthMe);
+  const me = useAppSelector(selectUserAuth);
 
   const article = useAppSelector(selectArticle);
   const comments = useAppSelector(selectComments.selectAll);
@@ -52,8 +52,9 @@ function ArticlePage() {
   const isCommentsLoading = useAppSelector(selectCommentsLoading);
 
   useEffectOnce(() => {
-    dispatch(getArticle(params.id as string));
-    dispatch(getComments(params.id as string));
+    const id = params.id as string;
+    dispatch(getArticle(id));
+    dispatch(getComments(id));
   });
 
   const errorMessage = article?.error ?? commentsError;

@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
 
 import ArticleSelectView from './article-select-view';
 import { ArticleView } from '../model/constants';

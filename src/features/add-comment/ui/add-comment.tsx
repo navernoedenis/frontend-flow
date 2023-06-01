@@ -7,7 +7,7 @@ import { AppTypography } from '@/shared/ui/app-typography';
 import { Flexbox } from '@/shared/ui/flexbox';
 import { TextField } from '@/shared/ui/text-field';
 
-import { capitalizeFirstWord } from '@/shared/lib/transforms/capitalize-first-word';
+import { capitalizeFirstLetter } from '@/shared/lib/capitalize-first-letter';
 
 import classes from './add-comment.module.scss';
 
@@ -62,7 +62,7 @@ function AddComment({
         disabled={isDisabled}
         name="comment"
         onChange={handleChange}
-        placeholder={capitalizeFirstWord(t('placeholder'))}
+        placeholder={capitalizeFirstLetter(t('placeholder'))}
         value={value}
       />
 

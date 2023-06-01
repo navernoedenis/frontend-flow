@@ -26,17 +26,10 @@ function CommentList({
       direction="column-reverse"
       gap="16"
     >
-      {isLoading ? (
-        <>
-          <CommentSkeleton />
-          <CommentSkeleton />
-          <CommentSkeleton />
-        </>
-      ) : (
-        comments.map((comment) => (
-          <CommentEntity key={comment.id} comment={comment} />
-        ))
-      )}
+      {isLoading && <CommentSkeleton repeat={3} />}
+      {comments.map((comment) => (
+        <CommentEntity key={comment.id} comment={comment} />
+      ))}
     </Flexbox>
   );
 }

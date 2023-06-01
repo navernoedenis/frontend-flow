@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import type { AppReducersLazy } from '@/app/providers/store/types';
-import { LazyReducers } from '@/shared/lib/components';
+import { LazyReducers } from '@/shared/providers';
 import { Flexbox } from '@/shared/ui/flexbox';
 import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 

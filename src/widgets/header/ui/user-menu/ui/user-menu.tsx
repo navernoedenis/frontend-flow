@@ -3,14 +3,12 @@ import type { MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { authActions, selectAuthMe } from '@/features/auth';
+import { userActions, selectUserAuth, isAdminRole } from '@/entities/user';
 
 import { Dropdown, DropdownItem } from '@/shared/ui/dropdown';
 import { LazyImage } from '@/shared/ui/lazy-image';
-
-import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 import { routes } from '@/shared/constants/routes';
-import { isAdminRole } from '@/shared/lib/user-roles';
+import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 
 import classes from './user-menu.module.scss';
 
@@ -21,7 +19,7 @@ const UserMenu = () => {
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const me = useAppSelector(selectAuthMe);
+  const me = useAppSelector(selectUserAuth);
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -38,7 +36,7 @@ const UserMenu = () => {
   }, []);
 
   const handleLogout = useCallback(() => {
-    dispatch(authActions.logout());
+    dispatch(userActions.logout());
   }, [dispatch]);
 
   if (!me) {
@@ -49,6 +47,7 @@ const UserMenu = () => {
     <>
       <button
         className={classes.button}
+        data-testid="user-menu"
         onClick={handleToggleMenu}
         ref={buttonRef}
       >
@@ -63,16 +62,21 @@ const UserMenu = () => {
       >
         {isAdmin && (
           <DropdownItem
+            data-testid="user-menu.admin"
             onClick={() => navigate(routes.admin())}
             title={t('menu.admin')}
           />
         )}
-
         <DropdownItem
+          data-testid="user-menu.profile"
           onClick={() => navigate(routes.profile(me.id))}
           title={t('menu.profile')}
         />
-        <DropdownItem onClick={handleLogout} title={t('menu.logout')} />
+        <DropdownItem
+          data-testid="user-menu.logout"
+          onClick={handleLogout}
+          title={t('menu.logout')}
+        />
       </Dropdown>
     </>
   );

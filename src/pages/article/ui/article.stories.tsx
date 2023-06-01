@@ -2,17 +2,18 @@ import { Toaster } from 'react-hot-toast';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppStatePreloaded } from '@/app/providers/store';
+import { articleMock, articlesMock } from '@/entities/article';
+
 import { StoreDecorator } from '@/shared/config/storybook/decorators';
-import { makeGetRequest } from '@/shared/config/storybook/utils';
-import { articleMock, articlesMock } from '@/shared/config/jest/mocks/entities';
+import { makeGetRequest } from '@/shared/config/storybook/make-request';
 
 import ArticlePage from './article';
 
 const preloadedState: AppStatePreloaded = {
   article: {
-    isLoading: false,
-    error: '',
     data: articleMock,
+    error: '',
+    isLoading: false,
   },
 };
 

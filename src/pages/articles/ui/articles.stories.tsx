@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/decorators';
 
 import { AppStatePreloaded } from '@/app/providers/store';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
-import { articlesStateMock } from '@/shared/config/jest/mocks/states';
+import { articleMock } from '@/entities/article';
+import { articlesPageStateMock } from '../model/mocks';
 
 import ArticlesPage from './articles';
 
 const preloadedState: AppStatePreloaded = {
   articles: {
-    ...articlesStateMock,
+    ...articlesPageStateMock,
     ids: [articleMock.id],
     entities: { [articleMock.id]: articleMock },
   },

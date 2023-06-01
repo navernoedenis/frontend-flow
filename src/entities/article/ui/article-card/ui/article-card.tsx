@@ -6,9 +6,9 @@ import { AppTypography } from '@/shared/ui/app-typography';
 import { Flexbox } from '@/shared/ui/flexbox';
 import { LazyImage } from '@/shared/ui/lazy-image';
 
-import { classNames } from '@/shared/lib/transforms/class-names';
-import { openInNewTab } from '@/shared/lib/open-in-new-tab';
+import { classNames } from '@/shared/lib/class-names';
 
+import { openInNewTab } from '../lib/open-in-new-tab';
 import { ArticleBlockType } from '../../../model/types';
 import type { Article, ArticleTextBlock } from '../../../model/types';
 
@@ -59,17 +59,17 @@ function ArticleCard({
 
   return (
     <Flexbox
+      alignItems="start"
       className={containerClasses}
       data-testid="article-card"
       onClick={handleClick}
-      alignItems="start"
     >
       <LazyImage className={classes.image} src={article.image} />
 
       <Flexbox
+        alignItems="start"
         className={classes.content}
         direction="column"
-        alignItems="start"
         gap="16"
       >
         <AppTypography className={classes.title} tag="h4" lineClamp={1}>

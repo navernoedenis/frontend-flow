@@ -1,5 +1,5 @@
 import type { ElementType, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import classes from './app-typography.module.scss';
 
 interface AppTypographyProps {

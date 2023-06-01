@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
 
 import type { ArticleSortKey, ArticleSortOrder } from '../model/types';
 import ArticleSelectSort from './article-select-sort';

@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import type { ThunkConfig } from '@/app/providers/store';
-import { selectAuthMe } from '@/features/auth';
+import { selectUserAuth } from '@/entities/user';
 
 import type { Comment } from '@/entities/comment';
 import type { User } from '@/entities/user';
 
-import { errorMessage } from '@/shared/lib/transforms/error-message';
+import { errorMessage } from '@/shared/lib/error-message';
 
 interface AddCommentProps {
   articleId: string;
@@ -22,7 +22,7 @@ export const addComment = createAsyncThunk<
   const { extra, rejectWithValue, getState } = config;
 
   try {
-    const me = selectAuthMe(getState()) as User;
+    const me = selectUserAuth(getState()) as User;
 
     const response = await extra.client.post<Comment>('/comments', {
       articleId,

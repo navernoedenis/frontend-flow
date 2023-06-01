@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { articleRatingMock } from '@/shared/config/jest/mocks/entities';
-import { makeGetRequest } from '@/shared/config/storybook/utils';
+import { makeGetRequest } from '@/shared/config/storybook/make-request';
+import { articleRatingMock } from '../model/mocks';
 
 import ArticleRating from './article-rating';
 

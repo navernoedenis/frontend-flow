@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import type { FC } from 'react';
 import type { LinkProps } from 'react-router-dom';
 
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import classes from './app-link.module.scss';
 
 interface AppLinkProps extends LinkProps {

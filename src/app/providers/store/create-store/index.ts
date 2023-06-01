@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import type { ReducersMapObject, Reducer } from '@reduxjs/toolkit';
 
 import { networkStatusReducer } from '@/widgets/network-status';
-import { authReducer } from '@/features/auth';
+import { userReducer } from '@/entities/user';
 import { client, rtk } from '@/shared/api';
 
 import { createReducerManager } from '../create-manager';
@@ -12,8 +12,8 @@ export const createStore = (params: AppStoreParams = {}) => {
   const { lazyReducers = {}, preloadedState = {} } = params;
 
   const rootReducer: ReducersMapObject<AppState> = {
-    auth: authReducer,
     networkStatus: networkStatusReducer,
+    user: userReducer,
     [rtk.reducerPath]: rtk.reducer,
     ...lazyReducers,
   };

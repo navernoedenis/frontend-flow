@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 
 import classes from './star-rating.module.scss';
 import StarIcon from './assets/star.svg';

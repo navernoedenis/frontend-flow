@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
+import { articleMock } from '../../../model/mocks';
 import ArticleList from './article-list';
 
 const mockArticles = Array.from({ length: 3 }, (_, index) => ({

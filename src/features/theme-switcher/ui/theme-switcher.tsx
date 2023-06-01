@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { FC, MouseEvent } from 'react';
 
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import { Dropdown, DropdownItem } from '@/shared/ui/dropdown';
 import { useTheme } from '@/shared/hooks';
 

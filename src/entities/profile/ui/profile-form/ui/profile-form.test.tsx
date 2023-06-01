@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
-import { profileMock } from '@/shared/config/jest/mocks/entities';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { profileMock } from '@/entities//profile';
 
 import ProfileForm from './profile-form';
 

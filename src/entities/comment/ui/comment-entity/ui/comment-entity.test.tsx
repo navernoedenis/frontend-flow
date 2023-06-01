@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { commentMock } from '@/shared/config/jest/mocks/entities';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
 import { routes } from '@/shared/constants/routes';
+import { commentMock } from '../../../model/mocks';
 
 import CommentEntity from './comment-entity';
 

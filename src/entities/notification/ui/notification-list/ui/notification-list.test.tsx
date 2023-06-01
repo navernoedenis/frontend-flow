@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
-import { makeServerError } from '@/shared/config/jest/server';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { makeResponseError } from '@/shared/config/jest/server';
 
 import NotificationList from './notification-list';
 
@@ -25,7 +25,7 @@ describe('test entities/notification-list', () => {
   });
 
   it('show error', async () => {
-    makeServerError('/notifications');
+    makeResponseError('/notifications');
     renderWithAll(<NotificationList userId="1" />);
 
     await waitFor(() => {

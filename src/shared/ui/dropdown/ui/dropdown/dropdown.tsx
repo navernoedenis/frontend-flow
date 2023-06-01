@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { MutableRefObject, ReactNode } from 'react';
 
 import { Portal } from '@/shared/ui/portal';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 import { useThrottle } from '@/shared/hooks';
 
 import { calcCoords } from '../../model/utils/calc-cords';

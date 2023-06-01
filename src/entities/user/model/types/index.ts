@@ -1,6 +1,10 @@
 import type { Profile } from '@/entities/profile';
 
-export type UserRole = 'root' | 'admin' | 'user';
+export interface UserState {
+  auth: User | null;
+  error: string;
+  isLoading: boolean;
+}
 
 export interface User {
   id: string;
@@ -10,3 +14,7 @@ export interface User {
   profileId: string;
   roles: UserRole[];
 }
+
+export type UserRole = 'root' | 'admin' | 'user';
+
+export type UserSignInForm = Pick<User, 'name' | 'password'>;

@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import type { InputHTMLAttributes } from 'react';
 
 import { AppTypography } from '@/shared/ui/app-typography';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 
 import classes from './text-field.module.scss';
 

@@ -6,14 +6,14 @@ import type { AppReducersLazy } from '@/app/providers/store';
 import type { Profile } from '@/entities/profile';
 import type { Country } from '@/entities/country';
 
-import { selectAuthMe } from '@/features/auth';
+import { selectUserAuth } from '@/entities/user';
 import { ProfileForm, ProfileFormSkeleton } from '@/entities/profile';
 
 import { AppTypography } from '@/shared/ui/app-typography';
 
 import { useAppDispatch, useAppSelector } from '@/shared/hooks';
 import { deepCopy } from '@/shared/lib/deep-copy';
-import { LazyReducers } from '@/shared/lib/components';
+import { LazyReducers } from '@/shared/providers';
 
 import { EditButtons } from './edit-buttons';
 
@@ -46,7 +46,7 @@ function EditProfile() {
   });
 
   const dispatch = useAppDispatch();
-  const me = useAppSelector(selectAuthMe);
+  const me = useAppSelector(selectUserAuth);
 
   const profile = useAppSelector(selectProfileData);
   const error = useAppSelector(selectProfileError);

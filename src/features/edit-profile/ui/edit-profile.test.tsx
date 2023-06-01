@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
-import { profileStateMock } from '@/shared/config/jest/mocks/states';
-import { adminMock, userMock } from '@/shared/config/jest/mocks/entities';
+import { profileStateMock } from '@/features/edit-profile';
+import { adminUserMock, userMock } from '@/entities/user';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
 
 import EditProfile from './edit-profile';
 
@@ -35,7 +35,7 @@ describe('test features/edit-profile', () => {
 
   it('show edit buttons if my profile', async () => {
     renderWithAll(<EditProfile />, {
-      auth: { me: userMock },
+      user: { auth: userMock },
       profile: profileStateMock,
     });
     expect(screen.getByTestId('edit-buttons')).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe('test features/edit-profile', () => {
 
   it('hide edit buttons if not my profile', () => {
     renderWithAll(<EditProfile />, {
-      auth: { me: adminMock },
+      user: { auth: adminUserMock },
       profile: profileStateMock,
     });
     expect(screen.queryByTestId('edit-buttons')).not.toBeInTheDocument();

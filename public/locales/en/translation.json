@@ -71,7 +71,7 @@
     "articles-recommended": {
       "title": "articles recommended"
     },
-    "auth": {
+    "auth-card": {
       "buttons": {
         "enter": "enter",
         "reset": "reset"

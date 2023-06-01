@@ -1,17 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { AppStatePreloaded } from '@/app/providers/store';
 import { StoreDecorator } from '@/shared/config/storybook/decorators';
-import {
-  authStateMock,
-  profileStateMock,
-} from '@/shared/config/jest/mocks/states';
+
+import { profileStateMock } from '@/features/edit-profile';
+import { userStateMock } from '@/entities/user';
 
 import ProfilePage from './profile';
 
 const preloadedState: AppStatePreloaded = {
-  auth: authStateMock,
   networkStatus: { isOnline: true },
   profile: profileStateMock,
+  user: userStateMock,
 };
 
 const meta: Meta = {

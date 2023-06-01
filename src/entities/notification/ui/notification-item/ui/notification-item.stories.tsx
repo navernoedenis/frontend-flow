@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { notificationMock } from '@/shared/config/jest/mocks/entities';
+import { notificationMock } from '../../../model/mocks';
 
 import NotificationItem from './notification-item';
 import NotificationItemSkeleton from './notification-item.skeleton';

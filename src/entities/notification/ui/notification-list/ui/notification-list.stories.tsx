@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { notificationsMock } from '@/shared/config/jest/mocks/entities';
-import { makeGetRequest } from '@/shared/config/storybook/utils';
+import { makeGetRequest } from '@/shared/config/storybook/make-request';
+import { notificationsMock } from '../../../model/mocks';
 
 import NotificationList from './notification-list';
 

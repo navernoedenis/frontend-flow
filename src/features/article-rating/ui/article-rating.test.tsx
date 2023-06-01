@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
-import { renderWithAll } from '@/shared/config/jest/providers';
-import { makeServerError } from '@/shared/config/jest/server';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { makeResponseError } from '@/shared/config/jest/server';
 
 import ArticleRating from './article-rating';
 
@@ -19,7 +19,7 @@ describe('test features/article-rating', () => {
   });
 
   test('show nothing if catch error', async () => {
-    makeServerError('/articles-rating');
+    makeResponseError('/articles-rating');
     renderWithAll(<ArticleRating articleId="1" userId="1" />);
 
     await waitFor(() => {

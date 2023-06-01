@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
+import { articleMock } from '../../../model/mocks';
 
 import ArticleCard from './article-card';
 import ArticleCardSkeleton from './article-card.skeleton';
@@ -24,6 +24,7 @@ export const Component: Story = {
 export const Skeleton: Story = {
   args: {
     isCompact: false,
+    repeat: 1,
   },
   render: (props) => <ArticleCardSkeleton {...props} />,
 };

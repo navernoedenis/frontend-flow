@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { AppButton } from '@/shared/ui/app-button';
 import { AppTypography } from '@/shared/ui/app-typography';
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 
 import classes from './language-switcher.module.scss';
 

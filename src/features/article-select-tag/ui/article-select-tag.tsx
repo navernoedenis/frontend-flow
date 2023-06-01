@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { AppButton } from '@/shared/ui/app-button';
 import { Flexbox } from '@/shared/ui/flexbox';
 
-import { classNames } from '@/shared/lib/transforms/class-names';
+import { classNames } from '@/shared/lib/class-names';
 
 import type { ArticleTag, ArticleTagButton } from '../model/types';
 import classes from './article-select-tag.module.scss';

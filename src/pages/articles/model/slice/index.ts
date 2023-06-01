@@ -12,10 +12,10 @@ import type {
 
 import type { Article } from '@/entities/article';
 
-import { LS_ARTICLES_VIEW_KEY } from '@/shared/constants/local-storage';
 import { Storage } from '@/shared/services';
 
 import { getArticles } from '../../api/get-articles/get-articles';
+import { LS_ARTICLES_VIEW_KEY } from '../constants';
 import type { ArticlesState } from '../types';
 
 const initialState: ArticlesState = {

@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast';
 import type { Meta, StoryObj } from '@storybook/react';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
+import { articleMock } from '../../../model/mocks';
 
 import Article from './article';
 import ArticleSkeleton from './article.skeleton';

@@ -1,6 +1,9 @@
 import axios from 'axios';
 import type { AppState, AppDispatch } from '@/app/providers/store';
-import { commentMock, userMock } from '@/shared/config/jest/mocks/entities';
+
+import { commentMock } from '@/entities/comment';
+import { userMock } from '@/entities/user';
+
 import { addComment } from './add-comment';
 
 jest.mock('axios');
@@ -12,7 +15,7 @@ describe('test pages/article/add-comment', () => {
 
   beforeEach(() => {
     dispatch = jest.fn();
-    getState = jest.fn().mockReturnValue({ auth: { me: userMock } });
+    getState = jest.fn().mockReturnValue({ user: { auth: userMock } });
   });
 
   it('return new comment', async () => {

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { articleMock } from '@/shared/config/jest/mocks/entities';
-import { renderWithAll } from '@/shared/config/jest/providers';
+import { renderWithAll } from '@/shared/config/jest/render-with-all';
+import { articleMock } from '../../../model/mocks';
 
 import ArticleEntity from './article';
 
